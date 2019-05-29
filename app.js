@@ -30,4 +30,9 @@ app.use(session({
 
 //
 
+
+app.get("/", async (req, res) => {
+  res.render("pages/index")
+});
+
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
