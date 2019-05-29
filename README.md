@@ -1,6 +1,6 @@
 # Meesterproef @cmda-minor-web · 2018-2019 ⚙️
 
-*Here goes the intro of a project.*
+This is the repo for the 'Meesterproef' assignment of [Robin Stut](https://github.com/RobinStut), [Bas Pieren](https://github.com/BasPieren), [Sterre van Geest](https://github.com/BasPieren) and [Jesse Dijkman](https://github.com/jesseDijkman1)
 
 ![Project Image](https://i.imgur.com/ZALRBjH.png)
 > Image description
@@ -42,6 +42,7 @@ This project makes use of the following packages and technologies:
 * [Express Sessions](https://www.npmjs.com/package/express-session)
 * [EJS](https://ejs.co/)
 * [dotenv](https://www.npmjs.com/package/dotenv)
+* [nodemon](https://www.npmjs.com/package/nodemon)
 
 ## API 🐒
 We made use of the following API for this project:
