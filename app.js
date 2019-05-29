@@ -10,6 +10,7 @@ const apiKey = process.env.apiKey;
 const user = require("./modules/user.js");
 
 require("dotenv").config()
+console.log('test');
 
 const app = express()
 
