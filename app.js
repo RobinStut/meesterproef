@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const ejs = require('ejs')
 
+const user = require("./modules/user.js");
+
 require('dotenv').config()
 
 const app = express()
