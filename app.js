@@ -9,18 +9,15 @@ require('dotenv').config()
 
 const app = express()
 
-// Server modules
-require("./modules/routes.js")(app);
-
 // Constants
 const PORT = 3000
 
 // Express middleware
-app.use(express.static("public"))
+app.use(express.static('public'))
 
 // EJS middleware
-app.set("view engine", "ejs")
-app.set("views", "views")
+app.set('view engine', 'ejs')
+app.set('views', 'views')
 
 // Body-parser middleware
 app.use(bodyParser.json())
@@ -30,14 +27,10 @@ app.use(bodyParser.urlencoded({
 
 // Express-session middleware
 app.use(session({
-  secret: "classified"
+  secret: 'classified'
 }))
 
-//
-
-
-app.get("/", async (req, res) => {
-  res.render("pages/index")
-});
+// Routing
+require('./modules/routes.js')(app);
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
