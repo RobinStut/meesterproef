@@ -7,9 +7,16 @@
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
+    "dotenv-json": "^1.0.0",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
+<<<<<<< HEAD
+    "express-session": "^1.16.1",
+    "firebase": "^6.1.0",
+    "firebase-admin": "^8.0.0"
+=======
     "express-session": "^1.16.1"
+>>>>>>> 7f87c746b8dc251ae5190b118c7d25ab15a67d17
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
