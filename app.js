@@ -1,3 +1,5 @@
+
+// Node_modules
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
@@ -5,10 +7,13 @@ const ejs = require('ejs')
 
 require('dotenv').config()
 
+const app = express()
+
+// Server modules
+require("./modules/routes.js")(app);
+
 // Constants
 const PORT = 3000
-
-const app = express()
 
 // Express middleware
 app.use(express.static("public"))
