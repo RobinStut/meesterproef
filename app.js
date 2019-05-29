@@ -14,25 +14,28 @@ const firebase = require('firebase');
 const admin = require('firebase-admin');
 const serviceAccount = require('./public/meesterproef-48b42-firebase-adminsdk-990t4-93c2b22a9f.json');
 
+<<<<<<< HEAD
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://meesterproef-48b42.firebaseio.com"
 });
+=======
+const user = require("./modules/user.js");
+
+require('dotenv').config()
+>>>>>>> 7f87c746b8dc251ae5190b118c7d25ab15a67d17
 
 const app = express()
-
-// Server modules
-require("./modules/routes.js")(app);
 
 // Constants
 const PORT = 3000
 
 // Express middleware
-app.use(express.static("public"))
+app.use(express.static('public'))
 
 // EJS middleware
-app.set("view engine", "ejs")
-app.set("views", "views")
+app.set('view engine', 'ejs')
+app.set('views', 'views')
 
 // Body-parser middleware
 app.use(bodyParser.json())
@@ -42,9 +45,10 @@ app.use(bodyParser.urlencoded({
 
 // Express-session middleware
 app.use(session({
-  secret: "classified"
+  secret: 'classified'
 }))
 
+<<<<<<< HEAD
 
 var config = {
   apiKey: apiKey,
@@ -67,5 +71,9 @@ writeUserData()
 app.get("/", async (req, res) => {
   res.render("pages/index")
 });
+=======
+// Routing
+require('./modules/routes.js')(app);
+>>>>>>> 7f87c746b8dc251ae5190b118c7d25ab15a67d17
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
