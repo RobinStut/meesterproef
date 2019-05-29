@@ -14,16 +14,14 @@ const firebase = require('firebase');
 const admin = require('firebase-admin');
 const serviceAccount = require('./public/meesterproef-48b42-firebase-adminsdk-990t4-93c2b22a9f.json');
 
-<<<<<<< HEAD
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://meesterproef-48b42.firebaseio.com"
 });
-=======
+
 const user = require("./modules/user.js");
 
 require('dotenv').config()
->>>>>>> 7f87c746b8dc251ae5190b118c7d25ab15a67d17
 
 const app = express()
 
@@ -48,8 +46,6 @@ app.use(session({
   secret: 'classified'
 }))
 
-<<<<<<< HEAD
-
 var config = {
   apiKey: apiKey,
   authDomain: "meesterproef-48b42.firebaseapp.com",
@@ -71,9 +67,7 @@ writeUserData()
 app.get("/", async (req, res) => {
   res.render("pages/index")
 });
-=======
 // Routing
 require('./modules/routes.js')(app);
->>>>>>> 7f87c746b8dc251ae5190b118c7d25ab15a67d17
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
