@@ -3,7 +3,6 @@ module.exports = () => {
     require("firebase/auth");
     require("firebase/firestore");
 
-
     const firebase = require('firebase');
     const admin = require('firebase-admin');
     const serviceAccount = require('./public/meesterproef-48b42-firebase-adminsdk-990t4-93c2b22a9f.json');

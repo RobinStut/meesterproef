@@ -5,7 +5,6 @@ const session = require("express-session")
 const ejs = require("ejs")
 
 const apiKey = process.env.apiKey;
-const user = require("./modules/user.js");
 
 require("dotenv").config()
 
@@ -33,7 +32,7 @@ app.use(session({
 }))
 
 // Firebase
-require('./modules/firebase.js')();
+// require('./modules/firebase.js')();
 
 
 app.get("/", async (req, res) => {
