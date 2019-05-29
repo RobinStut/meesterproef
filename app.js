@@ -7,6 +7,7 @@ const ejs = require("ejs")
 const apiKey = process.env.apiKey;
 
 require("dotenv").config()
+console.log('test');
 
 const app = express()
 
