@@ -1,6 +1,6 @@
 # Meesterproef @cmda-minor-web · 2018-2019 ⚙️
 
-This is the repo for the 'Meesterproef' assignment of [Robin Stut](https://github.com/RobinStut), [Bas Pieren](https://github.com/BasPieren), [Sterre van Geest](https://github.com/BasPieren) and [Jesse Dijkman](https://github.com/jesseDijkman1)
+This is the repo for the 'Meesterproef' assignment of [Robin Stut](https://github.com/RobinStut), [Bas Pieren](https://github.com/BasPieren), [Sterre van Geest](https://github.com/BasPieren) and [Jesse Dijkman](https://github.com/jesseDijkman1).
 
 ![Project Image](https://i.imgur.com/ZALRBjH.png)
 > Image description
