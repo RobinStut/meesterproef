@@ -1,19 +1,11 @@
-<<<<<<< HEAD
-=======
-require("dotenv-json")();
-require('dotenv').config()
->>>>>>> 01fea7913ccf5ed91c298d694e471a17e9474464
-
 // Node_modules
 const express = require("express")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const ejs = require("ejs")
-<<<<<<< HEAD
-=======
+
 const apiKey = process.env.apiKey;
 const user = require("./modules/user.js");
->>>>>>> 01fea7913ccf5ed91c298d694e471a17e9474464
 
 require("dotenv").config()
 
@@ -40,8 +32,6 @@ app.use(session({
   secret: "classified"
 }))
 
-<<<<<<< HEAD
-=======
 // Firebase
 require('./modules/firebase.js')();
 
@@ -49,7 +39,7 @@ require('./modules/firebase.js')();
 app.get("/", async (req, res) => {
   res.render("pages/index")
 });
->>>>>>> 01fea7913ccf5ed91c298d694e471a17e9474464
+
 // Routing
 require("./modules/routes.js")(app);
 
