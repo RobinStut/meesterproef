@@ -4,10 +4,7 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 const ejs = require("ejs")
 
-const apiKey = process.env.apiKey;
-
 require("dotenv").config()
-console.log('test');
 
 const app = express()
 
@@ -31,14 +28,6 @@ app.use(bodyParser.urlencoded({
 app.use(session({
   secret: "classified"
 }))
-
-// Firebase
-// require('./modules/firebase.js')();
-
-
-app.get("/", async (req, res) => {
-  res.render("pages/index")
-});
 
 // Routing
 require("./modules/routes.js")(app);
