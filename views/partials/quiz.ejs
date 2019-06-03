@@ -1,19 +1,116 @@
 <form id="quizForm">
 
-    <input type="checkbox" id="1" name="quizInput">
-    <label for="1">
+    <section>
+        <h3>How old are you</h3>
+        <label for="1">
+            4 - 12 years
+            <input type="radio" id="1" name="howOldAreYou">
+        </label>
+        <label for="2">
+            13 - 18 years
+            <input type="radio" id="2" name="howOldAreYou">
+        </label>
+        <label for="3">
+            19 - 30 years
+            <input type="radio" id="3" name="howOldAreYou">
+        </label>
+        <label for="4">
+            31 - 45 years
+            <input type="radio" id="4" name="howOldAreYou">
+        </label>
+        <label for="5">
+            46 - 65 years
+            <input type="radio" id="5" name="howOldAreYou">
+        </label>
+        <label for="6">
+            65+ years
+            <input type="radio" id="6" name="howOldAreYou">
+        </label>
+    </section>
 
-        <h3> 1</h3>
+    <section>
+        <h3>On which sports level do you want to train? </h3>
+        <label for="7">
+            Beginner
+            <input type="radio" id="7" name="sportsLevel">
+        </label>
+        <label for="8">
+            Intermediate
+            <input type="radio" id="8" name="sportsLevel">
+        </label>
+        <label for="9">
+            Professional
+            <input type="radio" id="9" name="sportsLevel">
+        </label>
+    </section>
 
-    </label>
+    <section>
+        <h3>Which genders do you want to make Sports with?</h3>
+        <label for="10">
+            Female only
+            <input type="radio" id="10" name="genderChoice">
+        </label>
+        <label for="11">
+            Mixed
+            <input type="radio" id="11" name="genderChoice">
+        </label>
+        <label for="12">
+            Male only
+            <input type="radio" id="12" name="genderChoice">
+        </label>
+    </section>
 
-    <input type="checkbox" id="2" name="quizInput">
-    <label for="2">
+    <section>
+        <h3>What are your 3 main motivations for sports?</h3>
+        <label for="13">
+            <input type="text" id="13" name="genderChoice">
+        </label>
+        <label for="14">
+            <input type="text" id="14" name="genderChoice">
+        </label>
+        <label for="15">
+            <input type="text" id="15" name="genderChoice">
+        </label>
+    </section>
 
-        <h3> 2</h3>
+    <section>
+        <h3>Are you a lone wolf or prefer the whole pack?</h3>
+        <label for="16">
+            <input type="range" id="16" name="wolfpack" min="0" max="10">
+        </label>
+        <h3>Do you prefer indoor or outdoor?</h3>
+        <label for="17">
+            <input type="range" id="17" name="inOutdoor" min="0" max="10">
+        </label>
+        <h3>Fish or land mammal?</h3>
+        <label for="18">
+            <input type="range" id="18" name="fishLand" min="0" max="10">
+        </label>
+        <h3>What would you like to improve?</h3>
+        <label for="19">
+            strength
+            <input type="radio" id="19" name="improve">
+        </label>
+        <label for="20">
+            endurance
+            <input type="radio" id="20" name="improve">
+        </label>
+        balance
+        <label for="21">
+            <input type="radio" id="21" name="improve">
+        </label>
 
-    </label>
+    </section>
 
 
-    <button id="quizSubmit">Keus bevestigen</button>
+
+
+
+
+
+
+
+    <button id="quizBackButton">Back</button>
+    <button id="quizNextButton">Next</button>
+    <button id="quizSubmit">Submit</button>
 </form>
