@@ -16,7 +16,14 @@
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
   font-family: sans-serif;
 }
 
@@ -45,7 +52,7 @@ header {
   box-sizing: border-box;
 }
 
-header div{
+header div {
   padding: 1rem;
   height: 100%;
   background-color: var(---dark-grey);
@@ -69,6 +76,14 @@ header div:last-of-type {
   border-left: 1px solid #2d2d2d;
 }
 
-header div:last-of-type a:last-of-type{
+header div:last-of-type a:last-of-type {
   margin: 0 0 0 1rem;
+}
+
+#quizForm .showFormElement {
+  display: block;
+}
+
+#quizForm section {
+  display: none;
 }
