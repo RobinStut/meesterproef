@@ -14,6 +14,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -35,18 +36,21 @@ p {
 }
 
 main {
+  padding: 0 5em;
   height: 100vh;
 }
 
-section {
+main section {
   margin: 1em auto;
-  padding: 1em;
-  width: 80vw;
+  padding: 1em 0;
   height: 50vh;
-  border: 1px solid var(---black);
 }
 
-section h2 + p {
+main section:last-of-type {
+  border-bottom: 0;
+}
+
+main section h2 + p {
   margin: 1em 0 auto 0;
 }
 
@@ -62,24 +66,38 @@ section h2 + p {
   justify-content: space-between;
 }
 
-/* ---------- HEADER ---------- */
+.st-divider {
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  background-color: var(---black);
+}
 
+.st-a-button {
+  margin: auto 0;
+  padding: 1em 2em;
+  width: fit-content;
+  color: var(---black);
+  text-decoration: none;
+  background-color: var(---light-grey);
+  border-radius: 25px;
+  transition: 0.2s;
+}
+
+.st-a-button:hover {
+  background-color: var(---dark-grey);
+}
+
+/* ---------- HEADER ---------- */
 header {
   width: 100%;
   height: 10vh;
-  background-color: #f4f4f4;
-  box-sizing: border-box;
+  background-color: var(---dark-grey);
 }
 
 header div{
   padding: 1rem;
   height: 100%;
-  background-color: var(---dark-grey);
-  box-sizing: border-box;
-}
-
-header div:first-of-type {
-  border-right: 1px solid #2d2d2d;
 }
 
 header img {
@@ -92,7 +110,6 @@ header input {
 
 header div:last-of-type {
   margin: 0 0 0 2rem;
-  border-left: 1px solid #2d2d2d;
 }
 
 header div:last-of-type a:last-of-type{
@@ -101,21 +118,43 @@ header div:last-of-type a:last-of-type{
 
 /* ---------- HERO ---------- */
 #st-homepage-hero {
+  justify-content: center;
   margin-top: 0;
   width: 100%;
+  height: 70vh;
   text-align: center;
-  background-color: var(---dark-grey);
+  background-color: var(---light-grey);
   border: none;
 }
 
-/* ---------- COMMUNITY ---------- */
+/* ---------- QUIZ ---------- */
 
+
+/* ---------- COMMUNITY ---------- */
 #st-homepage-community div {
   margin: 0 0 auto 0;
 }
 
 #st-homepage-community div article {
   padding: 1em;
+  margin: 0 1em;
+  height: fit-content;
   border: 1px solid var(---black);
   border-radius: 20px;
+}
+
+#st-homepage-community div article:first-of-type {
+  margin-left: 0;
+}
+
+#st-homepage-community div article:last-of-type {
+  margin-right: 0;
+}
+
+#st-homepage-community div article h3{
+  margin: 0 0 0.5em 0;
+}
+
+#st-homepage-community div article p{
+  font-size: 0.9em;
 }
