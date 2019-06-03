@@ -20,8 +20,34 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-family: sans-serif;
 }
 
+h1 {
+  display: none;
+}
+
+h2 {
+  text-transform: uppercase;
+  color: var(---text-black);
+}
+
+p {
+  color: var(---text-black);
+  font-weight: 300;
+}
+
 main {
   height: 100vh;
+}
+
+section {
+  margin: 1em auto;
+  padding: 1em;
+  width: 80vw;
+  height: 50vh;
+  border: 1px solid var(---black);
+}
+
+section h2 + p {
+  margin: 1em 0 auto 0;
 }
 
 .display-flex-h {
@@ -71,4 +97,25 @@ header div:last-of-type {
 
 header div:last-of-type a:last-of-type{
   margin: 0 0 0 1rem;
+}
+
+/* ---------- HERO ---------- */
+#st-homepage-hero {
+  margin-top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(---dark-grey);
+  border: none;
+}
+
+/* ---------- COMMUNITY ---------- */
+
+#st-homepage-community div {
+  margin: 0 0 auto 0;
+}
+
+#st-homepage-community div article {
+  padding: 1em;
+  border: 1px solid var(---black);
+  border-radius: 20px;
 }
