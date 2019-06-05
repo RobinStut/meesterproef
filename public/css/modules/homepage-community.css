@@ -1,0 +1,29 @@
+/* ---------- COMMUNITY ---------- */
+#st-homepage-community div {
+  margin: 0 0 auto 0;
+}
+
+#st-homepage-community div article {
+  padding: 1em;
+  margin: 0 1em;
+  height: fit-content;
+  border: 1px solid var(---black);
+  border-radius: 20px;
+}
+
+#st-homepage-community div article:first-of-type {
+  margin-left: 0;
+}
+
+#st-homepage-community div article:last-of-type {
+  margin-right: 0;
+}
+
+#st-homepage-community div article h3{
+  margin: 0 0 0.5em 0;
+}
+
+#st-homepage-community div article p{
+  font-size: 0.9em;
+  font-style: italic;
+}
