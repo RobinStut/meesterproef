@@ -6,12 +6,11 @@ body footer {
   background-color: var(---primary-color);
 }
 
-body footer div {
-  margin: auto;
-  width: 50%;
-}
-
 body footer div a {
   color: var(---black);
   text-decoration: none;
+}
+
+body footer div svg {
+  width: 25px;
 }
