@@ -1,27 +1,12 @@
 /* ---------- HEADER ---------- */
 header {
-  width: 100%;
+  padding: 0 0.938em;
+  width: 100vw;
   height: 10vh;
   background-color: var(---primary-color);
+  z-index: 999;
 }
 
-header div{
-  padding: 1rem;
-  height: 100%;
-}
-
-header img {
-  margin: 0 auto;
-}
-
-header input {
-  margin: 0 2rem 0 0;
-}
-
-header div:last-of-type {
-  margin: 0 0 0 2rem;
-}
-
-header div:last-of-type a:last-of-type{
-  margin: 0 0 0 1rem;
+header button svg {
+  width: 25px;
 }
