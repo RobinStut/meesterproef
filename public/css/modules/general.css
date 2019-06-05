@@ -14,12 +14,20 @@ h1 {
 }
 
 h2 {
+  font-size: var(---font-size-16px);
   color: var(---text-black);
   text-transform: uppercase;
 }
 
+h3 {
+  margin-bottom: 1em;
+  font-size: var(---font-size-14px);
+  font-weight: 400;
+}
+
 p {
   color: var(---text-black);
+  font-size: var(---font-size-12px);
   font-weight: 300;
 }
 
@@ -28,7 +36,7 @@ main {
 }
 
 main section {
-  padding: 1em 0;
+  padding: 1.5em 0;
 }
 
 main section:last-of-type {
@@ -59,7 +67,7 @@ main section h2 + p {
 }
 
 .st-a-button {
-  margin: 1em 0 0 0;
+  margin: 2em 0 0 0;
   padding: 1em 2em;
   color: var(---black);
   text-align: center;
