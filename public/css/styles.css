@@ -87,3 +87,24 @@ header div:last-of-type a:last-of-type {
 #quizForm section {
   display: none;
 }
+
+#progressBar {
+  display: flex;
+}
+
+#progressBar .green {
+  background-color: green;
+}
+
+#progressBar .lastStep {
+  width: auto;
+}
+
+.progressStep {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  background-color: gray;
+}
