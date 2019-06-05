@@ -1,8 +1,13 @@
+/* ---------- GLOBAL ---------- */
 @import "modules/fonts.css";
 @import "modules/root.css";
 @import "modules/general.css";
 @import "modules/header.css";
+@import "modules/footer.css";
+
+/* ---------- HOMEPAGE ---------- */
 @import "modules/homepage-hero.css";
 @import "modules/homepage-quiz.css";
 @import "modules/homepage-community.css";
-@import "modules/footer.css";
+@import "modules/homepage-places.css";
+@import "modules/homepage-healthy-living.css";
