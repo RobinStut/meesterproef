@@ -1,14 +1,9 @@
-/* ---------- FONTS ---------- */
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
-
-/* ---------- COLORS ---------- */
-:root {
-  ---white: #ffffff;
-  ---black: #000000;
-  ---light-grey: #efefef;
-  ---dark-grey: #d5d5d5;
-  ---text-black: #2d2d2d;
-}
+@import "modules/fonts.css";
+@import "modules/root.css";
+@import "modules/header.css";
+@import "modules/homepage-hero.css";
+@import "modules/homepage-community.css";
+@import "modules/footer.css";
 
 /* ---------- GENERAL ---------- */
 * {
@@ -86,94 +81,4 @@ main section h2 + p {
 
 .st-a-button:hover {
   background-color: var(---dark-grey);
-}
-
-/* ---------- HEADER ---------- */
-header {
-  width: 100%;
-  height: 10vh;
-  background-color: var(---dark-grey);
-}
-
-header div{
-  padding: 1rem;
-  height: 100%;
-}
-
-header img {
-  margin: 0 auto;
-}
-
-header input {
-  margin: 0 2rem 0 0;
-}
-
-header div:last-of-type {
-  margin: 0 0 0 2rem;
-}
-
-header div:last-of-type a:last-of-type{
-  margin: 0 0 0 1rem;
-}
-
-/* ---------- HERO ---------- */
-#st-homepage-hero {
-  justify-content: center;
-  margin-top: 0;
-  width: 100%;
-  height: 70vh;
-  text-align: center;
-  background-color: var(---light-grey);
-  border: none;
-}
-
-/* ---------- QUIZ ---------- */
-
-
-/* ---------- COMMUNITY ---------- */
-#st-homepage-community div {
-  margin: 0 0 auto 0;
-}
-
-#st-homepage-community div article {
-  padding: 1em;
-  margin: 0 1em;
-  height: fit-content;
-  border: 1px solid var(---black);
-  border-radius: 20px;
-}
-
-#st-homepage-community div article:first-of-type {
-  margin-left: 0;
-}
-
-#st-homepage-community div article:last-of-type {
-  margin-right: 0;
-}
-
-#st-homepage-community div article h3{
-  margin: 0 0 0.5em 0;
-}
-
-#st-homepage-community div article p{
-  font-size: 0.9em;
-  font-style: italic;
-}
-
-/* ---------- FOOTER ---------- */
-body footer {
-  padding: 1em;
-  width: 100%;
-  height: 20vh;
-  background-color: var(---dark-grey);
-}
-
-body footer div {
-  margin: auto;
-  width: 50%;
-}
-
-body footer div a {
-  color: var(---black);
-  text-decoration: none;
 }
