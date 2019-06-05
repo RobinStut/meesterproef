@@ -80,6 +80,8 @@ header div:last-of-type a:last-of-type {
   margin: 0 0 0 1rem;
 }
 
+/* begin of Quiz styling */
+
 #quizForm .showFormElement {
   display: block;
 }
@@ -108,3 +110,5 @@ header div:last-of-type a:last-of-type {
   text-align: center;
   background-color: gray;
 }
+
+/* end of Quiz styling */
