@@ -67,11 +67,11 @@ main section h2 + p {
   width: fit-content;
   color: var(---black);
   text-decoration: none;
-  background-color: var(---light-grey);
+  background-color: var(---secondary-color);
   border-radius: 25px;
   transition: 0.2s;
 }
 
 .st-a-button:hover {
-  background-color: var(---dark-grey);
+  background-color: var(---primary-color);
 }
