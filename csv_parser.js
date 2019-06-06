@@ -6,7 +6,6 @@ class Object_template {
     this.template = this.createTemplate()
   }
 
-
   createTemplate() {
     let obj = {}
 
@@ -20,16 +19,16 @@ class Object_template {
   createObject(row) {
     const rawValues = row.split(",");
     const keys = Object.keys(this.template)
-
+    const clone = {...this.template}
     rawValues.forEach((v, i) => {
       if (v.length == 0) {
-        this.template[keys[i]] = undefined
+        clone[keys[i]] = undefined
       } else {
-        this.template[keys[i]] = v
+        clone[keys[i]] = v
       }
     })
 
-    return this.template
+    return clone
   }
 }
 
