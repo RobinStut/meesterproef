@@ -34,9 +34,9 @@ h4 {
 }
 
 p {
-  color: var(---text-black);
-  font-size: var(---font-size-12px);
-  font-weight: 300;
+  color: var(---text-color);
+  font-size: var(---font-size-15px);
+  font-weight: 400;
 }
 
 main section {
