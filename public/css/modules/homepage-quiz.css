@@ -5,3 +5,7 @@
   border-top-right-radius: 25px;
   z-index: 1;
 }
+
+#st-homepage-quiz h4 {
+  margin-bottom: 1em;
+}
