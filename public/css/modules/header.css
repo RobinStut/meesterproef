@@ -1,0 +1,11 @@
+header {
+  padding: 0 0.938em;
+  width: 100vw;
+  height: 10vh;
+  background-color: var(---primary-color);
+  z-index: 999;
+}
+
+header button svg {
+  width: 25px;
+}
