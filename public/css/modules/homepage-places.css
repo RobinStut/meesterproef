@@ -1,3 +1,39 @@
 #st-homepage-places {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#st-homepage-places h3 {
   text-align: center;
+}
+
+.st-homepage-palace-article {
+  margin: 1em 0;
+}
+
+.st-homepage-palace-article:first-of-type {
+  margin-top: 0;
+}
+
+.st-homepage-palace-article:last-of-type {
+  margin-bottom: 2em;
+}
+
+.st-homepage-palace-article p {
+  margin-bottom: 1em;
+  padding-left: 1em;
+}
+
+.st-homepage-palace-article img {
+  width: 100%;
+}
+
+.st-homepage-palace-article a {
+  position: relative;
+  top: -1.5em;
+  left: 1em;
+}
+
+.st-homepage-palace-article ul {
+  padding-left: 1em;
 }
