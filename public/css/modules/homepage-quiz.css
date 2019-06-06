@@ -1,3 +1,6 @@
 #st-homepage-quiz {
+  background-color: var(---primary-color);
   text-align: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
