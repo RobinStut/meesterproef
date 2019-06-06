@@ -2,7 +2,13 @@ body footer {
   padding: 0 0.938em;
   width: 100%;
   height: 20vh;
-  background-color: var(---primary-color);
+  background-color: var(---text-color);
+}
+
+body footer a {
+  margin: 0 0.5em;
+  color: var(---black);
+  font-size: var(---font-size-14px);
 }
 
 body footer div {
@@ -15,13 +21,9 @@ body footer div:first-of-type {
   width: fit-content;
 }
 
-body footer div:first-of-type a {
-  margin: 0 1em;
-  color: var(---black);
-  font-size: 0.6em;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-decoration: none;
+body footer div:first-of-type a svg {
+  width: 25px;
+  color: var(---secondary-color);
 }
 
 body footer div:last-of-type {
@@ -30,10 +32,10 @@ body footer div:last-of-type {
 }
 
 body footer div:last-of-type a {
-  margin: 0 0.5em;
-  color: var(---black);
-}
-
-body footer div:last-of-type a svg {
-  width: 25px;
+  margin: 0 1em;
+  color: var(---white);
+  font-size: 0.6em;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
 }
