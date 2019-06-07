@@ -28,6 +28,11 @@
   margin: 0 1em 0 0;
 }
 
-#st-homepage-community div article div p:first-of-type{
+#st-homepage-community div article p {
   margin: 0 0 0.5em 0;
+}
+
+#st-homepage-community div article div {
+  position: relative;
+  padding: 0 0 0 0.5em;
 }
