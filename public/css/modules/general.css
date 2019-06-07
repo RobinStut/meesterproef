@@ -19,12 +19,12 @@ h1 {
 h2 {
   font-size: var(---font-size-25px);
   font-weight: 400;
-  color: var(---text-black);
   text-transform: uppercase;
 }
 
 h3 {
   margin-bottom: 1.5em;
+  color: var(---text-color);
   font-size: var(---font-size-18px);
   font-weight: 600;
   text-transform: uppercase;
