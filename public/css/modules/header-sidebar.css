@@ -1,5 +1,5 @@
 aside {
-    position: absolute;
+    position: fixed;
     padding: 4em 1em 1em 1em;
     height: 100%;
     width: 80vw;
