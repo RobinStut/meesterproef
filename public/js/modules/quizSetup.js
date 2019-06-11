@@ -144,11 +144,73 @@ export default (() => {
             fishOrLand: Number(formResult[7]),
             improvement: formResult[8]
         }
-        console.log(yourResultsOfForm);
+
         const jsonData = await fetch(`${window.location.href}sportQuizFilter.json`).then(function (response) {
             return response.json();
         })
-        console.log(jsonData);
+
+        let comparedResultsOfSports = []
+        let mapCounter = 0;
+
+        jsonData.map(x => {
+            let percentage = 0
+
+            const age = (() => {
+                const ageIsInObject = x.age.includes(yourResultsOfForm.age)
+                if (ageIsInObject == true) {
+                    percentage += 20;
+                }
+            })()
+
+            const gender = (() => {
+                const genderIsInObject = x.gender.includes(yourResultsOfForm.gender)
+                if (genderIsInObject == true) {
+                    percentage += 20;
+                }
+            })()
+
+            const group = (() => {
+                const groupOrSoloInObject = x.groupOrSolo === yourResultsOfForm.groupOrSolo
+                if (groupOrSoloInObject === true) {
+                    percentage += 20;
+                }
+                if (groupOrSoloInObject === false) {
+                    const calcedPercentage = 20 - (Math.abs(yourResultsOfForm.groupOrSolo - x.groupOrSolo) * 2)
+                    percentage += calcedPercentage
+                }
+            })()
+
+            const inOutdoor = (() => {
+                const inOrOutdoorInObject = x.inOrOutdoor === yourResultsOfForm.inOrOutdoor
+                if (inOrOutdoorInObject === true) {
+                    percentage += 20;
+                }
+                if (inOrOutdoorInObject === false) {
+                    const calcedPercentage = 20 - (Math.abs(yourResultsOfForm.inOrOutdoor - x.inOrOutdoor) * 2)
+                    percentage += calcedPercentage
+                }
+            })()
+
+            const fishOrLand = (() => {
+                const fishOrLandInObject = x.fishOrLand === yourResultsOfForm.fishOrLand
+                if (fishOrLandInObject === true) {
+                    percentage += 20;
+                }
+                if (fishOrLandInObject === false) {
+                    const calcedPercentage = 20 - (Math.abs(yourResultsOfForm.fishOrLand - x.fishOrLand) * 2)
+                    percentage += calcedPercentage
+                }
+            })()
+            console.log(percentage);
+
+            comparedResultsOfSports.push({
+                percentageNum: percentage,
+                index: mapCounter
+            })
+            mapCounter += 1;
+        });
+
+
 
     })
 

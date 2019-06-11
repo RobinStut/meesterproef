@@ -38,3 +38,5 @@ add parent class with the increase or decrease class to check what the bar needs
 
 
 
+Now that I can walk through the quiz, i want to match my results with de existing sport resutls
+I need to get all the results, and compare each of them with my results. Then i need to make a percentage linked to each object in the array. For now i think that i recreate an array with only the percentages and the index number of that array item. 
