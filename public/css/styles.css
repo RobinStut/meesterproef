@@ -111,4 +111,44 @@ header div:last-of-type a:last-of-type {
   background-color: gray;
 }
 
+.dragInput {
+  height: 40px;
+  width: 150px;
+  background-color: lightgray;
+  margin: .3rem;
+}
+
+.showFormElement {
+  height: 350px;
+}
+
+#quizForm .showFormElement#howOldAreYou {
+  display: grid;
+}
+
+#quizForm .showFormElement#whichGender {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#whichGender svg {
+  width: 100px;
+  margin: 0 auto;
+}
+
+#whichGender label {
+  display: grid;
+  text-align: center;
+}
+
+#whichGender input {
+  margin: 0 auto;
+}
+
+#whichGender h3 {
+  grid-column-end: 4;
+  grid-column-start: 1;
+}
+
 /* end of Quiz styling */

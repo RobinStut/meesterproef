@@ -1,4 +1,4 @@
 console.log('linked');
 
 // quiz
-import Quiz from "./modules/quiz.js";
+import Quiz from "./modules/quizSetup.js";

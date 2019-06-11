@@ -1,5 +1,4 @@
 export default (() => {
-
     const nextButton = document.getElementById('quizNextButton')
     const backButton = document.getElementById('quizBackButton')
     const sectionCount = document.getElementById("quizForm").getElementsByTagName('section')
@@ -57,7 +56,7 @@ export default (() => {
             } else {
                 //all other posibilities
                 classNameFinder.removeAttribute("class");;
-                classNameFinder.nextSibling.nextSibling.setAttribute('class', 'showFormElement');
+                classNameFinder.nextSibling.nextElementSibling.setAttribute('class', 'showFormElement');
                 backButton.removeAttribute('disabled', '')
             }
         }
@@ -77,12 +76,80 @@ export default (() => {
             if (sectionClass == 'showFormElement' && i > 0) {
                 //all other posibilities
                 classNameFinder.removeAttribute("class");;
-                classNameFinder.previousSibling.previousSibling.setAttribute('class', 'showFormElement');
+                classNameFinder.previousSibling.previousElementSibling.setAttribute('class', 'showFormElement');
                 nextButton.removeAttribute('disabled', '')
             }
         }
         progressBarUpdate()
     });
 
+    const draggableItems = document.getElementsByClassName('draggableTag')
+    const dragInputs = document.getElementsByClassName('dragInput')
+    const dragTagValues = document.getElementsByClassName('draggableTag')
+    let currentDraggedElement
+    for (const dragInput of dragInputs) {
+        dragInput.addEventListener("dragover", dragover)
+        dragInput.addEventListener("dragenter", dragenter)
+        dragInput.addEventListener("drop", drop)
+    }
+    for (const dragValue of dragTagValues) {
+        dragValue.addEventListener("dragstart", dragstart)
+
+    }
+
+
+
+    function dragover(e) {
+        e.preventDefault()
+    }
+
+    function dragstart(e) {
+        currentDraggedElement = e.target.innerText
+    }
+
+    function dragenter(e) {
+        e.preventDefault()
+    }
+
+    function drop(e) {
+        setTimeout(() => {
+            e.path[0].value = e.target.textContent;
+        }, 0);
+        this.innerText = currentDraggedElement
+        const coresponsingInputfield = e.target.attributes[1].value;
+        document.getElementById(coresponsingInputfield).value = currentDraggedElement
+    }
+
+
+    const form = document.getElementById('quizForm')
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault()
+        const formInputs = document.getElementById('quizForm').getElementsByTagName('input')
+        let formResult = []
+
+        for (let formInput of formInputs) {
+            if (formInput.type === 'radio' && formInput.checked === true) {
+                formResult.push(formInput.attributes[3].value)
+            }
+            if (formInput.type !== 'radio') {
+                formResult.push(formInput.value)
+            }
+        }
+        let yourResultsOfForm = {
+            age: formResult[0],
+            gender: formResult[1],
+            motivation: [formResult[2], formResult[3], formResult[4]],
+            groupOrSolo: Number(formResult[5]),
+            inOrOutdoor: Number(formResult[6]),
+            fishOrLand: Number(formResult[7]),
+            improvement: formResult[8]
+        }
+        console.log(yourResultsOfForm);
+        const jsonData = await fetch(`${window.location.href}sportQuizFilter.json`).then(function (response) {
+            return response.json();
+        })
+        console.log(jsonData);
+
+    })
 
 })()

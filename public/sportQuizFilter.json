@@ -1,0 +1,29 @@
+[{
+    "sport": "Judo",
+    "age": ["4 - 12 years", "13 - 18 years", "19 - 30 years"],
+    "fishOrLand": 10,
+    "gender": "Mixed",
+    "groupOrSolo": 5,
+    "inOrOutdoor": 0
+}, {
+    "sport": "Canoe",
+    "age": ["4 - 12 years", "13 - 18 years", "19 - 30 years", "31 - 45 years", "46 - 65 years", "65+"],
+    "fishOrLand": 1,
+    "gender": "Mixed",
+    "groupOrSolo": 8,
+    "inOrOutdoor": 10
+}, {
+    "sport": "Ice skating",
+    "age": ["4 - 12 years", "13 - 18 years", "19 - 30 years", "31 - 45 years", "46 - 65 years"],
+    "fishOrLand": 4,
+    "gender": "Mixed",
+    "groupOrSolo": 3,
+    "inOrOutdoor": 6
+}, {
+    "sport": "Football",
+    "age": ["4 - 12 years", "13 - 18 years", "19 - 30 years", "31 - 45 years", "46 - 65 years"],
+    "fishOrLand": 10,
+    "gender": ["Female only", "Male only"],
+    "groupOrSolo": 10,
+    "inOrOutdoor": 10
+}]
