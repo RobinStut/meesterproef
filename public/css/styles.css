@@ -3,6 +3,7 @@
 @import "modules/root.css";
 @import "modules/general.css";
 @import "modules/header.css";
+@import "modules/header-sidebar.css";
 @import "modules/footer.css";
 
 /* ---------- HOMEPAGE ---------- */
