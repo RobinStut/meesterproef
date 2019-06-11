@@ -1,14 +1,14 @@
 :root {
-  ---black: #000000;
-  ---white: #ffffff;
-  ---primary-color: #35AFA3;
-  ---secondary-color: #F7D650;
-  ---text-color: #153E60;
-  ---font-size-50px: 3.125em;
-  ---font-size-25px: 1.563em;
-  ---font-size-18px: 1.125em;
-  ---font-size-16px: 1em;
-  ---font-size-15px: 0.938em;
-  ---font-size-14px: 0.875em;
-  ---main-padding: 0 1em;
+  --black: #000000;
+  --white: #ffffff;
+  --primary-color: #35AFA3;
+  --secondary-color: #F7D650;
+  --text-color: #153E60;
+  --font-size-50px: 3.125em;
+  --font-size-25px: 1.563em;
+  --font-size-18px: 1.125em;
+  --font-size-16px: 1em;
+  --font-size-15px: 0.938em;
+  --font-size-14px: 0.875em;
+  --main-padding: 0 1em;
 }
