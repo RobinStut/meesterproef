@@ -73,6 +73,7 @@ export default (() => {
                 //begin of the questions
                 backButton.setAttribute('disabled', '')
             }
+
             if (sectionClass == 'showFormElement' && i > 0) {
                 //all other posibilities
                 classNameFinder.removeAttribute("class");;
@@ -87,17 +88,17 @@ export default (() => {
     const dragInputs = document.getElementsByClassName('dragInput')
     const dragTagValues = document.getElementsByClassName('draggableTag')
     let currentDraggedElement
+
     for (const dragInput of dragInputs) {
         dragInput.addEventListener("dragover", dragover)
         dragInput.addEventListener("dragenter", dragenter)
         dragInput.addEventListener("drop", drop)
     }
+
     for (const dragValue of dragTagValues) {
         dragValue.addEventListener("dragstart", dragstart)
 
     }
-
-
 
     function dragover(e) {
         e.preventDefault()
@@ -119,7 +120,6 @@ export default (() => {
         const coresponsingInputfield = e.target.attributes[1].value;
         document.getElementById(coresponsingInputfield).value = currentDraggedElement
     }
-
 
     const form = document.getElementById('quizForm')
     form.addEventListener('submit', async function (e) {
@@ -210,6 +210,18 @@ export default (() => {
             mapCounter += 1;
         });
 
+        comparedResultsOfSports.sort(function (a, b) {
+            return a.percentageNum - b.percentageNum;
+        });
+        comparedResultsOfSports.reverse()
+        console.log(comparedResultsOfSports);
+
+        // jsonData 
+
+        for (let i = 0; i < 3; i++) {
+            console.log(comparedResultsOfSports[i].percentageNum);
+            console.log(jsonData[i]);
+        }
 
 
     })
