@@ -116,3 +116,15 @@ main section {
   border: 1px solid var(--text-color);
   box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
 }
+
+.st-text-color {
+  color: var(--text-color);
+}
+
+.st-show {
+  left: 0;
+}
+
+.st-overflow-hidden {
+  overflow: hidden;
+}
