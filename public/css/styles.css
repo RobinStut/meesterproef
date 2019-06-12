@@ -12,3 +12,7 @@
 @import "modules/homepage-community.css";
 @import "modules/homepage-places.css";
 @import "modules/homepage-healthy-living.css";
+
+
+/* ---------- QUIZ ---------- */
+@import "modules/quiz.css";
