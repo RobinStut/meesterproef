@@ -149,7 +149,8 @@ export default (() => {
             }
             console.log(yourResultsOfForm);
 
-            const jsonData = await fetch(`${window.location.href}sportQuizFilter.json`).then(function (response) {
+            console.log(window);
+            const jsonData = await fetch(`http://${window.location.host}/sportQuizFilter.json`).then(function (response) {
                 return response.json();
             })
 

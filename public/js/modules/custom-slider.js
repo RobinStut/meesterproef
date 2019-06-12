@@ -119,8 +119,6 @@ export default class extends DraggingEvent {
         // Update the range input
         this.rangeInput.value = realValue;
 
-        console.log(this.rangeInput.value)
-
         // document.getElementById("16").getElementsByClassName("slider-pin").innerHTML = `${this.rangeInput.value}`
         this.slider.querySelector(".slider-pin").innerHTML = `${this.rangeInput.value}`
         this.slider.querySelector(".slider-pin").style.left = `${newX}%`;
