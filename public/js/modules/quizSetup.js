@@ -1,8 +1,6 @@
 export default (() => {
 
-    console.log(window);
-
-    if (true === false) {
+    if (window.location.pathname === "/quiz") {
 
         const nextButton = document.getElementById('quizNextButton')
         const backButton = document.getElementById('quizBackButton')
