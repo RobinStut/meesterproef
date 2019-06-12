@@ -1,16 +1,9 @@
     'use strict';
 
     import * as header from './modules/header.js'
-    import {
-        sidebarNav
-    } from './modules/header-sidebar.js'
-
-    const customSliders = document.getElementsByClassName("custom-slider")
-
-    header.headerBackgroundScroll()
-    sidebarNav()
-    import Quiz from "./modules/quizSetup.js";
-    import CustomSlider from "./modules/customSlider.js"
+    import { sidebarNav } from './modules/header-sidebar.js'
+    import Quiz from "./modules/quiz-setup.js";
+    import CustomSlider from "./modules/custom-slider.js"
 
     (() => {
         header.headerBackgroundScroll()

@@ -1,4 +1,4 @@
-import DraggingEvent from "./dragging-event.js/index.js"
+import DraggingEvent from "./dragging-event.js"
 
 export default class extends DraggingEvent {
     constructor(rangeInput) {
