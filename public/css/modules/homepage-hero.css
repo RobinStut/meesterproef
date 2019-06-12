@@ -1,16 +1,32 @@
-#st-homepage-hero {
+.st-hero {
   justify-content: center;
   position: relative;
   margin-top: 0;
   padding: var(--main-padding);
   width: 100%;
-  height: 45vh;
   color: var(--white);
   background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url(../../images/homepage-hero-image.png);
   background-position: center;
   border: none;
+  background-size: cover;
 }
 
-#st-homepage-hero h2:nth-child(2) {
+.big-hero h2:nth-child(2) {
   margin-bottom: 1em;
 }
+
+.small-hero h2:nth-child(1){
+  margin-top: 1em;
+}
+
+.big-hero {
+  height: 45vh;
+}
+
+.small-hero {
+  height: 25vh;
+}
+
+
+
+
