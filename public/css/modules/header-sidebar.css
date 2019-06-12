@@ -7,7 +7,7 @@ aside {
     left: -1000px;
     background-color: var(--white);
     transition: 0.5s ease-in-out;
-    z-index: 1;
+    z-index: 2;
 }
 
 aside ul:first-of-type {
