@@ -144,6 +144,7 @@ export default (() => {
             fishOrLand: Number(formResult[7]),
             improvement: formResult[8]
         }
+        console.log(yourResultsOfForm);
 
         const jsonData = await fetch(`${window.location.href}sportQuizFilter.json`).then(function (response) {
             return response.json();
@@ -201,8 +202,6 @@ export default (() => {
                     percentage += calcedPercentage
                 }
             })()
-            console.log(percentage);
-
             comparedResultsOfSports.push({
                 percentageNum: percentage,
                 index: mapCounter
@@ -213,6 +212,19 @@ export default (() => {
         comparedResultsOfSports.sort(function (a, b) {
             return a.percentageNum - b.percentageNum;
         });
+
+        // function sortDevicesByStatusAndPower(a, b) {
+        //     var aStatus = a.network_status,
+        //         bStatus = b.network_status;
+        //     if( aStatus != b.network_status )
+        //       return aStatus < bStatus ? -1 : 1;
+        //     else
+        //      return a.battery_level - b.battery_level;   
+        // }
+
+
+
+
         comparedResultsOfSports.reverse()
         console.log(comparedResultsOfSports);
 

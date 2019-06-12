@@ -152,3 +152,53 @@ header div:last-of-type a:last-of-type {
 }
 
 /* end of Quiz styling */
+
+/* Custom sliders CSS */
+
+.visuallyhidden {
+  position: absolute;
+  right: 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+.slider-container {
+  --slider-transition: all .05s linear;
+  height: 100px;
+  width: 100%;
+  border: solid 1px black;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.slider-track {
+  height: 10px;
+  width: 100%;
+  background: grey;
+  position: relative;
+  border-radius: 50px;
+}
+
+.slider-trail {
+  background: green;
+  border-radius: inherit;
+  height: inherit;
+  transition: var(--slider-transition);
+}
+
+.slider-pin {
+  height: 30px;
+  width: 30px;
+  background: blue;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border-radius: 100%;
+  transition: var(--slider-transition);
+}
+
+.slider-pin:hover {
+  cursor: pointer;
+}

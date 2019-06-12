@@ -4,26 +4,30 @@
     "fishOrLand": 10,
     "gender": "Mixed",
     "groupOrSolo": 5,
-    "inOrOutdoor": 0
+    "inOrOutdoor": 0,
+    "motivation": ["personal achievements", "learn something"]
 }, {
     "sport": "Canoe",
     "age": ["4 - 12 years", "13 - 18 years", "19 - 30 years", "31 - 45 years", "46 - 65 years", "65+"],
     "fishOrLand": 1,
     "gender": "Mixed",
     "groupOrSolo": 8,
-    "inOrOutdoor": 10
+    "inOrOutdoor": 10,
+    "motivation": ["fun", "relaxation"]
 }, {
     "sport": "Ice skating",
     "age": ["4 - 12 years", "13 - 18 years", "19 - 30 years", "31 - 45 years", "46 - 65 years"],
     "fishOrLand": 4,
     "gender": "Mixed",
     "groupOrSolo": 3,
-    "inOrOutdoor": 6
+    "inOrOutdoor": 6,
+    "motivation": ["fun", "learn something"]
 }, {
     "sport": "Football",
     "age": ["4 - 12 years", "13 - 18 years", "19 - 30 years", "31 - 45 years", "46 - 65 years"],
     "fishOrLand": 10,
     "gender": ["Female only", "Male only"],
     "groupOrSolo": 10,
-    "inOrOutdoor": 10
+    "inOrOutdoor": 10,
+    "motivation": ["winning", "meet friends"]
 }]
