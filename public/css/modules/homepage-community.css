@@ -1,6 +1,14 @@
-#st-homepage-community {
+#st-homepage-community::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 15px;
+  top: -14px;
+  left: 0;
+  background-color: var(--white);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  z-index: 1;
 }
 
 #st-homepage-community h3 {
