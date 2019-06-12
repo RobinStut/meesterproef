@@ -48,6 +48,10 @@ li {
   font-weight: 300;
 }
 
+section {
+  position: relative;
+}
+
 blockquote p:before {
   position: absolute;
   top: 0.4em;
