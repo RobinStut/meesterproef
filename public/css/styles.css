@@ -2,17 +2,16 @@
 @import "modules/fonts.css";
 @import "modules/root.css";
 @import "modules/general.css";
-@import "modules/header.css";
-@import "modules/header-sidebar.css";
-@import "modules/footer.css";
+@import "modules/header/header.css";
+@import "modules/header/header-sidebar.css";
+@import "modules/hero.css";
+@import "modules/footer/footer.css";
 
 /* ---------- HOMEPAGE ---------- */
-@import "modules/homepage-hero.css";
-@import "modules/homepage-quiz.css";
-@import "modules/homepage-community.css";
-@import "modules/homepage-places.css";
-@import "modules/homepage-healthy-living.css";
-
+@import "modules/home/homepage-quiz.css";
+@import "modules/home/homepage-community.css";
+@import "modules/home/homepage-places.css";
+@import "modules/home/homepage-healthy-living.css";
 
 /* ---------- QUIZ ---------- */
 @import "modules/quiz.css";
