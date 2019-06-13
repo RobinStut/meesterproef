@@ -33,5 +33,6 @@ app.use(session({
 
 // Routing
 require("./modules/routes.js")(app);
+require("./modules/create-event.js")(app);
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
