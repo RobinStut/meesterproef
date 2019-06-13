@@ -17,4 +17,10 @@ module.exports = app => {
       heroText: ["Login/Register"]
     })
   })
+  app.get("/sportprovider", (req, res) => {
+    res.render("pages/sportprovider-dashboard.ejs", {
+      hero: "small-hero",
+      heroText: ["Dashboard"]
+    })
+  })
 }
