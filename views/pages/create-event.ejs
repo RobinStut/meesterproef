@@ -10,24 +10,24 @@
     <section id="st-create-event" class="display-flex-v st-section-radius">
         <h3>Create Event</h3>
 
-        <form action="" class="display-flex-v">
-            <input type="text" placeholder="Title">
+        <form action="/created-event" class="display-flex-v" method="POST">
+            <input type="text" name="event-name" placeholder="Title" required>
 
-            <textarea name="comment" form="usrform" placeholder="Description"></textarea>
+            <textarea name="event-description" placeholder="Description" required></textarea>
 
-            <input type="text" placeholder="Location">
+            <input type="text" name="event-location" placeholder="Location" required>
 
             <label for="">Date
-                <input type="date">
+                <input type="date" name="event-date" required>
             </label>
 
             <div>
                 <label for="">From
-                    <input type="time">
+                    <input type="time" name="event-from-time" required>
                 </label>
     
                 <label for="">Till
-                    <input type="time">
+                    <input type="time" name="event-till-time" required>
                 </label>
             </div>
 
