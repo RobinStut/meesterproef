@@ -3,6 +3,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const ejs = require("ejs")
+const request = require('request');
 
 require("dotenv").config()
 
@@ -33,5 +34,6 @@ app.use(session({
 
 // Routing
 require("./modules/routes.js")(app);
+require("./modules/sportslist.js")(request);
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
