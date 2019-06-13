@@ -11,4 +11,16 @@ module.exports = app => {
       heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
     })
   })
+  app.get("/login", (req, res) => {
+    res.render("pages/login.ejs", {
+      hero: "small-hero",
+      heroText: ["Login/Register"]
+    })
+  })
+  app.get("/sportprovider", (req, res) => {
+    res.render("pages/sportprovider-dashboard.ejs", {
+      hero: "small-hero",
+      heroText: ["Dashboard"]
+    })
+  })
 }
