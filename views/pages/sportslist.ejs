@@ -7,17 +7,21 @@
 <% include ../partials/hero %>
 
 <main>
-
     <section id="st-homepage-community" class="display-flex-v">
         <h3>Learn from others</h3>
-
         <div class="display-flex-v">
-          <ul>
-              <li>Hoi</li>
-          </ul>
+            <ul>
+                <%keys.forEach(key => {%>
+                <li><%=key%></li>
+                <ul>
+                    <%data[key].forEach(item2 => {%>
+                        <li><%=item2%></li>
+                        <%})%>
+                    <%})%>
+                </ul>
+            </ul>
         </div>
     </section>
-
 </main>
 
 <% include ../partials/footer %>
