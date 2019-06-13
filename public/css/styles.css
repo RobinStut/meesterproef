@@ -19,5 +19,8 @@
 /* ---------- LOGIN ---------- */
 @import "modules/login/login.css";
 
-/* ---------- LOGIN ---------- */
+/* ---------- DASHBOARD ---------- */
 @import "modules/dashboard/sportprovider-dashboard.css";
+
+/* ---------- CREATE EVENT ---------- */
+@import "modules/dashboard/create-event/create-event.css";
