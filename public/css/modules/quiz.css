@@ -1,0 +1,122 @@
+/* begin of Quiz styling */
+
+#quizForm .showFormElement {
+    display: block;
+}
+
+#quizForm section {
+    display: none;
+}
+
+#progressBar {
+    display: flex;
+}
+
+#progressBar .green {
+    background-color: green;
+}
+
+#progressBar .lastStep {
+    width: auto;
+}
+
+.progressStep {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    background-color: gray;
+}
+
+.dragInput {
+    height: 40px;
+    width: 150px;
+    background-color: lightgray;
+    margin: .3rem;
+}
+
+.showFormElement {
+    height: 350px;
+}
+
+#quizForm .showFormElement#howOldAreYou {
+    display: grid;
+}
+
+#quizForm .showFormElement#whichGender {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#whichGender svg {
+    width: 100px;
+    margin: 0 auto;
+}
+
+#whichGender label {
+    display: grid;
+    text-align: center;
+}
+
+#whichGender input {
+    margin: 0 auto;
+}
+
+#whichGender h3 {
+    grid-column-end: 4;
+    grid-column-start: 1;
+}
+
+/* end of Quiz styling */
+
+/* Custom sliders CSS */
+
+.visuallyhidden {
+    position: absolute;
+    right: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+.slider-container {
+    --slider-transition: all .05s linear;
+    height: 100px;
+    width: 100%;
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+.slider-track {
+    height: 10px;
+    width: 100%;
+    background: grey;
+    position: relative;
+    border-radius: 50px;
+}
+
+.slider-trail {
+    background: green;
+    border-radius: inherit;
+    height: inherit;
+    transition: var(--slider-transition);
+}
+
+.slider-pin {
+    height: 30px;
+    width: 30px;
+    background: blue;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: 100%;
+    transition: var(--slider-transition);
+}
+
+.slider-pin:hover {
+    cursor: pointer;
+}
