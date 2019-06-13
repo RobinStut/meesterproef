@@ -23,4 +23,10 @@ module.exports = app => {
       heroText: ["Dashboard"]
     })
   })
+  app.get("/create-event", (req, res) => {
+    res.render("pages/create-event.ejs", {
+      hero: "small-hero",
+      heroText: ["Create Event"]
+    })
+  })
 }
