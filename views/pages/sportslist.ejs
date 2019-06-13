@@ -7,15 +7,15 @@
 <% include ../partials/hero %>
 
 <main>
-    <section id="st-sportactivities" class="display-flex-v">
+    <section id="st-sportactivities" class="display-flex-v st-section-radius">
         <h3>Learn from others</h3>
         <div class="display-flex-v">
             <ul>
                 <%keys.forEach(key => {%>
-                <li><%=key%></li>
+                <li class="letter-keys"><%=key%></li>
                 <ul>
                     <%data[key].forEach(item2 => {%>
-                        <li><%=item2%></li>
+                        <li><a href="<%=item2%>"><%=item2%></a></li>
                         <%})%>
                     <%})%>
                 </ul>
