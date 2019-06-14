@@ -1,4 +1,4 @@
-[{
+{
     "sport": "Bodyworkout",
     "inOrOutdoor": 1,
     "groupOrSolo": 1,
@@ -208,7 +208,7 @@
     "category": "Sport games"
 }, {
     "sport": "Hockey",
-    "inOrOutdoor": "4",
+    "inOrOutdoor": "?",
     "groupOrSolo": 5,
     "fishOrLand": 1,
     "sbc": "e",
@@ -278,4 +278,4 @@
     "sbc": "Balance",
     "motivation": ["fun", "friends", "stress-relief"],
     "category": "Dance"
-}]
+}
