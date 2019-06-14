@@ -3,25 +3,9 @@
 }
 
 #st-create-event form {
-    margin: auto 0;
     text-align: left;
 }
 
-#st-create-event form input,  #st-create-event form textarea {
-    margin: 1em 0;
-    padding: 1em;
-    font-size: 1em;
-    background-color: var(--white);
-    border-top: none; 
-    border-right: none; 
-    border-bottom: 2px solid var(--primary-color);
-    border-left: 2px solid var(--primary-color);
+#st-create-event form input, #st-create-event form textarea, #st-create-event form select {
+    border: 1px solid var(--black);
 }
-
-#st-create-event form button {
-    background-color: var(--white); 
-}
-
-#st-create-event form div {
-    margin: 0 0 2em 0;
- }
