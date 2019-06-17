@@ -1,11 +1,8 @@
+import Carousel from "./carousel.js"
+
 export default (() => {
 
-
     if (window.location.pathname === "/quiz") {
-
-
-        import Carousel from "./modules/carousel.js"
-
 
         document.getElementById('mainMotivation').innerHTML =
             `   <h3>What are your 3 main motivations for sports?</h3>
