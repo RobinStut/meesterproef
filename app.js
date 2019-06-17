@@ -19,8 +19,8 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(session({ secret: "classified" }))
 
-require("./modules/routes.js")(app);
-require("./modules/create-event.js")(app, conceptEvents);
-require("./modules/publish-event.js")(app, conceptEvents, eventsData);
+require("./modules/routes.js")(app)
+require("./modules/create-event.js")(app, conceptEvents)
+require("./modules/publish-event.js")(app, conceptEvents, eventsData)
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
