@@ -68,7 +68,8 @@ class Carousel extends DraggingEvent {
       const leftPos = this.calcPos(x + xDist, scale)
 
       this.updateCards(this.cards[i], {
-        left: leftPos
+        left: leftPos,
+        scale: scale
       })
     }
   }
