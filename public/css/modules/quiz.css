@@ -138,9 +138,9 @@
     color: var(--text-color);
 }
 
-#howOldAreYou input {
-    /* display: none; */
-}
+/* #howOldAreYou input {
+    display: none;
+} */
 
 #howOldAreYou input:checked+label {
     background-color: var(--text-color);
