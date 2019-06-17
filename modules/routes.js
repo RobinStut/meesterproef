@@ -1,4 +1,6 @@
-module.exports = app => {
+const fetchData = require("./fetch.js")
+
+module.exports = (app) => {
   app.get("/", (req, res) => {
     res.render("pages/index.ejs", {
       hero: "big-hero",
@@ -23,10 +25,13 @@ module.exports = app => {
       heroText: ["Dashboard"]
     })
   })
-  app.get("/create-event", (req, res) => {
+  app.get("/create-event", async (req, res) => {
+    const data = await fetchData()
+        
     res.render("pages/create-event.ejs", {
       hero: "small-hero",
-      heroText: ["Create Event"]
+      heroText: ["Create Event"],
+      data: data
     })
   })
 }
