@@ -21,6 +21,11 @@ a {
   text-decoration: none;
 }
 
+.heading-darkblue {
+  color: var(--text-color);
+}
+
+
 #st-sportactivities .sports-list a {
   position: relative;
   bottom: 60px;
@@ -126,4 +131,42 @@ a {
 #sports-events  {
   margin-bottom: 10em;
 }
+
+#st-sportslist-clubs article div  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+#st-sportslist-clubs h4 {
+ font-weight: 600;
+}
+
+
+#st-sportslist-clubs .clubs-tag {
+  display: inline;
+  padding: 0.5em 2em;
+  border-radius: 10em;
+  background-color : var(--secondary-color);
+}
+
+#st-sportslist-clubs .website {
+  text-decoration: underline;
+  font-weight: 600;
+  display: inline;
+  color: var(--text-color);
+}
+
+#st-sportslist-clubs .website:hover {
+  text-decoration: underline;
+  background-color: #AFBDC9;
+  
+}
+
+#st-sportslist-clubs p {
+ margin: .6em 0;
+ 
+}
+
 

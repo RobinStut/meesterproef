@@ -16,10 +16,20 @@ module.exports = app => {
       keys: Object.keys(data),
     })
   })
-  app.get("/sportslist/:id", async (req, res) => {
+  app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
     const data = await sportslistData();
-    res.render("pages/sportlist-detail.ejs", {
+    res.render("pages/sportlist-clubs.ejs", {
+      hero: "small-hero", 
+      heroText: ["Sports Activities A-Z"],
+      sport: id,
+      data: data,
+    })
+  })
+  app.get("/sportslist/events/:id", async (req, res) => {
+    const id = req.params.id
+    const data = await sportslistData();
+    res.render("pages/sportlist-events.ejs", {
       hero: "small-hero", 
       heroText: ["Sports Activities A-Z"],
       sport: id,
