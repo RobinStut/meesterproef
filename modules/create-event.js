@@ -31,14 +31,19 @@ module.exports = (app) => {
             })
             if (!exists) {
                 allEvents.push(event)
+
+                console.log(allEvents)
             } else {
                 console.log("Sorry, that event already exists.")
+
+                console.log(allEvents)
             }
         }
 
         res.render("pages/created-event.ejs", {
             hero: "small-hero",
-            heroText: ["Create Event"]
+            heroText: ["Create Event"],
+            event: event
         })
     })
 }
