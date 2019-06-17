@@ -8,14 +8,36 @@
 
 <main>
     <section id="st-sportactivities" class="display-flex-v st-section-radius">
-        <h3>Learn from others</h3>
+        <!-- <h3>Find your sport activity</h3> -->
+
+        <div>
+            <ul class="filter-bar">
+                <li><a href="#">Filter</a></li>
+                <!-- <li><a href="#">Sorteer</a></li> -->
+                <li>
+                <span class="selected">
+                    <a href="#">Lijst</a>
+                </span>
+                <span>
+                    <a href="/kaart.html">Kaart</a>
+                </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search-bar">
+            <!-- <input type="text" name="" value=""> -->
+            <!-- <button type="button" name="button">search</button></button> -->
+        </div>
+
+
         <div class="display-flex-v">
-            <ul>
+            <ul class="sports-list">
                 <%keys.forEach(key => {%>
                 <li class="letter-keys"><%=key%></li>
                 <ul>
                     <%data[key].forEach(item2 => {%>
-                        <li><a href="<%=item2%>"><%=item2%></a></li>
+                        <li><img src="https://www.vlaardingen.nl/dsresource?objectid=43a92442-c39a-4011-9784-9fad7fabf6ee&&disposition=inline" alt=""><a href="<%=item2%>"><%=item2%></a></li>
                         <%})%>
                     <%})%>
                 </ul>
