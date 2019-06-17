@@ -1,4 +1,7 @@
-const fetchData = require("./fetch.js")
+module.exports = app => {
+
+const quizPostRequest = require("./quizPostRequest.js"),
+      fetchData = require("./fetch.js")
 
 module.exports = (app) => {
   app.get("/", (req, res) => {

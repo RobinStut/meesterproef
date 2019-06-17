@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<% include ../partials/nav %>
+
+<% include ../partials/hero %>
+
+<h1>Sportstimulering</h1>
+
+<% for (let index = 0; index < quizResult.length; index++) { %>
+
+<section>
+    <h2><%= quizResult[index].sport.sport %></h2>
+</section>
+
+<%}%>
+
+<% include ../partials/footer %>

@@ -2,7 +2,7 @@
     "sport": "Bodyworkout",
     "inOrOutdoor": 1,
     "groupOrSolo": 1,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Strength",
     "motivation": ["achievements"],
     "category": "Fitness"
@@ -10,7 +10,7 @@
     "sport": "Yoga",
     "inOrOutdoor": 2,
     "groupOrSolo": 1,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Balance",
     "motivation": ["stress-relief", "relaxation", "me-time"],
     "category": "Fitness"
@@ -18,7 +18,7 @@
     "sport": "Meditation",
     "inOrOutdoor": 2,
     "groupOrSolo": 1,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Balance",
     "motivation": ["stress-relief", "relaxation", "me-time"],
     "category": "Fitness"
@@ -26,7 +26,7 @@
     "sport": "Individual",
     "inOrOutdoor": "",
     "groupOrSolo": "",
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "",
     "motivation": "",
     "category": "Fitness"
@@ -34,7 +34,7 @@
     "sport": "Boulder",
     "inOrOutdoor": 1,
     "groupOrSolo": 1,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Strength",
     "motivation": ["achievements", "fun", "learn smth"],
     "category": "Fitness"
@@ -42,7 +42,7 @@
     "sport": "gymnastics",
     "inOrOutdoor": 1,
     "groupOrSolo": 2,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Balance",
     "motivation": ["learn smth", "achievements", "fun"],
     "category": "Fitness"
@@ -50,7 +50,7 @@
     "sport": "Swimming",
     "inOrOutdoor": 3,
     "groupOrSolo": 1,
-    "fishOrLand": 5,
+    "fishOrLand": 1,
     "sbc": "Endurance",
     "motivation": ["stress-relief", "relaxation", "me-time"],
     "category": "Fitness"
@@ -58,7 +58,7 @@
     "sport": "Running",
     "inOrOutdoor": 5,
     "groupOrSolo": 2,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Endurance",
     "motivation": ["stress-relief", "me-time", "achievements"],
     "category": "Fitness"
@@ -66,7 +66,7 @@
     "sport": "Aikido",
     "inOrOutdoor": 1,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["achievements", "stress relief", "fun"],
     "category": "Material Arts"
@@ -74,7 +74,7 @@
     "sport": "Boxing",
     "inOrOutdoor": 1,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["win", "achievements", "stress-relief"],
     "category": "Material Arts"
@@ -82,7 +82,7 @@
     "sport": "Fencing",
     "inOrOutdoor": 1,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["win", "achievements", "stress-relief"],
     "category": "Material Arts"
@@ -90,7 +90,7 @@
     "sport": "Judo",
     "inOrOutdoor": 1,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["achievements", "stress relief", "fun"],
     "category": "Material Arts"
@@ -98,7 +98,7 @@
     "sport": "Karate",
     "inOrOutdoor": 1,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["achievements", "stress relief", "fun"],
     "category": "Material Arts"
@@ -106,7 +106,7 @@
     "sport": "Kickboxing",
     "inOrOutdoor": 1,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["win", "achievements", "stress-relief"],
     "category": "Material Arts"
@@ -114,7 +114,7 @@
     "sport": "MMA",
     "inOrOutdoor": 1,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["achievements", "stress relief", "fun"],
     "category": "Material Arts"
@@ -122,7 +122,7 @@
     "sport": "Climbing",
     "inOrOutdoor": 5,
     "groupOrSolo": 1,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["achievements", "fun", "learn smth"],
     "category": "Outdoor"
@@ -130,7 +130,7 @@
     "sport": "Mountainbike",
     "inOrOutdoor": 5,
     "groupOrSolo": 1,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Endurance",
     "motivation": ["achievements", "fun", "me-time"],
     "category": "Outdoor"
@@ -138,7 +138,7 @@
     "sport": "Parkour",
     "inOrOutdoor": 5,
     "groupOrSolo": 2,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e, b",
     "motivation": ["achievements", "fun", "friends"],
     "category": "Outdoor"
@@ -146,7 +146,7 @@
     "sport": "Cycling",
     "inOrOutdoor": 5,
     "groupOrSolo": 2,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["achievements", "fun", "me-time"],
     "category": "Outdoor"
@@ -154,7 +154,7 @@
     "sport": "Rugby",
     "inOrOutdoor": 5,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "s",
     "motivation": ["friends", "win", "stress-releif"],
     "category": "Sport games"
@@ -162,7 +162,7 @@
     "sport": "Badminton",
     "inOrOutdoor": 2,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -170,7 +170,7 @@
     "sport": "Basketball",
     "inOrOutdoor": 4,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -178,7 +178,7 @@
     "sport": "Volleyball",
     "inOrOutdoor": 2,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -186,15 +186,15 @@
     "sport": "Beach-Volleyball",
     "inOrOutdoor": 5,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
 }, {
     "sport": "Soccer",
-    "inOrOutdoor": 2,
+    "inOrOutdoor": 4,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -202,15 +202,15 @@
     "sport": "Handball",
     "inOrOutdoor": 4,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
 }, {
     "sport": "Hockey",
-    "inOrOutdoor": "4",
+    "inOrOutdoor": 4,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -218,7 +218,7 @@
     "sport": "Squash",
     "inOrOutdoor": 1,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "stress-releif"],
     "category": "Sport games"
@@ -226,7 +226,7 @@
     "sport": "Tennis",
     "inOrOutdoor": 3,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -234,7 +234,7 @@
     "sport": "Table Tennis",
     "inOrOutdoor": 3,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -242,7 +242,7 @@
     "sport": "Ultimate Frisbee",
     "inOrOutdoor": 3,
     "groupOrSolo": 5,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -250,7 +250,7 @@
     "sport": "Waterball",
     "inOrOutdoor": 3,
     "groupOrSolo": 5,
-    "fishOrLand": 5,
+    "fishOrLand": 1,
     "sbc": "e",
     "motivation": ["friends", "win", "fun"],
     "category": "Sport games"
@@ -258,7 +258,7 @@
     "sport": "Balley",
     "inOrOutdoor": 1,
     "groupOrSolo": 2,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Balance",
     "motivation": ["achievements", "learn something", "me-time"],
     "category": "Dance"
@@ -266,7 +266,7 @@
     "sport": "Hip Hop",
     "inOrOutdoor": 2,
     "groupOrSolo": 3,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Balance",
     "motivation": ["fun", "friends", "stress-relief"],
     "category": "Dance"
@@ -274,7 +274,7 @@
     "sport": "Salsa",
     "inOrOutdoor": 2,
     "groupOrSolo": 4,
-    "fishOrLand": 1,
+    "fishOrLand": 5,
     "sbc": "Balance",
     "motivation": ["fun", "friends", "stress-relief"],
     "category": "Dance"
