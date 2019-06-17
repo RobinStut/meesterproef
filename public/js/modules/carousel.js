@@ -55,6 +55,12 @@ class Carousel extends DraggingEvent {
     }
 
     if (data.hasOwnProperty("zIndex")) {
+      if (data.zIndex === 0) {
+        card.classList.add("highlight")
+      } else {
+        card.classList.remove("highlight")
+      }
+
       card.style.zIndex = data.zIndex
     }
   }
