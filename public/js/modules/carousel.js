@@ -15,6 +15,9 @@ class Carousel extends DraggingEvent {
     this.cardWidth = this.cards[0].offsetWidth / this.container.offsetWidth * 100
     this.xScale = {};
 
+    // Resizing
+    window.addEventListener("resize", this.updateCardWidth.bind(this))
+
     // Initalizer
     this.build()
 
@@ -39,6 +42,12 @@ class Carousel extends DraggingEvent {
         zIndex: zIndex
       })
     }
+  }
+
+  updateCardWidth() {
+    this.cardWidth = this.cards[0].offsetWidth / this.container.offsetWidth * 100
+
+    this.build()
   }
 
   updateCards(card, data) {
