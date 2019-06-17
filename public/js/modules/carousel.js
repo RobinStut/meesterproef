@@ -10,13 +10,16 @@ class Carousel extends DraggingEvent {
     this.container = container;
     this.cards = container.querySelectorAll(".card");
 
+    // Carousel data
+    this.centerIndex = (this.cards.length - 1) / 2; // center card
+
     // Initalizer
     this.build()
   }
 
   build() {
     for (let i = 0; i < this.cards.length; i++) {
-      console.log(this.cards[i].id)
+      const x = i - this.centerIndex; // x-scale (-1 0 1)
     }
   }
 }
