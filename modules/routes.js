@@ -7,6 +7,12 @@ module.exports = (app) => {
       heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
     })
   })
+  app.get("/events", (req, res) => {
+    res.render("pages/events.ejs", {
+      hero: "small-hero",
+      heroText: ["Events"]
+    })
+  })
   app.get("/quiz", (req, res) => {
     res.render("pages/quiz.ejs", {
       hero: "small-hero",
