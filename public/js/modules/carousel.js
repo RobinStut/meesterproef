@@ -74,9 +74,14 @@ class Carousel extends DraggingEvent {
     if (data == null) {
       // User stopped dragging
       xDist = 0;
+
+      this.container.classList.add("smooth-return")
     } else {
       // User is dragging
+
       xDist = data.x / 250;
+
+      this.container.classList.remove("smooth-return")
     }
 
     for (let i = 0; i < this.cards.length; i++) {
