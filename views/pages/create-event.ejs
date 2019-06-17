@@ -22,13 +22,17 @@
             
             <label for="">Sport
                 <select name="event-sport">
-                    <option value="voetbal">Voetbal</option>
+                    <% data.forEach(sport => { %>
+                    <option value="<%= sport.sport %>"><%= sport.sport %></option>
+                    <% }) %>
                 </select>
             </label>
 
             <label for="">Category
                 <select name="event-category">
-                    <option value="fitness">Fitness</option>
+                    <% data.forEach(category => { %>
+                        <option value="<%= category.category %>"><%= category.category %></option>
+                    <% }) %>
                 </select>
             </label>
 
