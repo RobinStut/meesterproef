@@ -67,14 +67,21 @@ class Carousel extends DraggingEvent {
   checkOrdering(x, xDist) {
     const rounded = Math.round(xDist)
 
+    let newX = x;
 
     if (x + rounded > x) {
-      console.log("Right overflow")
+      if (x + rounded > this.centerIndex) {
+
+        newX = ((x + rounded - 1) - this.centerIndex) - rounded + -this.centerIndex
+      }
     } else if (x + rounded < x) {
-      console.log("Left overflow")
+      if (x + rounded < -this.centerIndex) {
+
+        newX = ((x + rounded + 1) + this.centerIndex) - rounded + this.centerIndex
+      }
     }
 
-    return x
+    return newX
   }
 
   moveCards(data) {
