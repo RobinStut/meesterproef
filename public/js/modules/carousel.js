@@ -26,7 +26,8 @@ class Carousel extends DraggingEvent {
     for (let i = 0; i < this.cards.length; i++) {
       const x = i - this.centerIndex; // x-scale (-1 0 1)
       const scale = this.calcScale(x)
-      const leftPos = this.calcPos(x, scale)
+      const scale2 = this.calcScale2(x)
+      const leftPos = this.calcPos(x, scale2)
       const zIndex = -(Math.abs(x))
 
       this.xScale[x] = this.cards[i]
@@ -63,7 +64,21 @@ class Carousel extends DraggingEvent {
 
 
   calcScale(x) {
-    return 1 - 1 / 5 * Math.pow(x, 2)
+    const formula = 1 - 1 / 5 * Math.pow(x, 2)
+
+    if (formula <= 0) {
+      return 0
+    } else {
+      return formula
+    }
+  }
+
+  calcScale2(x) {
+    if (x <= 0) {
+      return 1 - -1 / 5 * x
+    } else if (x > 0) {
+      return  1 - 1 / 5 * x
+    }
   }
 
   calcPos(x, scale) {
@@ -80,24 +95,25 @@ class Carousel extends DraggingEvent {
     const rounded = Math.round(xDist)
 
     let newX = x;
-    if (x !== x + rounded) {
-      if (x + rounded > x) {
-        if (x + rounded > this.centerIndex) {
 
-          newX = ((x + rounded - 1) - this.centerIndex) - rounded + -this.centerIndex
-        }
-      } else if (x + rounded < x) {
-        if (x + rounded < -this.centerIndex) {
+    if (x + rounded > x) {
+      if (x + rounded > this.centerIndex) {
 
-          newX = ((x + rounded + 1) + this.centerIndex) - rounded + this.centerIndex
-        }
+        newX = ((x + rounded - 1) - this.centerIndex) - rounded + -this.centerIndex
       }
+    } else if (x + rounded < x) {
+      if (x + rounded < -this.centerIndex) {
 
-      this.xScale[newX + rounded] = card;
+        newX = ((x + rounded + 1) + this.centerIndex) - rounded + this.centerIndex
+      }
     }
 
+    this.xScale[newX + rounded] = card;
+
     // Update the z-index
-    this.updateCards(card, {zIndex: -Math.abs(newX + rounded)})
+    this.updateCards(card, {
+      zIndex: -Math.abs(newX + rounded)
+    })
 
     return newX
   }
@@ -118,7 +134,6 @@ class Carousel extends DraggingEvent {
       }
     } else {
       // User is dragging
-
       xDist = data.x / 250;
 
       this.container.classList.remove("smooth-return")
@@ -127,7 +142,8 @@ class Carousel extends DraggingEvent {
     for (let i = 0; i < this.cards.length; i++) {
       const x = this.checkOrdering(this.cards[i], parseInt(this.cards[i].dataset.x), xDist)
       const scale = this.calcScale(x + xDist)
-      const leftPos = this.calcPos(x + xDist, scale)
+      const scale2 = this.calcScale2(x + xDist)
+      const leftPos = this.calcPos(x + xDist, scale2)
 
       this.updateCards(this.cards[i], {
         left: leftPos,
