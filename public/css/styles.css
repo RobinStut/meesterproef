@@ -24,3 +24,6 @@
 
 /* ---------- CREATE EVENT ---------- */
 @import "modules/dashboard/create-event/create-event.css";
+
+/* ---------- EVENTS ---------- */
+@import "modules/events/events.css";
