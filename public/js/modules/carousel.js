@@ -99,9 +99,13 @@ class Carousel extends DraggingEvent {
       // User stopped dragging
       xDist = 0;
 
-      console.log(this.xScale)
-
       this.container.classList.add("smooth-return")
+
+      for (let x in this.xScale) {
+        this.updateCards(this.xScale[x], {
+          x: x
+        })
+      }
     } else {
       // User is dragging
 
