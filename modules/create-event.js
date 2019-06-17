@@ -1,7 +1,5 @@
-module.exports = (app) => {
-    let allEvents = []
-
-    app.post('/created-event', (req, res) => {
+module.exports = (app, conceptEvents) => {
+    app.post('/create-event', (req, res) => {
         let event = {
             general:{
                 sportProviderId: Math.random(),
@@ -23,22 +21,7 @@ module.exports = (app) => {
             date: req.body['event-date']
         }
 
-        if (allEvents.length === 0) {
-            allEvents.push(event)   
-        } else if (allEvents.length > 0) {
-            const exists = allEvents.find(e => {
-                return e.general.title.toLowerCase() === event.general.title.toLowerCase()
-            })
-            if (!exists) {
-                allEvents.push(event)
-
-                console.log(allEvents)
-            } else {
-                console.log("Sorry, that event already exists.")
-
-                console.log(allEvents)
-            }
-        }
+        conceptEvents.push(event)
 
         res.render("pages/created-event.ejs", {
             hero: "small-hero",
