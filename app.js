@@ -13,6 +13,9 @@ const app = express()
 // Constants
 const PORT = 3000
 
+let conceptEvents = []
+let eventsData = []
+
 // Express middleware
 app.use(express.static("public"))
 
@@ -33,6 +36,7 @@ app.use(session({
 
 // Routing
 require("./modules/routes.js")(app);
-require("./modules/create-event.js")(app);
+require("./modules/create-event.js")(app, conceptEvents);
+require("./modules/publish-event.js")(app, conceptEvents, eventsData);
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
