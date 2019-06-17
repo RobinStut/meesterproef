@@ -12,15 +12,15 @@ export default (() => {
             for (let i = 0; i < (sectionCount.length + 1); i++) {
 
                 if (i === 0) {
-                    HTMLProgressBar.insertAdjacentHTML('beforeend', `<div class="progressStep green"value="${i}">${i+1}</div>`);
+                    HTMLProgressBar.insertAdjacentHTML('beforeend', `<div class="progressStep green"value="${i}"></div>`);
                 }
 
                 if (i > 0 && i < sectionCount.length) {
-                    HTMLProgressBar.insertAdjacentHTML('beforeend', `<div class="progressStep"value="${i}">${i+1}</div>`);
+                    HTMLProgressBar.insertAdjacentHTML('beforeend', `<div class="progressStep"value="${i}"></div>`);
                 }
 
                 if (sectionCount.length === i) {
-                    HTMLProgressBar.insertAdjacentHTML('beforeend', `<div class="progressStep lastStep"value="${i}">Result</div>`);
+                    HTMLProgressBar.insertAdjacentHTML('beforeend', `<div class="progressStep lastStep"value="${i}"></div>`);
                 }
             }
         }
@@ -87,7 +87,6 @@ export default (() => {
             progressBarUpdate()
         });
 
-        const draggableItems = document.getElementsByClassName('draggableTag')
         const dragInputs = document.getElementsByClassName('dragInput')
         const dragTagValues = document.getElementsByClassName('draggableTag')
         let currentDraggedElement
@@ -160,27 +159,27 @@ export default (() => {
             jsonData.map(x => {
                 let percentage = 0
 
-                const age = (() => {
-                    const ageIsInObject = x.age.includes(yourResultsOfForm.age)
-                    if (ageIsInObject == true) {
-                        percentage += 20;
-                    }
-                })()
+                // const age = (() => {
+                //     const ageIsInObject = x.age.includes(yourResultsOfForm.age)
+                //     if (ageIsInObject == true) {
+                //         percentage += 20;
+                //     }
+                // })()
 
-                const gender = (() => {
-                    const genderIsInObject = x.gender.includes(yourResultsOfForm.gender)
-                    if (genderIsInObject == true) {
-                        percentage += 20;
-                    }
-                })()
+                // const gender = (() => {
+                //     const genderIsInObject = x.gender.includes(yourResultsOfForm.gender)
+                //     if (genderIsInObject == true) {
+                //         percentage += 20;
+                //     }
+                // })()
 
                 const group = (() => {
                     const groupOrSoloInObject = x.groupOrSolo === yourResultsOfForm.groupOrSolo
                     if (groupOrSoloInObject === true) {
-                        percentage += 20;
+                        percentage += 33.33;
                     }
                     if (groupOrSoloInObject === false) {
-                        const calcedPercentage = 20 - (Math.abs(yourResultsOfForm.groupOrSolo - x.groupOrSolo) * 2)
+                        const calcedPercentage = 33.33 - (Math.abs(yourResultsOfForm.groupOrSolo - x.groupOrSolo) * 3.33)
                         percentage += calcedPercentage
                     }
                 })()
@@ -188,10 +187,10 @@ export default (() => {
                 const inOutdoor = (() => {
                     const inOrOutdoorInObject = x.inOrOutdoor === yourResultsOfForm.inOrOutdoor
                     if (inOrOutdoorInObject === true) {
-                        percentage += 20;
+                        percentage += 33.33;
                     }
                     if (inOrOutdoorInObject === false) {
-                        const calcedPercentage = 20 - (Math.abs(yourResultsOfForm.inOrOutdoor - x.inOrOutdoor) * 2)
+                        const calcedPercentage = 33.33 - (Math.abs(yourResultsOfForm.inOrOutdoor - x.inOrOutdoor) * 3.33)
                         percentage += calcedPercentage
                     }
                 })()
@@ -199,10 +198,10 @@ export default (() => {
                 const fishOrLand = (() => {
                     const fishOrLandInObject = x.fishOrLand === yourResultsOfForm.fishOrLand
                     if (fishOrLandInObject === true) {
-                        percentage += 20;
+                        percentage += 33.33;
                     }
                     if (fishOrLandInObject === false) {
-                        const calcedPercentage = 20 - (Math.abs(yourResultsOfForm.fishOrLand - x.fishOrLand) * 2)
+                        const calcedPercentage = 33.33 - (Math.abs(yourResultsOfForm.fishOrLand - x.fishOrLand) * 6.66)
                         percentage += calcedPercentage
                     }
                 })()
@@ -222,10 +221,13 @@ export default (() => {
 
             // jsonData 
 
+            document.getElementById('quizForm').innerHTML = "";
+
             for (let i = 0; i < 3; i++) {
-                console.log(comparedResultsOfSports[i].percentageNum);
-                console.log(jsonData[i]);
+                document.getElementById('quizForm').insertAdjacentHTML('beforeend', `<article id="endresult"><h3>${jsonData[comparedResultsOfSports[i].index].sport} with ${comparedResultsOfSports[i].percentageNum}%</h3><p>Soccer is a teamsport that requires a lot of Lorem Ipsum Dolor sit Amet. Lorem Ipsum Dolor sit Amet. </p></article>`);
             }
+
+
 
 
         })

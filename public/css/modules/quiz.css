@@ -1,7 +1,13 @@
 /* begin of Quiz styling */
 
+#quizForm {
+    min-height: 600px;
+}
+
 #quizForm .showFormElement {
     display: block;
+    height: auto;
+    position: relative;
 }
 
 #quizForm section {
@@ -9,11 +15,11 @@
 }
 
 #progressBar {
-    display: flex;
+    display: none;
 }
 
 #progressBar .green {
-    background-color: green;
+    background-color: var(--primary-color);
 }
 
 #progressBar .lastStep {
@@ -99,7 +105,7 @@
 }
 
 .slider-trail {
-    background: green;
+    background: var(--text-color);
     border-radius: inherit;
     height: inherit;
     transition: var(--slider-transition);
@@ -119,4 +125,141 @@
 
 .slider-pin:hover {
     cursor: pointer;
+}
+
+
+#howOldAreYou label {
+    min-height: 30px;
+    margin: 1rem;
+    align-self: center;
+    text-align: center;
+    line-height: 30px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#howOldAreYou input {
+    display: none;
+}
+
+#howOldAreYou input:checked+label {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+}
+
+#howOldAreYou input:checked+label p {
+    color: var(--secondary-color);
+}
+
+#whichGender input {
+    display: none;
+}
+
+#whichGender svg {
+    fill: var(--secondary-color);
+}
+
+
+
+#whichGender input:checked+label svg {
+    fill: var(--text-color);
+}
+
+#mainMotivation p {
+    background-color: var(--secondary-color);
+    width: fit-content;
+    padding: .2em 1em;
+    margin: 0.3rem;
+    border-radius: 5px;
+}
+
+#mainMotivation .dragInput {
+    padding: .3rem;
+    color: var(--text-color);
+    font-size: var(--font-size-15px);
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+#sliderOptions svg {
+    max-height: 30px;
+    fill: var(--secondary-color);
+}
+
+#sliderOptions .slider-container {
+    border: none;
+}
+
+#sliderOptions .slider-pin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 3px solid var(--secondary-color);
+}
+
+#sliderOptions label {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    align-items: center;
+    color: var(--text-color);
+    font-size: var(--font-size-15px);
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+#sliderOptions #improvement {
+    display: flex;
+    justify-content: space-around;
+}
+
+#sliderOptions #improvement input {
+    display: none;
+}
+
+#sliderOptions #improvement label {
+    display: block;
+}
+
+#sliderOptions #improvement input:checked+label svg {
+    fill: var(--text-color);
+}
+
+/* #sliderOptions #improvement svg {
+    max-height: 100px;
+} */
+
+#quizForm button {
+    position: absolute;
+    bottom: -40px;
+    height: 30px;
+    border: none;
+    background-color: var(--primary-color);
+    margin: 0.3rem;
+    border-radius: 5px;
+    padding: .2em 1em;
+    margin: .3em;
+    color: white;
+}
+
+#quizForm button:disabled,
+button[disabled] {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+#quizBackButton {
+    left: 16px;
+}
+
+#quizNextButton {
+    left: 80px;
+}
+
+#quizSubmit {
+    right: 40px;
+}
+
+#endresult p {
+    margin-bottom: 30px;
 }

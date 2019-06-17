@@ -17,9 +17,11 @@ class Object_template {
   }
 
   createObject(row) {
-    const rawValues = row.split(",");
+    const rawValues = row.split(";");
     const keys = Object.keys(this.template)
-    const clone = {...this.template}
+    const clone = {
+      ...this.template
+    }
     rawValues.forEach((v, i) => {
       if (v.length == 0) {
         clone[keys[i]] = undefined
@@ -32,7 +34,7 @@ class Object_template {
   }
 }
 
-fs.readFile("data/raw/sportaanbieders.csv", (err, data) => {
+fs.readFile("sportQuiz.csv", (err, data) => {
   if (err) throw err;
 
   readCSV(data)
@@ -43,13 +45,15 @@ function readCSV(data) {
     .toString()
     .replace(/\r/g, "");
 
+  // console.log(csv)
+
   const rowsArray = csv.split(/\n/g)
   const namingsRow = rowsArray
     .shift()
     .toLowerCase()
 
     .replace(/\s/g, "_")
-    .split(",")
+    .split(";")
 
   const template = new Object_template(namingsRow)
 
@@ -59,7 +63,7 @@ function readCSV(data) {
 
   const finalJSON = JSON.stringify(finalData)
 
-  fs.writeFile('data/json/sportaanbieders.json', finalJSON, (err) => {
+  fs.writeFile('sportQuiz.json', finalJSON, (err) => {
     if (err) throw err;
     console.log('The file has been saved!');
   });
