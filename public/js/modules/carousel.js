@@ -13,6 +13,7 @@ class Carousel extends DraggingEvent {
     // Carousel data
     this.centerIndex = (this.cards.length - 1) / 2; // center card
     this.cardWidth = this.cards[0].offsetWidth / this.container.offsetWidth * 100
+    this.xScale = {};
 
     // Initalizer
     this.build()
@@ -27,12 +28,17 @@ class Carousel extends DraggingEvent {
       const scale = this.calcScale(x)
       const leftPos = this.calcPos(x, scale)
 
+      this.xScale[x] = this.cards[i]
+
       this.updateCards(this.cards[i], {
         x: x,
         left: leftPos,
         scale: scale
       })
+
+
     }
+    console.log(this.xScale)
   }
 
   updateCards(card, data) {
@@ -64,23 +70,25 @@ class Carousel extends DraggingEvent {
     }
   }
 
-  checkOrdering(x, xDist) {
+  checkOrdering(card, x, xDist) {
     const rounded = Math.round(xDist)
 
     let newX = x;
+    if (x !== x + rounded) {
+      if (x + rounded > x) {
+        if (x + rounded > this.centerIndex) {
 
-    if (x + rounded > x) {
-      if (x + rounded > this.centerIndex) {
+          newX = ((x + rounded - 1) - this.centerIndex) - rounded + -this.centerIndex
+        }
+      } else if (x + rounded < x) {
+        if (x + rounded < -this.centerIndex) {
 
-        newX = ((x + rounded - 1) - this.centerIndex) - rounded + -this.centerIndex
+          newX = ((x + rounded + 1) + this.centerIndex) - rounded + this.centerIndex
+        }
       }
-    } else if (x + rounded < x) {
-      if (x + rounded < -this.centerIndex) {
 
-        newX = ((x + rounded + 1) + this.centerIndex) - rounded + this.centerIndex
-      }
+      this.xScale[newX + rounded] = card;
     }
-
     return newX
   }
 
@@ -90,6 +98,8 @@ class Carousel extends DraggingEvent {
     if (data == null) {
       // User stopped dragging
       xDist = 0;
+
+      console.log(this.xScale)
 
       this.container.classList.add("smooth-return")
     } else {
@@ -101,7 +111,7 @@ class Carousel extends DraggingEvent {
     }
 
     for (let i = 0; i < this.cards.length; i++) {
-      const x = this.checkOrdering(parseInt(this.cards[i].dataset.x), xDist)
+      const x = this.checkOrdering(this.cards[i], parseInt(this.cards[i].dataset.x), xDist)
       const scale = this.calcScale(x + xDist)
       const leftPos = this.calcPos(x + xDist, scale)
 
