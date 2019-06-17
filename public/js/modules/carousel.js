@@ -1,8 +1,6 @@
 import DraggingEvent from "./dragging-event.js"
 
-const carouselContainer = document.querySelector(".card-carousel")
-
-class Carousel extends DraggingEvent {
+export default class extends DraggingEvent {
   constructor(container) {
     super(container)
 
