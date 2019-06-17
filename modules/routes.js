@@ -23,7 +23,4 @@ module.exports = app => {
       heroText: ["Dashboard"]
     })
   })
-  app.get("/carousel_test", (req, res) => {
-    res.render("pages/carousel-test.ejs")
-  })
 }
