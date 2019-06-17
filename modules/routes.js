@@ -1,4 +1,7 @@
 module.exports = app => {
+
+  const quizPostRequest = require("./quizPostRequest.js")
+
   app.get("/", (req, res) => {
     res.render("pages/index.ejs", {
       hero: "big-hero",
@@ -23,4 +26,12 @@ module.exports = app => {
       heroText: ["Dashboard"]
     })
   })
+  // app.get("/quiz", async (req, res) => {
+  //   const data = await quizPostRequest();
+  //   res.render("pages/quiz.ejs", {
+  //     hero: "small-hero",
+  //     heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"],
+  //     data: data,
+  //   })
+  // })
 }

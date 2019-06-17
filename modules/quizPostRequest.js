@@ -1,26 +1,84 @@
 module.exports = app => {
-    const request = require('request');
-    app.post("/quiz", function (req, res) {
+    const fetch = require('node-fetch');
 
-        const howOldAreYou = req.body.howOldAreYou
-        const genderChoice = req.body.genderChoice[0]
-        const wolfpack = Number(req.body.wolfpack)
-        const inOutdoor = Number(req.body.inOutdoor)
-        const fishLand = Number(req.body.fishLand)
-        const improve = req.body.improve
+    app.post("/quiz", async function (req, res) {
 
-        console.log(`${howOldAreYou} ${genderChoice} ${wolfpack} ${inOutdoor} ${fishLand} ${improve}`)
+        const sportQuizRequest = await fetch(`https://raw.githubusercontent.com/RobinStut/meesterproef/serverQuiz/public/sportQuizFilter.json`)
+        const sportQuizData = await sportQuizRequest.json()
+        let comparedResultsOfSports = []
+        let mapCounter = 0;
+        let yourResultsOfForm = {
+            age: req.body.howOldAreYou,
+            gender: req.body.genderChoice[0],
+            groupOrSolo: Number(req.body.wolfpack),
+            inOrOutdoor: Number(req.body.inOutdoor),
+            fishOrLand: Number(req.body.fishLand),
+            improvement: req.body.improve
+        }
+        let quizResult = []
 
-        request(`http://${window.location.host}/sportQuizFilter.json`, function (error, response, body) {
-            console.log('error:', error); // Print the error if one occurred
-            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-            console.log('body:', body); // Print the HTML for the Google homepage.
+        sportQuizData.map(x => {
+            let percentage = 0
+
+            const groupCalc = (() => {
+                const groupOrSoloInObject = x.groupOrSolo === yourResultsOfForm.groupOrSolo
+                if (groupOrSoloInObject === true) {
+                    percentage += 33.33;
+                }
+                if (groupOrSoloInObject === false) {
+                    const calcedPercentage = 33.33 - (Math.abs(yourResultsOfForm.groupOrSolo - x.groupOrSolo) * 3.33)
+                    percentage += calcedPercentage
+                }
+            })()
+
+            const inOutdoorCalc = (() => {
+                const inOrOutdoorInObject = x.inOrOutdoor === yourResultsOfForm.inOrOutdoor
+                if (inOrOutdoorInObject === true) {
+                    percentage += 33.33;
+                }
+                if (inOrOutdoorInObject === false) {
+                    const calcedPercentage = 33.33 - (Math.abs(yourResultsOfForm.inOrOutdoor - x.inOrOutdoor) * 3.33)
+                    percentage += calcedPercentage
+                }
+            })()
+
+            const fishOrLandCalc = (() => {
+                const fishOrLandInObject = x.fishOrLand === yourResultsOfForm.fishOrLand
+                if (fishOrLandInObject === true) {
+                    percentage += 33.33;
+                }
+                if (fishOrLandInObject === false) {
+                    const calcedPercentage = 33.33 - (Math.abs(yourResultsOfForm.fishOrLand - x.fishOrLand) * 6.66)
+                    percentage += calcedPercentage
+                }
+            })()
+            comparedResultsOfSports.push({
+                percentageNum: percentage,
+                index: mapCounter
+            })
+            mapCounter += 1;
         });
 
-        // const jsonData = await fetch(`http://${window.location.host}/sportQuizFilter.json`).then(function (response) {
-        //     //             return response.json();
-        //     //         })
+        comparedResultsOfSports.sort(function (a, b) {
+            return a.percentageNum - b.percentageNum;
+        });
 
-        // res.render("pages/setup");
+        comparedResultsOfSports.reverse()
+
+        for (let i = 0; i < 5; i++) {
+            // console.log(`${sportQuizData[comparedResultsOfSports[i].index].sport} with ${comparedResultsOfSports[i].percentageNum}%)`);
+            quizResult.push({
+                sport: sportQuizData[comparedResultsOfSports[i].index],
+                percent: comparedResultsOfSports[i].percentageNum
+            })
+        }
+
+        console.log(quizResult);
+
+        res.render("pages/quizResult", {
+            quizResult: quizResult,
+            hero: "small-hero",
+            heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
+        });
     });
 }
