@@ -23,7 +23,7 @@ module.exports = (app, conceptEvents) => {
 
         conceptEvents.push(event)
 
-        res.render("pages/created-event.ejs", {
+        res.render("pages/edit-event.ejs", {
             hero: "small-hero",
             heroText: ["Create Event"],
             event: event
