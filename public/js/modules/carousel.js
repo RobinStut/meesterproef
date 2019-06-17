@@ -27,13 +27,15 @@ class Carousel extends DraggingEvent {
       const x = i - this.centerIndex; // x-scale (-1 0 1)
       const scale = this.calcScale(x)
       const leftPos = this.calcPos(x, scale)
+      const zIndex = -(Math.abs(x))
 
       this.xScale[x] = this.cards[i]
 
       this.updateCards(this.cards[i], {
         x: x,
         left: leftPos,
-        scale: scale
+        scale: scale,
+        zIndex: zIndex
       })
 
 
@@ -52,6 +54,10 @@ class Carousel extends DraggingEvent {
 
     if (data.hasOwnProperty("scale")) {
       card.style.transform = `scale(${data.scale})`
+    }
+
+    if (data.hasOwnProperty("zIndex")) {
+      card.style.zIndex = data.zIndex
     }
   }
 
