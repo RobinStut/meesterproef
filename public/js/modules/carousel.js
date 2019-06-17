@@ -20,7 +20,16 @@ class Carousel extends DraggingEvent {
   build() {
     for (let i = 0; i < this.cards.length; i++) {
       const x = i - this.centerIndex; // x-scale (-1 0 1)
+      const scale = this.calcScale(x)
+
+      console.log(scale)
     }
+  }
+
+  calcScale(x) {
+    const formula = 1 - 1 / 5 * Math.pow(x, 2)
+
+    return formula
   }
 }
 
