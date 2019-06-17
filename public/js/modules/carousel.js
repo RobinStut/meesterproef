@@ -28,6 +28,7 @@ class Carousel extends DraggingEvent {
       const leftPos = this.calcPos(x, scale)
 
       this.updateCards(this.cards[i], {
+        x: x,
         left: leftPos,
         scale: scale
       })
@@ -35,6 +36,10 @@ class Carousel extends DraggingEvent {
   }
 
   updateCards(card, data) {
+    if (data.hasOwnProperty("x")) {
+      card.setAttribute("data-x", data.x)
+    }
+
     if (data.hasOwnProperty("left")) {
       card.style.left = `${data.left}%`
     }
@@ -59,10 +64,12 @@ class Carousel extends DraggingEvent {
     }
   }
 
+  checkOrdering() {
+
+  }
+
   moveCards(data) {
     let xDist;
-
-
 
     if (data == null) {
       // User stopped dragging
@@ -73,7 +80,7 @@ class Carousel extends DraggingEvent {
     }
 
     for (let i = 0; i < this.cards.length; i++) {
-      const x = i - this.centerIndex; // x-scale (-1 0 1)
+      const x = parseInt(this.cards[i].dataset.x); // x-scale (-1 0 1)
       const scale = this.calcScale(x + xDist)
       const leftPos = this.calcPos(x + xDist, scale)
 
