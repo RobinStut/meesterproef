@@ -264,6 +264,6 @@ button[disabled] {
     margin-bottom: 30px;
 }
 
-#quizForm input:focus+label p {
+#quizForm input:focus:checked+label p {
     background-color: var(--primary-color);
 }
