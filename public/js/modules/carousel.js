@@ -60,7 +60,17 @@ class Carousel extends DraggingEvent {
   }
 
   moveCards(data) {
-    const xDist = data.x / 250;
+    let xDist;
+
+
+
+    if (data == null) {
+      // User stopped dragging
+      xDist = 0;
+    } else {
+      // User is dragging
+      xDist = data.x / 250;
+    }
 
     for (let i = 0; i < this.cards.length; i++) {
       const x = i - this.centerIndex; // x-scale (-1 0 1)
