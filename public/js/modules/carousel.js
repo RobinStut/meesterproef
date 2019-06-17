@@ -95,6 +95,10 @@ class Carousel extends DraggingEvent {
 
       this.xScale[newX + rounded] = card;
     }
+
+    // Update the z-index
+    this.updateCards(card, {zIndex: -Math.abs(newX + rounded)})
+
     return newX
   }
 
