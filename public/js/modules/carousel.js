@@ -16,6 +16,9 @@ class Carousel extends DraggingEvent {
 
     // Initalizer
     this.build()
+
+    // Bind dragging event
+    super.getDistance(this.moveCards.bind(this))
   }
 
   build() {
@@ -25,7 +28,6 @@ class Carousel extends DraggingEvent {
 
       const leftPos = this.calcPos(x, scale)
 
-      console.log(leftPos)
       this.cards[i].style.left = `${leftPos}%`
     }
   }
@@ -42,6 +44,10 @@ class Carousel extends DraggingEvent {
       // Calculate the left position for the cards on the right side
       return 100 - (scale * 100 + this.cardWidth) / 2
     }
+  }
+
+  moveCards(data) {
+    console.log(data)
   }
 }
 
