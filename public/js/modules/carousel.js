@@ -7,7 +7,17 @@ class Carousel extends DraggingEvent {
     super(container)
 
     // Elements
-    this.container = container
+    this.container = container;
+    this.cards = container.querySelectorAll(".card");
+
+    // Initalizer
+    this.build()
+  }
+
+  build() {
+    for (let i = 0; i < this.cards.length; i++) {
+      console.log(this.cards[i].id)
+    }
   }
 }
 
