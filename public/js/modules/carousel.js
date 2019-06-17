@@ -155,5 +155,3 @@ export default class extends DraggingEvent {
     }
   }
 }
-
-new Carousel(carouselContainer)
