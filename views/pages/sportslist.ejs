@@ -30,17 +30,19 @@
             <!-- <button type="button" name="button">search</button></button> -->
         </div>
 
-
         <div class="display-flex-v">
             <ul class="sports-list">
                 <%keys.forEach(key => {%>
                 <li class="letter-keys"><%=key%></li>
-                <ul>
-                    <%data[key].forEach(item2 => {%>
-                        <li><img src="https://www.vlaardingen.nl/dsresource?objectid=43a92442-c39a-4011-9784-9fad7fabf6ee&&disposition=inline" alt=""><a href="<%=item2%>"><%=item2%></a></li>
+                    <ul>
+                        <%data[key].forEach(item2 => {%>
+                            <li>
+                                <img src="http://lorempixel.com/400/200/sports" alt="">
+                                <a href="/sportslist/<%=item2%>"><%=item2%></a>
+                            </li>
                         <%})%>
                     <%})%>
-                </ul>
+                    </ul>
             </ul>
         </div>
     </section>

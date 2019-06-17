@@ -17,6 +17,10 @@
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 #st-sportactivities .sports-list a {
   position: relative;
   bottom: 60px;
@@ -29,7 +33,7 @@
 
 #st-sportactivities img {
   width: 100%;
-  filter: grayscale(30%);
+  filter: grayscale(40%);
 }
 
 #st-sportactivities img:hover {
@@ -99,3 +103,27 @@
   display: block;
   background-color: #AFBDC9;
 }
+
+#sports-events a{
+  display: block;
+  margin: 0;  
+}
+
+#sports-events a{
+  display: block;
+  margin: 0;  
+}
+
+#sports-events a:first-of-type{
+  margin-bottom: .5em;
+}
+
+#sports-events div {
+  bottom: 7em;
+  position: absolute;
+}
+
+#sports-events  {
+  margin-bottom: 10em;
+}
+
