@@ -64,8 +64,17 @@ class Carousel extends DraggingEvent {
     }
   }
 
-  checkOrdering() {
+  checkOrdering(x, xDist) {
+    const rounded = Math.round(xDist)
 
+
+    if (x + rounded > x) {
+      console.log("Right overflow")
+    } else if (x + rounded < x) {
+      console.log("Left overflow")
+    }
+
+    return x
   }
 
   moveCards(data) {
@@ -85,7 +94,7 @@ class Carousel extends DraggingEvent {
     }
 
     for (let i = 0; i < this.cards.length; i++) {
-      const x = parseInt(this.cards[i].dataset.x); // x-scale (-1 0 1)
+      const x = this.checkOrdering(parseInt(this.cards[i].dataset.x), xDist)
       const scale = this.calcScale(x + xDist)
       const leftPos = this.calcPos(x + xDist, scale)
 
