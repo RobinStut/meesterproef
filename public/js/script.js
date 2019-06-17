@@ -4,6 +4,7 @@
     import { sidebarNav } from './modules/header-sidebar.js'
     import Quiz from "./modules/quiz-setup.js";
     import CustomSlider from "./modules/custom-slider.js"
+    import Carousel from "./modules/carousel.js"
 
     (() => {
         header.headerBackgroundScroll()
