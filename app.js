@@ -8,8 +8,6 @@ require("dotenv").config()
 
 const app = express()
 
-// FUCKING KUT BRANCHES
-
 // Constants
 const PORT = 3000
 
