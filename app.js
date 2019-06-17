@@ -32,6 +32,12 @@ app.use(session({
 }))
 
 // Routing
+require("./modules/quizPostRequest.js")(app);
+
+// Routing
 require("./modules/routes.js")(app);
+
+// Quiz functionality
+require("./modules/quiz.js")(app);
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
