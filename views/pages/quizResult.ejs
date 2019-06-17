@@ -6,6 +6,12 @@
 
 <h1>Sportstimulering</h1>
 
-<%= quizResult[0].sport.sport %>
+<% for (let index = 0; index < quizResult.length; index++) { %>
+
+<section>
+    <h2><%= quizResult[index].sport.sport %></h2>
+</section>
+
+<%}%>
 
 <% include ../partials/footer %>

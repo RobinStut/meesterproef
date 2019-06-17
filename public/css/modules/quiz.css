@@ -139,7 +139,7 @@
 }
 
 #howOldAreYou input {
-    display: none;
+    /* display: none; */
 }
 
 #howOldAreYou input:checked+label {
@@ -262,4 +262,8 @@ button[disabled] {
 
 #endresult p {
     margin-bottom: 30px;
+}
+
+#quizForm input:focus+label p {
+    background-color: var(--primary-color);
 }

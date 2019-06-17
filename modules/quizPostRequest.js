@@ -9,12 +9,16 @@ module.exports = app => {
         let mapCounter = 0;
         let yourResultsOfForm = {
             age: req.body.howOldAreYou,
-            gender: req.body.genderChoice[0],
+            gender: req.body.genderChoice,
+            motivation: req.body.mainMotivation,
             groupOrSolo: Number(req.body.wolfpack),
             inOrOutdoor: Number(req.body.inOutdoor),
             fishOrLand: Number(req.body.fishLand),
             improvement: req.body.improve
         }
+        console.log(yourResultsOfForm);
+
+        console.log(req.body.mainMotivation);
         let quizResult = []
 
         sportQuizData.map(x => {
@@ -73,7 +77,7 @@ module.exports = app => {
             })
         }
 
-        console.log(quizResult);
+        // console.log(quizResult);
 
         res.render("pages/quizResult", {
             quizResult: quizResult,
