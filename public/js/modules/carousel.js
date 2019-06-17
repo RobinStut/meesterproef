@@ -11,7 +11,7 @@ class Carousel extends DraggingEvent {
     this.cards = container.querySelectorAll(".card");
 
     // Carousel data
-    this.centerIndex = (this.cards.length - 1) / 2; // center card
+    this.centerIndex = (this.cards.length - 1) / 2;
     this.cardWidth = this.cards[0].offsetWidth / this.container.offsetWidth * 100
     this.xScale = {};
 
@@ -24,24 +24,21 @@ class Carousel extends DraggingEvent {
 
   build() {
     for (let i = 0; i < this.cards.length; i++) {
-      const x = i - this.centerIndex; // x-scale (-1 0 1)
-      const scale = this.calcScale(x)
-      const scale2 = this.calcScale2(x)
-      const leftPos = this.calcPos(x, scale2)
-      const zIndex = -(Math.abs(x))
+      const x = i - this.centerIndex,
+            sizeScale = this.calcScaleSize(x),
+            positionScale = this.calcScalePosition(x),
+            leftPos = this.calcPosition(x, positionScale),
+            zIndex = -(Math.abs(x))
 
       this.xScale[x] = this.cards[i]
 
       this.updateCards(this.cards[i], {
         x: x,
         left: leftPos,
-        scale: scale,
+        scale: sizeScale,
         zIndex: zIndex
       })
-
-
     }
-    console.log(this.xScale)
   }
 
   updateCards(card, data) {
@@ -63,32 +60,30 @@ class Carousel extends DraggingEvent {
   }
 
 
-  calcScale(x) {
+  calcScaleSize(x) {
     const formula = 1 - 1 / 5 * Math.pow(x, 2)
 
     if (formula <= 0) {
       return 0
-    } else {
-      return formula
     }
+
+    return formula
   }
 
-  calcScale2(x) {
+  calcScalePosition(x) {
     if (x <= 0) {
       return 1 - -1 / 5 * x
-    } else if (x > 0) {
-      return  1 - 1 / 5 * x
     }
+
+    return  1 - 1 / 5 * x
   }
 
-  calcPos(x, scale) {
-    if (x < 0) {
-      // Calculate the left position for the cards one the left side
+  calcPosition(x, scale) {
+    if (x <= 0) {
       return (scale * 100 - this.cardWidth) / 2;
-    } else {
-      // Calculate the left position for the cards on the right side
-      return 100 - (scale * 100 + this.cardWidth) / 2
     }
+
+    return 100 - (scale * 100 + this.cardWidth) / 2
   }
 
   checkOrdering(card, x, xDist) {
@@ -98,19 +93,16 @@ class Carousel extends DraggingEvent {
 
     if (x + rounded > x) {
       if (x + rounded > this.centerIndex) {
-
         newX = ((x + rounded - 1) - this.centerIndex) - rounded + -this.centerIndex
       }
     } else if (x + rounded < x) {
       if (x + rounded < -this.centerIndex) {
-
         newX = ((x + rounded + 1) + this.centerIndex) - rounded + this.centerIndex
       }
     }
 
     this.xScale[newX + rounded] = card;
 
-    // Update the z-index
     this.updateCards(card, {
       zIndex: -Math.abs(newX + rounded)
     })
@@ -122,7 +114,6 @@ class Carousel extends DraggingEvent {
     let xDist;
 
     if (data == null) {
-      // User stopped dragging
       xDist = 0;
 
       this.container.classList.add("smooth-return")
@@ -133,21 +124,20 @@ class Carousel extends DraggingEvent {
         })
       }
     } else {
-      // User is dragging
       xDist = data.x / 250;
 
       this.container.classList.remove("smooth-return")
     }
 
     for (let i = 0; i < this.cards.length; i++) {
-      const x = this.checkOrdering(this.cards[i], parseInt(this.cards[i].dataset.x), xDist)
-      const scale = this.calcScale(x + xDist)
-      const scale2 = this.calcScale2(x + xDist)
-      const leftPos = this.calcPos(x + xDist, scale2)
+      const x = this.checkOrdering(this.cards[i], parseInt(this.cards[i].dataset.x), xDist),
+            sizeScale = this.calcScaleSize(x + xDist),
+            positionScale = this.calcScalePosition(x + xDist),
+            leftPos = this.calcPosition(x + xDist, positionScale)
 
       this.updateCards(this.cards[i], {
         left: leftPos,
-        scale: scale
+        scale: sizeScale
       })
     }
   }
