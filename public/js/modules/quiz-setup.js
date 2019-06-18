@@ -3,7 +3,6 @@ import Carousel from "./carousel.js"
 export default (() => {
 
     if (window.location.pathname === "/quiz" && document.getElementById('mainMotivation')) {
-
         document.getElementById('mainMotivation').innerHTML =
             `   <h3>What are your 3 main motivations for sports?</h3>
         <label for="13">
@@ -53,7 +52,10 @@ export default (() => {
     const dragTagValues = document.getElementsByClassName('draggableTag')
     let currentDraggedElement
 
-    new Carousel(carousel)
+    if (carousel) {
+        new Carousel(carousel)
+    }
+
 
     for (const dragInput of dragInputs) {
         dragInput.addEventListener("dragover", dragover)
