@@ -16,6 +16,9 @@
 /* ---------- QUIZ ---------- */
 @import "modules/quiz.css";
 
+/* ---------- SPORTSLIST ---------- */
+@import "modules/sportslist.css";
+
 /* ---------- LOGIN ---------- */
 @import "modules/login/login.css";
 
