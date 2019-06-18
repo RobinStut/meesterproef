@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+<h1>Sportstimulering</h1>
+
+<% include ../partials/nav %>
+
+<% include ../partials/hero %>
+
+<main>
+
+    <section id="st-events" class="display-flex-v st-section-radius">
+        <h3>Events</h3>
+
+        <% data.forEach(event => { %>
+            <article class="st-homepage-palace-article">
+                <p class="st-p-bold"><%= event.general.title %></p>
+
+                <img src="/images/swimming-pool.png" alt="">
+
+                <a href="#" class="st-button st-button-solid-yellow"><%= event.sport.sportName %></a>
+
+                <p><%= event.general.description %></p>
+
+                <p>Van <span class="st-p-bold"><%= event.time.timeStart %></span> t/m <span class="st-p-bold"><%= event.time.timeEnd %></span></p>
+
+                <ul>
+                    <li><%= event.location.city %></li>
+                    <li><%= event.location.address %></li>
+                </ul>
+            </article>
+        <% }) %>
+
+    </section>
+
+</main>
+
+<% include ../partials/footer %></section>

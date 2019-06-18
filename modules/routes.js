@@ -1,12 +1,18 @@
-module.exports = app => {
+const quizPostRequest = require("./quizPostRequest.js"),
+      fetchData = require("./fetch.js")
 
-  const quizPostRequest = require("./quizPostRequest.js"),
-    fetchData = require("./fetch.js")
-
+module.exports = (app, eventsData) => {
   app.get("/", (req, res) => {
     res.render("pages/index.ejs", {
       hero: "big-hero",
       heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
+    })
+  })
+  app.get("/events", (req, res) => {
+    res.render("pages/events.ejs", {
+      hero: "small-hero",
+      heroText: ["Events"],
+      data: eventsData
     })
   })
   app.get("/quiz", (req, res) => {
