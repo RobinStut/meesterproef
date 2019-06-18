@@ -3,7 +3,7 @@ module.exports = app => {
 
     app.post("/quiz", async function (req, res) {
 
-        const sportQuizRequest = await fetch(`https://raw.githubusercontent.com/RobinStut/meesterproef/serverQuiz/public/sportQuizFilter.json`)
+        const sportQuizRequest = await fetch(`https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json`)
         const sportQuizData = await sportQuizRequest.json()
         let comparedResultsOfSports = []
         let mapCounter = 0;
