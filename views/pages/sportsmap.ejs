@@ -12,13 +12,13 @@
 
         <div>
             <ul class="filter-bar">
-                <li><a href="#">Filter</a></li>
+                <li><a href="#"></a></li>
                 <!-- <li><a href="#">Sorteer</a></li> -->
                 <li>
-                <span class="selected">
-                    <a href="#">List</a>
+                <span >
+                    <a href="/sportslist">List</a>
                 </span>
-                <span>
+                <span class="selected">
                     <a href="/sportsmap">Map</a>
                 </span>
                 </li>
@@ -31,19 +31,13 @@
         </div>
 
         <div class="display-flex-v">
-            <ul class="sports-list">
-                <%keys.forEach(key => {%>
-                <li class="letter-keys"><%=key%></li>
-                    <ul>
-                        <%data[key].forEach(item2 => {%>
-                            <li>
-                                <img src="http://lorempixel.com/400/200/sports" alt="">
-                                <a href="/sportslist/events/<%=item2%>"><%=item2%></a>
-                            </li>
-                        <%})%>
-                    <%})%>
-                    </ul>
-            </ul>
+            <iframe
+      width="100%"
+      height="500"
+      frameborder="0"
+      scrolling="no"
+      src="https://kaart.amsterdam.nl/sport#14/52.3229/4.9493/topo/9268,9269,9270,9271,9272,9273,9274,9275,9276,9277,9278,9279,9280,9281,9282,9283,9284,9285,9286,9287,9288,9289,9290,9291,9292,9293,9294,9295,9296,9297,9298,9299,9300,9301,9302,9303,9304,9305,9306,9307,9308,9309,9310,9311,9312,9313,9314,9315,9316,9317,9318,9319,9320,9321,9322,9323,9324,9325,9326,9327,9328,9329,9330,9331,9332,9333,9334,9335,9336,9337,9338,9339,9340,9341,9342,9343,9777//"
+    ></iframe>
         </div>
     </section>
 </main>
