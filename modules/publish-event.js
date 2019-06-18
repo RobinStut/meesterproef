@@ -17,7 +17,7 @@ module.exports = (app, conceptEvents, eventsData) => {
             })
             if (!exists) {
                 eventsData.push(conceptEvents[0])
-
+                
                 conceptEvents.length = 0
 
                 console.log('Event Data:')

@@ -44,6 +44,8 @@ module.exports = (app, eventsData) => {
       hero: "small-hero", 
       heroText: ["Sports Activities A-Z"],
       sport: id,
+    })
+  })
   app.get("/events", (req, res) => {
     res.render("pages/events.ejs", {
       hero: "small-hero",
