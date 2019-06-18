@@ -1,4 +1,5 @@
-const fetchData = require("./fetch.js")
+const quizPostRequest = require("./quizPostRequest.js"),
+      fetchData = require("./fetch.js")
 
 module.exports = (app, eventsData) => {
   app.get("/", (req, res) => {
@@ -34,7 +35,7 @@ module.exports = (app, eventsData) => {
   })
   app.get("/create-event", async (req, res) => {
     const data = await fetchData()
-        
+
     res.render("pages/create-event.ejs", {
       hero: "small-hero",
       heroText: ["Create Event"],

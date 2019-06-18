@@ -20,7 +20,9 @@ app
   .use(session({ secret: "classified" }))
 
 require("./modules/routes.js")(app, eventsData)
+require("./modules/quizPostRequest.js")(app);
 require("./modules/create-event.js")(app, conceptEvents)
 require("./modules/publish-event.js")(app, conceptEvents, eventsData)
+require("./modules/quiz.js")(app);
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
