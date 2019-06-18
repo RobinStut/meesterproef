@@ -16,7 +16,7 @@ module.exports = (app, fs, conceptEvents, eventsData) => {
             console.log('Event Data:')
             console.log(eventsData)
 
-            res.redirect('/')
+            res.redirect('/events')
         } else if (eventsData.length > 0) {
             console.log(conceptEvents)
 
