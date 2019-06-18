@@ -1,13 +1,14 @@
-let allSports;
-
-(async function() {
+let allSports
+;(async function() {
   const getAllSports = require("./sportslist.js")
   allSports = await getAllSports()
-  console.log(allSports);
+  //console.log(allSports);
 })()
 
+const getEvents = require("./sportslist-events.js")
+
 const quizPostRequest = require("./quizPostRequest.js"),
-      fetchData = require("./fetch.js")
+  fetchData = require("./fetch.js")
 
 module.exports = (app, eventsData) => {
   app.get("/", (req, res) => {
@@ -18,32 +19,35 @@ module.exports = (app, eventsData) => {
   })
   app.get("/sportslist", async (req, res) => {
     res.render("pages/sportslist.ejs", {
-      hero: "small-hero", 
+      hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
       data: allSports,
-      keys: Object.keys(allSports),
+      keys: Object.keys(allSports)
     })
   })
   app.get("/sportsmap", async (req, res) => {
     res.render("pages/sportsmap.ejs", {
-      hero: "small-hero", 
-      heroText: ["Sports Activities A-Z MAP"],
+      hero: "small-hero",
+      heroText: ["Sports Activities A-Z MAP"]
     })
   })
   app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
     res.render("pages/sportlist-clubs.ejs", {
-      hero: "small-hero", 
+      hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
-      sport: id,
+      sport: id
     })
   })
   app.get("/sportslist/events/:id", async (req, res) => {
     const id = req.params.id
+    const filteredEvents = await getEvents(id)
+    console.log(filteredEvents)
     res.render("pages/sportlist-events.ejs", {
-      hero: "small-hero", 
+      hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
-      sport: id,
+      events: filteredEvents,
+      sport: id
     })
   })
   app.get("/events", (req, res) => {
@@ -80,4 +84,4 @@ module.exports = (app, eventsData) => {
       data: data
     })
   })
-} 
+}

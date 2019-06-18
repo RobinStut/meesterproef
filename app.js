@@ -17,8 +17,12 @@ app
 
   .use(express.static("public"))
   .use(bodyParser.json())
-  .use(bodyParser.urlencoded({ extended: true }))
-  .use(session({ secret: "classified" }))
+  .use(bodyParser.urlencoded({
+    extended: true
+  }))
+  .use(session({
+    secret: "classified"
+  }))
 
 require("./modules/sportslist.js")(request);
 require("./modules/routes.js")(app, eventsData)
