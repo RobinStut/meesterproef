@@ -1,4 +1,10 @@
-const sportslistData = require("./sportslist.js")
+let allSports;
+
+(async function() {
+  const getAllSports = require("./sportslist.js")
+  allSports = await getAllSports()
+  console.log(allSports);
+})()
 
 module.exports = app => {
   app.get("/", (req, res) => {
@@ -8,32 +14,33 @@ module.exports = app => {
     })
   })
   app.get("/sportslist", async (req, res) => {
-    const data = await sportslistData();
     res.render("pages/sportslist.ejs", {
       hero: "small-hero", 
       heroText: ["Sports Activities A-Z"],
-      data: data,
-      keys: Object.keys(data),
+      data: allSports,
+      keys: Object.keys(allSports),
+    })
+  })
+  app.get("/sportsmap", async (req, res) => {
+    res.render("pages/sportsmap.ejs", {
+      hero: "small-hero", 
+      heroText: ["Sports Activities A-Z MAP"],
     })
   })
   app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
-    const data = await sportslistData();
     res.render("pages/sportlist-clubs.ejs", {
       hero: "small-hero", 
       heroText: ["Sports Activities A-Z"],
       sport: id,
-      data: data,
     })
   })
   app.get("/sportslist/events/:id", async (req, res) => {
     const id = req.params.id
-    const data = await sportslistData();
     res.render("pages/sportlist-events.ejs", {
       hero: "small-hero", 
       heroText: ["Sports Activities A-Z"],
       sport: id,
-      data: data,
     })
   })
   app.get("/quiz", (req, res) => {
