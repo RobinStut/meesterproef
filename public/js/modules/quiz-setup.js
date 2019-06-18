@@ -1,10 +1,13 @@
 import Carousel from "./carousel.js"
 
 export default (() => {
-
-    if (window.location.pathname === "/quiz" && document.getElementById('mainMotivation')) {
-        document.getElementById('mainMotivation').innerHTML =
-            `   <h3>What are your 3 main motivations for sports?</h3>
+  if (
+    window.location.pathname === "/quiz" &&
+    document.getElementById("mainMotivation")
+  ) {
+    document.getElementById(
+      "mainMotivation"
+    ).innerHTML = `   <h3>What are your 3 main motivations for sports?</h3>
         <label for="13">
             <div class="container dragInput" connectTo="13"></div>
             <input type="hidden" id="13" name="genderChoice">
@@ -43,50 +46,47 @@ export default (() => {
                 <p draggable="true" class="draggableTag">personal achievements </p>
             </div>
         </div>`
+  }
 
-    }
+  const carousel = document.querySelector(".card-carousel")
+  const dragInputs = document.getElementsByClassName("dragInput")
+  const dragTagValues = document.getElementsByClassName("draggableTag")
+  let currentDraggedElement
 
+  if (carousel) {
+    new Carousel(carousel)
+  }
 
-    const carousel = document.querySelector(".card-carousel");
-    const dragInputs = document.getElementsByClassName('dragInput')
-    const dragTagValues = document.getElementsByClassName('draggableTag')
-    let currentDraggedElement
+  for (const dragInput of dragInputs) {
+    dragInput.addEventListener("dragover", dragover)
+    dragInput.addEventListener("dragenter", dragenter)
+    dragInput.addEventListener("drop", drop)
+  }
 
-    if (carousel) {
-        new Carousel(carousel)
-    }
+  for (const dragValue of dragTagValues) {
+    dragValue.addEventListener("dragstart", dragstart)
+  }
 
+  function dragover(e) {
+    e.preventDefault()
+  }
 
-    for (const dragInput of dragInputs) {
-        dragInput.addEventListener("dragover", dragover)
-        dragInput.addEventListener("dragenter", dragenter)
-        dragInput.addEventListener("drop", drop)
-    }
+  function dragstart(e) {
+    currentDraggedElement = e.target.innerText
+  }
 
-    for (const dragValue of dragTagValues) {
-        dragValue.addEventListener("dragstart", dragstart)
+  function dragenter(e) {
+    e.preventDefault()
+  }
 
-    }
-
-    function dragover(e) {
-        e.preventDefault()
-    }
-
-    function dragstart(e) {
-        currentDraggedElement = e.target.innerText
-    }
-
-    function dragenter(e) {
-        e.preventDefault()
-    }
-
-    function drop(e) {
-        setTimeout(() => {
-            e.path[0].value = e.target.textContent;
-        }, 0);
-        this.innerText = currentDraggedElement
-        const coresponsingInputfield = e.target.attributes[1].value;
-        document.getElementById(coresponsingInputfield).value = currentDraggedElement
-    }
-
+  function drop(e) {
+    setTimeout(() => {
+      e.path[0].value = e.target.textContent
+    }, 0)
+    this.innerText = currentDraggedElement
+    const coresponsingInputfield = e.target.attributes[1].value
+    document.getElementById(
+      coresponsingInputfield
+    ).value = currentDraggedElement
+  }
 })()
