@@ -1,7 +1,15 @@
-module.exports = (app, conceptEvents, eventsData) => {
+module.exports = (app, fs, conceptEvents, eventsData) => {
     app.post('/publish-event', (req, res) => {
         if (req.url === '/publish-event' && eventsData.length === 0) {
             eventsData.push(conceptEvents[0])   
+
+            console.log(eventsData)
+
+            fs.writeFile('./data/json/sportEvents.json', JSON.stringify(eventsData), err => {
+                if(err) {
+                    return console.log(err) 
+                }
+            })
 
             conceptEvents.length = 0
 
