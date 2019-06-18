@@ -19,7 +19,7 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(session({ secret: "classified" }))
 
-require("./modules/routes.js")(app)
+require("./modules/routes.js")(app, eventsData)
 require("./modules/create-event.js")(app, conceptEvents)
 require("./modules/publish-event.js")(app, conceptEvents, eventsData)
 
