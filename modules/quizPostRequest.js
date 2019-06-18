@@ -2,7 +2,6 @@ module.exports = app => {
     const fetch = require('node-fetch');
 
     app.post("/quiz", async function (req, res) {
-
         const sportQuizRequest = await fetch(`https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json`)
         const sportQuizData = await sportQuizRequest.json()
         let comparedResultsOfSports = []
@@ -77,10 +76,11 @@ module.exports = app => {
             })
         }
 
-        // console.log(quizResult);
+        console.log(quizResult);
 
         res.render("pages/quizResult", {
             quizResult: quizResult,
+            sportQuizData: sportQuizData,
             hero: "small-hero",
             heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
         });
