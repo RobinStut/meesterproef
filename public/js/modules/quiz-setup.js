@@ -2,7 +2,7 @@ import Carousel from "./carousel.js"
 
 export default (() => {
 
-    if (window.location.pathname === "/quiz") {
+    if (window.location.pathname === "/quiz" && document.getElementById('mainMotivation')) {
 
         document.getElementById('mainMotivation').innerHTML =
             `   <h3>What are your 3 main motivations for sports?</h3>
@@ -47,9 +47,13 @@ export default (() => {
 
     }
 
+
+    const carousel = document.querySelector(".card-carousel");
     const dragInputs = document.getElementsByClassName('dragInput')
     const dragTagValues = document.getElementsByClassName('draggableTag')
     let currentDraggedElement
+
+    new Carousel(carousel)
 
     for (const dragInput of dragInputs) {
         dragInput.addEventListener("dragover", dragover)

@@ -6,12 +6,16 @@
 
 <h1>Sportstimulering</h1>
 
-<% for (let index = 0; index < quizResult.length; index++) { %>
+<section class="card-carousel">
 
-<section>
-    <h2><%= quizResult[index].sport.sport %></h2>
+    <% for (let index = 0; index < quizResult.length; index++) { %>
+
+    <div class="card">
+        <h2><%= quizResult[index].sport.sport %></h2>
+        <p><%= quizResult[index].sport.description %></p>
+    </div>
+
+    <%}%>
+
 </section>
-
-<%}%>
-
 <% include ../partials/footer %>

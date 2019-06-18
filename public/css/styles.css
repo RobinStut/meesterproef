@@ -30,3 +30,6 @@
 
 /* ---------- EVENTS ---------- */
 @import "modules/events/events.css";
+
+/* ---------- CAROUSEL --------- */
+@import "modules/carousel.css";
