@@ -26,6 +26,7 @@ module.exports = () => {
                     return a
                 }
             }, [])
+        
             // return data
             resolve(sortedSports)
             reject(error)
