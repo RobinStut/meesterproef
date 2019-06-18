@@ -116,6 +116,11 @@ main section {
   background-color: var(--secondary-color);
 }
 
+.st-button-solid-white {
+  padding: 0.5em 2em;
+  background-color: var(--white);
+}
+
 .st-button-border {
   background-color: var(--white);
   border: 1px solid var(--text-color);
