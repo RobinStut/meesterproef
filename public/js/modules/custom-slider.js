@@ -9,6 +9,11 @@ export default class extends DraggingEvent {
       this.settings = this.createSettings()
       this.slider = this.createSlider()
       this.scale = this.createScale()
+
+      super.leftOffset = this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2;
+      super.target = this.slider.track;
+
+      super.getPosition(this.sliding.bind(this))
     }
 
     createSettings() {
@@ -62,6 +67,10 @@ export default class extends DraggingEvent {
       }
 
       return scale
+    }
+
+    sliding(data) {
+      console.log(data)
     }
 
 }
