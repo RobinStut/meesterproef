@@ -10,10 +10,20 @@ export default class extends DraggingEvent {
       this.slider = this.createSlider()
       this.scale = this.createScale()
 
+      this.init()
+
       super.leftOffset = this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2;
       super.target = this.slider.track;
 
       super.getPosition(this.sliding.bind(this))
+    }
+
+    init() {
+      const index = Math.abs(this.settings.min - (this.settings.value)) / this.settings.stepSize
+      const position = this.scale[index]
+
+      this.slider.pin.style.left = `${position}px`
+      this.slider.trail.style.width = `${position + this.slider.pin.offsetWidth / 2 }px`
     }
 
     createSettings() {
@@ -110,10 +120,10 @@ export default class extends DraggingEvent {
         const position = this.findPosition(data.clickedX || data.x)
         const value = this.findValue(position)
 
-        console.log(value)
-
         this.slider.pin.style.left = `${position}px`
         this.slider.trail.style.width = `${position + this.slider.pin.offsetWidth / 2 }px`
+
+        this.rangeInput.value = value;
       }
     }
 
