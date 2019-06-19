@@ -1,11 +1,14 @@
 /* ---------- GLOBAL ---------- */
-@import "modules/fonts.css";
-@import "modules/root.css";
-@import "modules/general.css";
+@import "./fonts.css";
+@import "./root.css";
+@import "./general.css";
+
+/* ---------- HEADER ---------- */
 @import "modules/header/header.css";
 @import "modules/header/header-sidebar.css";
+
+/* ---------- HERO ---------- */
 @import "modules/hero.css";
-@import "modules/footer/footer.css";
 
 /* ---------- HOMEPAGE ---------- */
 @import "modules/home/homepage-quiz.css";
@@ -14,19 +17,19 @@
 @import "modules/home/homepage-healthy-living.css";
 
 /* ---------- QUIZ ---------- */
-@import "modules/quiz.css";
+@import "modules/quiz/quiz.css";
+@import "modules/quiz/quiz-carousel.css";
 
-/* ---------- SPORTSLIST ---------- */
-@import "modules/sportslist.css";
+/* ---------- SPORTS ACTIVITIES A-Z ---------- */
+@import "modules/sportslist/sportslist.css";
 
-/* ---------- LOGIN ---------- */
-@import "modules/login/login.css";
-
-/* ---------- DASHBOARD ---------- */
-@import "modules/dashboard/sportprovider-dashboard.css";
-
-/* ---------- CREATE EVENT ---------- */
-@import "modules/dashboard/create-event/create-event.css";
+/* ---------- SPORTPROVIDER ---------- */
+@import "modules/sportprovider/sportprovider-login.css";
+@import "modules/sportprovider/sportprovider-dashboard.css";
+@import "modules/sportprovider/sportprovider-create-event.css";
 
 /* ---------- EVENTS ---------- */
 @import "modules/events/events.css";
+
+/* ---------- FOOTER --------- */
+@import "modules/footer/footer.css";

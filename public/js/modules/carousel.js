@@ -26,10 +26,10 @@ export default class extends DraggingEvent {
   build() {
     for (let i = 0; i < this.cards.length; i++) {
       const x = i - this.centerIndex,
-            sizeScale = this.calcScaleSize(x),
-            positionScale = this.calcScalePosition(x),
-            leftPos = this.calcPosition(x, positionScale),
-            zIndex = -(Math.abs(x))
+        sizeScale = this.calcScaleSize(x),
+        positionScale = this.calcScalePosition(x),
+        leftPos = this.calcPosition(x, positionScale),
+        zIndex = -(Math.abs(x))
 
       this.xScale[x] = this.cards[i]
 
@@ -88,7 +88,7 @@ export default class extends DraggingEvent {
       return 1 - -1 / 5 * x
     }
 
-    return  1 - 1 / 5 * x
+    return 1 - 1 / 5 * x
   }
 
   calcPosition(x, scale) {
@@ -144,9 +144,9 @@ export default class extends DraggingEvent {
 
     for (let i = 0; i < this.cards.length; i++) {
       const x = this.checkOrdering(this.cards[i], parseInt(this.cards[i].dataset.x), xDist),
-            sizeScale = this.calcScaleSize(x + xDist),
-            positionScale = this.calcScalePosition(x + xDist),
-            leftPos = this.calcPosition(x + xDist, positionScale)
+        sizeScale = this.calcScaleSize(x + xDist),
+        positionScale = this.calcScalePosition(x + xDist),
+        leftPos = this.calcPosition(x + xDist, positionScale)
 
       this.updateCards(this.cards[i], {
         left: leftPos,

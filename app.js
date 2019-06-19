@@ -4,6 +4,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const ejs = require("ejs")
+const fs = require('fs')
 const request = require('request');
 const app = express()
 const PORT = 3000
@@ -28,7 +29,7 @@ require("./modules/sportslist.js")(request);
 require("./modules/routes.js")(app, eventsData)
 require("./modules/quizPostRequest.js")(app);
 require("./modules/create-event.js")(app, conceptEvents)
-require("./modules/publish-event.js")(app, conceptEvents, eventsData)
+require("./modules/publish-event.js")(app, fs, conceptEvents, eventsData)
 require("./modules/quiz.js")(app);
 require("./modules/sportslist-events.js")(app);
 

@@ -1,8 +1,8 @@
-let allSports
-;(async function() {
+let allSports;
+
+(async function () {
   const getAllSports = require("./sportslist.js")
   allSports = await getAllSports()
-  //console.log(allSports);
 })()
 
 const getEvents = require("./sportslist-events.js")
