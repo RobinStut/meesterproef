@@ -51,6 +51,17 @@ export default class extends DraggingEvent {
         track: trackEl
       }
     }
-    
-    createScale() {}
+
+    createScale() {
+      const scale = []
+      const sliderWidth = this.slider.track.offsetWidth - this.slider.pin.offsetWidth
+      const stepSize = sliderWidth / this.settings.steps
+
+      for (let i = 0; i <= this.settings.steps; i++) {
+        scale.push(i * stepSize)
+      }
+
+      return scale
+    }
+
 }
