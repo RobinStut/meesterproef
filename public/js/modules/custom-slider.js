@@ -99,10 +99,22 @@ export default class extends DraggingEvent {
       }
     }
 
-    sliding(data) {
-      const position = this.findPosition(data.clickedX || data.x)
+    findValue(x) {
+      const index = this.scale.indexOf(x);
 
-      console.log(position)
+      return this.settings.min - -(index * this.settings.stepSize)
+    }
+
+    sliding(data) {
+      if (data !== null) {
+        const position = this.findPosition(data.clickedX || data.x)
+        const value = this.findValue(position)
+
+        console.log(value)
+
+        this.slider.pin.style.left = `${position}px`
+        this.slider.trail.style.width = `${position + this.slider.pin.offsetWidth / 2 }px`
+      }
     }
 
 }
