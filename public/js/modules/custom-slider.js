@@ -1,10 +1,12 @@
 import DraggingEvent from "./dragging-event.js"
 
 export default class extends DraggingEvent {
-    constructor(rangeInput) {
+    constructor(rangeInput, callback) {
       super()
 
-      this.rangeInput = rangeInput;
+      this._output = callback || undefined
+
+      this.rangeInput = rangeInput
 
       this.settings = this.createSettings()
       this.slider = this.createSlider()
@@ -24,6 +26,8 @@ export default class extends DraggingEvent {
 
       this.slider.pin.style.left = `${position}px`
       this.slider.trail.style.width = `${position + this.slider.pin.offsetWidth / 2 }px`
+
+      if (this._output) this._output(this, this.rangeInput.value)
     }
 
     createSettings() {
@@ -123,8 +127,9 @@ export default class extends DraggingEvent {
         this.slider.pin.style.left = `${position}px`
         this.slider.trail.style.width = `${position + this.slider.pin.offsetWidth / 2 }px`
 
-        this.rangeInput.value = value;
+        this.rangeInput.value = value
+
+        if (this._output) this._output(this, this.rangeInput.value)
       }
     }
-
 }
