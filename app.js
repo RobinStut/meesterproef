@@ -4,8 +4,8 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const ejs = require("ejs")
-const fs = require('fs')
-const request = require('request');
+const fs = require("fs")
+const request = require("request")
 const app = express()
 const PORT = 3000
 
@@ -21,11 +21,19 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(session({ secret: "classified" }))
 
-require("./modules/sportslist.js")(request);
+require("./modules/sportlist/sportlist-az-list.js")(request)
 require("./modules/routes.js")(app, eventsData)
-require("./modules/quizPostRequest.js")(app);
-require("./modules/create-event.js")(app, conceptEvents)
-require("./modules/publish-event.js")(app, fs, conceptEvents, eventsData)
-require("./modules/quiz.js")(app);
+require("./modules/quiz/quiz-postrequest.js")(app)
+require("./modules/sportprovider/sportprovider-create-event.js")(
+  app,
+  conceptEvents
+)
+require("./modules/sportprovider/sportprovider-publish-event.js")(
+  app,
+  fs,
+  conceptEvents,
+  eventsData
+)
+// require("./modules/quiz.js")(app)
 
-app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
+app.listen(PORT, () => console.log(`Listening to port: ${PORT}`))
