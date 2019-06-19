@@ -17,13 +17,14 @@
 
                 <img src="/images/swimming-pool.png" alt="">
 
-                <a href="#" class="st-button st-button-solid-yellow"><%= event.sport.sportName %></a>
+                <a href="#" class="st-button st-button-solid-yellow"><%= event.sport.name %></a>
 
                 <p><%= event.general.description %></p>
 
                 <p>Van <span class="st-p-bold"><%= event.time.timeStart %></span> t/m <span class="st-p-bold"><%= event.time.timeEnd %></span></p>
 
                 <ul>
+                    <li><%= event.location.name %></li>
                     <li><%= event.location.city %></li>
                     <li><%= event.location.address %></li>
                 </ul>
