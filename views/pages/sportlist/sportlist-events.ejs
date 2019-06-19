@@ -5,41 +5,41 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-	<section class="display-flex-v st-section-radius">
-		<!-- <h3>Find your sport activity</h3> -->
-		<h3><%= sport %></h3>
-		<div>
-			<ul class="filter-bar">
-				<li>
-					<span class="selected">
-						<a href="#">Events</a>
-					</span>
-					<span>
-						<a href="/sportslist/clubs/<%=sport%>">Sport Clubs</a>
-					</span>
-				</li>
-			</ul>
-		</div>
-	</section>
-	<section id="st-homepage-places">
-		<% events.forEach(event => { %>
-		<article class="st-homepage-palace-article" id="sports-events">
-			<img src="<%= event.general.imgLink %>" alt="" />
-			<div>
-				<a href="#" class="st-button st-button-solid-white"
-					><%= event.date %></a
-				>
-				<a href="#" class="st-button st-button-solid-yellow"
-					><%= event.general.title %></a
-				>
-				<ul>
-					<li><%= event.location.name %></li>
-					<li><%= event.location.address %></li>
-				</ul>
-			</div>
-		</article>
-		<% }) %>
-	</section>
+  <section class="display-flex-v st-section-radius">
+    <!-- <h3>Find your sport activity</h3> -->
+    <h3><%= sport %></h3>
+    <div>
+      <ul class="filter-bar">
+        <li>
+          <span class="selected">
+            <a href="#">Events</a>
+          </span>
+          <span>
+            <a href="/sportslist/clubs/<%=sport%>">Sport Clubs</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="st-homepage-places">
+    <% events.forEach(event => { %>
+    <article class="st-homepage-palace-article" id="sports-events">
+      <img src="<%= event.general.imgLink %>" alt="" />
+      <div>
+        <a href="#" class="st-button st-button-solid-white"
+          ><%= event.date %></a
+        >
+        <a href="#" class="st-button st-button-solid-yellow"
+          ><%= event.general.title %></a
+        >
+        <ul>
+          <li><%= event.location.name %></li>
+          <li><%= event.location.address %></li>
+        </ul>
+      </div>
+    </article>
+    <% }) %>
+  </section>
 </main>
 
 <% include ../../partials/footer %>
