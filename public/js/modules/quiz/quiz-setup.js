@@ -1,10 +1,12 @@
 import Carousel from "./carousel.js"
+import isMobileDevice from "../helpers/isMobileDevice.js"
+
+const carousel = document.querySelector(".card-carousel")
+const dragInputs = document.getElementsByClassName("dragInput")
+const dragTagValues = document.getElementsByClassName("draggableTag")
 
 export default (() => {
-  if (
-    window.location.pathname === "/quiz" &&
-    document.getElementById("mainMotivation")
-  ) {
+  if (!isMobileDevice() && document.getElementById("mainMotivation")) {
     document.getElementById(
       "mainMotivation"
     ).innerHTML = `   <h3>What are your 3 main motivations for sports?</h3>
@@ -48,9 +50,6 @@ export default (() => {
         </div>`
   }
 
-  const carousel = document.querySelector(".card-carousel")
-  const dragInputs = document.getElementsByClassName("dragInput")
-  const dragTagValues = document.getElementsByClassName("draggableTag")
   let currentDraggedElement
 
   if (carousel) {
