@@ -1,0 +1,307 @@
+[{
+    "sport": "Bodyworkout",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 1,
+    "fishOrLand": 5,
+    "sbc": "Strength",
+    "motivation": ["achievements"],
+    "category": "Fitness",
+    "description": "Aerobic exercise is any physical activity that uses large muscle groups and causes the body to use more oxygen than it would while resting. The goal of aerobic exercise is to increase cardiovascular endurance. ... Examples of strength exercises are push-ups, pull-ups, lunges, squats, bench press."
+}, {
+    "sport": "Yoga",
+    "inOrOutdoor": 2,
+    "groupOrSolo": 1,
+    "fishOrLand": 5,
+    "sbc": "Balance",
+    "motivation": ["stress-relief", "relaxation", "me-time"],
+    "category": "Fitness",
+    "description": "Yoga is an old discipline from India. It is both spiritual and physical. Yoga uses breathing techniques, exercise and meditation. It helps to improve health and happiness."
+}, {
+    "sport": "Meditation",
+    "inOrOutdoor": 2,
+    "groupOrSolo": 1,
+    "fishOrLand": 5,
+    "sbc": "Balance",
+    "motivation": ["stress-relief", "relaxation", "me-time"],
+    "category": "Fitness",
+    "description": "Meditation is a practice where an individual uses a technique – such as mindfulness, or focusing their mind on a particular object, thought or activity – to train attention and awareness, and achieve a mentally clear and emotionally calm and stable state."
+}, {
+    "sport": "Boulder",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 1,
+    "fishOrLand": 5,
+    "sbc": "Strength",
+    "motivation": ["achievements", "fun", "learn smth"],
+    "category": "Fitness",
+    "description": "Bodybuilding makes not only a fit body, but also fit mind. The word bodybuilding says everything. It is so easy to understand the meaning of this word and what this sport is about. Bodybuilding is the best sport when it comes to making your body proportionally shaped and fit."
+}, {
+    "sport": "gymnastics",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 2,
+    "fishOrLand": 5,
+    "sbc": "Balance",
+    "motivation": ["learn smth", "achievements", "fun"],
+    "category": "Fitness",
+    "description": "Gymnastics is a sport that includes exercises requiring balance, strength, flexibility, agility, coordination and endurance. The movements involved in gymnastics contribute to the development of the arms, legs, shoulders, back, chest and abdominal muscle groups."
+}, {
+    "sport": "Swimming",
+    "inOrOutdoor": 3,
+    "groupOrSolo": 1,
+    "fishOrLand": 1,
+    "sbc": "Endurance",
+    "motivation": ["stress-relief", "relaxation", "me-time"],
+    "category": "Fitness",
+    "description": "Swimming is an individual or team sport that requires the use of one's entire body to move through water. The sport takes place in pools or open water (e.g., in a sea or lake)."
+}, {
+    "sport": "Running",
+    "inOrOutdoor": 5,
+    "groupOrSolo": 2,
+    "fishOrLand": 5,
+    "sbc": "Endurance",
+    "motivation": ["stress-relief", "me-time", "achievements"],
+    "category": "Fitness",
+    "description": "Running events. Running is both a competition and a type of training for sports that have running or endurance components. ... Running races are contests to determine which of the competitors is able to run a certain distance in the shortest time. Today, competitive running events make up the core of the sport of athletics."
+}, {
+    "sport": "Aikido",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["achievements", "stress relief", "fun"],
+    "category": "Material Arts",
+    "description": "Aikido is a modern Japanese martial art developed by Morihei Ueshiba as a synthesis of his martial studies, philosophy and religious beliefs. Ueshiba's goal was to create an art that practitioners could use to defend themselves while also protecting their attacker from injury."
+}, {
+    "sport": "Boxing",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["win", "achievements", "stress-relief"],
+    "category": "Material Arts",
+    "description": "Boxing is a combat sport in which two people, usually wearing protective gloves, throw punches at each other for a predetermined amount of time in a boxing ring. Amateur boxing is both an Olympic and Commonwealth Games sport and is a common fixture in most international games—it also has its own World Championships."
+}, {
+    "sport": "Fencing",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["win", "achievements", "stress-relief"],
+    "category": "Material Arts",
+    "description": "Fencing is a group of three related combat sports. The three disciplines in modern fencing are the foil, the épée, and the sabre; winning points are made through the contact with an opponent."
+}, {
+    "sport": "Judo",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["achievements", "stress relief", "fun"],
+    "category": "Material Arts",
+    "description": "Judo was originally created in 1882 by Jigoro Kano as a physical, mental, and moral pedagogy in Japan. It is generally categorized as a modern martial art, which later evolved into a combat and Olympic sport."
+}, {
+    "sport": "Karate",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["achievements", "stress relief", "fun"],
+    "category": "Material Arts",
+    "description": ""
+}, {
+    "sport": "Kickboxing",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["win", "achievements", "stress-relief"],
+    "category": "Material Arts",
+    "description": "Karate is a martial art developed in the Ryukyu Kingdom. It developed from the indigenous Ryukyuan martial arts under the influence of Kung Fu, particularly Fujian White Crane."
+}, {
+    "sport": "MMA",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["achievements", "stress relief", "fun"],
+    "category": "Material Arts",
+    "description": "Mixed martial arts is a full-contact combat sport that allows striking and grappling, both standing and on the ground, using techniques from various combat sports and martial arts. The first documented use of the term mixed martial arts was in a review of UFC 1 by television critic Howard Rosenberg in 1993."
+}, {
+    "sport": "Climbing",
+    "inOrOutdoor": 5,
+    "groupOrSolo": 1,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["achievements", "fun", "learn smth"],
+    "category": "Outdoor",
+    "description": "Climbing is the activity of using one's hands, feet, or any other part of the body to ascend a steep object. It is done for locomotion, recreation and competition, in trades that rely on it, and in emergency rescue and military operations. It is done indoors and out, on natural and man-made structures."
+}, {
+    "sport": "Mountainbike",
+    "inOrOutdoor": 5,
+    "groupOrSolo": 1,
+    "fishOrLand": 5,
+    "sbc": "Endurance",
+    "motivation": ["achievements", "fun", "me-time"],
+    "category": "Outdoor",
+    "description": "Mountain biking is a sport of riding bicycles off-road, often over rough terrain, using specially designed mountain bikes. Mountain bikes share similarities with other bikes but incorporate features designed to enhance durability and performance in rough terrain."
+}, {
+    "sport": "Parkour",
+    "inOrOutdoor": 5,
+    "groupOrSolo": 2,
+    "fishOrLand": 5,
+    "sbc": "e, b",
+    "motivation": ["achievements", "fun", "friends"],
+    "category": "Outdoor",
+    "description": "Parkour is a training discipline using movement that developed from military obstacle course training. Practitioners aim to get from one point to another in a complex environment, without assistive equipment and in the fastest and most efficient way possible."
+}, {
+    "sport": "Cycling",
+    "inOrOutdoor": 5,
+    "groupOrSolo": 2,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["achievements", "fun", "me-time"],
+    "category": "Outdoor",
+    "description": "Cycling, also called biking or bicycling, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as 'cyclists', 'bikers', or less commonly, as 'bicyclists'."
+}, {
+    "sport": "Rugby",
+    "inOrOutdoor": 5,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "s",
+    "motivation": ["friends", "win", "stress-releif"],
+    "category": "Sport games",
+    "description": "Rugby union, commonly known in most of the world simply as rugby, is a contact team sport which originated in England in the first half of the 19th century. One of the two codes of rugby football, it is based on running with the ball in hand."
+}, {
+    "sport": "Badminton",
+    "inOrOutdoor": 2,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are 'singles' and 'doubles'."
+}, {
+    "sport": "Basketball",
+    "inOrOutdoor": 4,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Basketball is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball through the defender's hoop while preventing the opposing team from shooting through their own hoop."
+}, {
+    "sport": "Volleyball",
+    "inOrOutdoor": 2,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Volleyball is a popular team sport in which two teams of six players are separated by a net. Each team tries to score points by grounding a ball on the other team's court under organized rules. It has been a part of the official program of the Summer Olympic Games since Tokyo 1964."
+}, {
+    "sport": "Beach-Volleyball",
+    "inOrOutdoor": 5,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Beach volleyball is a team sport played by two teams of two players on a sand court divided by a net. As in indoor volleyball, the objective of the game is to send the ball over the net and to ground it on the opponent's side of the court, and to prevent the same effort by the opponent."
+}, {
+    "sport": "Soccer",
+    "inOrOutdoor": 4,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Association football, more commonly known as football or soccer, is a team sport played with a spherical ball between two teams of eleven players. It is played by 250 million players in over 200 countries and dependencies, making it the world's most popular sport."
+}, {
+    "sport": "Handball",
+    "inOrOutdoor": 4,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Handball is a team sport in which two teams of seven players each pass a ball using their hands with the aim of throwing it into the goal of the other team. A standard match consists of two periods of 30 minutes, and the team that scores more goals wins."
+}, {
+    "sport": "Hockey",
+    "inOrOutdoor": 4,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Field hockey is a team game of the hockey family. The game can be played on grass, water turf, artificial turf or synthetic field as well as an indoor board surface. Each team plays with eleven players, including the goalie."
+}, {
+    "sport": "Squash",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "stress-releif"],
+    "category": "Sport games",
+    "description": "Squash is a ball sport played by two (singles) or four players (doubles squash) in a four-walled court with a small, hollow rubber ball. The players must alternate in striking the ball with their racquet and hit the ball onto the playable surfaces of the four walls of the court."
+}, {
+    "sport": "Tennis",
+    "inOrOutdoor": 3,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Tennis is a racket sport that can be played individually against a single opponent or between two teams of two players each. Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent's court."
+}, {
+    "sport": "Table Tennis",
+    "inOrOutdoor": 3,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Table tennis, also known as ping-pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using small rackets. The game takes place on a hard table divided by a net."
+}, {
+    "sport": "Ultimate Frisbee",
+    "inOrOutdoor": 3,
+    "groupOrSolo": 5,
+    "fishOrLand": 5,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "Ultimate, originally known as Ultimate frisbee, is a non-contact team sport played with a flying disc. Ultimate was developed in 1968 by a group of students at Columbia High School in Maplewood, New Jersey."
+}, {
+    "sport": "Waterball",
+    "inOrOutdoor": 3,
+    "groupOrSolo": 5,
+    "fishOrLand": 1,
+    "sbc": "e",
+    "motivation": ["friends", "win", "fun"],
+    "category": "Sport games",
+    "description": "A water ball or water walking ball is a large inflatable sphere that allows a person inside it to walk across the surface of a body of water. The giant ball is usually two metres in diameter and has a zippered entrance to allow for easy entry and exit."
+}, {
+    "sport": "Balley",
+    "inOrOutdoor": 1,
+    "groupOrSolo": 2,
+    "fishOrLand": 5,
+    "sbc": "Balance",
+    "motivation": ["achievements", "learn something", "me-time"],
+    "category": "Dance",
+    "description": "Ballet is a type of performance dance that originated during the Italian Renaissance in the fifteenth century and later developed into a concert dance form in France and Russia. It has since become a widespread, highly technical form of dance with its own vocabulary based on French terminology."
+}, {
+    "sport": "Hip Hop",
+    "inOrOutdoor": 2,
+    "groupOrSolo": 3,
+    "fishOrLand": 5,
+    "sbc": "Balance",
+    "motivation": ["fun", "friends", "stress-relief"],
+    "category": "Dance",
+    "description": "Hip-hop dance refers to street dance styles primarily performed to hip-hop music or that have evolved as part of hip-hop culture. ... Since being exposed, educational opportunities and dance competitions have helped maintain its presence worldwide."
+}, {
+    "sport": "Salsa",
+    "inOrOutdoor": 2,
+    "groupOrSolo": 4,
+    "fishOrLand": 5,
+    "sbc": "Balance",
+    "motivation": ["fun", "friends", "stress-relief"],
+    "category": "Dance",
+    "description": "Salsa is a dance sport that is gaining popularity under students. ... In this course you get acquainted with the principles of salsa and you learn some basic figures. You don't need special footwear or clothes, some enthusiasm and fun in dancing is enough."
+}]

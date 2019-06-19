@@ -16,5 +16,20 @@
 /* ---------- QUIZ ---------- */
 @import "modules/quiz.css";
 
+/* ---------- SPORTSLIST ---------- */
+@import "modules/sportslist.css";
+
 /* ---------- LOGIN ---------- */
 @import "modules/login/login.css";
+
+/* ---------- DASHBOARD ---------- */
+@import "modules/dashboard/sportprovider-dashboard.css";
+
+/* ---------- CREATE EVENT ---------- */
+@import "modules/dashboard/create-event/create-event.css";
+
+/* ---------- EVENTS ---------- */
+@import "modules/events/events.css";
+
+/* ---------- CAROUSEL --------- */
+@import "modules/carousel.css";

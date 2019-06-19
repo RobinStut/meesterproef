@@ -1,0 +1,171 @@
+#st-sportactivities .letter-keys {
+  background-color:#B1C3D2;
+  font-weight: 500;
+  margin: 1em 0;
+  padding: .5em;
+}
+
+#st-sportactivities  {
+  width: 100%;
+  position: absolute;
+}
+
+#st-sportactivities a {
+  color: inherit;
+  display: inline-block;
+  padding: .3sem 0;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.heading-darkblue {
+  color: var(--text-color);
+}
+
+
+#st-sportactivities .sports-list a {
+  position: relative;
+  bottom: 60px;
+  padding: 0 1em;
+  color: white;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+
+#st-sportactivities img {
+  width: 100%;
+  filter: grayscale(40%);
+}
+
+#st-sportactivities img:hover {
+  width: 100%;
+  filter: grayscale(0%);
+}
+
+.search-bar input {
+  width: 84.1%;
+  font-size: inherit;
+  color: #153E60;
+  margin-top: 1em;
+  border: 1px solid #153E60;
+  padding: .5em;
+
+}
+
+.search-bar button {
+  
+  font-size: inherit;
+  color: #153E60;
+  margin-top: 1em;
+  border: 1px solid #153E60;
+  padding: .5em;
+}
+
+.filter-bar {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #AFBDC9;
+}
+
+.filter-bar li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.filter-bar li:last-of-type span {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #AFBDC9;
+  padding: 0.75em;
+
+}
+.filter-bar li:last-of-type span:hover {
+  background-color: #AFBDC9;
+  border-color: #153E60;
+}
+
+.filter-bar .selected {
+  background-color: #AFBDC9;
+  border-bottom: 2px solid black;
+}
+
+.filter-bar li:last-of-type a {
+  padding: 0 .75em;
+  /* background-color: blue; */
+}
+
+.sports a {
+  font-size: 1.3em;
+  padding: .25em .75em;
+  font-weight: 700;
+  display: block;
+  background-color: #AFBDC9;
+}
+
+#sports-events a{
+  display: block;
+  margin: 0;  
+}
+
+#sports-events a{
+  display: block;
+  margin: 0;  
+}
+
+#sports-events a:first-of-type{
+  margin-bottom: .5em;
+}
+
+#sports-events div {
+  bottom: 7em;
+  position: absolute;
+}
+
+#sports-events  {
+  margin-bottom: 10em;
+}
+
+#st-sportslist-clubs article div  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+#st-sportslist-clubs h4 {
+ font-weight: 600;
+}
+
+
+#st-sportslist-clubs .clubs-tag {
+  display: inline;
+  padding: 0.5em 2em;
+  border-radius: 10em;
+  background-color : var(--secondary-color);
+}
+
+#st-sportslist-clubs .website {
+  text-decoration: underline;
+  font-weight: 600;
+  display: inline;
+  color: var(--text-color);
+}
+
+#st-sportslist-clubs .website:hover {
+  text-decoration: underline;
+  background-color: #AFBDC9;
+  
+}
+
+#st-sportslist-clubs p {
+ margin: .6em 0;
+}
+
+

@@ -116,9 +116,28 @@ main section {
   background-color: var(--secondary-color);
 }
 
+.st-button-solid-white {
+  padding: 0.5em 2em;
+  background-color: var(--white);
+}
+
 .st-button-border {
+  background-color: var(--white);
   border: 1px solid var(--text-color);
   box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+}
+
+.st-section-radius::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 15px;
+  top: -14px;
+  left: 0;
+  background-color: var(--white);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  z-index: 1;
 }
 
 .st-text-color {
