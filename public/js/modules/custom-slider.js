@@ -1,127 +1,147 @@
 import DraggingEvent from "./dragging-event.js"
 
 export default class extends DraggingEvent {
-    constructor(rangeInput) {
-        // Init the DraggingEvent
-        super()
-        // Send the dragging target later in the code
+  constructor(rangeInput, callback) {
+    super()
 
-        this.rangeInput = rangeInput
-        this.slider = this.createSlider()
-        this.settings = this.getSettings()
+    this._output = callback || undefined
 
-        this.sliderData = this.getSliderData()
-        this.stepData = this.getStepData()
+    this.rangeInput = rangeInput
 
-        this.init()
+    this.settings = this.createSettings()
+    this.slider = this.createSlider()
+    this.scale = this.createScale()
 
-        super.target = this.slider.querySelector(".slider-pin");
+    window.addEventListener("resize", () => {
+      this.scale = this.createScale()
+      this.init()
+    })
 
-        // Send the data to this.handler
-        super.getDistance(this.sliding.bind(this))
+    this.init()
+
+    super.leftOffset =
+      this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
+    super.target = this.slider.track
+
+    super.getPosition(this.sliding.bind(this))
+  }
+
+  init() {
+    const index =
+      Math.abs(this.settings.min - this.settings.value) / this.settings.stepSize
+    const position = this.scale[index]
+
+    this.slider.pin.style.left = `${position}px`
+    this.slider.trail.style.width = `${position +
+      this.slider.pin.offsetWidth / 2}px`
+
+    if (this._output) this._output(this, this.rangeInput.value)
+  }
+
+  createSettings() {
+    const settings = {
+      min: Number(this.rangeInput.min),
+      max: Number(this.rangeInput.max),
+      stepSize: Number(this.rangeInput.step) || 1,
+      value: Number(this.rangeInput.value)
     }
 
-    createSlider() {
-        const containerEl = document.createElement("DIV");
-        containerEl.classList.add("slider-container")
+    settings.total = settings.max - settings.min
+    settings.steps = settings.total / settings.stepSize
 
-        const trackEl = document.createElement("DIV");
-        trackEl.classList.add("slider-track")
+    return settings
+  }
 
-        const trailEl = document.createElement("DIV")
-        trailEl.classList.add("slider-trail")
+  createSlider() {
+    const containerEl = document.createElement("DIV")
+    const trackEl = document.createElement("DIV")
+    const trailEl = document.createElement("DIV")
+    const pinEl = document.createElement("DIV")
 
-        const pinEl = document.createElement("DIV");
-        pinEl.classList.add("slider-pin")
+    containerEl.classList.add("slider-container")
+    trackEl.classList.add("slider-track")
+    trailEl.classList.add("slider-trail")
+    pinEl.classList.add("slider-pin")
 
-        trackEl.appendChild(trailEl)
-        trackEl.appendChild(pinEl)
-        containerEl.appendChild(trackEl)
+    trackEl.appendChild(trailEl)
+    trackEl.appendChild(pinEl)
+    containerEl.appendChild(trackEl)
 
-        this.rangeInput.classList.add("visuallyhidden")
+    this.rangeInput.classList.add("visuallyhidden")
 
-        // Insert the custom slider after the original range input
-        return this.rangeInput.parentNode.insertBefore(containerEl, this.rangeInput.nextSibling)
+    this.rangeInput.parentNode.insertBefore(
+      containerEl,
+      this.rangeInput.nextSibling
+    )
+
+    return {
+      pin: pinEl,
+      trail: trailEl,
+      track: trackEl
+    }
+  }
+
+  createScale() {
+    const scale = []
+    const sliderWidth =
+      this.slider.track.offsetWidth - this.slider.pin.offsetWidth
+    const stepSize = sliderWidth / this.settings.steps
+
+    for (let i = 0; i <= this.settings.steps; i++) {
+      scale.push(i * stepSize)
     }
 
-    init() {
-        const pin = this.slider.querySelector(".slider-pin");
-        const trail = this.slider.querySelector(".slider-trail");
+    return scale
+  }
 
-        const pos = this.stepData.size * (this.settings.initValue / this.settings.step)
+  findPosition(x) {
+    let leftX, rightX
 
-        pin.style.left = `${pos}%`
-        trail.style.width = `${pos + this.sliderData.pinWidth / 2}%`
+    this.scale.forEach(s => {
+      if (x >= s) {
+        leftX = s
+      }
+    })
 
-        this.sliderData = this.getSliderData();
-        this.stepData = this.getStepData()
+    rightX = this.scale.find(s => {
+      if (x <= s) {
+        return s
+      }
+    })
+
+    const centerX = (leftX + rightX + this.slider.pin.offsetWidth) / 2
+
+    if (x > centerX) {
+      return rightX
+    } else if (x >= this.scale[this.scale.length - 1]) {
+      return this.scale[this.scale.length - 1]
     }
 
-    getSettings() {
-        return {
-            min: Number(this.rangeInput.min),
-            max: Number(this.rangeInput.max),
-            initValue: Number(this.rangeInput.value),
-            step: this.rangeInput.step || 1
-        }
+    if (x < centerX) {
+      return leftX
+    } else if (x <= this.scale[0]) {
+      return this.scale[0]
     }
+  }
 
-    getSliderData() {
-        const pixelData = {
-            pinWidth: this.slider.querySelector(".slider-pin").offsetWidth,
-            pinLeft: this.slider.querySelector(".slider-pin").offsetLeft,
-            trackLeft: this.slider.querySelector(".slider-track").offsetLeft,
-            trackWidth: this.slider.querySelector(".slider-track").offsetWidth
-        }
+  findValue(x) {
+    const index = this.scale.indexOf(x)
 
-        // Set to percentages
-        pixelData.pinLeft = pixelData.pinLeft / pixelData.trackWidth * 100;
-        pixelData.pinWidth = pixelData.pinWidth / pixelData.trackWidth * 100;
+    return this.settings.min - -(index * this.settings.stepSize)
+  }
 
-        return pixelData
+  sliding(data) {
+    if (data !== null) {
+      const position = this.findPosition(data.clickedX || data.x)
+      const value = this.findValue(position)
+
+      this.slider.pin.style.left = `${position}px`
+      this.slider.trail.style.width = `${position +
+        this.slider.pin.offsetWidth / 2}px`
+
+      this.rangeInput.value = value
+
+      if (this._output) this._output(this, this.rangeInput.value)
     }
-
-    getStepData() {
-        const stepsAmt = (Math.abs(this.settings.min) + Math.abs(this.settings.max)) / this.settings.step;
-        const stepSize = (100 - this.sliderData.pinWidth) / stepsAmt;
-        return {
-            amt: stepsAmt,
-            size: stepSize
-        }
-    }
-
-    async sliding(data) {
-        if (data === null) {
-            this.sliderData = this.getSliderData();
-            this.stepData = this.getStepData()
-
-            return;
-        }
-
-        let newX;
-
-        // Set to percentage
-        data.x = data.x / this.sliderData.trackWidth * 100
-
-        if (data.x + this.sliderData.pinLeft <= 0) {
-            newX = 0;
-        } else if (data.x + this.sliderData.pinLeft + this.sliderData.pinWidth >= 100) {
-            newX = 100 - this.sliderData.pinWidth;
-        } else {
-            let temp = Math.round(data.x / this.stepData.size)
-
-            newX = temp * this.stepData.size + this.sliderData.pinLeft
-        }
-
-        // Get the real value, can be passed to anything
-        const realValue = Math.round(newX / this.stepData.size) * this.settings.step;
-
-        // Update the range input
-        this.rangeInput.value = realValue;
-
-        // document.getElementById("16").getElementsByClassName("slider-pin").innerHTML = `${this.rangeInput.value}`
-        this.slider.querySelector(".slider-pin").innerHTML = `${this.rangeInput.value}`
-        this.slider.querySelector(".slider-pin").style.left = `${newX}%`;
-        this.slider.querySelector(".slider-trail").style.width = `${newX + this.sliderData.pinWidth / 2}%`
-    }
+  }
 }

@@ -1,3 +1,7 @@
+const quizPostRequest = require("./quiz/quiz-postrequest.js"),
+  fetchData = require("./helper/helper-fetch.js"),
+  quizCalc = require("./quiz/quiz-calculation.js")
+
 let allSports
 ;(async function() {
   const getAllSports = require("./sportlist/sportlist-az-list.js")
@@ -63,6 +67,19 @@ module.exports = (app, eventsData) => {
       heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
     })
   })
+  app.post("/quiz", async function(req, res) {
+    const sportQuizData = await fetchData(
+      "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
+    )
+    const quizResult = quizCalc(req, sportQuizData)
+    // console.log(test)
+    res.render("pages/quiz/quiz-result.ejs", {
+      quizResult: quizResult,
+      sportQuizData: sportQuizData,
+      hero: "small-hero",
+      heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
+    })
+  })
   app.get("/login", (req, res) => {
     res.render("pages/sportprovider/sportprovider-login.ejs", {
       hero: "small-hero",
@@ -76,7 +93,10 @@ module.exports = (app, eventsData) => {
     })
   })
   app.get("/create-event", async (req, res) => {
-    const data = await fetchData()
+
+    const data = await fetchData(
+      "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
+    )
 
     res.render("pages/sportprovider/sportprovider-create-event.ejs", {
       hero: "small-hero",

@@ -8,23 +8,28 @@
 	<section id="st-created-event" class="display-flex-v st-section-radius">
 		<h3>Your event</h3>
 
-		<div>
-			<p><span class="st-p-bold">Title:</span> <%= event.general.title %></p>
+		<article class="st-article-general">
+			<p class="st-p-bold"><%= event.general.title %></p>
+
+			<img src="/images/swimming-pool.png" alt="" />
+
+			<a href="#" class="st-button st-button-solid-yellow"
+				><%= event.sport.name %></a
+			>
+
+			<p><%= event.general.description %></p>
+
 			<p>
-				<span class="st-p-bold">Description:</span> <%=
-				event.general.description %>
+				Van <span class="st-p-bold"><%= event.time.timeStart %></span> t/m
+				<span class="st-p-bold"><%= event.time.timeEnd %></span>
 			</p>
-			<p><span class="st-p-bold">Sport:</span> <%= event.sport.sportName %></p>
-			<p>
-				<span class="st-p-bold">Location:</span> <%= event.location.city %>, <%=
-				event.location.address %>
-			</p>
-			<p>
-				<span class="st-p-bold">Time:</span> <%= event.time.timeStart %> t/m <%=
-				event.time.timeEnd %>
-			</p>
-			<p><span class="st-p-bold">Date:</span> <%= event.date %></p>
-		</div>
+
+			<ul>
+				<li><%= event.location.name %></li>
+				<li><%= event.location.city %></li>
+				<li><%= event.location.address %></li>
+			</ul>
+		</article>
 
 		<form action="/publish-event" method="POST">
 			<button type="submit" class="st-button st-button-border">
