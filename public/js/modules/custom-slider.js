@@ -25,6 +25,32 @@ export default class extends DraggingEvent {
       return settings
     }
 
-    createSlider() {}
+    createSlider() {
+      const containerEl = document.createElement("DIV")
+      const trackEl = document.createElement("DIV")
+      const trailEl = document.createElement("DIV")
+      const pinEl = document.createElement("DIV")
+
+
+      containerEl.classList.add("slider-container")
+      trackEl.classList.add("slider-track")
+      trailEl.classList.add("slider-trail")
+      pinEl.classList.add("slider-pin")
+
+      trackEl.appendChild(trailEl)
+      trackEl.appendChild(pinEl)
+      containerEl.appendChild(trackEl)
+
+      this.rangeInput.classList.add("visuallyhidden")
+
+      this.rangeInput.parentNode.insertBefore(containerEl, this.rangeInput.nextSibling)
+
+      return {
+        pin: pinEl,
+        trail: trailEl,
+        track: trackEl
+      }
+    }
+    
     createScale() {}
 }
