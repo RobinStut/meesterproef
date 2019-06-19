@@ -1,7 +1,3 @@
-const quizPostRequest = require("./quiz/quiz-postrequest.js"),
-  fetchData = require("./helper/helper-fetch.js"),
-  quizCalc = require("./quiz/quiz-calculation.js")
-
 let allSports
 ;(async function() {
   const getAllSports = require("./sportlist/sportlist-az-list.js")
@@ -93,7 +89,6 @@ module.exports = (app, eventsData) => {
     })
   })
   app.get("/create-event", async (req, res) => {
-
     const data = await fetchData(
       "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
     )

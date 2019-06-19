@@ -81,27 +81,23 @@
   /* background-color: blue; */
 }
 
-#sports-events a {
+.st-article-general-events a {
   display: block;
   margin: 0;
 }
 
-#sports-events a {
+.st-article-general-events a {
   display: block;
   margin: 0;
 }
 
-#sports-events a:first-of-type {
+.st-article-general-events a:first-of-type {
   margin-bottom: 0.5em;
 }
 
-#sports-events div {
-  bottom: 7em;
-  position: absolute;
-}
-
-#sports-events {
-  margin-bottom: 10em;
+.st-article-general-events div {
+  bottom: 2.5em;
+  position: relative;
 }
 
 #st-sportslist-clubs article {
@@ -150,6 +146,15 @@
   margin: 0.3em 0;
 }
 
-/* h3 {
-  text-align: center;
-} */
+.back-button {
+  color: var(--text-color);
+
+  margin-top: -1em;
+  margin-bottom: 1em;
+  top: 2px;
+}
+
+h3 {
+  text-align: left;
+  margin-bottom: 0em;
+}
