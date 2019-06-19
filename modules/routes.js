@@ -7,6 +7,7 @@ let allSports
 const quizPostRequest = require("./quiz/quiz-postrequest.js")
 const fetchData = require("./helper/helper-fetch.js")
 const sportlistEvents = require("./sportlist/sportslist-events.js")
+const getClubs = require("./sportlist/sportlist-clubs.js")
 
 module.exports = (app, eventsData) => {
   app.get("/", (req, res) => {
@@ -31,10 +32,12 @@ module.exports = (app, eventsData) => {
   })
   app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
+    const clubs = await getClubs(id)
     res.render("pages/sportlist/sportlist-clubs.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
-      sport: id
+      sport: id,
+      clubs: clubs
     })
   })
   app.get("/sportslist/events/:id", async (req, res) => {

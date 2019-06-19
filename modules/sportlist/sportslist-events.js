@@ -52,13 +52,12 @@ console.log(eventsFormat)
 
 module.exports = id => {
   return new Promise(async (resolve, reject) => {
-    console.log("sport:", id)
+    //console.log("sport:", id)
 
     // const response = await fetch(''),
     // const data = await response.json()
 
     const filter = eventsFormat.filter(event => event.sport.category === id)
-    console.log(filter)
 
     resolve(filter)
   })
