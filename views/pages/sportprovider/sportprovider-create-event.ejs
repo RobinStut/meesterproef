@@ -6,17 +6,27 @@
 
 <main>
 	<section id="st-create-event" class="display-flex-v st-section-radius">
-		<h3>Create Event</h3>
+		<h3>Creeër een Event</h3>
 
 		<form action="/create-event" class="display-flex-v" method="POST">
 			<label for=""
-				>Title
+				>Titel
 				<input type="text" name="event-name" required />
 			</label>
 
 			<label for=""
-				>Description
+				>Omschrijving
 				<textarea name="event-description" required></textarea>
+			</label>
+
+			<label for=""
+				>Afbeelding
+				<input
+					type="file"
+					accept="image/png, image/jpeg"
+					name="event-image"
+					required
+				/>
 			</label>
 
 			<label for=""
@@ -29,7 +39,7 @@
 			</label>
 
 			<label for=""
-				>Category
+				>Categorie
 				<select name="event-category">
 					<% data.forEach(category => { %>
 					<option value="<%= category.category %>"
@@ -41,7 +51,22 @@
 
 			<label for=""
 				>City
-				<input type="text" name="event-city" required />
+				<input
+					type="text"
+					name="event-city"
+					placeholder="Bijv. Amsterdam"
+					required
+				/>
+			</label>
+
+			<label for=""
+				>Locatie Naam
+				<input
+					type="text"
+					name="event-location-name"
+					placeholder="Bijv. Bijlmer Sportpark"
+					required
+				/>
 			</label>
 
 			<label for=""
@@ -50,18 +75,18 @@
 			</label>
 
 			<label for=""
-				>Date
+				>Datum
 				<input type="date" name="event-date" required />
 			</label>
 
 			<div>
 				<label for=""
-					>From
+					>Van
 					<input type="time" name="event-from-time" required />
 				</label>
 
 				<label for=""
-					>Till
+					>Tot
 					<input type="time" name="event-till-time" required />
 				</label>
 			</div>

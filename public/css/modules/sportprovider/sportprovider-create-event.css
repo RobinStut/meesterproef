@@ -1,24 +1,21 @@
-#st-create-event, #st-created-event {
-    height: 50vh;
-    text-align: center;
+#st-create-event form {
+	text-align: left;
 }
 
 #st-create-event form {
-    text-align: left;
+	text-align: left;
 }
 
-#st-create-event form {
-    text-align: left;
-}
-
-#st-create-event form input, #st-create-event form textarea, #st-create-event form select {
-    border: 1px solid var(--black);
+#st-create-event form input,
+#st-create-event form textarea,
+#st-create-event form select {
+	border: 1px solid var(--black);
 }
 
 #st-created-event {
-    height: 50vh;
+	padding: 1.5em 0;
 }
 
 #st-created-event div {
-    margin: 0 0 auto 0;
+	margin: 0 0 auto 0;
 }
