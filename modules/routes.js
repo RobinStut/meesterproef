@@ -8,6 +8,11 @@ let allSports
   allSports = await getAllSports()
 })()
 
+const quizPostRequest = require("./quiz/quiz-postrequest.js")
+const fetchData = require("./helper/helper-fetch.js")
+const sportlistEvents = require("./sportlist/sportslist-events.js")
+const getClubs = require("./sportlist/sportlist-clubs.js")
+
 module.exports = (app, eventsData) => {
   app.get("/", (req, res) => {
     res.render("pages/index.ejs", {
@@ -31,18 +36,22 @@ module.exports = (app, eventsData) => {
   })
   app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
+    const clubs = await getClubs(id)
     res.render("pages/sportlist/sportlist-clubs.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
-      sport: id
+      sport: id,
+      clubs: clubs
     })
   })
   app.get("/sportslist/events/:id", async (req, res) => {
     const id = req.params.id
+    const events = await sportlistEvents(id)
     res.render("pages/sportlist/sportlist-events.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
-      sport: id
+      sport: id,
+      events: events
     })
   })
   app.get("/events", (req, res) => {
@@ -62,10 +71,8 @@ module.exports = (app, eventsData) => {
     const sportQuizData = await fetchData(
       "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
     )
-
     const quizResult = quizCalc(req, sportQuizData)
     // console.log(test)
-
     res.render("pages/quiz/quiz-result.ejs", {
       quizResult: quizResult,
       sportQuizData: sportQuizData,
@@ -86,6 +93,7 @@ module.exports = (app, eventsData) => {
     })
   })
   app.get("/create-event", async (req, res) => {
+
     const data = await fetchData(
       "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
     )
