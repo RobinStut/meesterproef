@@ -1,4 +1,4 @@
-import header from './modules/header/header.js'
+import header from "./modules/header/header.js"
 import Quiz from "./modules/quiz/quiz-setup.js";
 import CustomSlider from "./modules/custom-slider.js";
 
