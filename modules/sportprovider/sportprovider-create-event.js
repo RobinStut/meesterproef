@@ -7,10 +7,11 @@ module.exports = (app, conceptEvents) => {
 				description: req.body["event-description"]
 			},
 			sport: {
-				sportName: req.body["event-sport"],
+				name: req.body["event-sport"],
 				category: req.body["event-category"]
 			},
 			location: {
+				name: req.body["event-location-name"],
 				city: req.body["event-city"],
 				address: req.body["event-address"]
 			},
