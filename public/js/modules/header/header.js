@@ -32,4 +32,7 @@ function headerBackgroundScroll() {
     })
 }
 
-export { headerBackgroundScroll, sidebarNav }
+headerBackgroundScroll()
+sidebarNav()
+
+export default {}
