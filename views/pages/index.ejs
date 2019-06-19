@@ -2,99 +2,107 @@
 
 <h1>Sportstimulering</h1>
 
-<% include ../partials/nav %>
-
-<% include ../partials/hero %>
+<% include ../partials/nav %> <% include ../partials/hero %>
 
 <main>
+	<section id="st-homepage-quiz" class="display-flex-v">
+		<h4>Which sport suits you the best?</h4>
 
-    <section id="st-homepage-quiz" class="display-flex-v">
-        <h4>Which sport suits you the best?</h4>
+		<a href="/quiz" class="st-button st-button-solid">Sports Configurator</a>
+	</section>
 
-        <a href="/quiz" class="st-button st-button-solid">Sports Configurator</a>
-    </section>
+	<section id="st-homepage-community" class="display-flex-v st-section-radius">
+		<h3>Learn from others</h3>
 
-    <section id="st-homepage-community" class="display-flex-v st-section-radius">
-        <h3>Learn from others</h3>
+		<div class="display-flex-v">
+			<article class="display-flex-h">
+				<img src="/images/profile-picture-1.png" alt="" />
 
-        <div class="display-flex-v">
-            <article class="display-flex-h">
-                <img src="/images/profile-picture-1.png" alt="">
+				<div>
+					<p><span class="st-p-bold">Anni</span>, 15</p>
+					<blockquote>
+						<p>
+							I join the dancing class every week two times. I love to see my
+							friends there and spent a good time with them. I meet so many new
+							friends there.
+						</p>
+					</blockquote>
+				</div>
+			</article>
 
-                <div>
-                    <p><span class="st-p-bold">Anni</span>, 15</p>
-                    <blockquote>
-                        <p>I join the dancing class every week two times. I love to see my friends there and spent a
-                            good time with them. I meet so many new friends there.</p>
-                    </blockquote>
-                </div>
-            </article>
+			<article class="display-flex-h">
+				<img src="/images/profile-picture-2.png" alt="" />
 
-            <article class="display-flex-h">
-                <img src="/images/profile-picture-2.png" alt="">
+				<div>
+					<p><span class="st-p-bold">John</span>, 78</p>
+					<blockquote>
+						<p>
+							To keep fit in older age, the Amsterdam sports program is
+							wonderful. There is something for every age group!
+						</p>
+					</blockquote>
+				</div>
+			</article>
 
-                <div>
-                    <p><span class="st-p-bold">John</span>, 78</p>
-                    <blockquote>
-                        <p>To keep fit in older age, the Amsterdam sports program is wonderful. There is something for
-                            every age group!</p>
-                    </blockquote>
-                </div>
-            </article>
+			<article class="display-flex-h">
+				<img src="/images/profile-picture-3.png" alt="" />
 
-            <article class="display-flex-h">
-                <img src="/images/profile-picture-3.png" alt="">
+				<div>
+					<p><span class="st-p-bold">Carry</span>, 36</p>
+					<blockquote>
+						<p>
+							After my children had so become enthusiastic about the sports
+							program, I have now discoverd it for myself. Tennis is my new
+							passion.
+						</p>
+					</blockquote>
+				</div>
+			</article>
+		</div>
+	</section>
 
-                <div>
-                    <p><span class="st-p-bold">Carry</span>, 36</p>
-                    <blockquote>
-                        <p>After my children had so become enthusiastic about the sports program, I have now discoverd
-                            it for myself. Tennis is my new passion.</p>
-                    </blockquote>
-                </div>
-            </article>
-        </div>
-    </section>
+	<section id="st-homepage-places" class="display-flex-v">
+		<h3>Places to be</h3>
 
-    <section id="st-homepage-places" class="display-flex-v">
-        <h3>Places to be</h3>
+		<article class="st-homepage-palace-article">
+			<p class="st-p-bold">A place for the cool kids</p>
 
-        <article class="st-homepage-palace-article">
-            <p class="st-p-bold">A place for the cool kids</p>
+			<img src="/images/skatepark.png" alt="" />
 
-            <img src="/images/skatepark.png" alt="">
+			<a href="#" class="st-button st-button-solid-yellow"
+				>Skatepark Bijlmeer</a
+			>
 
-            <a href="#" class="st-button st-button-solid-yellow">Skatepark Bijlmeer</a>
+			<ul>
+				<li>Nelson Mandelapark</li>
+				<li>Skateboard, BMX, inline</li>
+			</ul>
+		</article>
 
-            <ul>
-                <li>Nelson Mandelapark</li>
-                <li>Skateboard, BMX, inline</li>
-            </ul>
-        </article>
+		<article class="st-homepage-palace-article">
+			<p class="st-p-bold">Refresh needed?</p>
 
-        <article class="st-homepage-palace-article">
-            <p class="st-p-bold">Refresh needed?</p>
+			<img src="/images/swimming-pool.png" alt="" />
 
-            <img src="/images/swimming-pool.png" alt="">
+			<a href="#" class="st-button st-button-solid-yellow"
+				>Zwembad Drostenburg</a
+			>
 
-            <a href="#" class="st-button st-button-solid-yellow">Zwembad Drostenburg</a>
+			<ul>
+				<li>Drostenburg 1-4 , 1102 AB Amsterdam</li>
+				<li>Skateboard, BMX, inline</li>
+			</ul>
+		</article>
 
-            <ul>
-                <li>Drostenburg 1-4 , 1102 AB Amsterdam</li>
-                <li>Skateboard, BMX, inline</li>
-            </ul>
-        </article>
+		<a href="#" class="st-button st-button-border">See all places</a>
+	</section>
 
-        <a href="#" class="st-button st-button-border">See all places</a>
-    </section>
+	<section id="st-homepage-healthy-living" class="display-flex-v">
+		<h3>Learn more about healthy living</h3>
+		<p>There are so many factors we can consider to lead a healthier life.</p>
 
-    <section id="st-homepage-healthy-living" class="display-flex-v">
-        <h3>Learn more about healthy living</h3>
-        <p>There are so many factors we can consider to lead a healthier life.</p>
-
-        <a href="#" class="st-button st-button-border">Healthy Living Blog</a>
-    </section>
-
+		<a href="#" class="st-button st-button-border">Healthy Living Blog</a>
+	</section>
 </main>
 
 <% include ../partials/footer %>

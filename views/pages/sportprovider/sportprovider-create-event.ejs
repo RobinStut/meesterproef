@@ -1,66 +1,74 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 
 <h1>Sportstimulering</h1>
 
-<% include ../partials/nav %>
-
-<% include ../partials/hero %>
+<% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-    <section id="st-create-event" class="display-flex-v st-section-radius">
-        <h3>Create Event</h3>
+	<section id="st-create-event" class="display-flex-v st-section-radius">
+		<h3>Create Event</h3>
 
-        <form action="/create-event" class="display-flex-v" method="POST">
+		<form action="/create-event" class="display-flex-v" method="POST">
+			<label for=""
+				>Title
+				<input type="text" name="event-name" required />
+			</label>
 
-            <label for="">Title
-                <input type="text" name="event-name" required>
-            </label>
+			<label for=""
+				>Description
+				<textarea name="event-description" required></textarea>
+			</label>
 
-            <label for="">Description
-                <textarea name="event-description" required></textarea>
-            </label>
-            
-            <label for="">Sport
-                <select name="event-sport">
-                    <% data.forEach(sport => { %>
-                    <option value="<%= sport.sport %>"><%= sport.sport %></option>
-                    <% }) %>
-                </select>
-            </label>
+			<label for=""
+				>Sport
+				<select name="event-sport">
+					<% data.forEach(sport => { %>
+					<option value="<%= sport.sport %>"><%= sport.sport %></option>
+					<% }) %>
+				</select>
+			</label>
 
-            <label for="">Category
-                <select name="event-category">
-                    <% data.forEach(category => { %>
-                        <option value="<%= category.category %>"><%= category.category %></option>
-                    <% }) %>
-                </select>
-            </label>
+			<label for=""
+				>Category
+				<select name="event-category">
+					<% data.forEach(category => { %>
+					<option value="<%= category.category %>"
+						><%= category.category %></option
+					>
+					<% }) %>
+				</select>
+			</label>
 
-            <label for="">City
-                <input type="text" name="event-city" required>
-            </label>
+			<label for=""
+				>City
+				<input type="text" name="event-city" required />
+			</label>
 
-            <label for="">Address
-                <input type="text" name="event-address" required>
-            </label>
+			<label for=""
+				>Address
+				<input type="text" name="event-address" required />
+			</label>
 
-            <label for="">Date
-                <input type="date" name="event-date" required>
-            </label>
+			<label for=""
+				>Date
+				<input type="date" name="event-date" required />
+			</label>
 
-            <div>
-                <label for="">From
-                    <input type="time" name="event-from-time" required>
-                </label>
-    
-                <label for="">Till
-                    <input type="time" name="event-till-time" required>
-                </label>
-            </div>
+			<div>
+				<label for=""
+					>From
+					<input type="time" name="event-from-time" required />
+				</label>
 
-            <button type="submit" class="st-button st-button-border">Submit</button>
-        </form>
-    </section>
+				<label for=""
+					>Till
+					<input type="time" name="event-till-time" required />
+				</label>
+			</div>
+
+			<button type="submit" class="st-button st-button-border">Submit</button>
+		</form>
+	</section>
 </main>
 
-<% include ../partials/footer %>
+<% include ../../partials/footer %>

@@ -1,37 +1,37 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 
 <h1>Sportstimulering</h1>
 
-<% include ../partials/nav %> <% include ../partials/hero %>
+<% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-  <section id="st-created-event" class="display-flex-v st-section-radius">
-    <h3>Your event</h3>
+	<section id="st-created-event" class="display-flex-v st-section-radius">
+		<h3>Your event</h3>
 
-    <div>
-      <p><span class="st-p-bold">Title:</span> <%= event.general.title %></p>
-      <p>
-        <span class="st-p-bold">Description:</span> <%=
-        event.general.description %>
-      </p>
-      <p><span class="st-p-bold">Sport:</span> <%= event.sport.sportName %></p>
-      <p>
-        <span class="st-p-bold">Location:</span> <%= event.location.city %>, <%=
-        event.location.address %>
-      </p>
-      <p>
-        <span class="st-p-bold">Time:</span> <%= event.time.timeStart %> t/m <%=
-        event.time.timeEnd %>
-      </p>
-      <p><span class="st-p-bold">Date:</span> <%= event.date %></p>
-    </div>
+		<div>
+			<p><span class="st-p-bold">Title:</span> <%= event.general.title %></p>
+			<p>
+				<span class="st-p-bold">Description:</span> <%=
+				event.general.description %>
+			</p>
+			<p><span class="st-p-bold">Sport:</span> <%= event.sport.sportName %></p>
+			<p>
+				<span class="st-p-bold">Location:</span> <%= event.location.city %>, <%=
+				event.location.address %>
+			</p>
+			<p>
+				<span class="st-p-bold">Time:</span> <%= event.time.timeStart %> t/m <%=
+				event.time.timeEnd %>
+			</p>
+			<p><span class="st-p-bold">Date:</span> <%= event.date %></p>
+		</div>
 
-    <form action="/publish-event" method="POST">
-      <button type="submit" class="st-button st-button-border">
-        Publish Event
-      </button>
-    </form>
-  </section>
+		<form action="/publish-event" method="POST">
+			<button type="submit" class="st-button st-button-border">
+				Publish Event
+			</button>
+		</form>
+	</section>
 </main>
 
-<% include ../partials/footer %>
+<% include ../../partials/footer %>
