@@ -5,33 +5,34 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-	<section class="display-flex-v st-section-radius">
-		<!-- <h3>Find your sport activity</h3> -->
-		<h3><%= sport %></h3>
-		<div>
-			<ul class="filter-bar">
-				<li>
-					<span>
-						<a href="/sportslist/events/<%=sport%>">Events</a>
-					</span>
-					<span class="selected">
-						<a href="#">Sport Clubs</a>
-					</span>
-				</li>
-			</ul>
-		</div>
-	</section>
-	<section id="st-sportslist-clubs" class="display-flex-v">
-		<article>
-			<div>
-				<h4 class="heading-darkblue">Friends '90</h4>
-				<p class="clubs-tag"><%=sport%></p>
-			</div>
-			<p>Sportzaal Kortvoort 69-71</p>
-			<p>Kortvoort 69-71, 1104NA Amsterdam</p>
-			<a class="website">www.henkie.nl</a>
-		</article>
-	</section>
+  <section class="display-flex-v st-section-radius">
+    <!-- <h3>Find your sport activity</h3> -->
+    <a href="/sportslist">< Back to overview</a></Back>
+    <h3><%= sport %></h3>
+    <div>
+      <ul class="filter-bar">
+        <li>
+          <span>
+            <a href="/sportslist/events/<%=sport%>">Events</a>
+          </span>
+          <span class="selected">
+            <a href="#">Sport Clubs</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="st-sportslist-clubs" class="display-flex-v">
+    <article>
+      <div>
+        <h4 class="heading-darkblue">Friends '90</h4>
+        <p class="clubs-tag"><%=sport%></p>
+      </div>
+      <p>Sportzaal Kortvoort 69-71</p>
+      <p>Kortvoort 69-71, 1104NA Amsterdam</p>
+      <a class="website">www.henkie.nl</a>
+    </article>
+  </section>
 </main>
 
 <% include ../../partials/footer %>

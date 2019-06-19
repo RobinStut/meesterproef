@@ -57,7 +57,7 @@ module.exports = id => {
     // const response = await fetch(''),
     // const data = await response.json()
 
-    const filter = eventsFormat.filter(sport => sport.sport.category === id)
+    const filter = eventsFormat.filter(event => event.sport.category === id)
     console.log(filter)
 
     resolve(filter)
