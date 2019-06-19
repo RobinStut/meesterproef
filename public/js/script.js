@@ -15,6 +15,8 @@
         const customSliders = document.getElementsByClassName("custom-slider")
 
         for (let i = 0; i < customSliders.length; i++) {
-            new CustomSlider(customSliders[i])
+            new CustomSlider(customSliders[i], (origin, value) => {
+              origin.slider.pin.textContent = value;
+            })
         }
     })()
