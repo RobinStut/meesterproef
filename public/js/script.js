@@ -1,12 +1,11 @@
 import * as header from './modules/header/header.js'
-import { sidebarNav } from './modules/header/header-sidebar.js'
 import Quiz from "./modules/quiz/quiz-setup.js";
 import CustomSlider from "./modules/custom-slider.js"
 
 
 (() => {
     header.headerBackgroundScroll()
-    sidebarNav()
+    header.sidebarNav()
 
     const customSliders = document.getElementsByClassName("custom-slider")
 
