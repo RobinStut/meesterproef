@@ -4,7 +4,8 @@ module.exports = (app, conceptEvents) => {
 			general: {
 				sportProviderId: Math.random(),
 				title: req.body["event-name"],
-				description: req.body["event-description"]
+				description: req.body["event-description"],
+				image: req.body["event-image"]
 			},
 			sport: {
 				name: req.body["event-sport"],
