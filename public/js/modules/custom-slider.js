@@ -69,8 +69,40 @@ export default class extends DraggingEvent {
       return scale
     }
 
+    findPosition(x) {
+      let leftX, rightX;
+
+      this.scale.forEach(s => {
+        if (x > s) {
+          leftX = s
+        }
+      })
+
+      rightX = this.scale.find(s => {
+        if (x < s) {
+          return s
+        }
+      })
+
+      const centerX = (leftX + rightX + this.slider.pin.offsetWidth) / 2
+
+      if (x > centerX) {
+        return rightX
+      } else if (x >= this.scale[this.scale.length - 1]) {
+        return this.scale[this.scale.length - 1]
+      }
+
+      if (x < centerX) {
+        return leftX
+      } else if (x <= this.scale[0]) {
+        return this.scale[0]
+      }
+    }
+
     sliding(data) {
-      console.log(data)
+      const position = this.findPosition(data.clickedX || data.x)
+
+      console.log(position)
     }
 
 }
