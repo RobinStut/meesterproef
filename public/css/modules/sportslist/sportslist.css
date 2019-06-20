@@ -1,33 +1,33 @@
 #st-sportlist-az .letter-keys {
-  background-color: #b1c3d2;
-  font-weight: 600;
-  margin: 1em 0;
-  padding: 0.5em;
+	background-color: #b1c3d2;
+	font-weight: 600;
+	margin: 1em 0;
+	padding: 0.5em;
 }
 
 #st-sportlist-az {
-  width: 100%;
+	width: 100%;
 }
 
 #st-sportlist-az a {
-  display: inline-block;
-  padding: 0.3sem 0;
-  text-decoration: none;
+	display: inline-block;
+	padding: 0.3sem 0;
+	text-decoration: none;
 }
 
 .heading-darkblue {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 #st-sportlist-az .sports-list a {
-  font-weight: 500;
-  font-size: 1em;
-  padding: 0.5em 0;
-  color: inherit;
+	font-weight: 500;
+	font-size: 1em;
+	padding: 0.5em 0;
+	color: inherit;
 }
 
 .toggle-button__container {
-  color: blue !important;
+	color: blue !important;
 }
 
 /* .search-bar input {
@@ -48,113 +48,113 @@
 } */
 
 .filter-bar {
-  margin-top: 1em;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #afbdc9;
+	margin-top: 1em;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #afbdc9;
 }
 
 .filter-bar li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .filter-bar li:last-of-type span {
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 2px solid #afbdc9;
-  padding: 0.75em;
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 2px solid #afbdc9;
+	padding: 0.75em;
 }
 .filter-bar li:last-of-type span:hover {
-  background-color: #afbdc9;
-  border-color: #153e60;
+	background-color: #afbdc9;
+	border-color: #153e60;
 }
 
 .filter-bar .selected {
-  background-color: #afbdc9;
-  border-bottom: 2px solid black;
+	background-color: #afbdc9;
+	border-bottom: 2px solid black;
 }
 
 .filter-bar li:last-of-type a {
-  padding: 0 0.75em;
-  /* background-color: blue; */
+	padding: 0 0.75em;
+	/* background-color: blue; */
 }
 
 .st-article-general-events a {
-  display: block;
-  margin: 0;
+	display: block;
+	margin: 0;
 }
 
 .st-article-general-events a {
-  display: block;
-  margin: 0;
+	display: block;
+	margin: 0;
 }
 
 .st-article-general-events a:first-of-type {
-  margin-bottom: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 .st-article-general-events div {
-  bottom: 2.5em;
-  position: relative;
+	bottom: 2.5em;
+	position: relative;
 }
 
 #st-sportslist-clubs article {
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-  border-bottom: 1px solid #afbdc9;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #afbdc9;
 }
 
 #st-sportslist-clubs article div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #st-sportslist-clubs h4 {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 #st-sportslist-clubs .clubs-tag {
-  display: inline;
-  padding: 0.5em 2em;
-  border-radius: 10em;
-  background-color: var(--secondary-color);
-  margin-left: 0.3em !important;
-  display: inline-block;
+	display: inline;
+	padding: 0.5em 2em;
+	border-radius: 10em;
+	background-color: var(--secondary-color);
+	margin-left: 0.3em !important;
+	display: inline-block;
 }
 
 #st-sportslist-clubs .website {
-  text-decoration: underline;
-  font-weight: 600;
-  display: inline;
-  color: var(--text-color);
+	text-decoration: underline;
+	font-weight: 600;
+	display: inline;
+	color: var(--text-color);
 }
 
 #st-sportslist-clubs .website:hover {
-  text-decoration: underline;
-  background-color: #afbdc9;
+	text-decoration: underline;
+	background-color: #afbdc9;
 }
 
 #st-sportslist-clubs p {
-  margin: 0.6em 0;
+	margin: 0.6em 0;
 }
 
 #st-sportslist-clubs p:first-of-type {
-  margin: 0.3em 0;
+	margin: 0.3em 0;
 }
 
 .back-button {
-  color: var(--text-color);
+	color: var(--text-color);
 
-  margin-top: -1em;
-  margin-bottom: 1em;
-  top: 2px;
+	margin-top: -1em;
+	margin-bottom: 1em;
+	top: 2px;
 }
 
-h3 {
+/* h3 {
   text-align: left;
   margin-bottom: 0em;
-}
+} */

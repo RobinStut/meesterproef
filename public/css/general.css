@@ -1,7 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 h1,
@@ -12,10 +12,11 @@ h5,
 h6,
 p,
 a,
-li {
-  font-family: "Roboto", sans-serif;
-]	font-family: "Roboto", sans-serif;
-]}
+li,
+label,
+textarea {
+	font-family: "Roboto", sans-serif;
+}
 
 h1 {
 	display: none;
@@ -48,6 +49,11 @@ p {
 	font-weight: 400;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 ul {
 	list-style: none;
 }
@@ -58,29 +64,55 @@ li {
 	font-weight: 300;
 }
 
+label {
+	margin: 1em 0 0.5em 0;
+	font-size: var(--font-size-18px);
+}
+
+input[type="text"],
+textarea {
+	padding: 1em;
+	border: 1px solid var(--grey);
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+input[type="text"] {
+	height: 3em;
+}
+
+textarea {
+	height: 5em;
+}
+
+button {
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+}
+
 section {
 	position: relative;
 }
 
 blockquote p:before {
-  position: absolute;
-  top: 0.4em;
-  left: 0;
-  content: open-quote;
-  color: #153e60;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: var(--font-size-50px);
-  opacity: 0.3;
+	position: absolute;
+	top: 0.4em;
+	left: 0;
+	content: open-quote;
+	color: #153e60;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: var(--font-size-50px);
+	opacity: 0.3;
 }
 
 blockquote p:after {
-  position: absolute;
-  right: 0;
-  content: close-quote;
-  color: #153e60;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: var(--font-size-50px);
-  opacity: 0.3;
+	position: absolute;
+	right: 0;
+	content: close-quote;
+	color: #153e60;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: var(--font-size-50px);
+	opacity: 0.3;
 }
 
 main section {
@@ -133,9 +165,9 @@ main section {
 }
 
 .st-button-border {
-  background-color: var(--white);
-  border: 1px solid var(--text-color);
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+	background-color: var(--white);
+	border: 1px solid var(--text-color);
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .st-article-general {
@@ -195,7 +227,8 @@ main section {
 	overflow: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.label-required::before {
+	content: "*";
+	margin: 0 0.2em 0 0;
+	color: red;
 }
