@@ -1,11 +1,13 @@
 import DraggingEvent from "../dragging-event.js"
 
 export default class extends DraggingEvent {
-  constructor(container) {
+  constructor(container, controller = undefined) {
     super(container)
 
     // Elements
     this.container = container
+    this.controllerElement = controller
+
     this.cards = container.querySelectorAll(".card")
 
     // Carousel data
@@ -17,6 +19,12 @@ export default class extends DraggingEvent {
     // Resizing
     window.addEventListener("resize", this.updateCardWidth.bind(this))
 
+    if (this.controllerElement) {
+      this.controllerElement.addEventListener(
+        "keydown",
+        this.controller.bind(this)
+      )
+    }
     // Initalizer
     this.build()
 
@@ -41,6 +49,10 @@ export default class extends DraggingEvent {
         zIndex: zIndex
       })
     }
+  }
+
+  controller(e) {
+    console.log(e.target)
   }
 
   updateCardWidth() {
