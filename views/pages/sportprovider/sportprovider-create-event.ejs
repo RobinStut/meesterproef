@@ -6,7 +6,7 @@
 
 <main>
 	<section id="st-create-event" class="display-flex-v st-section-radius">
-		<h3>Creeër een Event</h3>
+		<h3>Creeër een event</h3>
 
 		<form action="/create-event" class="display-flex-v" method="POST">
 			<label for="event-name" class="label-required">Titel</label>
@@ -60,6 +60,7 @@
 				Tot welke categorie behoord je sport?
 			</p>
 			<select id="event-category" name="event-category" required>
+				<option value="test">twst</option>
 				<% data.forEach(category => { %>
 				<option value="<%= category.category %>"
 					><%= category.category %></option
