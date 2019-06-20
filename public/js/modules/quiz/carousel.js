@@ -52,7 +52,47 @@ export default class extends DraggingEvent {
   }
 
   controller(e) {
-    console.log(e.target)
+    const temp = { ...this.xScale }
+
+    if (e.keyCode === 39) {
+      // Left arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) - 1 < -this.centerIndex
+            ? this.centerIndex
+            : parseInt(x) - 1
+
+        temp[newX] = this.xScale[x]
+      }
+    }
+
+    if (e.keyCode == 37) {
+      // Right arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) + 1 > this.centerIndex
+            ? -this.centerIndex
+            : parseInt(x) + 1
+
+        temp[newX] = this.xScale[x]
+      }
+    }
+
+    this.xScale = temp
+
+    for (let x in temp) {
+      const sizeScale = this.calcScaleSize(x),
+        positionScale = this.calcScalePosition(x),
+        leftPos = this.calcPosition(x, positionScale),
+        zIndex = -Math.abs(x)
+
+      this.updateCards(temp[x], {
+        x: x,
+        left: leftPos,
+        scale: sizeScale,
+        zIndex: zIndex
+      })
+    }
   }
 
   updateCardWidth() {
