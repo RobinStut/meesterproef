@@ -5,15 +5,17 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <section class="card-carousel">
-	<% for (let index = 0; index < quizResult.length; index++) { %>
+  <% for (let index = 0; index < quizResult.length; index++) { %>
 
-	<div class="card">
-		<h2><%= quizResult[index].sport.sport %></h2>
-		<p><%= quizResult[index].sport.description %></p>
-		<a href="/events">Bekijk direct de events</a>
-	</div>
+  <div class="card">
+    <h2><%= quizResult[index].sport.sport %></h2>
+    <p><%= quizResult[index].sport.description %></p>
+    <a href="/events">Bekijk direct de events</a>
+  </div>
 
-	<%}%>
+  <%}%>
+
+  <a href="#" class="card-controller">Carousel</a>
 </section>
 
 <% include ../../partials/footer %>
