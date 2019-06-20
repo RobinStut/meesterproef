@@ -1,7 +1,6 @@
 #st-login {
-    height: 50vh;
+	height: 50vh;
 }
-
-#st-login a:last-of-type {
-    margin: 1em 0 auto 0;
+#st-login a {
+	margin: auto;
 }
