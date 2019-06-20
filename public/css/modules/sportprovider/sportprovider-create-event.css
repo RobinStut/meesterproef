@@ -2,14 +2,12 @@
 	text-align: left;
 }
 
-#st-create-event form {
-	text-align: left;
+#st-create-event form label:first-of-type {
+	margin-top: 0;
 }
 
-#st-create-event form input,
-#st-create-event form textarea,
-#st-create-event form select {
-	border: 1px solid var(--black);
+#st-create-event form label + p {
+	margin-bottom: 1em;
 }
 
 #st-created-event {
