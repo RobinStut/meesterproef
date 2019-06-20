@@ -8,6 +8,7 @@ const quizPostRequest = require("./quiz/quiz-postrequest.js")
 const fetchData = require("./helper/helper-fetch.js")
 const sportlistEvents = require("./sportlist/sportslist-events.js")
 const getClubs = require("./sportlist/sportlist-clubs.js")
+const quizCalc = require("./quiz/quiz-calculation.js")
 
 module.exports = (app, eventsData) => {
   app.get("/", (req, res) => {

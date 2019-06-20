@@ -1,5 +1,6 @@
 import header from "./modules/header/header.js"
 import Quiz from "./modules/quiz/quiz-setup.js"
+import QuizSplit from "./modules/quiz/quiz-splitup.js"
 import CustomSlider from "./modules/custom-slider.js"
 
 const customSliders = document.getElementsByClassName("custom-slider")
