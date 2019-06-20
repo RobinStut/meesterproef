@@ -17,6 +17,11 @@ export default class extends DraggingEvent {
       this.init()
     })
 
+    this.rangeInput.addEventListener("change", () => {
+      this.settings.value = Number(this.rangeInput.value)
+      this.init()
+    })
+
     this.init()
 
     super.leftOffset =
