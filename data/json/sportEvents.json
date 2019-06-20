@@ -1,1 +1,13 @@
-[{"general":{"sportProviderId":0.7617768509878062,"title":"test","description":"this is a test"},"sport":{"sportName":"Bodyworkout","category":"Material Arts"},"location":{"city":"haarlem","address":"joafije"},"time":{"timeStart":"13:41","timeEnd":"14:34"},"date":"1996-12-09"}]
+[
+  {
+    "general": {
+      "sportProviderId": 0.7617768509878062,
+      "title": "test",
+      "description": "this is a test"
+    },
+    "sport": { "sportName": "Bodyworkout", "category": "Material Arts" },
+    "location": { "city": "haarlem", "address": "joafije" },
+    "time": { "timeStart": "13:41", "timeEnd": "14:34" },
+    "date": "1996-12-09"
+  }
+]

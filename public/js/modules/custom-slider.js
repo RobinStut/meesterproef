@@ -12,6 +12,11 @@ export default class extends DraggingEvent {
     this.slider = this.createSlider()
     this.scale = this.createScale()
 
+    this.rangeInput.addEventListener("change", () => {
+      this.settings.value = Number(this.rangeInput.value)
+      this.init()
+    })
+    
     this.init()
 
     this.leftOffset =

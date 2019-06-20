@@ -6,7 +6,7 @@
 
 <main>
 	<section class="display-flex-v st-section-radius">
-		<!-- <h3>Find your sport activity</h3> -->
+		<a class="back-button" href="/sportslist">< Back to overview</a></Back>
 		<h3><%= sport %></h3>
 		<div>
 			<ul class="filter-bar">
@@ -23,7 +23,7 @@
 	</section>
 	<section id="st-homepage-places">
 		<% events.forEach(event => { %>
-		<article class="st-homepage-palace-article" id="sports-events">
+		<article class="st-article-general st-article-general-events" id="sports-events">
 			<img src="<%= event.general.imgLink %>" alt="" />
 			<div>
 				<a href="#" class="st-button st-button-solid-white"
@@ -39,6 +39,7 @@
 			</div>
 		</article>
 		<% }) %>
+		
 	</section>
 </main>
 

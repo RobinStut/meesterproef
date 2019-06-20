@@ -1,11 +1,13 @@
 import DraggingEvent from "../dragging-event.js"
 
 export default class extends DraggingEvent {
-  constructor(container) {
+  constructor(container, controller = undefined) {
     super(container)
 
     // Elements
     this.container = container
+    this.controllerElement = controller
+
     this.cards = container.querySelectorAll(".card")
 
     // Carousel data
@@ -17,6 +19,12 @@ export default class extends DraggingEvent {
     // Resizing
     window.addEventListener("resize", this.updateCardWidth.bind(this))
 
+    if (this.controllerElement) {
+      this.controllerElement.addEventListener(
+        "keydown",
+        this.controller.bind(this)
+      )
+    }
     // Initalizer
     this.build()
 
@@ -35,6 +43,50 @@ export default class extends DraggingEvent {
       this.xScale[x] = this.cards[i]
 
       this.updateCards(this.cards[i], {
+        x: x,
+        left: leftPos,
+        scale: sizeScale,
+        zIndex: zIndex
+      })
+    }
+  }
+
+  controller(e) {
+    const temp = { ...this.xScale }
+
+    if (e.keyCode === 39) {
+      // Left arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) - 1 < -this.centerIndex
+            ? this.centerIndex
+            : parseInt(x) - 1
+
+        temp[newX] = this.xScale[x]
+      }
+    }
+
+    if (e.keyCode == 37) {
+      // Right arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) + 1 > this.centerIndex
+            ? -this.centerIndex
+            : parseInt(x) + 1
+
+        temp[newX] = this.xScale[x]
+      }
+    }
+
+    this.xScale = temp
+
+    for (let x in temp) {
+      const sizeScale = this.calcScaleSize(x),
+        positionScale = this.calcScalePosition(x),
+        leftPos = this.calcPosition(x, positionScale),
+        zIndex = -Math.abs(x)
+
+      this.updateCards(temp[x], {
         x: x,
         left: leftPos,
         scale: sizeScale,
