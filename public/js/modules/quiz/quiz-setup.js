@@ -4,6 +4,9 @@ import isMobileDevice from "../helpers/isMobileDevice.js"
 const carousel = document.querySelector(".card-carousel")
 const dragInputs = document.getElementsByClassName("dragInput")
 const dragTagValues = document.getElementsByClassName("draggableTag")
+const carouselController = document.querySelector(
+  ".card-carousel + .carousel-controller"
+)
 
 export default (() => {
   if (!isMobileDevice() && document.getElementById("mainMotivation")) {
@@ -53,7 +56,7 @@ export default (() => {
   let currentDraggedElement
 
   if (carousel) {
-    new Carousel(carousel)
+    new Carousel(carousel, carouselController)
   }
 
   for (const dragInput of dragInputs) {
