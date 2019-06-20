@@ -12,18 +12,24 @@ export default class extends DraggingEvent {
     this.slider = this.createSlider()
     this.scale = this.createScale()
 
-    window.addEventListener("resize", () => {
-      this.scale = this.createScale()
-      this.init()
-    })
-
     this.init()
 
-    super.leftOffset =
+    this.leftOffset =
       this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
+
     super.target = this.slider.track
 
     super.getPosition(this.sliding.bind(this))
+
+    window.addEventListener("resize", () => {
+      this.leftOffset =
+        this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
+
+      this.settings = this.createSettings()
+      this.scale = this.createScale()
+
+      this.init()
+    })
   }
 
   init() {
@@ -31,6 +37,7 @@ export default class extends DraggingEvent {
       Math.abs(this.settings.min - this.settings.value) / this.settings.stepSize
     const position = this.scale[index]
 
+    console.log(position)
     this.slider.pin.style.left = `${position}px`
     this.slider.trail.style.width = `${position +
       this.slider.pin.offsetWidth / 2}px`
@@ -132,7 +139,9 @@ export default class extends DraggingEvent {
 
   sliding(data) {
     if (data !== null) {
-      const position = this.findPosition(data.clickedX || data.x)
+      const position = this.findPosition(
+        data.clickedX - this.leftOffset || data.x - this.leftOffset
+      )
       const value = this.findValue(position)
 
       this.slider.pin.style.left = `${position}px`
