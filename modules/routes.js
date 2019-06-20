@@ -14,7 +14,7 @@ module.exports = (app, eventsData) => {
 	app.get("/", (req, res) => {
 		res.render("pages/index.ejs", {
 			hero: "big-hero",
-			heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
+			heroText: ["Amsterdam", "Zuidoost", "Be a part of it!"]
 		})
 	})
 	app.get("/sportslist", async (req, res) => {
