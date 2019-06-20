@@ -1,11 +1,18 @@
-let allSports
+let allSportClubs = []
 ;(async function() {
-  const getAllSports = require("./sportlist/sportlist-az-list.js")
-  allSports = await getAllSports()
+  const fetchAllSportClubs = require("./sportlist/sportlist-fetch-all.js")
+  allSportClubs = await fetchAllSportClubs(allSportClubs)
 })()
 
-const quizPostRequest = require("./quiz/quiz-postrequest.js")
+let allEvents = []
+;(async function() {
+  const fetchAllEvents = require("./sportlist/sportlist-fetch-all-events.js")
+  allEvents = await fetchAllEvents(allEvents)
+})()
+
+// const quizPostRequest = require("./quiz/quiz-postrequest.js")
 const fetchData = require("./helper/helper-fetch.js")
+const getAllSports = require("./sportlist/sportlist-az-list.js")
 const sportlistEvents = require("./sportlist/sportslist-events.js")
 const getClubs = require("./sportlist/sportlist-clubs.js")
 
@@ -17,6 +24,8 @@ module.exports = (app, eventsData) => {
     })
   })
   app.get("/sportslist", async (req, res) => {
+    const allSports = await getAllSports(allSportClubs)
+
     res.render("pages/sportlist/sportlist-az-list.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
@@ -32,7 +41,7 @@ module.exports = (app, eventsData) => {
   })
   app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
-    const clubs = await getClubs(id)
+    const clubs = await getClubs(allSportClubs, id)
     res.render("pages/sportlist/sportlist-clubs.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
@@ -42,7 +51,7 @@ module.exports = (app, eventsData) => {
   })
   app.get("/sportslist/events/:id", async (req, res) => {
     const id = req.params.id
-    const events = await sportlistEvents(id)
+    const events = await sportlistEvents(allEvents, id)
     res.render("pages/sportlist/sportlist-events.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],

@@ -48,17 +48,10 @@ const eventsFormat = [
     date: ["27 oktober 2019"]
   }
 ]
-console.log(eventsFormat)
 
-module.exports = id => {
+module.exports = (allEvents, id) => {
   return new Promise(async (resolve, reject) => {
-    //console.log("sport:", id)
-
-    // const response = await fetch(''),
-    // const data = await response.json()
-
     const filter = eventsFormat.filter(event => event.sport.category === id)
-
     resolve(filter)
   })
 }
