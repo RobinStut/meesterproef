@@ -91,7 +91,7 @@ module.exports = (app, eventsData) => {
 	})
 	app.get("/create-event", async (req, res) => {
 		const data = await fetchData(
-			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
 		)
 
 		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
