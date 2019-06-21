@@ -19,6 +19,5 @@ module.exports = data => {
       }
     }, [])
     resolve(sortedSports)
-    reject(error)
   })
 }

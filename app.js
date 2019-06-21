@@ -11,6 +11,7 @@ const PORT = 3000
 
 let conceptEvents = []
 let eventsData = []
+let sportproviderData = []
 
 app
   .set("view engine", "ejs")
@@ -18,15 +19,19 @@ app
 
   .use(express.static("public"))
   .use(bodyParser.json())
-  .use(bodyParser.urlencoded({
-    extended: true
-  }))
-  .use(session({
-    secret: "classified"
-  }))
+  .use(
+    bodyParser.urlencoded({
+      extended: true
+    })
+  )
+  .use(
+    session({
+      secret: "classified"
+    })
+  )
 
 require("./modules/sportlist/sportlist-az-list.js")(request)
-require("./modules/routes.js")(app, eventsData)
+require("./modules/routes.js")(app, eventsData, sportproviderData)
 require("./modules/quiz/quiz-postrequest.js")(app)
 require("./modules/sportprovider/sportprovider-create-event.js")(
   app,
@@ -38,6 +43,7 @@ require("./modules/sportprovider/sportprovider-publish-event.js")(
   conceptEvents,
   eventsData
 )
+
 // require("./modules/quiz.js")(app)
 
 app.listen(PORT, () => console.log(`Listening to port: ${PORT}`))

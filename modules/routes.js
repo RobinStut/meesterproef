@@ -1,14 +1,7 @@
-let allSportClubs = []
-;(async function() {
-  const fetchAllSportClubs = require("./sportlist/sportlist-fetch-all.js")
-  allSportClubs = await fetchAllSportClubs(allSportClubs)
-})()
+const sportproviderUrl =
+  "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportaanbieders.json"
 
-let allEvents = []
-;(async function() {
-  const fetchAllEvents = require("./sportlist/sportlist-fetch-all-events.js")
-  allEvents = await fetchAllEvents(allEvents)
-})()
+const eventsUrl = ""
 
 // const quizPostRequest = require("./quiz/quiz-postrequest.js")
 const fetchData = require("./helper/helper-fetch.js")
@@ -16,7 +9,7 @@ const getAllSports = require("./sportlist/sportlist-az-list.js")
 const sportlistEvents = require("./sportlist/sportslist-events.js")
 const getClubs = require("./sportlist/sportlist-clubs.js")
 
-module.exports = (app, eventsData) => {
+module.exports = (app, eventsData, sportproviderData) => {
   app.get("/", (req, res) => {
     res.render("pages/index.ejs", {
       hero: "big-hero",
@@ -24,6 +17,8 @@ module.exports = (app, eventsData) => {
     })
   })
   app.get("/sportslist", async (req, res) => {
+    const allSportClubs = await fetchData(sportproviderUrl, sportproviderData)
+    sportproviderData = allSportClubs
     const allSports = await getAllSports(allSportClubs)
 
     res.render("pages/sportlist/sportlist-az-list.ejs", {
@@ -41,7 +36,7 @@ module.exports = (app, eventsData) => {
   })
   app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
-    const clubs = await getClubs(allSportClubs, id)
+    const clubs = await getClubs(sportproviderData, id)
     res.render("pages/sportlist/sportlist-clubs.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
@@ -51,6 +46,7 @@ module.exports = (app, eventsData) => {
   })
   app.get("/sportslist/events/:id", async (req, res) => {
     const id = req.params.id
+    const allEvents = ""
     const events = await sportlistEvents(allEvents, id)
     res.render("pages/sportlist/sportlist-events.ejs", {
       hero: "small-hero",
@@ -74,7 +70,10 @@ module.exports = (app, eventsData) => {
   })
   app.post("/quiz", async function(req, res) {
     const sportQuizData = await fetchData(
-      "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
+      "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json",
+      app,
+      eventsData,
+      sportproviderData
     )
     const quizResult = quizCalc(req, sportQuizData)
     // console.log(test)
