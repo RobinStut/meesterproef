@@ -8,7 +8,12 @@
 	<section id="st-create-event" class="display-flex-v st-section-radius">
 		<h3>Creeër een activiteit</h3>
 
-		<form action="/create-event" class="display-flex-v" method="POST">
+		<form
+			action="/create-event"
+			class="display-flex-v"
+			enctype="multipart/form-data"
+			method="POST"
+		>
 			<label for="event-name" class="label-required">Titel</label>
 			<input
 				id="event-name"
@@ -42,7 +47,7 @@
 			<p>
 				Wat voor soort activiteit is het?
 			</p>
-			<select id="event=sport" name="event-sport" required>
+			<select id="event-type" name="event-sport" required>
 				<option value="training">Training</option>
 				<option value="opendag">Opendag</option>
 				<option value="sportdag">Sportdag</option>
