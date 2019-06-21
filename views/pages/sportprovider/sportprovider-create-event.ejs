@@ -6,13 +6,10 @@
 
 <main>
 	<section id="st-create-event" class="display-flex-v st-section-radius">
-		<h3>Creeër een event</h3>
+		<h3>Creeër een activiteit</h3>
 
 		<form action="/create-event" class="display-flex-v" method="POST">
 			<label for="event-name" class="label-required">Titel</label>
-			<p>
-				Wat is de naam van je evenement?
-			</p>
 			<input
 				id="event-name"
 				type="text"
@@ -22,9 +19,6 @@
 			/>
 
 			<label for="event-description" class="label-required">Omschrijving</label>
-			<p>
-				Beschrijf kort wat voor evenement het is.
-			</p>
 			<textarea
 				id="event-description"
 				name="event-description"
@@ -33,21 +27,30 @@
 				required
 			></textarea>
 
-			<label for="event-image" class="label-required">Afbeelding</label>
+			<label for="event-image">Afbeelding</label>
 			<p>
-				Het sfeer beeld wat bij je evenement staat.
+				Upload een article voor bij je activiteit.
 			</p>
 			<input
 				id="event-image"
 				type="file"
 				accept="image/png, image/jpeg"
 				name="event-image"
-				required
 			/>
+
+			<label for="event-type" class="label-required">Type Activiteit</label>
+			<p>
+				Wat voor soort activiteit is het?
+			</p>
+			<select id="event=sport" name="event-sport" required>
+				<option value="training">Training</option>
+				<option value="opendag">Opendag</option>
+				<option value="sportdag">Sportdag</option>
+			</select>
 
 			<label for="event-sport" class="label-required">Sport</label>
 			<p>
-				Om welke sport draait het evenement?
+				Om welke sport draait de activiteit?
 			</p>
 			<select id="event=sport" name="event-sport" required>
 				<% data.forEach(sport => { %>
@@ -60,7 +63,6 @@
 				Tot welke categorie behoord je sport?
 			</p>
 			<select id="event-category" name="event-category" required>
-				<option value="test">twst</option>
 				<% data.forEach(category => { %>
 				<option value="<%= category.category %>"
 					><%= category.category %></option
@@ -68,21 +70,18 @@
 				<% }) %>
 			</select>
 
-			<label for="event-city" class="label-required">Stad</label>
-			<p>
-				De stad waar het evenement plaats vind.
-			</p>
+			<label for="event-city" class="label-required">Stadsdeel</label>
 			<input
 				id="event-city"
 				type="text"
 				name="event-city"
-				placeholder="Bijv. Amsterdam"
+				placeholder="Bijv. Amsterdam Zuidoost"
 				required
 			/>
 
-			<label for="event-location-name">Locatie Naam</label>
+			<label for="event-location-name">Locatie</label>
 			<p>
-				De naam van de locatie waar het evenement zich plaatsvind.
+				De naam van de locatie waar de activiteit zich plaatsvind.
 			</p>
 			<input
 				id="event-location-name"
@@ -92,10 +91,6 @@
 			/>
 
 			<label for="event-address" class="label-required">Address</label>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.
-			</p>
 			<input
 				id="event-address"
 				type="text"
@@ -106,21 +101,42 @@
 
 			<label for="event-date" class="label-required">Datum</label>
 			<p>
-				Op welke dag vind het evenement plaats?
+				Op welke dag vind de activiteit plaats?
 			</p>
 			<input id="event-date" type="date" name="event-date" required />
 
 			<label for="event-from-time" class="label-required">Van</label>
 			<p>
-				Het evenement begint om:
+				De activiteit begint om:
 			</p>
 			<input id="event-from-time" type="time" name="event-from-time" required />
 
 			<label for="event-till-time" class="label-required">Tot</label>
 			<p>
-				Het evenement eindigt om:
+				De activiteit eindigt om:
 			</p>
 			<input id="event-till-time" type="time" name="event-till-time" required />
+
+			<fieldset>
+				<legend class="label-required">
+					Is je activiteit eenmalig, wekelijks, maandelijks?
+				</legend>
+
+				<input id="one-off" type="radio" name="event-recurring" required />
+				<label for="one-off">Eenmalig</label>
+				<br />
+
+				<input id="weekly" type="radio" name="event-recurring" required />
+				<label for="weekly">Wekelijks</label>
+				<br />
+
+				<input id="monthly" type="radio" name="event-recurring" required />
+				<label for="monthly">Maandelijks</label>
+				<br />
+
+				<input id="annually" type="radio" name="event-recurring" required />
+				<label for="annually">Jaarlijks</label>
+			</fieldset>
 
 			<button type="submit" class="st-button st-button-border">Submit</button>
 		</form>
