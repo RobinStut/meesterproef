@@ -1,11 +1,11 @@
-module.exports = (app, conceptEvents) => {
-	app.post("/create-event", (req, res) => {
+module.exports = (app, upload, conceptEvents) => {
+	app.post("/create-event", upload.single("event-image"), (req, res) => {
 		let event = {
 			general: {
-				eventId: Math.random(),
+				id: Math.random(),
 				title: req.body["event-name"],
 				description: req.body["event-description"],
-				image: req.body["event-image"],
+				image: req.file ? req.file.filename : null,
 				type: req.body["event-type"],
 				recurring: req.body["event-recurring"]
 			},
