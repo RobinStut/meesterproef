@@ -14,7 +14,8 @@ p,
 a,
 li,
 label,
-textarea {
+textarea,
+legend {
 	font-family: "Roboto", sans-serif;
 }
 
@@ -83,6 +84,19 @@ input[type="text"] {
 
 textarea {
 	height: 5em;
+}
+
+fieldset {
+	border: none;
+	margin: 1em 0 0.5em;
+}
+
+fieldset label {
+	font-size: var(--font-size-15px);
+}
+
+fieldset legend {
+	margin: 0 0 0.5em 0;
 }
 
 button {

@@ -69,7 +69,7 @@ module.exports = (app, eventsData) => {
 			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
 		)
 		const quizResult = quizCalc(req, sportQuizData)
-		// console.log(test)
+
 		res.render("pages/quiz/quiz-result.ejs", {
 			quizResult: quizResult,
 			sportQuizData: sportQuizData,
@@ -91,7 +91,7 @@ module.exports = (app, eventsData) => {
 	})
 	app.get("/create-event", async (req, res) => {
 		const data = await fetchData(
-			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
 		)
 
 		res.render("pages/sportprovider/sportprovider-create-event.ejs", {

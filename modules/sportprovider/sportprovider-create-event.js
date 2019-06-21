@@ -1,11 +1,13 @@
-module.exports = (app, conceptEvents) => {
-	app.post("/create-event", (req, res) => {
+module.exports = (app, upload, conceptEvents) => {
+	app.post("/create-event", upload.single("event-image"), (req, res) => {
 		let event = {
 			general: {
-				sportProviderId: Math.random(),
+				id: Math.random(),
 				title: req.body["event-name"],
 				description: req.body["event-description"],
-				image: req.body["event-image"]
+				image: req.file ? req.file.filename : null,
+				type: req.body["event-type"],
+				recurring: req.body["event-recurring"]
 			},
 			sport: {
 				name: req.body["event-sport"],
@@ -17,10 +19,10 @@ module.exports = (app, conceptEvents) => {
 				address: req.body["event-address"]
 			},
 			time: {
-				timeStart: req.body["event-from-time"],
-				timeEnd: req.body["event-till-time"]
-			},
-			date: req.body["event-date"]
+				date: req.body["event-date"],
+				start: req.body["event-from-time"],
+				end: req.body["event-till-time"]
+			}
 		}
 
 		conceptEvents.push(event)
