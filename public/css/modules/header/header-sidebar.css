@@ -1,39 +1,41 @@
-aside {
-	position: fixed;
-	padding: 4em 1em 1em 1em;
-	height: 100%;
-	width: 100vw;
-	top: 0;
-	left: -1000px;
-	background-color: var(--white);
-	transition: 0.5s ease-in-out;
-	z-index: 2;
+/* This CSS file messes with other, use classes */
+
+/* aside {
+  position: fixed;
+  padding: 4em 1em 1em 1em;
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: -1000px;
+  background-color: var(--white);
+  transition: 0.5s ease-in-out;
+  z-index: 2;
 }
 
 aside ul {
-	line-height: 2.5em;
+  line-height: 2.5em;
 }
 
 aside ul li a {
-	color: var(--text-color);
-	font-size: var(--font-size-18px);
-	font-weight: 400;
-	text-transform: uppercase;
-	text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size-18px);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 aside div {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin: auto 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto 0 0 0;
 }
 
 aside div ul {
-	margin: auto 0 0 0;
-	line-height: 2em;
+  margin: auto 0 0 0;
+  line-height: 2em;
 }
 
 aside div a {
-	margin-top: auto;
-	text-align: right;
-}
+  margin-top: auto;
+  text-align: right;
+} */
