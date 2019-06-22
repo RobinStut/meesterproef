@@ -18,10 +18,6 @@
   }
 }
 
-.card-carousel.smooth-return {
-  transition: all 0.2s ease;
-}
-
 .card-carousel .card {
   background: lightgrey;
   width: var(--card-width);
