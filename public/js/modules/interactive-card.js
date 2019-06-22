@@ -18,8 +18,13 @@ export default class extends DraggingEvent {
       this.card.style.height = "0px"
       this.card.style.margin = "0px"
       this.card.style.padding = "0px"
+      this.card.style.border = "none"
       this.card.style.transform = `translateX(${window.innerWidth}px)`
     }, 0)
+
+    setTimeout(() => {
+      this.card.remove()
+    }, 1000)
   }
 
   slideCard(data) {
