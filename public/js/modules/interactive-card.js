@@ -11,7 +11,7 @@ export default class extends DraggingEvent {
     super.getDistance(this.slideCard.bind(this))
   }
 
-  removeCard() {
+  removeCard(toRight) {
     this.card.style.height = `${this.card.offsetHeight}px`
 
     setTimeout(() => {
@@ -19,7 +19,12 @@ export default class extends DraggingEvent {
       this.card.style.margin = "0px"
       this.card.style.padding = "0px"
       this.card.style.border = "none"
-      this.card.style.transform = `translateX(${window.innerWidth}px)`
+
+      if (toRight) {
+        this.card.style.transform = `translateX(${window.innerWidth}px)`
+      } else {
+        this.card.style.transform = `translateX(-${window.innerWidth}px)`
+      }
     }, 0)
 
     setTimeout(() => {
@@ -33,9 +38,10 @@ export default class extends DraggingEvent {
       this.card.classList.remove("smooth-return")
       this.card.style.transform = `translateX(${data.x}px)`
     } else {
-      if (Math.abs(this.memory.x > 150)) {
+      // Once you drag the card over the 75% of its own distance it will be removed
+      if (Math.abs(this.memory.x) > this.card.offsetWidth * 0.75) {
         this.card.classList.add("smooth-return")
-        this.removeCard()
+        this.removeCard(this.memory.x > 0)
       } else {
         this.card.classList.add("smooth-return")
         this.card.style.transform = `translateX(0)`
