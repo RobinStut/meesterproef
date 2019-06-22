@@ -1,0 +1,46 @@
+.floating-action {
+  background: var(--primary-color);
+  border-radius: 100px;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  padding: 1em;
+  z-index: 2;
+}
+
+.pop-up {
+  --duration: 0.3s;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  opacity: 0;
+  transition: bottom 0s ease calc(2 * var(--duration)),
+    opacity var(--duration) ease calc(var(--duration) / 2);
+  padding: 2em;
+  overflow: scroll;
+}
+
+#pop-up-toggle:checked ~ .pop-up {
+  transition: bottom 0s ease, opacity var(--duration) ease;
+  bottom: 0;
+  opacity: 1;
+}
+
+.pop-up-content {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 1em;
+  transform: translateY(-100%) scale(0.5);
+  opacity: 0;
+  transition: transform var(--duration) ease, opacity var(--duration) ease;
+}
+
+#pop-up-toggle:checked ~ .pop-up .pop-up-content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
