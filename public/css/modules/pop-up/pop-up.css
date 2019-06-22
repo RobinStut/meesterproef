@@ -37,12 +37,8 @@
 }
 
 .pop-up-content {
-  max-width: 500px;
-  margin: 0 auto;
-  background: white;
-  padding: 1em;
-  transform: translateY(-100%) scale(0.5);
   opacity: 0;
+  transform: translateY(-100%) scale(0.5);
   transition: transform var(--duration) ease, opacity var(--duration) ease;
 }
 
