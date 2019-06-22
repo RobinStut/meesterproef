@@ -31,5 +31,8 @@
 /* ---------- EVENTS ---------- */
 @import "modules/events/events.css";
 
+/* ---------- POP-UP --------- */
+@import "modules/pop-up/pop-up.css";
+
 /* ---------- FOOTER --------- */
 @import "modules/footer/footer.css";
