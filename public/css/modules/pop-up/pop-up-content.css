@@ -1,0 +1,16 @@
+.pop-up-content article {
+  padding: 1em;
+  background: white;
+}
+
+.pop-up-content article:not(:last-child) {
+  border-bottom: solid 3px whitesmoke;
+  margin-bottom: 1em;
+}
+
+.pop-up-content {
+  max-width: 500px;
+  margin: 0 auto;
+
+  padding: 1em;
+}
