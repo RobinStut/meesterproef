@@ -79,8 +79,6 @@ export default class extends DraggingEvent {
     trackEl.appendChild(pinEl)
     containerEl.appendChild(trackEl)
 
-    trackEl.style.setProperty("touch-action", "none")
-
     this.rangeInput.classList.add("visuallyhidden")
 
     this.rangeInput.parentNode.insertBefore(
