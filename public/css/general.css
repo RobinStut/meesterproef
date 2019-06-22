@@ -234,7 +234,7 @@ main section {
 }
 
 .st-show {
-  left: 0;
+  left: 0 !important;
 }
 
 .st-overflow-hidden {

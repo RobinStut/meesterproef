@@ -5,7 +5,7 @@
   bottom: 1em;
   right: 1em;
   padding: 1em;
-  z-index: 2;
+  z-index: 1;
   filter: blur(0px) !important;
 }
 
@@ -17,7 +17,7 @@
   position: fixed;
   bottom: 100%;
   left: 0;
-  z-index: 1;
+
   opacity: 0;
   transition: bottom 0s ease calc(2 * var(--duration)),
     opacity var(--duration) ease calc(var(--duration) / 2);
@@ -34,8 +34,12 @@
   transition: bottom 0s ease, opacity var(--duration) ease;
   bottom: 0;
   opacity: 1;
+  z-index: 100;
 }
 
+#pop-up-toggle:checked ~ .floating-action {
+  z-index: 101;
+}
 .pop-up-content {
   opacity: 0;
   transform: translateY(-100%) scale(0.5);

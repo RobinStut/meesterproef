@@ -100,8 +100,4 @@ module.exports = (app, eventsData) => {
       data: data
     })
   })
-
-  app.get("/pop-up", (req, res) => {
-    res.render("pages/pop-up-test.ejs")
-  })
 }
