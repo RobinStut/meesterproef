@@ -1,39 +1,49 @@
 import DraggingEvent from "../dragging-event.js"
+import checkBrowser from "../helpers/checkBrowser.js"
 
 export default class extends DraggingEvent {
   constructor(container, controller = undefined) {
-    super(container)
+    if (checkBrowser() !== "safari") {
+      super(container)
 
-    // Elements
-    this.container = container
-    this.controllerElement = controller
+      // Elements
+      this.container = container
+      this.controllerElement = controller
 
-    this.cards = container.querySelectorAll(".card")
+      this.cards = container.querySelectorAll(".card")
 
-    // Carousel data
-    this.centerIndex = (this.cards.length - 1) / 2
-    this.cardWidth =
-      (this.cards[0].offsetWidth / this.container.offsetWidth) * 100
-    this.xScale = {}
+      // Carousel data
+      this.centerIndex = (this.cards.length - 1) / 2
+      this.cardWidth =
+        (this.cards[0].offsetWidth / this.container.offsetWidth) * 100
+      this.xScale = {}
 
-    // Resizing
-    window.addEventListener("resize", this.updateCardWidth.bind(this))
+      // Resizing
+      window.addEventListener("resize", this.updateCardWidth.bind(this))
 
-    if (this.controllerElement) {
-      this.controllerElement.addEventListener(
-        "keydown",
-        this.controller.bind(this)
-      )
+      if (this.controllerElement) {
+        this.controllerElement.addEventListener(
+          "keydown",
+          this.controller.bind(this)
+        )
+      }
+      // Initalizer
+      this.build()
+
+      // Bind dragging event
+      super.getDistance(this.moveCards.bind(this))
+    } else {
+      container.style.display = "flex"
+      container.style.overflow = "scroll"
     }
-    // Initalizer
-    this.build()
-
-    // Bind dragging event
-    super.getDistance(this.moveCards.bind(this))
   }
 
   build() {
+    this.container.style.overflow = "hidden"
+
     for (let i = 0; i < this.cards.length; i++) {
+      this.cards[i].style.position = "absolute"
+
       const x = i - this.centerIndex,
         sizeScale = this.calcScaleSize(x),
         positionScale = this.calcScalePosition(x),
