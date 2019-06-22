@@ -1,40 +1,45 @@
 import DraggingEvent from "./dragging-event.js"
+import checkBrowser from "./helpers/checkBrowser.js"
+
+console.log(checkBrowser())
 
 export default class extends DraggingEvent {
   constructor(rangeInput, callback) {
-    super()
+    if (checkBrowser() !== "safari") {
+      super()
 
-    this._output = callback || undefined
+      this._output = callback || undefined
 
-    this.rangeInput = rangeInput
+      this.rangeInput = rangeInput
 
-    this.settings = this.createSettings()
-    this.slider = this.createSlider()
-    this.scale = this.createScale()
+      this.settings = this.createSettings()
+      this.slider = this.createSlider()
+      this.scale = this.createScale()
 
-    this.rangeInput.addEventListener("change", () => {
-      this.settings.value = Number(this.rangeInput.value)
+      this.rangeInput.addEventListener("change", () => {
+        this.settings.value = Number(this.rangeInput.value)
+        this.init()
+      })
+
       this.init()
-    })
 
-    this.init()
-
-    this.leftOffset =
-      this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
-
-    super.target = this.slider.track
-
-    super.getPosition(this.sliding.bind(this))
-
-    window.addEventListener("resize", () => {
       this.leftOffset =
         this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
 
-      this.settings = this.createSettings()
-      this.scale = this.createScale()
+      super.target = this.slider.track
 
-      this.init()
-    })
+      super.getPosition(this.sliding.bind(this))
+
+      window.addEventListener("resize", () => {
+        this.leftOffset =
+          this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
+
+        this.settings = this.createSettings()
+        this.scale = this.createScale()
+
+        this.init()
+      })
+    }
   }
 
   init() {
