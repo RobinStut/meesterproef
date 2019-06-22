@@ -16,7 +16,7 @@ export default class extends DraggingEvent {
       this.settings.value = Number(this.rangeInput.value)
       this.init()
     })
-    
+
     this.init()
 
     this.leftOffset =
@@ -78,6 +78,8 @@ export default class extends DraggingEvent {
     trackEl.appendChild(trailEl)
     trackEl.appendChild(pinEl)
     containerEl.appendChild(trackEl)
+
+    trackEl.style.setProperty("touch-action", "none")
 
     this.rangeInput.classList.add("visuallyhidden")
 
