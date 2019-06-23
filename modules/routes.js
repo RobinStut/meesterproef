@@ -11,7 +11,7 @@ const getClubs = require("./sportlist/sportlist-clubs.js")
 const quizCalc = require("./quiz/quiz-calculation.js")
 
 module.exports = (app, eventsData) => {
-	app.get("/", (req, res) => {
+	app.get("/", async (req, res) => {
 		res.render("pages/index.ejs", {
 			hero: "big-hero",
 			heroText: ["Amsterdam", "Zuidoost", "Be a part of it!"]
@@ -51,11 +51,19 @@ module.exports = (app, eventsData) => {
 			events: events
 		})
 	})
-	app.get("/events", (req, res) => {
+	app.get("/events", async (req, res) => {
+		const sportEvents = await fetchData(
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportEvents.json"
+		)
+		const sportDescription = await fetchData(
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
+		)
+
 		res.render("pages/events/events-overview.ejs", {
 			hero: "small-hero",
 			heroText: ["Events"],
-			data: eventsData
+			sportEvents: sportEvents,
+			sportDescription: sportDescription
 		})
 	})
 	app.get("/quiz", (req, res) => {
