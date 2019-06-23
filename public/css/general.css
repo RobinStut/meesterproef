@@ -10,12 +10,6 @@ h1 {
 	display: none;
 }
 
-h2 {
-	font-size: var(--font-size-25px);
-	font-weight: 400;
-	text-transform: uppercase;
-}
-
 p {
 	color: var(--text-color);
 	font-size: var(--font-size-15px);
