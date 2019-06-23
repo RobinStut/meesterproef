@@ -100,6 +100,10 @@ fieldset legend {
 	padding-right: 0;
 }
 
+.section--minHeight {
+	min-height: 50vh;
+}
+
 .section__h3--heading {
 	margin-bottom: 1.5em;
 	color: var(--text-color);
