@@ -21,9 +21,6 @@
 /* ---------- SPORTS ACTIVITIES A-Z ---------- */
 @import "modules/sportslist/sportslist.css";
 
-/* ---------- SPORTPROVIDER ---------- */
-@import "modules/sportprovider/sportprovider-create-event.css";
-
 /* ---------- POP-UP --------- */
 @import "modules/pop-up/pop-up.css";
 @import "modules/pop-up/pop-up-content.css";

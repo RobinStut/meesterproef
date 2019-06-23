@@ -8,7 +8,7 @@
 
 <main>
 
-    <section class="display--flex-v section section--radius section--minHeight">
+    <section class="display--flex-v section section--radius section--padding-0 section--minHeight">
         <h3 class="section__h3--heading">Events</h3>
 
         <% data.forEach(event => { %>
@@ -19,9 +19,9 @@
 
                 <a href="#" class="button button--solid-yellow button--small article__button"><%= event.sport.name %></a>
 
-                <p><%= event.general.description %></p>
+                <p class="article__description"><%= event.general.description %></p>
 
-                <p>Van <span class="st-p-bold"><%= event.time.timeStart %></span> t/m <span class="st-p-bold"><%= event.time.timeEnd %></span></p>
+                <p class="article__time">Van <span class="st-p-bold"><%= event.time.timeStart %></span> t/m <span class="st-p-bold"><%= event.time.timeEnd %></span></p>
 
                 <ul class="article__list">
                     <li><%= event.location.name %></li>
