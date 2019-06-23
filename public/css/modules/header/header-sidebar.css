@@ -22,20 +22,8 @@
 	text-decoration: none;
 }
 
-.sidebar__collection--grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin: auto 0 0 0;
-}
-
-.sidebar__collection__list {
-	margin: auto 0 0 0;
-	line-height: 2em;
-}
-
 .sidebar__collection__link {
 	margin-top: auto;
-	text-align: right;
 }
 
 .sidebar--show {
