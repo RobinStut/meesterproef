@@ -28,7 +28,7 @@ module.exports = (app, upload, conceptEvents) => {
 		conceptEvents.push(event)
 
 		res.render("pages/sportprovider/sportprovider-edit-event.ejs", {
-			hero: "small-hero",
+			hero: "hero--small",
 			heroText: ["Create Event"],
 			event: event
 		})

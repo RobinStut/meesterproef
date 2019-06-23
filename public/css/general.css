@@ -31,27 +31,6 @@ li {
 	font-weight: 300;
 }
 
-label {
-	margin: 1em 0 0.5em 0;
-	font-size: var(--font-size-18px);
-}
-
-input[type="text"],
-textarea {
-	padding: 1em;
-	border: 1px solid var(--grey);
-	border-radius: 10px;
-	box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-input[type="text"] {
-	height: 3em;
-}
-
-textarea {
-	height: 5em;
-}
-
 fieldset {
 	border: none;
 	margin: 1em 0 0.5em;
@@ -113,6 +92,10 @@ fieldset legend {
 	text-align: center;
 }
 
+.section__p--center {
+	text-align: center;
+}
+
 .article {
 	margin: 1em 0;
 }
@@ -135,6 +118,15 @@ fieldset legend {
 	width: 100%;
 }
 
+.article__description {
+	padding-left: 1em;
+}
+
+.article__time {
+	margin: 1em 0;
+	padding-left: 1em;
+}
+
 .article__button {
 	display: initial !important;
 	position: relative;
@@ -144,6 +136,45 @@ fieldset legend {
 
 .article__list {
 	padding-left: 1em;
+}
+
+.form {
+	text-align: left;
+}
+
+.form__label {
+	margin: 1em 0 0.5em 0;
+	font-size: var(--font-size-18px);
+}
+
+.form__label:first-of-type {
+	margin-top: 0;
+}
+
+.form__label + p {
+	margin-bottom: 1em;
+}
+
+.form__label--required::before {
+	content: "*";
+	margin: 0 0.2em 0 0;
+	color: red;
+}
+
+.form__inputText,
+.form__textarea {
+	padding: 1em;
+	border: 1px solid var(--grey);
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.form__inputText {
+	height: 3em;
+}
+
+.form__textarea {
+	height: 5em;
 }
 
 .button {
@@ -180,12 +211,6 @@ fieldset legend {
 
 .button--small {
 	padding: 0.5em 2em;
-}
-
-.label-required::before {
-	content: "*";
-	margin: 0 0.2em 0 0;
-	color: red;
 }
 
 .smooth-return {

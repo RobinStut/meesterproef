@@ -22,8 +22,6 @@
 @import "modules/sportslist/sportslist.css";
 
 /* ---------- SPORTPROVIDER ---------- */
-@import "modules/sportprovider/sportprovider-login.css";
-@import "modules/sportprovider/sportprovider-dashboard.css";
 @import "modules/sportprovider/sportprovider-create-event.css";
 
 /* ---------- POP-UP --------- */
