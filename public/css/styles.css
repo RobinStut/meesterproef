@@ -30,6 +30,7 @@
 
 /* ---------- EVENTS ---------- */
 @import "modules/events/events.css";
+@import "modules/events/events-filter.css";
 
 /* ---------- FOOTER --------- */
 @import "modules/footer/footer.css";
