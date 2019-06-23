@@ -41,6 +41,8 @@ export default class extends DraggingEvent {
 
     this.cardsAmount--
 
+    this.memory = null
+
     if (this.onRemove) {
       this.onRemove(target, this.cardsAmount)
     }
