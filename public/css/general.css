@@ -128,6 +128,7 @@ fieldset legend {
 .article__p {
 	margin-bottom: 1em;
 	padding-left: 1em;
+	font-weight: 500;
 }
 
 .article__img {
@@ -179,18 +180,6 @@ fieldset legend {
 
 .button--small {
 	padding: 0.5em 2em;
-}
-
-.st-text-color {
-	color: var(--text-color);
-}
-
-.st-show {
-	left: 0 !important;
-}
-
-.st-overflow-hidden {
-	overflow: hidden;
 }
 
 .label-required::before {

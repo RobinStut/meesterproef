@@ -1,21 +1,29 @@
-header {
-  position: fixed;
-  padding: 0 0.938em;
-  width: 100vw;
-  height: 10vh;
-  z-index: 3;
+.header {
+	position: fixed;
+	padding: 0 0.938em;
+	width: 100vw;
+	height: 10vh;
+	z-index: 3;
 }
 
-header button {
-  margin: 0 0 0 auto;
+.header__hamburger {
+	margin: 0 0 0 auto;
 }
 
-header button svg {
-  width: 25px;
-  color: var(--white);
+.header__hamburger svg {
+	width: 25px;
+	color: var(--white);
 }
 
-.st-header-background-color {
-  background-color: rgba(255, 255, 255, 0.95);
-  transition: 0.2s ease-in-out;
+.header--background-solid {
+	background-color: rgba(255, 255, 255, 0.95);
+	transition: 0.2s ease-in-out;
+}
+
+.header__hamburger--blue {
+	color: var(--text-color) !important;
+}
+
+.body--overflow-hidden {
+	overflow: hidden;
 }
