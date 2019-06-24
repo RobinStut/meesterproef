@@ -41,12 +41,11 @@
 }
 
 .st-filter-form-show {
-	height: 200px;
+	height: fit-content;
 }
 
 .st-filter-form-show form {
-	display: block;
-	height: 100%;
+	display: flex;
 }
 
 .st-turn-180 {
