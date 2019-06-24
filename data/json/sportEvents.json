@@ -1,13 +1,1 @@
-[
-  {
-    "general": {
-      "sportProviderId": 0.7617768509878062,
-      "title": "test",
-      "description": "this is a test"
-    },
-    "sport": { "sportName": "Bodyworkout", "category": "Material Arts" },
-    "location": { "city": "haarlem", "address": "joafije" },
-    "time": { "timeStart": "13:41", "timeEnd": "14:34" },
-    "date": "1996-12-09"
-  }
-]
+[{"general":{"id":0.41195251843149827,"title":"Hockey Event","description":"Dit is een test","image":"event-image-1561365757741.png","recurring":"on"},"sport":{"name":["training","Hockey"],"category":"Sport games"},"location":{"name":"Bijlmer Sportpark","city":"Amsterdam Zuidoost","address":"Lalala straat 9"},"time":{"date":"2019-07-18","start":"14:00","end":"20:00"}}]
