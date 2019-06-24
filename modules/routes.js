@@ -13,12 +13,14 @@ const getClubs = require("./sportlist/sportlist-clubs.js")
 const quizCalc = require("./quiz/quiz-calculation.js")
 
 module.exports = async (app, eventsData) => {
-  const data = await fetch.file("data/json/sportEvents.json")
+  const json = await fetch.file("data/json/sportEvents.json")
+  const data = await JSON.parse(json)
 
   app.get("/", async (req, res) => {
     res.render("pages/index.ejs", {
       hero: "big-hero",
-      heroText: ["Amsterdam", "Zuidoost", "Be a part of it!"]
+      heroText: ["Amsterdam", "Zuidoost", "Be a part of it!"],
+      popUpData: data
     })
   })
   app.get("/sportslist", async (req, res) => {
