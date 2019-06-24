@@ -10,12 +10,10 @@ const customSliders = document.getElementsByClassName("custom-slider")
 const cardsContainer = document.querySelector(".interactive-cards")
 
 for (let i = 0; i < customSliders.length; i++) {
-	new CustomSlider(customSliders[i], (origin, value) => {
-		origin.slider.pin.textContent = value
-		// console.log(origin.slider.pin)
-
-		quizSliderTexts(value)
-	})
+  new CustomSlider(customSliders[i], (origin, value) => {
+    origin.slider.pin.textContent = value
+    quizSliderTexts(value, origin.id)
+  })
 }
 
 if (cardsContainer) {
