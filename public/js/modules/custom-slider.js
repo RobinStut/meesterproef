@@ -47,7 +47,6 @@ export default class extends DraggingEvent {
       Math.abs(this.settings.min - this.settings.value) / this.settings.stepSize
     const position = this.scale[index]
 
-    console.log(position)
     this.slider.pin.style.left = `${position}px`
     this.slider.trail.style.width = `${position +
       this.slider.pin.offsetWidth / 2}px`
