@@ -1,11 +1,12 @@
 const sportproviderUrl =
   "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportaanbieders.json"
+const eventsUrl =
+  "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportEvents.json"
 
-const eventsUrl = ""
 const sportDescriptionUrl =
   "https://raw.githubusercontent.com/RobinStut/meesterproef/feature/sportaanbiederScrape/data/json/sportDescription.json"
 
-// const quizPostRequest = require("./quiz/quiz-postrequest.js")
+const quizPostRequest = require("./quiz/quiz-postrequest.js")
 const fetchData = require("./helper/helper-fetch.js")
 const getAllSports = require("./sportlist/sportlist-az-list.js")
 const sportlistEvents = require("./sportlist/sportslist-events.js")
@@ -57,7 +58,8 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
   })
   app.get("/sportslist/events/:id", async (req, res) => {
     const id = req.params.id
-    const allEvents = ""
+    const allEvents = await fetchData(eventsUrl, eventsData)
+    eventsData = allEvents
     const events = await sportlistEvents(allEvents, id)
     const allDescriptions = await fetchData(
       sportDescriptionUrl,

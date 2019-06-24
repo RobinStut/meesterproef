@@ -8,8 +8,8 @@ module.exports = (urlToFetch, dataObject) => {
     } else {
       console.log("Er is nog geen data, dus data ophalen")
       const response = await fetch(urlToFetch)
-      let sportproviderData = await response.json()
-      resolve(sportproviderData)
+      let data = await response.json()
+      resolve(data)
     }
   })
 }
