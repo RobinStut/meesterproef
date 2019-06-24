@@ -54,7 +54,6 @@ export default class extends DraggingEvent {
       target.classList.remove("smooth-return")
       target.style.transform = `translateX(${data.x}px)`
     } else {
-      // Once you drag the card over the 75% of its own distance it will be removed
       if (Math.abs(this.memory.x) > target.offsetWidth * 0.75) {
         target.classList.add("smooth-return")
         this.removeCard(target, this.memory.x > 0)

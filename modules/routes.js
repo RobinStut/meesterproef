@@ -51,11 +51,19 @@ module.exports = (app, eventsData) => {
 			events: events
 		})
 	})
-	app.get("/events", (req, res) => {
+	app.get("/events", async (req, res) => {
+		const sportEvents = await fetchData(
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportEvents.json"
+		)
+		const sportDescription = await fetchData(
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
+		)
+
 		res.render("pages/events/events-overview.ejs", {
-			hero: "hero--small",
+			hero: "small-hero",
 			heroText: ["Events"],
-			data: eventsData
+			sportEvents: sportEvents,
+			sportDescription: sportDescription
 		})
 	})
 	app.get("/quiz", (req, res) => {

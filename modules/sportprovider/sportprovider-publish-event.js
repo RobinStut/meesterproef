@@ -28,9 +28,19 @@ module.exports = (app, fs, conceptEvents, eventsData) => {
 			if (!exists) {
 				eventsData.push(conceptEvents[0])
 
+				fs.writeFile(
+					"./data/json/sportEvents.json",
+					JSON.stringify(eventsData),
+					err => {
+						if (err) {
+							return console.log(err)
+						}
+					}
+				)
+
 				conceptEvents.length = 0
 
-				res.redirect("/")
+				res.redirect("/events")
 			} else {
 				console.log("Sorry, that event already exists.")
 

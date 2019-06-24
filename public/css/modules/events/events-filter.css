@@ -1,0 +1,53 @@
+.st-filter-form {
+	position: relative;
+	margin: 0 auto 2em auto;
+	padding: 0.5em 1em;
+	width: 90vw;
+	height: 2.5em;
+	border: 1px solid #e1e1e1;
+	border-radius: 0.313em;
+	transition: 0.2s ease-in-out;
+}
+
+.st-filter-form div {
+	width: 100%;
+}
+
+.st-filter-form div p {
+	margin: 0;
+	float: left;
+}
+
+.st-filter-form div button {
+	margin: 0 0 0 auto;
+	padding: 0;
+	width: 1.5em;
+	height: 1em;
+	background-color: #ffffff;
+	border: none;
+	outline: 0;
+	transition: 0.3s ease-in-out;
+}
+
+.st-filter-form button svg {
+	max-width: 1em;
+	width: auto;
+	height: auto;
+	transition: all 0.5s;
+}
+
+.st-filter-form form {
+	display: none;
+}
+
+.st-filter-form-show {
+	height: fit-content;
+}
+
+.st-filter-form-show form {
+	display: flex;
+}
+
+.st-turn-180 {
+	transform: rotate(180deg);
+}
