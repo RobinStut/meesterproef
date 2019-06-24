@@ -1,7 +1,7 @@
 let allSports
 ;(async function() {
-	const getAllSports = require("./sportlist/sportlist-az-list.js")
-	allSports = await getAllSports()
+  const getAllSports = require("./sportlist/sportlist-az-list.js")
+  allSports = await getAllSports()
 })()
 
 const quizPostRequest = require("./quiz/quiz-postrequest.js")
@@ -78,34 +78,34 @@ module.exports = (app, eventsData) => {
 		)
 		const quizResult = quizCalc(req, sportQuizData)
 
-		res.render("pages/quiz/quiz-result.ejs", {
-			quizResult: quizResult,
-			sportQuizData: sportQuizData,
-			hero: "small-hero",
-			heroText: ["Sports Configurator"]
-		})
-	})
-	app.get("/login", (req, res) => {
-		res.render("pages/sportprovider/sportprovider-login.ejs", {
-			hero: "small-hero",
-			heroText: [""]
-		})
-	})
-	app.get("/sportprovider", (req, res) => {
-		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
-			hero: "small-hero",
-			heroText: ["Dashboard"]
-		})
-	})
-	app.get("/create-event", async (req, res) => {
-		const data = await fetchData(
-			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
-		)
+    res.render("pages/quiz/quiz-result.ejs", {
+      quizResult: quizResult,
+      sportQuizData: sportQuizData,
+      hero: "small-hero",
+      heroText: ["Sports Configurator"]
+    })
+  })
+  app.get("/login", (req, res) => {
+    res.render("pages/sportprovider/sportprovider-login.ejs", {
+      hero: "small-hero",
+      heroText: [""]
+    })
+  })
+  app.get("/sportprovider", (req, res) => {
+    res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
+      hero: "small-hero",
+      heroText: ["Dashboard"]
+    })
+  })
+  app.get("/create-event", async (req, res) => {
+    const data = await fetchData(
+      "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
+    )
 
-		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
-			hero: "small-hero",
-			heroText: [""],
-			data: data
-		})
-	})
+    res.render("pages/sportprovider/sportprovider-create-event.ejs", {
+      hero: "small-hero",
+      heroText: [""],
+      data: data
+    })
+  })
 }

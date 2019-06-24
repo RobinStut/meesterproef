@@ -1,40 +1,45 @@
 import DraggingEvent from "./dragging-event.js"
+import checkBrowser from "./helpers/checkBrowser.js"
+
+console.log(checkBrowser())
 
 export default class extends DraggingEvent {
   constructor(rangeInput, callback) {
-    super()
+    if (checkBrowser() !== "safari") {
+      super()
 
-    this._output = callback || undefined
+      this._output = callback || undefined
 
-    this.rangeInput = rangeInput
+      this.rangeInput = rangeInput
 
-    this.settings = this.createSettings()
-    this.slider = this.createSlider()
-    this.scale = this.createScale()
-
-    this.rangeInput.addEventListener("change", () => {
-      this.settings.value = Number(this.rangeInput.value)
-      this.init()
-    })
-    
-    this.init()
-
-    this.leftOffset =
-      this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
-
-    super.target = this.slider.track
-
-    super.getPosition(this.sliding.bind(this))
-
-    window.addEventListener("resize", () => {
-      this.leftOffset =
-        this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
+      this.id = rangeInput.id
 
       this.settings = this.createSettings()
+      this.slider = this.createSlider()
       this.scale = this.createScale()
 
+      this.rangeInput.addEventListener("change", () => {
+        this.settings.value = Number(this.rangeInput.value)
+        this.init()
+      })
+
       this.init()
-    })
+
+      this.leftOffset = this.slider.track.offsetLeft
+
+      super.target = this.slider.track
+
+      super.getPosition(this.sliding.bind(this))
+
+      window.addEventListener("resize", () => {
+        this.leftOffset = this.slider.track.offsetLeft
+
+        this.settings = this.createSettings()
+        this.scale = this.createScale()
+
+        this.init()
+      })
+    }
   }
 
   init() {
@@ -42,7 +47,6 @@ export default class extends DraggingEvent {
       Math.abs(this.settings.min - this.settings.value) / this.settings.stepSize
     const position = this.scale[index]
 
-    console.log(position)
     this.slider.pin.style.left = `${position}px`
     this.slider.trail.style.width = `${position +
       this.slider.pin.offsetWidth / 2}px`
