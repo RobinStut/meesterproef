@@ -13,8 +13,6 @@
 /* ---------- HOMEPAGE ---------- */
 @import "modules/home/homepage-quiz.css";
 @import "modules/home/homepage-community.css";
-@import "modules/home/homepage-places.css";
-@import "modules/home/homepage-healthy-living.css";
 
 /* ---------- QUIZ ---------- */
 @import "modules/quiz/quiz.css";
@@ -23,13 +21,8 @@
 /* ---------- SPORTS ACTIVITIES A-Z ---------- */
 @import "modules/sportslist/sportslist.css";
 
-/* ---------- SPORTPROVIDER ---------- */
-@import "modules/sportprovider/sportprovider-login.css";
-@import "modules/sportprovider/sportprovider-dashboard.css";
-@import "modules/sportprovider/sportprovider-create-event.css";
-
 /* ---------- EVENTS ---------- */
-@import "modules/events/events.css";
+@import "modules/events/events-filter.css";
 
 /* ---------- POP-UP --------- */
 @import "modules/pop-up/pop-up.css";

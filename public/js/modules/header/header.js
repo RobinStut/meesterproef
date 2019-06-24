@@ -1,32 +1,32 @@
 function sidebarNav() {
-  const body = document.querySelector("body"),
-    headerHamburger = document.getElementById("st-hamburger-menu"),
-    headerHamburgerIcon = document.querySelector("#st-hamburger-menu svg"),
-    asideMenu = document.querySelector(".nav-sidebar")
+	const body = document.querySelector("body"),
+		headerHamburger = document.getElementsByClassName("header__hamburger"),
+		headerHamburgerIcon = document.querySelector(".header__hamburger svg"),
+		asideMenu = document.getElementsByClassName("sidebar")
 
-  headerHamburger.addEventListener("click", () => {
-    body.classList.toggle("st-overflow-hidden")
-    asideMenu.classList.toggle("st-show")
-    headerHamburgerIcon.classList.toggle("st-text-color")
-  })
+	headerHamburger[0].addEventListener("click", () => {
+		body.classList.toggle("body--overflow-hidden")
+		asideMenu[0].classList.toggle("sidebar--show")
+		headerHamburgerIcon.classList.toggle("header__hamburger--blue")
+	})
 }
 
 function headerBackgroundScroll() {
-  const scrollPos = 0,
-    header = document.querySelector("header"),
-    headerHamburgerIcon = document.querySelector("#st-hamburger-menu svg")
+	const scrollPos = 0,
+		header = document.getElementsByClassName("header"),
+		headerHamburgerIcon = document.querySelector(".header__hamburger svg")
 
-  window.addEventListener("scroll", () => {
-    const windowYOffset = window.scrollY
+	window.addEventListener("scroll", () => {
+		const windowYOffset = window.scrollY
 
-    if (windowYOffset > scrollPos) {
-      header.classList.add("st-header-background-color")
-      headerHamburgerIcon.classList.add("st-text-color")
-    } else if (windowYOffset === scrollPos) {
-      header.classList.remove("st-header-background-color")
-      headerHamburgerIcon.classList.remove("st-text-color")
-    }
-  })
+		if (windowYOffset > scrollPos) {
+			header[0].classList.add("header--background-solid")
+			headerHamburgerIcon.classList.add("header__hamburger--blue")
+		} else if (windowYOffset === scrollPos) {
+			header[0].classList.remove("header--background-solid")
+			headerHamburgerIcon.classList.remove("header__hamburger--blue")
+		}
+	})
 }
 
 headerBackgroundScroll()

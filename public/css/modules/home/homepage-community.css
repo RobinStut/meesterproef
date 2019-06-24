@@ -1,33 +1,41 @@
-#st-homepage-community h3 {
-  text-align: center;
+.quote {
+	margin: 1em 0;
+	height: fit-content;
 }
 
-#st-homepage-community div {
-  margin: 0 0 auto 0;
+.quote:first-of-type {
+	margin-top: 0;
 }
 
-#st-homepage-community div article {
-  margin: 1em 0;
-  height: fit-content;
+.quote:last-of-type {
+	margin-bottom: 0;
 }
 
-#st-homepage-community div article:first-of-type {
-  margin-top: 0;
+.quote__img {
+	margin: 0 1em 0 0;
 }
 
-#st-homepage-community div article:last-of-type {
-  margin-bottom: 0;
+.quote__block p:before {
+	position: absolute;
+	top: 0em;
+	left: 0;
+	content: open-quote;
+	color: #153e60;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: var(--font-size-50px);
+	opacity: 0.3;
 }
 
-#st-homepage-community div article img {
-  margin: 0 1em 0 0;
+.quote__block p:after {
+	position: absolute;
+	right: 0;
+	content: close-quote;
+	color: #153e60;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: var(--font-size-50px);
+	opacity: 0.3;
 }
 
-#st-homepage-community div article p {
-  margin: 0 0 0.5em 0;
-}
-
-#st-homepage-community div article div {
-  position: relative;
-  padding: 0 0 0 0.5em;
+.quote__block__name {
+	margin-bottom: 0.5em;
 }

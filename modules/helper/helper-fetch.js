@@ -1,10 +1,13 @@
 const fetch = require("node-fetch")
 
-module.exports = urlToFetch => {
+module.exports = (urlToFetch, dataObject) => {
   return new Promise(async (resolve, reject) => {
-    const response = await fetch(urlToFetch),
-      data = await response.json()
-
-    resolve(data)
+    if (dataObject.length !== 0) {
+      resolve(dataObject)
+    } else {
+      const response = await fetch(urlToFetch)
+      let data = await response.json()
+      resolve(data)
+    }
   })
 }
