@@ -1,7 +1,7 @@
 let allSports
 ;(async function() {
-  const getAllSports = require("./sportlist/sportlist-az-list.js")
-  allSports = await getAllSports()
+	const getAllSports = require("./sportlist/sportlist-az-list.js")
+	allSports = await getAllSports()
 })()
 
 const quizPostRequest = require("./quiz/quiz-postrequest.js")
@@ -11,15 +11,15 @@ const getClubs = require("./sportlist/sportlist-clubs.js")
 const quizCalc = require("./quiz/quiz-calculation.js")
 
 module.exports = (app, eventsData) => {
-	app.get("/", async (req, res) => {
+	app.get("/", (req, res) => {
 		res.render("pages/index.ejs", {
-			hero: "big-hero",
+			hero: "hero--big",
 			heroText: ["Amsterdam", "Zuidoost", "Be a part of it!"]
 		})
 	})
 	app.get("/sportslist", async (req, res) => {
 		res.render("pages/sportlist/sportlist-az-list.ejs", {
-			hero: "small-hero",
+			hero: "hero--small",
 			heroText: ["Sports Activities A-Z"],
 			data: allSports,
 			keys: Object.keys(allSports)
@@ -27,7 +27,7 @@ module.exports = (app, eventsData) => {
 	})
 	app.get("/sportsmap", async (req, res) => {
 		res.render("pages/sportlist/sportlist-map.ejs", {
-			hero: "small-hero",
+			hero: "hero--small",
 			heroText: ["Sports Activities A-Z MAP"]
 		})
 	})
@@ -35,7 +35,7 @@ module.exports = (app, eventsData) => {
 		const id = req.params.id
 		const clubs = await getClubs(id)
 		res.render("pages/sportlist/sportlist-clubs.ejs", {
-			hero: "small-hero",
+			hero: "hero--small",
 			heroText: ["Sports Activities A-Z"],
 			sport: id,
 			clubs: clubs
@@ -45,7 +45,7 @@ module.exports = (app, eventsData) => {
 		const id = req.params.id
 		const events = await sportlistEvents(id)
 		res.render("pages/sportlist/sportlist-events.ejs", {
-			hero: "small-hero",
+			hero: "hero--small",
 			heroText: ["Sports Activities A-Z"],
 			sport: id,
 			events: events
@@ -68,7 +68,7 @@ module.exports = (app, eventsData) => {
 	})
 	app.get("/quiz", (req, res) => {
 		res.render("pages/quiz/quiz-questions.ejs", {
-			hero: "small-hero",
+			hero: "hero--small",
 			heroText: ["Sports Configurator"]
 		})
 	})
@@ -78,34 +78,34 @@ module.exports = (app, eventsData) => {
 		)
 		const quizResult = quizCalc(req, sportQuizData)
 
-    res.render("pages/quiz/quiz-result.ejs", {
-      quizResult: quizResult,
-      sportQuizData: sportQuizData,
-      hero: "small-hero",
-      heroText: ["Sports Configurator"]
-    })
-  })
-  app.get("/login", (req, res) => {
-    res.render("pages/sportprovider/sportprovider-login.ejs", {
-      hero: "small-hero",
-      heroText: [""]
-    })
-  })
-  app.get("/sportprovider", (req, res) => {
-    res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
-      hero: "small-hero",
-      heroText: ["Dashboard"]
-    })
-  })
-  app.get("/create-event", async (req, res) => {
-    const data = await fetchData(
-      "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
-    )
+		res.render("pages/quiz/quiz-result.ejs", {
+			quizResult: quizResult,
+			sportQuizData: sportQuizData,
+			hero: "hero--small",
+			heroText: ["Sports Configurator"]
+		})
+	})
+	app.get("/login", (req, res) => {
+		res.render("pages/sportprovider/sportprovider-login.ejs", {
+			hero: "hero--small",
+			heroText: [""]
+		})
+	})
+	app.get("/sportprovider", (req, res) => {
+		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
+			hero: "hero--small",
+			heroText: ["Dashboard"]
+		})
+	})
+	app.get("/create-event", async (req, res) => {
+		const data = await fetchData(
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportDescription.json"
+		)
 
-    res.render("pages/sportprovider/sportprovider-create-event.ejs", {
-      hero: "small-hero",
-      heroText: [""],
-      data: data
-    })
-  })
+		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
+			hero: "hero--small",
+			heroText: [""],
+			data: data
+		})
+	})
 }
