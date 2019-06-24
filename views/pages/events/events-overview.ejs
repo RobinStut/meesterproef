@@ -21,6 +21,7 @@
             <form method="POST" class="display-flex-v">
                 <label for="filter-sport">Sport</label>
                 <select id="filter-sport" name="">
+                    <option disabled selected value> -- Selecteer en sport -- </option>
                 <% sportDescription.forEach(sport => { %>
                     <option value="<%= sport.sport %>"><%= sport.sport%></option>
                 <% }) %>
@@ -28,6 +29,7 @@
 
                 <label for="filter-day">Dag</label>
                 <select id="filter-day" name="">
+                    <option disabled selected value> -- Selecteer en dag -- </option>
                     <option value="maandag">Maandag</option>
                     <option value="dinsdag">Dinsdag</option>
                     <option value="woensdag">Woensdag</option>
@@ -39,10 +41,11 @@
 
                 <label for="filter-type">Type</label>
                 <select id="filter-type" name="">
-                        <% sportEvents.forEach(sport => { %>
-                            <option value="<%= sport.general.type %>"><%= sport.general.type%></option>
-                        <% }) %>
-                        </select>
+                    <option disabled selected value> -- Selecteer en type event -- </option>
+                    <% sportEvents.forEach(sport => { %>
+                        <option value="<%= sport.general.type %>"><%= sport.general.type%></option>
+                    <% }) %>
+                    </select>
 
                 <button>Submit</button>
             </form>
