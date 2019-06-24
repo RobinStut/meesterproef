@@ -1,3 +1,4 @@
+import { classToggleClick } from "./modules/helpers/class-toggle-click.js"
 import header from "./modules/header/header.js"
 import Quiz from "./modules/quiz/quiz-setup.js"
 import QuizSliderTexts from "./modules/quiz/quiz-slider-texts.js"
@@ -28,3 +29,12 @@ if (cardsContainer) {
     }
   })
 }
+
+const eventsFilter = document.querySelector(".st-filter-form")
+const eventsFilterButton = document.querySelector(".st-filter-form button")
+const toggleElements = [
+	{ element: eventsFilter, class: "st-filter-form-show" },
+	{ element: eventsFilterButton, class: "st-turn-180" }
+]
+
+classToggleClick(eventsFilterButton, toggleElements)

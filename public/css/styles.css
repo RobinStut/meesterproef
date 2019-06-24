@@ -30,6 +30,7 @@
 
 /* ---------- EVENTS ---------- */
 @import "modules/events/events.css";
+@import "modules/events/events-filter.css";
 
 /* ---------- POP-UP --------- */
 @import "modules/pop-up/pop-up.css";
