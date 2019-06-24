@@ -2,14 +2,17 @@ const sportproviderUrl =
   "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportaanbieders.json"
 
 const eventsUrl = ""
+const sportDescriptionUrl =
+  "https://raw.githubusercontent.com/RobinStut/meesterproef/feature/sportaanbiederScrape/data/json/sportDescription.json"
 
 // const quizPostRequest = require("./quiz/quiz-postrequest.js")
 const fetchData = require("./helper/helper-fetch.js")
 const getAllSports = require("./sportlist/sportlist-az-list.js")
 const sportlistEvents = require("./sportlist/sportslist-events.js")
 const getClubs = require("./sportlist/sportlist-clubs.js")
+const sportDescriptions = require("./sportlist/sportlist-descriptions.js")
 
-module.exports = (app, eventsData, sportproviderData) => {
+module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
   app.get("/", (req, res) => {
     res.render("pages/index.ejs", {
       hero: "big-hero",
@@ -19,7 +22,7 @@ module.exports = (app, eventsData, sportproviderData) => {
   app.get("/sportslist", async (req, res) => {
     const allSportClubs = await fetchData(sportproviderUrl, sportproviderData)
     sportproviderData = allSportClubs
-    const allSports = await getAllSports(allSportClubs)
+    const allSports = await getAllSports(sportproviderData)
 
     res.render("pages/sportlist/sportlist-az-list.ejs", {
       hero: "small-hero",
@@ -37,22 +40,38 @@ module.exports = (app, eventsData, sportproviderData) => {
   app.get("/sportslist/clubs/:id", async (req, res) => {
     const id = req.params.id
     const clubs = await getClubs(sportproviderData, id)
+    const allDescriptions = await fetchData(
+      sportDescriptionUrl,
+      sportDescriptionData
+    )
+    sportDescriptionData = allDescriptions
+    const description = await sportDescriptions(allDescriptions, id)
+
     res.render("pages/sportlist/sportlist-clubs.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
       sport: id,
-      clubs: clubs
+      clubs: clubs,
+      sportDescription: description[0].description
     })
   })
   app.get("/sportslist/events/:id", async (req, res) => {
     const id = req.params.id
     const allEvents = ""
     const events = await sportlistEvents(allEvents, id)
+    const allDescriptions = await fetchData(
+      sportDescriptionUrl,
+      sportDescriptionData
+    )
+    sportDescriptionData = allDescriptions
+    const description = await sportDescriptions(allDescriptions, id)
+
     res.render("pages/sportlist/sportlist-events.ejs", {
       hero: "small-hero",
       heroText: ["Sports Activities A-Z"],
       sport: id,
-      events: events
+      events: events,
+      sportDescription: description[0].description
     })
   })
   app.get("/events", (req, res) => {

@@ -12,6 +12,7 @@ const PORT = 3000
 let conceptEvents = []
 let eventsData = []
 let sportproviderData = []
+let sportDescriptionData = []
 
 app
   .set("view engine", "ejs")
@@ -31,7 +32,12 @@ app
   )
 
 require("./modules/sportlist/sportlist-az-list.js")(request)
-require("./modules/routes.js")(app, eventsData, sportproviderData)
+require("./modules/routes.js")(
+  app,
+  eventsData,
+  sportproviderData,
+  sportDescriptionData
+)
 require("./modules/quiz/quiz-postrequest.js")(app)
 require("./modules/sportprovider/sportprovider-create-event.js")(
   app,
