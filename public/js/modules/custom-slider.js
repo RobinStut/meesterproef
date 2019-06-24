@@ -12,6 +12,8 @@ export default class extends DraggingEvent {
 
       this.rangeInput = rangeInput
 
+      this.id = rangeInput.id
+
       this.settings = this.createSettings()
       this.slider = this.createSlider()
       this.scale = this.createScale()
@@ -23,16 +25,14 @@ export default class extends DraggingEvent {
 
       this.init()
 
-      this.leftOffset =
-        this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
+      this.leftOffset = this.slider.track.offsetLeft
 
       super.target = this.slider.track
 
       super.getPosition(this.sliding.bind(this))
 
       window.addEventListener("resize", () => {
-        this.leftOffset =
-          this.slider.track.offsetLeft + this.slider.pin.offsetWidth / 2
+        this.leftOffset = this.slider.track.offsetLeft
 
         this.settings = this.createSettings()
         this.scale = this.createScale()
