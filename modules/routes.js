@@ -2,7 +2,6 @@ const sportproviderUrl =
   "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportaanbieders.json"
 const eventsUrl =
   "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportEvents.json"
-
 const sportDescriptionUrl =
   "https://raw.githubusercontent.com/RobinStut/meesterproef/feature/sportaanbiederScrape/data/json/sportDescription.json"
 
