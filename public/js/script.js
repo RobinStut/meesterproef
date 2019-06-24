@@ -12,10 +12,14 @@ for (let i = 0; i < customSliders.length; i++) {
   })
 }
 
-new InteractiveCards(cardsContainer, (target, amount) => {
-  if (amount === 0) {
-    document.getElementById("pop-up-toggle").checked = false
+if (cardsContainer) {
+  new InteractiveCards(cardsContainer, (target, amount) => {
+    if (amount === 0) {
+      setTimeout(() => {
+        document.getElementById("pop-up-toggle").checked = false
 
-    cardsContainer.classList.add("empty")
-  }
-})
+        cardsContainer.classList.add("empty")
+      }, 100)
+    }
+  })
+}
