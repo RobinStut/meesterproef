@@ -12,6 +12,8 @@ export default class extends DraggingEvent {
 
       this.rangeInput = rangeInput
 
+      this.id = rangeInput.id
+
       this.settings = this.createSettings()
       this.slider = this.createSlider()
       this.scale = this.createScale()
