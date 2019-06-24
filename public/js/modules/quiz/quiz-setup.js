@@ -50,7 +50,9 @@ export default (() => {
             <div class="container">
                 <p draggable="true" class="draggableTag">personal achievements </p>
             </div>
-        </div>`
+        </div>
+        <label for="s-2">Back</label>
+        <label for="s-4">Next</label>`
   }
 
   let currentDraggedElement

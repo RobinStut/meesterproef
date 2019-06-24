@@ -17,6 +17,7 @@
 /* ---------- QUIZ ---------- */
 @import "modules/quiz/quiz.css";
 @import "modules/quiz/quiz-carousel.css";
+@import "modules/quiz/quiz-splitup.css";
 
 /* ---------- SPORTS ACTIVITIES A-Z ---------- */
 @import "modules/sportslist/sportslist.css";

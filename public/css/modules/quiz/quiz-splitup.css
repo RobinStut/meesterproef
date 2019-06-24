@@ -1,0 +1,48 @@
+.visuallyhidden {
+  position: absolute;
+  right: 100%;
+  z-index: -1;
+  opacity: 0;
+}
+
+.section-sliders {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(4, 100vw);
+}
+
+.section-sliders section {
+  transition: all 0.2s ease;
+}
+
+#s-1:checked ~ #quizForm .section-sliders section {
+  transform: translateX(0);
+}
+
+#s-2:checked ~ #quizForm .section-sliders section {
+  transform: translateX(-100vw);
+}
+
+#s-3:checked ~ #quizForm .section-sliders section {
+  transform: translateX(-200vw);
+}
+
+#s-4:checked ~ #quizForm .section-sliders section {
+  transform: translateX(-300vw);
+}
+
+.s-1:checked ~ header label[for="s-1"] {
+  /* background: blue; */
+}
+
+.s-2:checked ~ header label[for="s-2"] {
+  /* background: red; */
+}
+
+.s-3:checked ~ header label[for="s-3"] {
+  /* background: green; */
+}
+
+.s-4:checked ~ header label[for="s-4"] {
+  /* background: green; */
+}
