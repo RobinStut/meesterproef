@@ -11,6 +11,7 @@ const getAllSports = require("./sportlist/sportlist-az-list.js")
 const sportlistEvents = require("./sportlist/sportslist-events.js")
 const getClubs = require("./sportlist/sportlist-clubs.js")
 const sportDescriptions = require("./sportlist/sportlist-descriptions.js")
+const quizCalc = require("./quiz/quiz-calculation.js")
 
 module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
   app.get("/", (req, res) => {
@@ -25,7 +26,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const allSports = await getAllSports(sportproviderData)
 
     res.render("pages/sportlist/sportlist-az-list.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Sports Activities A-Z"],
       data: allSports,
       keys: Object.keys(allSports)
@@ -33,7 +34,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
   })
   app.get("/sportsmap", async (req, res) => {
     res.render("pages/sportlist/sportlist-map.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Sports Activities A-Z MAP"]
     })
   })
@@ -48,7 +49,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const description = await sportDescriptions(allDescriptions, id)
 
     res.render("pages/sportlist/sportlist-clubs.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Sports Activities A-Z"],
       sport: id,
       clubs: clubs,
@@ -68,7 +69,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const description = await sportDescriptions(allDescriptions, id)
 
     res.render("pages/sportlist/sportlist-events.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Sports Activities A-Z"],
       sport: id,
       events: events,
@@ -77,14 +78,14 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
   })
   app.get("/events", (req, res) => {
     res.render("pages/events/events-overview.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Events"],
       data: eventsData
     })
   })
   app.get("/quiz", (req, res) => {
     res.render("pages/quiz/quiz-questions.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
     })
   })
@@ -100,19 +101,19 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     res.render("pages/quiz/quiz-result.ejs", {
       quizResult: quizResult,
       sportQuizData: sportQuizData,
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
     })
   })
   app.get("/login", (req, res) => {
     res.render("pages/sportprovider/sportprovider-login.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Login/Register"]
     })
   })
   app.get("/sportprovider", (req, res) => {
     res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
-      hero: "small-hero",
+      hero: "hero--small",
       heroText: ["Dashboard"]
     })
   })
@@ -120,11 +121,11 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const data = await fetchData(
       "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
     )
-
-    res.render("pages/sportprovider/sportprovider-create-event.ejs", {
-      hero: "small-hero",
-      heroText: ["Create Event"],
-      data: data
-    })
+  res.render("pages/events/events-overview.ejs", {
+    hero: "small-hero",
+    heroText: ["Events"],
+    sportEvents: sportEvents,
+    sportDescription: sportDescription
   })
+	})
 }

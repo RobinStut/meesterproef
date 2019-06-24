@@ -12,14 +12,10 @@
   transition: filter 0.3s ease;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
   .card-carousel {
-    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2);
+    margin-left: calc((100vw - var(--carousel-min-width)) / 2);
   }
-}
-
-.card-carousel.smooth-return {
-  transition: all 0.2s ease;
 }
 
 .card-carousel .card {
@@ -29,7 +25,6 @@
   text-align: center;
   min-width: 250px;
   height: var(--card-height);
-  position: absolute;
   margin: 0 auto;
   color: rgba(0, 0, 0, 0.5);
   filter: brightness(1.1);

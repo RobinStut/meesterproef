@@ -1,23 +1,25 @@
-#st-homepage-quiz {
-  padding-bottom: 3em;
-  background-color: var(--primary-color);
-  text-align: center;
-  z-index: 1;
+.section--highlight {
+	padding-bottom: 3em;
+	background-color: var(--primary-color);
+	text-align: center;
 }
 
-#st-homepage-quiz::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 15px;
-  top: -15px;
-  left: 0;
-  background-color: var(--primary-color);
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  z-index: 1;
+.section--highlight-radius::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 15px;
+	top: -15px;
+	left: 0;
+	background-color: var(--primary-color);
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	z-index: 1;
 }
 
-#st-homepage-quiz h4 {
-  margin-bottom: 1em;
+.section--highlight-heading {
+	margin-bottom: 1.5em;
+	color: var(--white);
+	font-size: var(--font-size-18px);
+	font-weight: 400;
 }

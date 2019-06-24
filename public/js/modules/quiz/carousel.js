@@ -1,31 +1,49 @@
 import DraggingEvent from "../dragging-event.js"
+import checkBrowser from "../helpers/checkBrowser.js"
 
 export default class extends DraggingEvent {
-  constructor(container) {
-    super(container)
+  constructor(container, controller = undefined) {
+    if (checkBrowser() !== "safari") {
+      super(container)
 
-    // Elements
-    this.container = container
-    this.cards = container.querySelectorAll(".card")
+      // Elements
+      this.container = container
+      this.controllerElement = controller
 
-    // Carousel data
-    this.centerIndex = (this.cards.length - 1) / 2
-    this.cardWidth =
-      (this.cards[0].offsetWidth / this.container.offsetWidth) * 100
-    this.xScale = {}
+      this.cards = container.querySelectorAll(".card")
 
-    // Resizing
-    window.addEventListener("resize", this.updateCardWidth.bind(this))
+      // Carousel data
+      this.centerIndex = (this.cards.length - 1) / 2
+      this.cardWidth =
+        (this.cards[0].offsetWidth / this.container.offsetWidth) * 100
+      this.xScale = {}
 
-    // Initalizer
-    this.build()
+      // Resizing
+      window.addEventListener("resize", this.updateCardWidth.bind(this))
 
-    // Bind dragging event
-    super.getDistance(this.moveCards.bind(this))
+      if (this.controllerElement) {
+        this.controllerElement.addEventListener(
+          "keydown",
+          this.controller.bind(this)
+        )
+      }
+      // Initalizer
+      this.build()
+
+      // Bind dragging event
+      super.getDistance(this.moveCards.bind(this))
+    } else {
+      container.style.display = "flex"
+      container.style.overflow = "scroll"
+    }
   }
 
   build() {
+    this.container.style.overflow = "hidden"
+
     for (let i = 0; i < this.cards.length; i++) {
+      this.cards[i].style.position = "absolute"
+
       const x = i - this.centerIndex,
         sizeScale = this.calcScaleSize(x),
         positionScale = this.calcScalePosition(x),
@@ -35,6 +53,50 @@ export default class extends DraggingEvent {
       this.xScale[x] = this.cards[i]
 
       this.updateCards(this.cards[i], {
+        x: x,
+        left: leftPos,
+        scale: sizeScale,
+        zIndex: zIndex
+      })
+    }
+  }
+
+  controller(e) {
+    const temp = { ...this.xScale }
+
+    if (e.keyCode === 39) {
+      // Left arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) - 1 < -this.centerIndex
+            ? this.centerIndex
+            : parseInt(x) - 1
+
+        temp[newX] = this.xScale[x]
+      }
+    }
+
+    if (e.keyCode == 37) {
+      // Right arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) + 1 > this.centerIndex
+            ? -this.centerIndex
+            : parseInt(x) + 1
+
+        temp[newX] = this.xScale[x]
+      }
+    }
+
+    this.xScale = temp
+
+    for (let x in temp) {
+      const sizeScale = this.calcScaleSize(x),
+        positionScale = this.calcScalePosition(x),
+        leftPos = this.calcPosition(x, positionScale),
+        zIndex = -Math.abs(x)
+
+      this.updateCards(temp[x], {
         x: x,
         left: leftPos,
         scale: sizeScale,

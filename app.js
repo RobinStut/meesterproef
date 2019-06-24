@@ -4,8 +4,10 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const ejs = require("ejs")
+const path = require("path")
 const fs = require("fs")
 const request = require("request")
+const multer = require("multer")
 const app = express()
 const PORT = 3000
 
@@ -13,6 +15,18 @@ let conceptEvents = []
 let eventsData = []
 let sportproviderData = []
 let sportDescriptionData = []
+
+const storage = multer.diskStorage({
+	destination: "./public/uploads/",
+	filename: function(req, file, cb) {
+		cb(
+			null,
+			file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+		)
+	}
+})
+
+const upload = multer({ storage: storage })
 
 app
   .set("view engine", "ejs")
@@ -40,14 +54,15 @@ require("./modules/routes.js")(
 )
 require("./modules/quiz/quiz-postrequest.js")(app)
 require("./modules/sportprovider/sportprovider-create-event.js")(
-  app,
-  conceptEvents
+	app,
+	upload,
+	conceptEvents
 )
 require("./modules/sportprovider/sportprovider-publish-event.js")(
-  app,
-  fs,
-  conceptEvents,
-  eventsData
+	app,
+	fs,
+	conceptEvents,
+	eventsData
 )
 
 // require("./modules/quiz.js")(app)

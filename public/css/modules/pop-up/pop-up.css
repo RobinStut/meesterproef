@@ -1,0 +1,69 @@
+.floating-action {
+  background: var(--primary-color);
+  border-radius: 100px;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  padding: 1em;
+  z-index: 1;
+  filter: blur(0px) !important;
+}
+
+.pop-up {
+  --duration: 0.3s;
+  filter: blur(0px) !important;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 100%;
+  left: 0;
+  opacity: 0;
+  transition: bottom 0s ease calc(2 * var(--duration)),
+    opacity var(--duration) ease calc(var(--duration) / 2);
+  padding: 2em;
+  overflow: scroll;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 100;
+}
+
+#pop-up-toggle:checked ~ .pop-up {
+  transition: bottom 0s ease, opacity var(--duration) ease;
+  bottom: 0;
+  opacity: 1;
+}
+
+#pop-up-toggle:checked ~ .floating-action {
+  z-index: 101;
+}
+.pop-up-content {
+  opacity: 0;
+  transform: translateY(-100%) scale(0.5);
+  transition: transform var(--duration) ease, opacity var(--duration) ease;
+}
+
+#pop-up-toggle:checked ~ .pop-up .pop-up-content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.pop-up label[for="pop-up-toggle"] {
+  margin: 0;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#pop-up-toggle:checked ~ .pop-up label[for="pop-up-toggle"] {
+  display: block;
+}
+
+#pop-up-toggle:checked ~ * {
+  filter: blur(1px);
+}
