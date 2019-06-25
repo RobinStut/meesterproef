@@ -5,43 +5,60 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-	<section class="display-flex-v st-section-radius">
-		<a class="back-button" href="/sportslist">< Back to overview</a></Back>
-		<h3><%= sport %></h3>
-		<p><%= sportDescription %></p>
-		<div>
-			<ul class="filter-bar">
-				<li>
-					<span class="selected">
-						<a href="#">Events</a>
-					</span>
-					<span>
-						<a href="/sportslist/clubs/<%=sport%>">Sport Clubs</a>
-					</span>
-				</li>
-			</ul>
-		</div>
-	</section>
-	<section id="st-homepage-places">
-		<% events.forEach(event => { %>
-		<article class="st-article-general st-article-general-events" id="sports-events">
-			<img src="<%= event.general.imgLink %>" alt="" />
-			<div>
-				<a href="#" class="st-button st-button-solid-white"
-					><%= event.date %></a
-				>
-				<a href="#" class="st-button st-button-solid-yellow"
-					><%= event.general.title %></a
-				>
-				<ul>
-					<li><%= event.location.name %></li>
-					<li><%= event.location.address %></li>
-				</ul>
-			</div>
-		</article>
-		<% }) %>
-		
-	</section>
+  <section
+    class="display--flex-v section section--highlight section--highlight-radius"
+  >
+    <h3 class="section__h3--heading section__h3--heading--white">
+      <%= sport %>
+    </h3>
+    <p class="p--sportdescription"><%= sportDescription %></p>
+  </section>
+  <section class="section section--radius">
+    <a class="button--back" href="/sportslist">< Back to overview</a>
+    <ul class="filter--bar">
+      <li>
+        <span class="selected">
+          <a href="#">Events</a>
+        </span>
+        <span>
+          <a href="/sportslist/clubs/<%=sport%>">Sport Clubs</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="">
+    <% events.forEach(event => { %>
+    <a href="/event/<%= event.general.id %>">
+      <article class="event">
+        <div
+          class="event__content overlay"
+          style="background-image:url(/images/homepage-hero-image.png)"
+        >
+          <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
+          <p class="event__time">
+            <%= event.time.date %> <%= event.time.start %>-<%= event.time.end %>
+          </p>
+          <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
+        </div>
+      </article>
+    </a>
+    <a href="/event/<%= event.general.id %>">
+      <article class="event">
+        <div
+          class="event__content overlay"
+          style="background-image:url(/images/homepage-hero-image.png)"
+        >
+          <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
+          <p class="event__time">
+            <%= event.time.date %> <%= event.time.start %>-<%= event.time.end %>
+          </p>
+          <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
+        </div>
+      </article>
+    </a>
+    <% }) %>
+  </section>
 </main>
 
 <% include ../../partials/footer %>
