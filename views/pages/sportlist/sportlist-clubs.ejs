@@ -19,14 +19,14 @@
   </section>
 
   <section class="section section--radius">
-    <a class="button--back" href="/sportslist">< Back to overview</a>
+    <a class="button--back" href="/sportslist">< Terug naar overzicht</a>
     <ul class="filter--bar">
       <li>
         <span>
-          <a href="/sportslist/events/<%=sport%>">Events</a>
+          <a href="/sportslist/events/<%=sport%>">Activiteiten</a>
         </span>
         <span class="selected">
-          <a href="#">Sport Clubs</a>
+          <a href="/sportslist/clubs/<%=sport%>">Sportclubs</a>
         </span>
       </li>
     </ul>
@@ -40,8 +40,10 @@
         <h4><%=club.naam%></h4>
         <h5 class="clubs-tag"><%=sport%></h5>
       </div>
+
+      <p><%=club.adres_accommodatie%></p>
       <p><%=club.naam_accommodatie%></p>
-      <p><%=club.adres_accommodatie%>, <%=club.plaats_accommodatie%></p>
+      <p><b><%=club.plaats_accommodatie%>, <%=club.stadsdeel%></b></p>
       <a href="http://<%=club.website%>" class="website"> <%=club.website%></a>
     </article>
     <% }) %>
