@@ -1,274 +1,135 @@
 [
-  {
-    "sport": "Bodyworkout",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 1,
-    "fishOrLand": 5,
-    "sbc": "Strength",
-    "motivation": ["achievements"]
-  },
-  {
-    "sport": "Yoga",
-    "inOrOutdoor": 2,
-    "groupOrSolo": 1,
-    "fishOrLand": 5,
-    "sbc": "Balance",
-    "motivation": ["stress-relief", "relaxation", "me-time"]
-  },
-  {
-    "sport": "Meditation",
-    "inOrOutdoor": 2,
-    "groupOrSolo": 1,
-    "fishOrLand": 5,
-    "sbc": "Balance",
-    "motivation": ["stress-relief", "relaxation", "me-time"]
-  },
-  {
-    "sport": "Boulder",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 1,
-    "fishOrLand": 5,
-    "sbc": "Strength",
-    "motivation": ["achievements", "fun", "learn smth"]
-  },
-  {
-    "sport": "gymnastics",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 2,
-    "fishOrLand": 5,
-    "sbc": "Balance",
-    "motivation": ["learn smth", "achievements", "fun"]
-  },
-  {
-    "sport": "Swimming",
-    "inOrOutdoor": 3,
-    "groupOrSolo": 1,
-    "fishOrLand": 1,
-    "sbc": "Endurance",
-    "motivation": ["stress-relief", "relaxation", "me-time"]
-  },
-  {
-    "sport": "Running",
-    "inOrOutdoor": 5,
-    "groupOrSolo": 2,
-    "fishOrLand": 5,
-    "sbc": "Endurance",
-    "motivation": ["stress-relief", "me-time", "achievements"]
-  },
-  {
-    "sport": "Aikido",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["achievements", "stress relief", "fun"]
-  },
-  {
-    "sport": "Boxing",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["win", "achievements", "stress-relief"]
-  },
-  {
-    "sport": "Fencing",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["win", "achievements", "stress-relief"]
-  },
-  {
-    "sport": "Judo",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["achievements", "stress relief", "fun"]
-  },
-  {
-    "sport": "Karate",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["achievements", "stress relief", "fun"]
-  },
-  {
-    "sport": "Kickboxing",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["win", "achievements", "stress-relief"]
-  },
-  {
-    "sport": "MMA",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["achievements", "stress relief", "fun"]
-  },
-  {
-    "sport": "Climbing",
-    "inOrOutdoor": 5,
-    "groupOrSolo": 1,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["achievements", "fun", "learn smth"]
-  },
-  {
-    "sport": "Mountainbike",
-    "inOrOutdoor": 5,
-    "groupOrSolo": 1,
-    "fishOrLand": 5,
-    "sbc": "Endurance",
-    "motivation": ["achievements", "fun", "me-time"]
-  },
-  {
-    "sport": "Parkour",
-    "inOrOutdoor": 5,
-    "groupOrSolo": 2,
-    "fishOrLand": 5,
-    "sbc": "e, b",
-    "motivation": ["achievements", "fun", "friends"]
-  },
-  {
-    "sport": "Cycling",
-    "inOrOutdoor": 5,
-    "groupOrSolo": 2,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["achievements", "fun", "me-time"]
-  },
-  {
-    "sport": "Rugby",
-    "inOrOutdoor": 5,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "s",
-    "motivation": ["friends", "win", "stress-releif"]
-  },
-  {
-    "sport": "Badminton",
-    "inOrOutdoor": 2,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Basketball",
-    "inOrOutdoor": 4,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Volleyball",
-    "inOrOutdoor": 2,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Beach-Volleyball",
-    "inOrOutdoor": 5,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Soccer",
-    "inOrOutdoor": 4,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Handball",
-    "inOrOutdoor": 4,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Hockey",
-    "inOrOutdoor": 4,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Squash",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "stress-releif"]
-  },
-  {
-    "sport": "Tennis",
-    "inOrOutdoor": 3,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Table Tennis",
-    "inOrOutdoor": 3,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Ultimate Frisbee",
-    "inOrOutdoor": 3,
-    "groupOrSolo": 5,
-    "fishOrLand": 5,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Waterball",
-    "inOrOutdoor": 3,
-    "groupOrSolo": 5,
-    "fishOrLand": 1,
-    "sbc": "e",
-    "motivation": ["friends", "win", "fun"]
-  },
-  {
-    "sport": "Balley",
-    "inOrOutdoor": 1,
-    "groupOrSolo": 2,
-    "fishOrLand": 5,
-    "sbc": "Balance",
-    "motivation": ["achievements", "learn something", "me-time"]
-  },
-  {
-    "sport": "Hip Hop",
-    "inOrOutdoor": 2,
-    "groupOrSolo": 3,
-    "fishOrLand": 5,
-    "sbc": "Balance",
-    "motivation": ["fun", "friends", "stress-relief"]
-  },
-  {
-    "sport": "Salsa",
-    "inOrOutdoor": 2,
-    "groupOrSolo": 4,
-    "fishOrLand": 5,
-    "sbc": "Balance",
-    "motivation": ["fun", "friends", "stress-relief"]
-  }
+	{
+		"sport": "Yoga",
+		"inOrOutdoor": 2,
+		"groupOrSolo": 1,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Gymnastiek",
+		"inOrOutdoor": 1,
+		"groupOrSolo": 2,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Zwemmen",
+		"inOrOutdoor": 3,
+		"groupOrSolo": 1,
+		"fishOrLand": 1
+	},
+	{
+		"sport": "Hardlopen",
+		"inOrOutdoor": 5,
+		"groupOrSolo": 2,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Aikido",
+		"inOrOutdoor": 1,
+		"groupOrSolo": 3,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Boksen",
+		"inOrOutdoor": 1,
+		"groupOrSolo": 3,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Judo",
+		"inOrOutdoor": 1,
+		"groupOrSolo": 3,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Karate",
+		"inOrOutdoor": 1,
+		"groupOrSolo": 3,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Kickboksen",
+		"inOrOutdoor": 1,
+		"groupOrSolo": 3,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Klimmen en boulderen",
+		"inOrOutdoor": 5,
+		"groupOrSolo": 1,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Wielrennen",
+		"inOrOutdoor": 5,
+		"groupOrSolo": 2,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Rugby",
+		"inOrOutdoor": 5,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Badminton",
+		"inOrOutdoor": 2,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Basketbal",
+		"inOrOutdoor": 4,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Volleybal",
+		"inOrOutdoor": 2,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+
+	{
+		"sport": "Voetbal",
+		"inOrOutdoor": 4,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Handbal",
+		"inOrOutdoor": 4,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Hockey",
+		"inOrOutdoor": 4,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Squash",
+		"inOrOutdoor": 1,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Tennis",
+		"inOrOutdoor": 3,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Tafeltennis",
+		"inOrOutdoor": 3,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	},
+	{
+		"sport": "Frisbee",
+		"inOrOutdoor": 3,
+		"groupOrSolo": 5,
+		"fishOrLand": 5
+	}
 ]
