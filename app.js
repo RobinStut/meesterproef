@@ -17,13 +17,13 @@ let sportproviderData = []
 let sportDescriptionData = []
 
 const storage = multer.diskStorage({
-	destination: "./public/uploads/",
-	filename: function(req, file, cb) {
-		cb(
-			null,
-			file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-		)
-	}
+  destination: "./public/uploads/",
+  filename: function(req, file, cb) {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    )
+  }
 })
 
 const upload = multer({ storage: storage })
@@ -45,24 +45,23 @@ app
     })
   )
 
-require("./modules/sportlist/sportlist-az-list.js")(request)
 require("./modules/routes.js")(
   app,
   eventsData,
   sportproviderData,
   sportDescriptionData
 )
-require("./modules/quiz/quiz-postrequest.js")(app)
+
 require("./modules/sportprovider/sportprovider-create-event.js")(
-	app,
-	upload,
-	conceptEvents
+  app,
+  upload,
+  conceptEvents
 )
 require("./modules/sportprovider/sportprovider-publish-event.js")(
-	app,
-	fs,
-	conceptEvents,
-	eventsData
+  app,
+  fs,
+  conceptEvents,
+  eventsData
 )
 
 // require("./modules/quiz.js")(app)
