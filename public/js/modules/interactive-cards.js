@@ -28,7 +28,6 @@ export default class extends DraggingEvent {
   }
 
   setTransitionDelays() {
-    console.log(this)
     for (let i = 0; i < this.cards.length; i++) {
       this.cards[i].parentElement.style.transitionDelay = `${i / 15}s`
     }
@@ -85,9 +84,5 @@ export default class extends DraggingEvent {
         target.style.transform = `translateX(0)`
       }
     }
-  }
-
-  static countCards(container) {
-    console.log(container.querySelectorAll(".card").length)
   }
 }
