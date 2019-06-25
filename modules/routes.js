@@ -140,8 +140,33 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
       sportEvents: sportEvents,
       sportDescription: sportDescription
     })
-  })
+	})
+	app.get("/login", (req, res) => {
+		res.render("pages/sportprovider/sportprovider-login.ejs", {
+			hero: "hero--small",
+			heroText: ["Login"]
+		})
+	})
+	app.get("/dashboard", (req, res) => {
+		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
+			hero: "hero--small",
+			heroText: ["Dashboard"]
+		})
+	})
+	app.get("/create-event", async (req, res) => {
+		const sportEvents = await fetchData(eventsUrl, eventsData)
+		const sportDescription = await fetchData(
+			sportDescriptionUrl,
+			sportDescriptionData
+		)
 
+		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
+			hero: "hero--small",
+			heroText: ["Activiteit"],
+			sportEvents: sportEvents,
+			sportDescription: sportDescription
+		})
+	})
   app.get("/error", (req, res) => {
     // Need to render an error page
     res.end(req.query.code)
