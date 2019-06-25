@@ -19,6 +19,7 @@ updateData()
 setInterval(updateData, 1000 * 60 * 60 * 24)
 
 module.exports = app => {
+  
 	// HOME
 	app.get("/", async (req, res) => {
 		const firstTwo = JSON.parse(_eventData).slice(0, 2)
@@ -110,11 +111,11 @@ module.exports = app => {
 	app.get("/login", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-login.ejs", {
 			hero: "hero--small",
-			heroText: ["Login/Register"]
+			heroText: ["Login"]
 		})
 	})
 
-	app.get("/sportprovider", (req, res) => {
+	app.get("/dashboard", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
 			hero: "hero--small",
 			heroText: ["Dashboard"]
@@ -124,16 +125,9 @@ module.exports = app => {
 	app.get("/create-event", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
 			hero: "hero--small",
-			heroText: ["Events"],
+			heroText: [""],
 			sportEvents: JSON.parse(_eventData),
 			sportDescription: JSON.parse(_descriptionData)
-		})
-	})
-
-	app.get("/dashboard", (req, res) => {
-		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
-			hero: "hero--small",
-			heroText: ["Dashboard"]
 		})
 	})
 }

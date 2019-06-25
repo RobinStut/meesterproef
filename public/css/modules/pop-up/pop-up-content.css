@@ -5,9 +5,8 @@
 }
 
 .pop-up-content .content-item .card {
-  padding: 1em;
-  background: white;
   margin-bottom: 1em;
+  position: relative;
 }
 
 .pop-up-content.empty {
@@ -28,4 +27,15 @@
 
 #pop-up-toggle:checked ~ .pop-up .pop-up-content.empty::after {
   opacity: 0.75;
+}
+
+.card a.overlay {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1;
 }

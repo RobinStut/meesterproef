@@ -20,3 +20,15 @@
 	margin: 0 auto;
 	width: fit-content;
 }
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 1em 10em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer {
+    padding: 1em 25em;
+  }
+}

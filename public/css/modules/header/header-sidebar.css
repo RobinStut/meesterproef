@@ -11,21 +11,32 @@
 }
 
 .sidebar__list {
-	line-height: 2.5em;
+  line-height: 2.5em;
 }
 
 .sidebar__list li a {
-	color: var(--text-color);
-	font-size: var(--font-size-18px);
-	font-weight: 400;
-	text-transform: uppercase;
-	text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size-18px);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .sidebar__collection__link {
-	margin-top: auto;
+  margin-top: auto;
 }
 
 .sidebar--show {
-	left: 0 !important;
+  left: 0 !important;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    padding: 4em 10em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sidebar {
+    padding: 4em 25em;
+  }
 }
