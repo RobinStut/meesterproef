@@ -16,7 +16,7 @@ export default class {
       window.addEventListener("pointermove", handler)
       window.addEventListener("pointerup", clearDraggingEvent)
 
-      function clearDraggingEvent() {
+      function clearDraggingEvent(e) {
         window.removeEventListener("pointermove", handler)
         window.removeEventListener("pointerup", clearDraggingEvent)
 
@@ -30,6 +30,8 @@ export default class {
     function distanceInit(e1) {
       const startingX = e1.clientX
       const startingY = e1.clientY
+
+      callback({ x: 0, y: 0 })
 
       return function(e2) {
         if (e2 === null) {
