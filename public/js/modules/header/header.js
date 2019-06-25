@@ -2,12 +2,17 @@ function sidebarNav() {
   const body = document.querySelector("body"),
     headerHamburger = document.getElementsByClassName("header__hamburger"),
     headerHamburgerIcon = document.querySelector(".header__hamburger svg"),
-    asideMenu = document.getElementsByClassName("sidebar")
+    asideMenu = document.getElementsByClassName("sidebar"),
+    headerLogo = document.getElementsByClassName("header__logo"),
+    header = document.querySelector("header")
 
   headerHamburger[0].addEventListener("click", () => {
+    headerLogo[0].classList.toggle("display--none")
     body.classList.toggle("body--overflow-hidden")
     asideMenu[0].classList.toggle("sidebar--show")
-    headerHamburgerIcon.classList.toggle("header__hamburger--blue")
+    header.classList.toggle("transparent")
+
+    headerHamburgerIcon.classList.add("header__hamburger--blue")
   })
 }
 
