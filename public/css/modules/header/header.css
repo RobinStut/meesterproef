@@ -29,3 +29,9 @@
 .body--overflow-hidden {
   overflow: hidden;
 }
+
+.header__logo {
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+}
