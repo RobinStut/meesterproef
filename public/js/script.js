@@ -17,15 +17,15 @@ for (let i = 0; i < customSliders.length; i++) {
 }
 
 if (cardsContainer) {
-	new InteractiveCards(cardsContainer, (target, amount) => {
-		if (amount === 0) {
-			setTimeout(() => {
-				document.getElementById("pop-up-toggle").checked = false
+  new InteractiveCards(cardsContainer, (target, amount) => {
+    if (amount === 0) {
+      setTimeout(() => {
+        document.getElementById("pop-up-toggle").checked = false
 
-				cardsContainer.classList.add("empty")
-			}, 100)
-		}
-	})
+        cardsContainer.classList.add("empty")
+      }, 300)
+    }
+  })
 }
 
 // const eventsFilter = document.querySelector(".st-filter-form")
