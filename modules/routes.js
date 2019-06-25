@@ -29,16 +29,19 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
   })
 
   app.get("/sportslist", async (req, res) => {
-    const allSportClubs = await fetchData(sportproviderUrl, sportproviderData)
-    sportproviderData = allSportClubs
-    const allSports = await getAllSports(sportproviderData)
+    try {
+      const data = await fetch.file("data/json/sportaanbiede3rs.json")
+      const allSports = await getAllSports(data)
 
-    res.render("pages/sportlist/sportlist-az-list.ejs", {
-      hero: "hero--small",
-      heroText: ["Sports Activities A-Z"],
-      data: allSports,
-      keys: Object.keys(allSports)
-    })
+      res.render("pages/sportlist/sportlist-az-list.ejs", {
+        hero: "hero--small",
+        heroText: ["Sports Activities A-Z"],
+        data: allSports,
+        keys: Object.keys(allSports)
+      })
+    } catch (code) {
+      res.redirect(`/error?code=${code}`)
+    }
   })
   app.get("/sportsmap", async (req, res) => {
     res.render("pages/sportlist/sportlist-map.ejs", {
@@ -140,33 +143,33 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
       sportEvents: sportEvents,
       sportDescription: sportDescription
     })
-	})
-	app.get("/login", (req, res) => {
-		res.render("pages/sportprovider/sportprovider-login.ejs", {
-			hero: "hero--small",
-			heroText: ["Login"]
-		})
-	})
-	app.get("/dashboard", (req, res) => {
-		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
-			hero: "hero--small",
-			heroText: ["Dashboard"]
-		})
-	})
-	app.get("/create-event", async (req, res) => {
-		const sportEvents = await fetchData(eventsUrl, eventsData)
-		const sportDescription = await fetchData(
-			sportDescriptionUrl,
-			sportDescriptionData
-		)
+  })
+  app.get("/login", (req, res) => {
+    res.render("pages/sportprovider/sportprovider-login.ejs", {
+      hero: "hero--small",
+      heroText: ["Login"]
+    })
+  })
+  app.get("/dashboard", (req, res) => {
+    res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
+      hero: "hero--small",
+      heroText: ["Dashboard"]
+    })
+  })
+  app.get("/create-event", async (req, res) => {
+    const sportEvents = await fetchData(eventsUrl, eventsData)
+    const sportDescription = await fetchData(
+      sportDescriptionUrl,
+      sportDescriptionData
+    )
 
-		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
-			hero: "hero--small",
-			heroText: ["Activiteit"],
-			sportEvents: sportEvents,
-			sportDescription: sportDescription
-		})
-	})
+    res.render("pages/sportprovider/sportprovider-create-event.ejs", {
+      hero: "hero--small",
+      heroText: ["Activiteit"],
+      sportEvents: sportEvents,
+      sportDescription: sportDescription
+    })
+  })
   app.get("/error", (req, res) => {
     // Need to render an error page
     res.end(req.query.code)
