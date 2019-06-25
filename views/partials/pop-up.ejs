@@ -3,42 +3,27 @@
 <div class="pop-up">
   <label for="pop-up-toggle"></label>
   <aside class="pop-up-content interactive-cards">
+    <% popUpData.forEach(event => { %>
     <div class="content-item">
-      <article class="card">
-        <h2>Event 1</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-          voluptatem tempore veritatis nesciunt eligendi nihil? Est
-          exercitationem eum aut in molestiae, ipsam, fuga quae ipsa, beatae at
-          aperiam alias earum.
-        </p>
-        <small>More data</small>
+      <article class="event card">
+        <a class="event__link overlay" href="/event/"></a>
+        <div
+          class="event__content overlay"
+          style="background-image:url(/uploads/<%= event.general.image %>)"
+        >
+          <h4 class="event__h4 event__h4--name">
+            <%= event.location.name %>
+          </h4>
+          <p class="event__time">
+            Van <%= event.time.start %> t/m <%= event.time.end %>
+          </p>
+          <h4 class="event__h4 event__h4--title">
+            <%= event.general.title %>
+          </h4>
+        </div>
       </article>
     </div>
-    <div class="content-item">
-      <article class="card">
-        <h2>Event 2</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-          voluptatem tempore veritatis nesciunt eligendi nihil? Est
-          exercitationem eum aut in molestiae, ipsam, fuga quae ipsa, beatae at
-          aperiam alias earum.
-        </p>
-        <small>More data</small>
-      </article>
-    </div>
-    <div class="content-item">
-      <article class="card">
-        <h2>Event 3</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-          voluptatem tempore veritatis nesciunt eligendi nihil? Est
-          exercitationem eum aut in molestiae, ipsam, fuga quae ipsa, beatae at
-          aperiam alias earum.
-        </p>
-        <small>More data</small>
-      </article>
-    </div>
+    <% }) %>
   </aside>
 </div>
 
