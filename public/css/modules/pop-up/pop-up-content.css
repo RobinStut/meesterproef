@@ -14,7 +14,7 @@
 }
 
 .pop-up-content.empty::after {
-  content: "Empty";
+  content: "Er zijn op dit moment geen evenementen";
   color: white;
   display: block;
   margin-top: calc(50vh - 2em);
