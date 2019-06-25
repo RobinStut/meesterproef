@@ -55,6 +55,27 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     )
     sportDescriptionData = allDescriptions
     const description = await sportDescriptions(allDescriptions, id)
+    
+		res.render("pages/events/events-overview.ejs", {
+			hero: "hero--small",
+			heroText: ["Activiteiten"],
+			data: events
+		})
+	})
+	app.get("/quiz", (req, res) => {
+		res.render("pages/quiz/quiz-questions.ejs", {
+			hero: "hero--small",
+			heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
+		})
+	})
+	app.post("/quiz", async function(req, res) {
+		const sportQuizData = await fetchData(
+			"https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json",
+			app,
+			eventsData,
+			sportproviderData
+		)
+		const quizResult = quizCalc(req, sportQuizData)
 
     res.render("pages/sportlist/sportlist-clubs.ejs", {
       hero: "hero--small",

@@ -8,37 +8,23 @@
 	<section class="display--flex-v section section--radius section--padding-0">
 		<h3 class="section__h3--heading">Jouw activiteit</h3>
 
-		<article class="article">
-			<p class="article__p"><%= event.general.title %></p>
-
-			<img
-				class="article__img"
-				src="/uploads/<%= event.general.image %>"
-				alt=""
-			/>
-
-			<a
-				href="#"
-				class="button button--solid-yellow button--small article__button"
-				><%= event.sport.name %></a
-			>
-
-			<p class="article__description"><%= event.general.description %></p>
-
-			<p class="article__time">
-				Van <span class="st-p-bold"><%= event.time.start %></span> t/m
-				<span class="st-p-bold"><%= event.time.end %></span>
-			</p>
-
-			<ul class="article__list">
-				<li><%= event.location.name %></li>
-				<li><%= event.location.city %></li>
-				<li><%= event.location.address %></li>
-			</ul>
-		</article>
+		<a href="/event/">
+			<article class="event__link" class="event">
+				<div
+				class="event__content overlay"
+				style="background-image:url(/uploads/<%= event.general.image %>)"
+				>
+				<h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
+				<p class="event__time">
+						Van <%= event.time.start %> t/m <%= event.time.end %></p>
+				</p>
+				<h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
+				</div>
+			</article>
+		</a>
 
 		<form action="/publish-event" method="POST">
-			<button type="submit" class="button button--ghost">
+			<button type="submit" class="button button--ghost button--top">
 				Publiceer activiteit
 			</button>
 		</form>
