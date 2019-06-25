@@ -1,22 +1,27 @@
 const fetch = require("./helper/fetcher.js")
 const filter = require("./helper/filter.js")
+
 const getAllSports = require("./sportlist/sportlist-az-list.js")
 const quizCalc = require("./quiz/quiz-calculation.js")
 
 module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
-  app.get("/", async (req, res) => {
+	// HOME
+	app.get("/", async (req, res) => {
     try {
       const data = await fetch.file("data/json/sportEvents.json")
-
+      const firstTwo = JSON.parse(data).slice(0, 2)
+      
       res.render("pages/index.ejs", {
-        hero: "hero--big",
-        heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
-      })
+				hero: "hero--big",
+				heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"],
+				sportEvents: firstTwo
+			})
     } catch (code) {
       res.redirect(`/error?code=${code}`)
     }
-  })
+	})
 
+	// SPORTLIST
   app.get("/sportslist", async (req, res) => {
     try {
       const data = await fetch.file("data/json/sportaanbieders.json")
@@ -87,7 +92,8 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
       res.redirect(`/error?code=${code}`)
     }
   })
-
+  
+  // EVENTS
   app.get("/events", async (req, res) => {
     try {
       const events = await fetch.file("data/json/sportEvents.json")
@@ -101,7 +107,8 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
       res.redirect(`/error?code=${code}`)
     }
   })
-
+  
+  // QUIZ
   app.get("/quiz", (req, res) => {
     res.render("pages/quiz/quiz-questions.ejs", {
       hero: "hero--small",
@@ -109,7 +116,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     })
   })
 
-  app.post("/quiz", async function(req, res) {
+  app.post("/quiz", async (req, res) => {
     try {
       const data = await fetch.file("data/json/sportQuizFilter.json")
       const quizResult = quizCalc(req, data)
@@ -123,7 +130,8 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
       res.redirect(`/error?code=${code}`)
     }
   })
-
+  
+  // SPORTPROVIDER
   app.get("/login", (req, res) => {
     res.render("pages/sportprovider/sportprovider-login.ejs", {
       hero: "hero--small",
@@ -161,6 +169,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     })
   })
 
+  // ERROR
   app.get("/error", (req, res) => {
     // Need to render an error page
     res.end(req.query.code)

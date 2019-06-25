@@ -78,21 +78,24 @@
 	<section class="display--flex-v section section--padding-0">
 		<h3 class="section__h3--heading">Activiteiten</h3>
 
-		<a href="/event/">
-			<article class="event">
-			  <div
-				class="event__content overlay"
-				style="background-image:url(/images/homepage-hero-image.png)"
-			  >
-				<h4 class="event__h4 event__h4--name">locatie</h4>
-				<p class="event__time">
-				 tijd
-				</p>
-				<h4 class="event__h4 event__h4--title">titel</h4>
-			  </div>
-			</article>
-		  </a>
-		<a href="#" class="button button--ghost">Zie alle activiteiten</a>
+		<% sportEvents.forEach(event => { %>
+            <a class="event__link" href="/event/">
+                <article class="event">
+                    <div
+                    class="event__content overlay"
+                    style="background-image:url(/uploads/<%= event.general.image %>)"
+                    >
+                    <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
+                    <p class="event__time">
+                            Van <%= event.time.start %> t/m <%= event.time.end %></p>
+                    </p>
+                    <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
+                    </div>
+                </article>
+            </a>
+		<% }) %>
+		
+		<a href="/events" class="button button--ghost button--top">Alle activiteiten</a>
 	</section>
 </main>
 
