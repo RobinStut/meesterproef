@@ -39,15 +39,14 @@
 #pop-up-toggle:checked ~ .floating-action {
   z-index: 101;
 }
-.pop-up-content {
-  opacity: 0;
-  transform: translateY(-100%) scale(0.5);
-  transition: transform var(--duration) ease, opacity var(--duration) ease;
+.pop-up-content .content-item {
+  transform: translateX(110%);
+  transition: transform calc(var(--duration) / 2) ease;
 }
 
-#pop-up-toggle:checked ~ .pop-up .pop-up-content {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+#pop-up-toggle:checked ~ .pop-up .pop-up-content .content-item {
+  transform: translateX(0);
+  transition: transform var(--duration) ease;
 }
 
 .pop-up label[for="pop-up-toggle"] {

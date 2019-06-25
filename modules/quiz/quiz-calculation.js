@@ -1,4 +1,6 @@
-module.exports = (req, sportQuizData) => {
+module.exports = (req, data) => {
+  const sportQuizData = JSON.parse(data)
+
   let comparedResultsOfSports = []
   let mapCounter = 0
   let yourResultsOfForm = {
