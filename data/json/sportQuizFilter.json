@@ -20,7 +20,8 @@
 	{
 		"sport": "Hardlopen",
 		"inOrOutdoor": 5,
-		"groupOrSolo": 2
+		"groupOrSolo": 2,
+		"fishOrLand": 5
 	},
 	{
 		"sport": "Aikido",
@@ -73,7 +74,8 @@
 	{
 		"sport": "Badminton",
 		"inOrOutdoor": 2,
-		"groupOrSolo": 5
+		"groupOrSolo": 5,
+		"fishOrLand": 5
 	},
 	{
 		"sport": "Basketbal",
