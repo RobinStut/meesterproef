@@ -1,29 +1,48 @@
 .header {
-	position: fixed;
-	padding: 0 0.938em;
-	width: 100vw;
-	height: 10vh;
-	z-index: 3;
+  position: fixed;
+  padding: 0 0.938em;
+  width: 100vw;
+  height: 10vh;
+  z-index: 3;
 }
 
 .header__hamburger {
-	margin: 0 0 0 auto;
+  margin: 0 0 0 auto;
+  border: none;
+  background-color: transparent;
 }
 
 .header__hamburger svg {
-	width: 25px;
-	color: var(--white);
+  width: 25px;
+  color: var(--white);
 }
 
 .header--background-solid {
-	background-color: rgba(255, 255, 255, 0.95);
-	transition: 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 1);
+  transition: 0.2s ease-in-out;
 }
 
 .header__hamburger--blue {
-	color: var(--text-color) !important;
+  color: var(--text-color) !important;
+  font-weight: 500;
 }
 
 .body--overflow-hidden {
-	overflow: hidden;
+  overflow: hidden;
+}
+
+.header__logo {
+  color: white;
+  font-size: 1.3em;
+  letter-spacing: 0.1px;
+  font-weight: 600;
+}
+
+.display--none {
+  display: none;
+  //background-color: transparent;
+}
+
+.transparent {
+  background-color: rgba(255, 255, 255, 0);
 }

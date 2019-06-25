@@ -29,27 +29,27 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 app
-  .set("view engine", "ejs")
-  .set("views", "views")
+	.set("view engine", "ejs")
+	.set("views", "views")
 
-  .use(express.static("public"))
-  .use(bodyParser.json())
-  .use(
-    bodyParser.urlencoded({
-      extended: true
-    })
-  )
-  .use(
-    session({
-      secret: "classified"
-    })
-  )
+	.use(express.static("public"))
+	.use(bodyParser.json())
+	.use(
+		bodyParser.urlencoded({
+			extended: true
+		})
+	)
+	.use(
+		session({
+			secret: "classified"
+		})
+	)
 
 require("./modules/routes.js")(
-  app,
-  eventsData,
-  sportproviderData,
-  sportDescriptionData
+	app,
+	eventsData,
+	sportproviderData,
+	sportDescriptionData
 )
 
 require("./modules/sportprovider/sportprovider-create-event.js")(
