@@ -7,14 +7,13 @@
 
 .footer a {
   display: block;
-
   color: white;
   font-size: var(--font-size-14px);
 }
 
 .footer img {
   margin-top: 2rem;
-  width: 30%;
+  max-width: 60%;
 }
 
 .footer__block {
