@@ -87,7 +87,7 @@
 }
 
 .slider-container {
-  --slider-transition: all 0.05s linear;
+  --slider-transition: all 0.1s linear;
   height: 100px;
   width: 100%;
   border: solid 1px black;
