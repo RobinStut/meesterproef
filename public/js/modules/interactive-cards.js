@@ -13,6 +13,9 @@ export default class extends DraggingEvent {
     this.memory
 
     for (let i = 0; i < this.cards.length; i++) {
+      // Set the content-item' transition delay
+      this.cards[i].parentElement.style.transitionDelay = `${i / 15}s`
+
       super.target = this.cards[i]
 
       super.getDistance(this.slideCard.bind(this, this.cards[i]))
@@ -37,7 +40,7 @@ export default class extends DraggingEvent {
 
     setTimeout(() => {
       target.remove()
-    }, 500)
+    }, 300)
 
     this.cardsAmount--
 
