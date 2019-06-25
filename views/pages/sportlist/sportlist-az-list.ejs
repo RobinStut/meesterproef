@@ -5,31 +5,24 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-  <section id="st-sportlist-az" class="display-flex-v st-section-radius">
-    <!-- <h3>Find your sport activity</h3> -->
+  <section class="section section--radius">
+    <h3 class="section__h3--heading">Vind jouw sportactiviteit</h3>
 
     <div>
-      <ul class="filter-bar">
-        <li><a href="#"></a></li>
-        <!-- <li><a href="#">Sorteer</a></li> -->
+      <ul class="filter--bar">
         <li>
           <span class="selected">
-            <a href="#">List</a>
+            <a href="#">Lijst</a>
           </span>
           <span>
-            <a href="/sportsmap">Map</a>
+            <a href="/sportsmap">Kaart</a>
           </span>
         </li>
       </ul>
     </div>
 
-    <div class="search-bar">
-      <!-- <input type="text" name="" value=""> -->
-      <!-- <button type="button" name="button">search</button></button> -->
-    </div>
-
     <div class="display-flex-v">
-      <ul class="sports-list">
+      <ul class="sports__list">
         <%keys.forEach(key => {%>
         <li class="letter-keys"><%=key%></li>
         <ul>
