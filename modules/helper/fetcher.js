@@ -9,6 +9,7 @@ module.exports.url = url => {
 
       resolve(data)
     } catch (err) {
+      console.log(err)
       reject(500)
     }
   })
@@ -18,6 +19,7 @@ module.exports.file = path => {
   return new Promise((resolve, reject) => {
     fs.readFile(path, (err, data) => {
       if (err) {
+        console.log(err)
         reject(500)
       } else {
         resolve(data.toString())
