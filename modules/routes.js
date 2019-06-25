@@ -26,7 +26,8 @@ module.exports = app => {
     res.render("pages/index.ejs", {
       hero: "hero--big",
       heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"],
-      sportEvents: firstTwo
+      sportEvents: firstTwo,
+      popUpData: JSON.parse(_eventData)
     })
   })
 
