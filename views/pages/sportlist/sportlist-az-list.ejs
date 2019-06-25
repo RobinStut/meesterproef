@@ -5,36 +5,36 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-  <section class="section section--radius">
-    <h3 class="section__h3--heading">Vind jouw sportactiviteit</h3>
+	<section class="section section--radius">
+		<h3 class="section__h3--heading">Vind jouw sport</h3>
 
-    <div>
-      <ul class="filter--bar">
-        <li>
-          <span class="selected">
-            <a href="#">Lijst</a>
-          </span>
-          <span>
-            <a href="/sportsmap">Kaart</a>
-          </span>
-        </li>
-      </ul>
-    </div>
+		<div class="switchFilter">
+			<ul class="filter--bar">
+				<li>
+					<span class="selected">
+						<a href="#">Lijst</a>
+					</span>
+					<span>
+						<a href="/sportsmap">Kaart</a>
+					</span>
+				</li>
+			</ul>
+		</div>
 
-    <div class="display-flex-v">
-      <ul class="sports__list">
-        <%keys.forEach(key => {%>
-        <li class="letter-keys"><%=key%></li>
-        <ul>
-          <%data[key].forEach(item2 => {%>
-          <li>
-            <a href="/sportslist/events/<%=item2%>"><%=item2%></a>
-          </li>
-          <%})%> <%})%>
-        </ul>
-      </ul>
-    </div>
-  </section>
+		<div class="display-flex-v">
+			<ul class="sports__list">
+				<%keys.forEach(key => {%>
+				<li class="letter-keys"><%=key%></li>
+				<ul>
+					<%data[key].forEach(item2 => {%>
+					<li>
+						<a href="/sportslist/events/<%=item2%>"><%=item2%></a>
+					</li>
+					<%})%> <%})%>
+				</ul>
+			</ul>
+		</div>
+	</section>
 </main>
 
 <% include ../../partials/footer %>

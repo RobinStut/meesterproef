@@ -5,60 +5,47 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-  <section
-    class="display--flex-v section section--highlight section--highlight-radius"
-  >
-    <h3 class="section__h3--heading section__h3--heading--white">
-      <%= sport %>
-    </h3>
-    <p class="p--sportdescription"><%= sportDescription %></p>
-  </section>
-  <section class="section section--radius">
-    <a class="button--back" href="/sportslist">< Terug naar overzicht</a>
-    <ul class="filter--bar">
-      <li>
-        <span class="selected">
-          <a href="#">Activiteiten</a>
-        </span>
-        <span>
-          <a href="/sportslist/clubs/<%=sport%>">Sportclubs</a>
-        </span>
-      </li>
-    </ul>
-  </section>
+	<section
+		class="display--flex-v section section--highlight section--highlight-radius"
+	>
+		<h3 class="section__h3--heading section__h3--heading--white">
+			<%= sport %>
+		</h3>
+		<p class="p--sportdescription"><%= sportDescription %></p>
+	</section>
 
-  <section class="">
-    <% events.forEach(event => { %>
-    <a href="/event/<%= event.general.id %>">
-      <article class="event">
-        <div
-          class="event__content overlay"
-          style="background-image:url(/images/homepage-hero-image.png)"
-        >
-          <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
-          <p class="event__time">
-            <%= event.time.date %> <%= event.time.start %>-<%= event.time.end %>
-          </p>
-          <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
-        </div>
-      </article>
-    </a>
-    <a href="/event/<%= event.general.id %>">
-      <article class="event">
-        <div
-          class="event__content overlay"
-          style="background-image:url(/images/homepage-hero-image.png)"
-        >
-          <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
-          <p class="event__time">
-            <%= event.time.date %> <%= event.time.start %>-<%= event.time.end %>
-          </p>
-          <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
-        </div>
-      </article>
-    </a>
-    <% }) %>
-  </section>
+	<section class="section section--radius">
+      <div class="switchFilter">
+          <!-- <a class="button--back" href="/sportslist">< Terug naar overzicht</a> -->
+          <ul class="filter--bar">
+            <li>
+              <span class="selected">
+                <a href="#">Activiteiten</a>
+              </span>
+              <span>
+                <a href="/sportslist/clubs/<%=sport%>">Sportclubs</a>
+              </span>
+            </li>
+          </ul>
+      </div>
+
+		<% events.forEach(event => { %>
+      <a class="event__link" href="/event/">
+          <article class="event">
+              <div
+              class="event__content overlay"
+              style="background-image:url(/uploads/<%= event.general.image %>)"
+              >
+              <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
+              <p class="event__time">
+                      Van <%= event.time.start %> t/m <%= event.time.end %></p>
+              </p>
+              <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
+              </div>
+          </article>
+      </a>
+		<% }) %>
+	</section>
 </main>
 
 <% include ../../partials/footer %>
