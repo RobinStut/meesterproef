@@ -43,7 +43,7 @@
     </button>
   </nav>
 
-  <form id="quizForm" method="POST">
+  <form id="quizForm" method="POST" class="quiz--form">
     <div class="section-sliders">
       <section id="howOldAreYou" class="showFormElement section-1 section">
         <h3 class="section__h3--heading">Hoe oud ben je?</h3>
@@ -112,7 +112,7 @@
 
       <section id="whichGender" class="showFormElement section-2 section">
         <h3 class="section__h3--heading">
-          Which genders do you want to make Sports with?
+          Met wie sport je het liefst?
         </h3>
         <input
           type="radio"
@@ -150,7 +150,7 @@
               />
             </g>
           </svg>
-          <p>Female only</p>
+          <p>Alleen met vrouwen</p>
         </label>
         <input
           type="radio"
@@ -159,7 +159,7 @@
           data="Mixed"
           value="Mixed"
         />
-        <label for="11">
+        <label for="11" class="gender">
           <?xml version="1.0" encoding="utf-8"?>
           <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
           <svg
@@ -181,7 +181,7 @@
                       c0-3.3-2.7-6-6-6c-3.3,0-6,2.7-6,6v0C36.1,9.4,38.7,12,42,12.1C42,12.1,42,12.1,42,12.1z"
             />
           </svg>
-          <p>Mixed</p>
+          <p>Gemixt/maakt niet uit</p>
         </label>
         <input
           type="radio"
@@ -219,15 +219,15 @@
               />
             </g>
           </svg>
-          <p>Male only</p>
+          <p>Alleen met mannen</p>
         </label>
-        <label class="quiz__navigation" for="s-1">Back</label>
-        <label class="quiz__navigation" for="s-3">Next</label>
+        <label class="quiz__navigation" for="s-1">Vorige</label>
+        <label class="quiz__navigation" for="s-3">Volgende</label>
       </section>
 
       <section id="mainMotivation" class="showFormElement section-3 section">
         <h3 class="section__h3--heading">
-          What are your 3 main motivations for sports?
+          Welke 3 factoren motiveren jouw het meest om te sporten?
         </h3>
 
         <input
@@ -238,7 +238,7 @@
           data="fun"
         />
         <label for="22">
-          <p>fun</p>
+          <p>Plezier</p>
         </label>
         <input
           type="checkbox"
@@ -248,7 +248,7 @@
           data="meet friends"
         />
         <label for="23">
-          <p>meet friends</p>
+          <p>Nieuwe vrienden ontmoeten</p>
         </label>
         <input
           type="checkbox"
@@ -258,7 +258,7 @@
           data="relaxation"
         />
         <label for="24">
-          <p>relaxation</p>
+          <p>Om te onstpannen</p>
         </label>
 
         <input
@@ -269,7 +269,7 @@
           data="me time"
         />
         <label for="25">
-          <p>me time</p>
+          <p>Voor mijn gezondheid</p>
         </label>
         <input
           type="checkbox"
@@ -279,7 +279,7 @@
           data="stress relief"
         />
         <label for="26">
-          <p>stress relief</p>
+          <p>??</p>
         </label>
         <input
           type="checkbox"
@@ -289,7 +289,7 @@
           data="winning"
         />
         <label for="27">
-          <p>winning</p>
+          <p>Om te winnen</p>
         </label>
 
         <input
@@ -300,7 +300,7 @@
           data="learn something"
         />
         <label for="28">
-          <p>learn something</p>
+          <p>Om iets leren</p>
         </label>
         <input
           type="checkbox"
@@ -310,10 +310,10 @@
           data="personal achievements"
         />
         <label for="29">
-          <p>personal achievements</p>
+          <p>Om persoonlijke doelen te halen</p>
         </label>
-        <label for="s-2">Back</label>
-        <label for="s-4">Next</label>
+        <label class="quiz__navigation" for="s-2">Vorige</label>
+        <label class="quiz__navigation" for="s-4">Volgende</label>
       </section>
 
       <section id="sliderOptions" class="showFormElement section-4 section">
@@ -676,8 +676,8 @@
           </svg>
         </label>
 
-        <label class="quiz__navigation" for="s-3">Back</label>
-        <button id="quizSubmit" type="submit">Submit</button>
+        <label class="quiz__navigation" for="s-3">Vorige</label>
+        <button id="quizSubmit" type="submit">Bekijk de uitslag</button>
       </section>
     </div>
   </form>
