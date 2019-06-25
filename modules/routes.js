@@ -18,11 +18,13 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
 	// HOME
 	app.get("/", async (req, res) => {
 		try {
-			const data = await fetch.file("data/json/sportEvents.json")
+			const sportEvents = await fetchData(eventsUrl, eventsData)
+			const firstTwo = sportEvents.slice(0, 2)
 
 			res.render("pages/index.ejs", {
 				hero: "hero--big",
-				heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
+				heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"],
+				sportEvents: firstTwo
 			})
 		} catch (code) {
 			res.redirect(`/error?code=${code}`)
