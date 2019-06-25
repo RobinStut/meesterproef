@@ -8,14 +8,14 @@ export default class extends DraggingEvent {
     this.cards = container.querySelectorAll(".card")
     this.cardsAmount = this.cards.length
 
-    this.onRemove = onRemove
+    this.onRemove = onRemove.bind(this)
 
     this.memory
 
+    this.setTransitionDelays()
+
     for (let i = 0; i < this.cards.length; i++) {
       this.cards[i].addEventListener("click", this.redirectPrevent)
-
-      this.cards[i].parentElement.style.transitionDelay = `${i / 15}s`
 
       super.target = this.cards[i]
 
@@ -25,6 +25,13 @@ export default class extends DraggingEvent {
 
   redirectPrevent(e) {
     e.preventDefault()
+  }
+
+  setTransitionDelays() {
+    console.log(this)
+    for (let i = 0; i < this.cards.length; i++) {
+      this.cards[i].parentElement.style.transitionDelay = `${i / 15}s`
+    }
   }
 
   removeCard(target, toRight) {
@@ -45,6 +52,10 @@ export default class extends DraggingEvent {
 
     setTimeout(() => {
       target.remove()
+
+      this.cards = this.container.querySelectorAll(".card")
+
+      this.setTransitionDelays()
     }, 300)
 
     this.cardsAmount--
