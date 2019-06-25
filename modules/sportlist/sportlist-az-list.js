@@ -2,7 +2,9 @@ const request = require("request")
 
 module.exports = data => {
   return new Promise((resolve, reject) => {
-    const allSportClubs = data.filter(item => Object.keys(item).length !== 0) // remove all empty records
+    const allSportClubs = JSON.parse(data).filter(
+      item => Object.keys(item).length !== 0
+    ) // remove all empty records
     const allSports = allSportClubs.map(item => item.sport)
     const uniqueSports = [...new Set(allSports)].sort()
 
