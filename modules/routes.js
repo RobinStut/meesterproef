@@ -109,10 +109,10 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
 	app.get("/login", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-login.ejs", {
 			hero: "hero--small",
-			heroText: ["Login/Register"]
+			heroText: ["Login"]
 		})
 	})
-	app.get("/sportprovider", (req, res) => {
+	app.get("/dashboard", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
 			hero: "hero--small",
 			heroText: ["Dashboard"]
@@ -127,7 +127,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
 
 		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
 			hero: "hero--small",
-			heroText: ["Events"],
+			heroText: ["Activiteit"],
 			sportEvents: sportEvents,
 			sportDescription: sportDescription
 		})
