@@ -1,8 +1,6 @@
 import DraggingEvent from "./dragging-event.js"
 import checkBrowser from "./helpers/checkBrowser.js"
 
-console.log(checkBrowser())
-
 export default class extends DraggingEvent {
   constructor(rangeInput, callback) {
     if (checkBrowser() !== "safari") {
@@ -25,14 +23,16 @@ export default class extends DraggingEvent {
 
       this.init()
 
-      this.leftOffset = this.slider.track.offsetLeft
+      this.leftOffset
+
+      this.updateLeftOffset()
 
       super.target = this.slider.track
 
       super.getPosition(this.sliding.bind(this))
 
       window.addEventListener("resize", () => {
-        this.leftOffset = this.slider.track.offsetLeft
+        this.updateLeftOffset()
 
         this.settings = this.createSettings()
         this.scale = this.createScale()
@@ -52,6 +52,13 @@ export default class extends DraggingEvent {
       this.slider.pin.offsetWidth / 2}px`
 
     if (this._output) this._output(this, this.rangeInput.value)
+  }
+
+  updateLeftOffset() {
+    const x1 = this.slider.track.getBoundingClientRect().left
+    const x2 = this.slider.container.parentElement.getBoundingClientRect().left
+
+    this.leftOffset = x1 - x2
   }
 
   createSettings() {
@@ -93,7 +100,8 @@ export default class extends DraggingEvent {
     return {
       pin: pinEl,
       trail: trailEl,
-      track: trackEl
+      track: trackEl,
+      container: containerEl
     }
   }
 
