@@ -5,37 +5,48 @@
 <% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-  <section class="display-flex-v st-section-radius">
-    <!-- <h3>Find your sport activity</h3> -->
-		<a class="back-button" href="/sportslist">< Back to overview</a></Back>
-    <h3><%= sport %></h3>
-    <p><%= sportDescription %></p>
-    <div>
-      <ul class="filter-bar">
-        <li>
-          <span>
-            <a href="/sportslist/events/<%=sport%>">Events</a>
-          </span>
-          <span class="selected">
-            <a href="#">Sport Clubs</a>
-          </span>
-        </li>
-      </ul>
-    </div>
+  <!-- <section class="section"> -->
+  <!-- <h3>Find your sport activity</h3> -->
+  <!-- <a class="back-button" href="/sportslist">< Back to overview</a></Back> -->
+
+  <section
+    class="display--flex-v section section--highlight section--highlight-radius"
+  >
+    <h3 class="section__h3--heading section__h3--heading--white">
+      <%= sport %>
+    </h3>
+    <p class="p--sportdescription"><%= sportDescription %></p>
   </section>
-  <section id="st-sportslist-clubs" class="display-flex-v">
+
+  <section class="section section--radius">
+    <a class="button--back" href="/sportslist">< Terug naar overzicht</a>
+    <ul class="filter--bar">
+      <li>
+        <span>
+          <a href="/sportslist/events/<%=sport%>">Activiteiten</a>
+        </span>
+        <span class="selected">
+          <a href="/sportslist/clubs/<%=sport%>">Sportclubs</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- </section> -->
+  <section class="section">
     <% clubs.forEach(club => { %>
-    <article>
+    <article class="article--sportclubs">
       <div>
-        <h4 class="heading-darkblue"><%=club.naam%></h4>
-        <p class="clubs-tag"><%=sport%></p>
+        <h4><%=club.naam%></h4>
+        <h5 class="clubs-tag"><%=sport%></h5>
       </div>
+
+      <p><%=club.adres_accommodatie%></p>
       <p><%=club.naam_accommodatie%></p>
-      <p><%=club.adres_accommodatie%>, <%=club.plaats_accommodatie%></p>
+      <p><b><%=club.plaats_accommodatie%>, <%=club.stadsdeel%></b></p>
       <a href="http://<%=club.website%>" class="website"> <%=club.website%></a>
     </article>
     <% }) %>
-    
   </section>
 </main>
 
