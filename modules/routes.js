@@ -24,6 +24,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const allSportClubs = await fetchData(sportproviderUrl, sportproviderData)
     sportproviderData = allSportClubs
     const allSports = await getAllSports(sportproviderData)
+    console.log(allSports)
 
     res.render("pages/sportlist/sportlist-az-list.ejs", {
       hero: "hero--small",
@@ -121,11 +122,11 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const data = await fetchData(
       "https://raw.githubusercontent.com/RobinStut/meesterproef/development/data/json/sportQuizFilter.json"
     )
-  res.render("pages/events/events-overview.ejs", {
-    hero: "small-hero",
-    heroText: ["Events"],
-    sportEvents: sportEvents,
-    sportDescription: sportDescription
+    res.render("pages/events/events-overview.ejs", {
+      hero: "small-hero",
+      heroText: ["Events"],
+      sportEvents: sportEvents,
+      sportDescription: sportDescription
+    })
   })
-	})
 }
