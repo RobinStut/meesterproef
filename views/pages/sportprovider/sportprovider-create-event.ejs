@@ -55,7 +55,7 @@
 			<p>
 				Wat voor soort activiteit is het?
 			</p>
-			<select id="event-type" name="event-sport" required>
+			<select id="event-type" name="event-type" required>
 				<option value="training">Training</option>
 				<option value="opendag">Opendag</option>
 				<option value="sportdag">Sportdag</option>
@@ -67,8 +67,8 @@
 			<p>
 				Om welke sport draait de activiteit?
 			</p>
-			<select id="event=sport" name="event-sport" required>
-				<% data.forEach(sport => { %>
+			<select id="event-sport" name="event-sport" required>
+				<% sportDescription.forEach(sport => { %>
 				<option value="<%= sport.sport %>"><%= sport.sport %></option>
 				<% }) %>
 			</select>
@@ -80,7 +80,7 @@
 				Tot welke categorie behoord je sport?
 			</p>
 			<select id="event-category" name="event-category" required>
-				<% data.forEach(category => { %>
+				<% sportDescription.forEach(category => { %>
 				<option value="<%= category.category %>"
 					><%= category.category %></option
 				>
