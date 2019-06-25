@@ -68,7 +68,7 @@ module.exports = app => {
 	app.get("/sportslist/events/:id", async (req, res) => {
 		const id = req.params.id
 
-		const matchingEvents = await filter.events(_eventData, id)
+		const matchingEvents = await filter.eventsByName(_eventData, id)
 		const description = await filter.descriptions(_descriptionData, id)
 
 		res.render("pages/sportlist/sportlist-events.ejs", {
@@ -86,6 +86,19 @@ module.exports = app => {
 			hero: "hero--small",
 			heroText: ["Activiteiten"],
 			data: JSON.parse(_eventData)
+		})
+	})
+
+	app.get("/events/:id", async (req, res) => {
+		const id = req.params.id
+		const matchingEvents = await filter.eventsById(_eventData, id)
+
+		console.log(matchingEvents)
+
+		res.render("pages/events/events-detail.ejs", {
+			hero: "hero--small",
+			heroText: [""],
+			data: matchingEvents
 		})
 	})
 

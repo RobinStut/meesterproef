@@ -15,7 +15,8 @@ h1 {
 }
 
 h4 {
-  color: var(--text-color);
+	margin: 0 0 0.5em 0;
+	color: var(--text-color);
 }
 
 p {
@@ -38,9 +39,9 @@ ul {
 }
 
 li {
-  color: var(--text-color);
-  font-size: var(--font-size-15px);
-  font-weight: 300;
+	color: var(--text-color);
+	font-size: var(--font-size-15px);
+	font-weight: 400;
 }
 
 fieldset {
@@ -166,6 +167,16 @@ fieldset legend {
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0.2em;
+}
+
+.eventDetail {
+	text-align: center;
+}
+
+.eventDetail__img {
+	margin: 1.5em 0;
+	max-width: 100%;
+	height: auto;
 }
 
 .article__list {
