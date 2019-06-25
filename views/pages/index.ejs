@@ -79,7 +79,7 @@
 		<h3 class="section__h3--heading">Activiteiten</h3>
 
 		<% sportEvents.forEach(event => { %>
-            <a class="event__link" href="/event/">
+            <a class="event__link" href="/events/<%= event.general.id %>">
                 <article class="event">
                     <div
                     class="event__content overlay"
