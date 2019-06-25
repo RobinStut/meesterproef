@@ -4,14 +4,9 @@
   padding: 1em;
 }
 
-.pop-up-content article {
+.pop-up-content .content-item .card {
   padding: 1em;
   background: white;
-  position: relative;
-}
-
-.pop-up-content article:not(:last-child) {
-  border-bottom: solid 3px whitesmoke;
   margin-bottom: 1em;
 }
 
