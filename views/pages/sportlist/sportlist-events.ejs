@@ -27,8 +27,12 @@
     </ul>
   </section>
 
-  <section class="">
-    <% events.forEach(event => { %>
+  <section class="section">
+    <% if (events.length === 0) { %>
+    <p class="section__h3--heading">
+      Er zijn helaas geen <%=sport%> activiteiten...
+    </p>
+    <% } %> <% events.forEach(event => { %>
     <a href="/event/<%= event.general.id %>">
       <article class="event">
         <div
