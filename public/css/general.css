@@ -20,6 +20,10 @@ p {
 	font-weight: 400;
 }
 
+.p--bold {
+	font-weight: 500;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
