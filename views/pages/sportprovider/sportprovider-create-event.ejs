@@ -83,22 +83,6 @@
 
 			<div class="divider"></div>
 
-			<label for="event-category" class="form__label form__label--required"
-				>Categorie</label
-			>
-			<p>
-				Tot welke categorie behoord je sport?
-			</p>
-			<select id="event-category" name="event-category" required>
-				<% sportDescription.forEach(category => { %>
-				<option value="<%= category.category %>"
-					><%= category.category %></option
-				>
-				<% }) %>
-			</select>
-
-			<div class="divider"></div>
-
 			<label for="event-city" class="form__label form__label--required"
 				>Stadsdeel</label
 			>
