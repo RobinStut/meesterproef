@@ -26,6 +26,8 @@
 				required
 			/>
 
+			<div class="divider"></div>
+
 			<label for="event-description" class="form__label form__label--required"
 				>Omschrijving</label
 			>
@@ -33,10 +35,12 @@
 				id="event-description"
 				class="form__textarea"
 				name="event-description"
-				maxlength="300"
-				placeholder="Max 300 karakters..."
+				maxlength="1000"
+				placeholder="Max 1000 karakters..."
 				required
 			></textarea>
+
+			<div class="divider"></div>
 
 			<label for="event-image" class="form__label">Afbeelding</label>
 			<p>
@@ -48,6 +52,8 @@
 				accept="image/png, image/jpeg"
 				name="event-image"
 			/>
+
+			<div class="divider"></div>
 
 			<label for="event-type" class="form__label form__label--required"
 				>Type Activiteit</label
@@ -61,6 +67,8 @@
 				<option value="sportdag">Sportdag</option>
 			</select>
 
+			<div class="divider"></div>
+
 			<label for="event-sport" class="form__label form__label--required"
 				>Sport</label
 			>
@@ -72,6 +80,8 @@
 				<option value="<%= sport.sport %>"><%= sport.sport %></option>
 				<% }) %>
 			</select>
+
+			<div class="divider"></div>
 
 			<label for="event-category" class="form__label form__label--required"
 				>Categorie</label
@@ -87,6 +97,8 @@
 				<% }) %>
 			</select>
 
+			<div class="divider"></div>
+
 			<label for="event-city" class="form__label form__label--required"
 				>Stadsdeel</label
 			>
@@ -99,17 +111,7 @@
 				required
 			/>
 
-			<label for="event-location-name" class="form__label">Locatie</label>
-			<p>
-				De naam van de locatie waar de activiteit zich plaatsvind.
-			</p>
-			<input
-				id="event-location-name"
-				class="form__inputText"
-				type="text"
-				name="event-location-name"
-				placeholder="Bijv. Bijlmer Sportpark"
-			/>
+			<div class="divider"></div>
 
 			<label for="event-address" class="form__label form__label--required"
 				>Address</label
@@ -123,6 +125,22 @@
 				required
 			/>
 
+			<div class="divider"></div>
+
+			<label for="event-location-name" class="form__label">Locatie</label>
+			<p>
+				De naam van de locatie waar de activiteit zich plaatsvind.
+			</p>
+			<input
+				id="event-location-name"
+				class="form__inputText"
+				type="text"
+				name="event-location-name"
+				placeholder="Bijv. Bijlmer Sportpark"
+			/>
+
+			<div class="divider"></div>
+
 			<label for="event-date" class="form__label form__label--required"
 				>Datum</label
 			>
@@ -130,6 +148,8 @@
 				Op welke dag vind de activiteit plaats?
 			</p>
 			<input id="event-date" type="date" name="event-date" required />
+
+			<div class="divider"></div>
 
 			<label for="event-from-time" class="form__label form__label--required"
 				>Van</label
@@ -139,6 +159,8 @@
 			</p>
 			<input id="event-from-time" type="time" name="event-from-time" required />
 
+			<div class="divider"></div>
+
 			<label for="event-till-time" class="form__label form__label--required"
 				>Tot</label
 			>
@@ -147,8 +169,10 @@
 			</p>
 			<input id="event-till-time" type="time" name="event-till-time" required />
 
+			<div class="divider"></div>
+
 			<fieldset>
-				<legend class="form__label--required">
+				<legend class="form__label form__label--required">
 					Is je activiteit eenmalig, wekelijks, maandelijks?
 				</legend>
 
@@ -168,7 +192,9 @@
 				<label for="annually">Jaarlijks</label>
 			</fieldset>
 
-			<button type="submit" class="button button--ghost">Submit</button>
+			<button type="submit" class="button button--ghost button--top">
+				Submit
+			</button>
 		</form>
 	</section>
 </main>

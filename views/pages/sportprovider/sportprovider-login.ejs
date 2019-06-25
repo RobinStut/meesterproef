@@ -6,10 +6,35 @@
 
 <main>
 	<section class="display-flex-v section section--radius section--minHeight">
-		<h3 class="section__h3--heading">Login/Register</h3>
-		<a href="/sportprovider" class="button button--ghost"
-			>Login in als sport provider</a
-		>
+		<form action="/dashboard" class="display--flex-v form">
+			<label for="login-username" class="form__label form__label--required"
+				>Username</label
+			>
+			<input
+				id="login-username"
+				name="login-username"
+				class="form__inputText"
+				type="text"
+				required
+			/>
+
+			<label for="login-password" class="form__label form__label--required"
+				>Password</label
+			>
+			<input
+				id="login-password"
+				class="form__inputText"
+				type="password"
+				required
+			/>
+
+			<button
+				class="button button--ghost button--topBottomMargin"
+				type="submit"
+			>
+				Login
+			</button>
+		</form>
 	</section>
 </main>
 
