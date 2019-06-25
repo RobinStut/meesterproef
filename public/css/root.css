@@ -1,21 +1,24 @@
 :root {
-	/* COLOR */
-	--black: #000000;
-	--white: #ffffff;
-	--grey: #d2d2d2;
-	--primary-color: #35afa3;
-	--secondary-color: #f7d650;
-	--text-color: #153e60;
-	--text-black: #2d2d2d;
+  /* COLOR */
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #d2d2d2;
+  --primary-color: #35afa3;
+  --secondary-color: #f7d650;
+  --text-color: #153e60;
+  --text-black: #2d2d2d;
 
-	/* FONT */
-	--font-size-50px: 3.125em;
-	--font-size-25px: 1.563em;
-	--font-size-18px: 1.125em;
-	--font-size-16px: 1em;
-	--font-size-15px: 0.938em;
-	--font-size-14px: 0.875em;
+  /* FONT */
+  --font-size-50px: 3.125em;
+  --font-size-25px: 1.563em;
+  --font-size-18px: 1.125em;
+  --font-size-16px: 1em;
+  --font-size-15px: 0.938em;
+  --font-size-14px: 0.875em;
 
-	/* MARGIN/PADDING */
-	--main-padding: 0 1em;
+  /* MARGIN/PADDING */
+  --main-padding: 0 1em;
+
+  /* SHADOW */
+  --subtle-shadow: 0px 10px 5px -5px rgba(0, 0, 0, 0.18);
 }
