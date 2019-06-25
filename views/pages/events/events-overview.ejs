@@ -9,6 +9,7 @@
 <main>
 
     <section class="display--flex-v section section--radius section--padding-0 section--minHeight">
+            <h3 class="section__h3--heading">Vind jouw activiteit</h3>
         <% data.forEach(event => { %>
             <a class="event__link" href="/event/">
                 <article class="event">
@@ -18,7 +19,7 @@
                     >
                     <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
                     <p class="event__time">
-                            Van <%= event.time.start %> t/m <%= event.time.end %></p>
+                            Van <span class="p--bold"><%= event.time.start %></span> t/m <span class="p--bold"><%= event.time.end %></span></p>
                     </p>
                     <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
                     </div>
