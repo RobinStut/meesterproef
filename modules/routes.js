@@ -4,28 +4,42 @@ const filter = require("./helper/filter.js")
 const getAllSports = require("./sportlist/sportlist-az-list.js")
 const quizCalc = require("./quiz/quiz-calculation.js")
 
-module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
-	// HOME
-	app.get("/", async (req, res) => {
+let _eventData, _clubsData, _descriptionData, _quizData
+
+async function updateData() {
+  _eventData = await fetch.file("data/json/sportEvents.json")
+  _clubsData = await fetch.file("data/json/sportaanbieders.json")
+  _descriptionData = await fetch.file("data/json/sportDescription.json")
+  _quizData = await fetch.file("data/json/sportQuizFilter.json")
+}
+
+updateData()
+
+// Update the data, not sure if this is good practice.
+setInterval(updateData, 1000 * 60 * 60 * 24)
+
+module.exports = app => {
+  // HOME
+  app.get("/", async (req, res) => {
+    console.log(_eventData)
     try {
-      const data = await fetch.file("data/json/sportEvents.json")
-      const firstTwo = JSON.parse(data).slice(0, 2)
-      
+      const firstTwo = JSON.parse(_eventData).slice(0, 2)
+
       res.render("pages/index.ejs", {
-				hero: "hero--big",
-				heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"],
-				sportEvents: firstTwo
-			})
+        hero: "hero--big",
+        heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"],
+        sportEvents: firstTwo
+      })
     } catch (code) {
       res.redirect(`/error?code=${code}`)
     }
-	})
+  })
 
-	// SPORTLIST
+  // SPORTLIST
   app.get("/sportslist", async (req, res) => {
     try {
-      const data = await fetch.file("data/json/sportaanbieders.json")
-      const allSports = await getAllSports(data)
+      // const data = await fetch.file("data/json/sportaanbieders.json")
+      const allSports = await getAllSports(_clubsData)
 
       res.render("pages/sportlist/sportlist-az-list.ejs", {
         hero: "hero--small",
@@ -49,13 +63,13 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const id = req.params.id
 
     try {
-      const allClubs = await fetch.file("data/json/sportaanbieders.json")
-      const matchingClubs = await filter.clubs(allClubs, id)
+      // const allClubs = await fetch.file("data/json/sportaanbieders.json")
+      const matchingClubs = await filter.clubs(_clubsData, id)
 
-      const allDescriptions = await fetch.file(
-        "data/json/sportDescription.json"
-      )
-      const description = await filter.descriptions(allDescriptions, id)
+      // const allDescriptions = await fetch.file(
+      //   "data/json/sportDescription.json"
+      // )
+      const description = await filter.descriptions(_descriptionData, id)
 
       res.render("pages/sportlist/sportlist-clubs.ejs", {
         hero: "hero--small",
@@ -73,13 +87,13 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
     const id = req.params.id
 
     try {
-      const allEvents = await fetch.file("data/json/sportEvents.json")
-      const matchingEvents = await filter.events(allEvents, id)
+      // const allEvents = await fetch.file("data/json/sportEvents.json")
+      const matchingEvents = await filter.events(_eventData, id)
 
-      const allDescriptions = await fetch.file(
-        "data/json/sportDescription.json"
-      )
-      const description = await filter.descriptions(allDescriptions, id)
+      // const allDescriptions = await fetch.file(
+      //   "data/json/sportDescription.json"
+      // )
+      const description = await filter.descriptions(_descriptionData, id)
 
       res.render("pages/sportlist/sportlist-events.ejs", {
         hero: "hero--small",
@@ -92,22 +106,22 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
       res.redirect(`/error?code=${code}`)
     }
   })
-  
+
   // EVENTS
   app.get("/events", async (req, res) => {
     try {
-      const events = await fetch.file("data/json/sportEvents.json")
+      // const events = await fetch.file("data/json/sportEvents.json")
 
       res.render("pages/events/events-overview.ejs", {
         hero: "hero--small",
         heroText: ["Events"],
-        data: JSON.parse(events)
+        data: JSON.parse(_eventData)
       })
     } catch (code) {
       res.redirect(`/error?code=${code}`)
     }
   })
-  
+
   // QUIZ
   app.get("/quiz", (req, res) => {
     res.render("pages/quiz/quiz-questions.ejs", {
@@ -118,8 +132,8 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
 
   app.post("/quiz", async (req, res) => {
     try {
-      const data = await fetch.file("data/json/sportQuizFilter.json")
-      const quizResult = quizCalc(req, data)
+      // const data = await fetch.file("data/json/sportQuizFilter.json")
+      const quizResult = quizCalc(req, _quizData)
 
       res.render("pages/quiz/quiz-result.ejs", {
         quizResult: quizResult,
@@ -130,7 +144,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
       res.redirect(`/error?code=${code}`)
     }
   })
-  
+
   // SPORTPROVIDER
   app.get("/login", (req, res) => {
     res.render("pages/sportprovider/sportprovider-login.ejs", {
@@ -148,14 +162,14 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
 
   app.get("/create-event", async (req, res) => {
     try {
-      const events = await fetch.file("data/json/sportEvents.json")
-      const descriptions = await fetch.file("data/json/sportDescription.json")
+      // const events = await fetch.file("data/json/sportEvents.json")
+      // const descriptions = await fetch.file("data/json/sportDescription.json")
 
       res.render("pages/sportprovider/sportprovider-create-event.ejs", {
         hero: "hero--small",
         heroText: ["Events"],
-        sportEvents: JSON.parse(events),
-        sportDescription: JSON.parse(descriptions)
+        sportEvents: JSON.parse(_eventData),
+        sportDescription: JSON.parse(_descriptionData)
       })
     } catch (code) {
       res.redirect(`/error?code=${code}`)
