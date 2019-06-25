@@ -80,7 +80,7 @@ module.exports = (app, eventsData, sportproviderData, sportDescriptionData) => {
 
 		res.render("pages/events/events-overview.ejs", {
 			hero: "hero--small",
-			heroText: ["Events"],
+			heroText: ["Activiteiten"],
 			data: events
 		})
 	})
