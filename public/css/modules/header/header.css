@@ -18,12 +18,13 @@
 }
 
 .header--background-solid {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 1);
   transition: 0.2s ease-in-out;
 }
 
 .header__hamburger--blue {
   color: var(--text-color) !important;
+  font-weight: 500;
 }
 
 .body--overflow-hidden {
@@ -32,6 +33,7 @@
 
 .header__logo {
   color: white;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 1.3em;
+  letter-spacing: 0.1px;
+  font-weight: 800;
 }
