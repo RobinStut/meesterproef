@@ -1,194 +1,82 @@
-
-[{"general":{"id":0.4271172454614347,"title":"Aloha Yoga op Paaseiland","description":"Aloha is de bekende liefdevolle Hawaïaanse groet en betekent letterlijk de adem van het leven. En net als voor het leven is bij yoga je ademhaling de basis van alles. Ademhaling en aandacht, compassie en vriendelijkheid voor elkaar en voor jezelf. Daar draait het om bij Aloha Yoga. \r\n\r\nOp de prachtige locatie van Paaseiland aan het IJ in Amsterdam, verzorgen we yogalessen, buiten met het kabbelende water op de achtergrond. ’s Morgens vroeg genieten van een gentle flow- of een dynamische vinyasa-klas of een meer restauratieve yin- of yinyang-klas gedurende de dag of avond.","image":"event-image-1561540435949.jpeg","recurring":"on"},"sport":{"name":"Yoga"},"location":{"name":"Paaseiland","city":"Amsterdam Centrum","address":"Westerdoksdijk 707, 1013 BX AMSTERDAM"},"time":{"date":"2019-06-29","start":"08:00","end":"18:00"}},{"general":{"id":0.784881598853777,"title":"Grachtenrace Amsterdam","description":"De Grachtenrace is een jaarlijkse sloepenrace van bijna 23 kilometer over de grachten van Amsterdam. In oktober 2019 keert deze unieke race door de Amsterdamse binnenstad terug.","image":"event-image-1561540636582.jpg","recurring":"on"},"sport":{"name":"Zwemmen"},"location":{"name":"Herengracht","city":"Amsterdam Centrum","address":"Herengracht , 1017 CD AMSTERDAM"},"time":{"date":"2019-10-12","start":"11:00","end":"16:30"}},{"general":{"id":0.3847618078329378,"title":"Zuidas Run","description":"De Zuidas Run keert weer terug voor de 11e editie rondom de Zuidas in Amsterdam. De Zuidas Run is een uniek hardloop- en netwerkevenement, waarbij de maatpakken van de Zuidas letterlijk worden verruild voor hardloopshirts. Schrijf je in voor de 5 of 10 kilometer en loop door het iconische zakelijke district van Amsterdam.","image":"event-image-1561540874409.jpg","recurring":"on"},"sport":{"name":"Hardlopen"},"location":{"name":"Zuidas","city":"Amsterdam Zuid","address":"Gustav Mahlerplein 1, 1082 MS AMSTERDAM"},"time":{"date":"2019-07-05","start":"19:00","end":"23:00"}},{"general":{"id":0.10130497738570443,"title":"Ben Bril Memorial Boksgala 2019","description":"De deuren van het Koninklijk Theater Carré in Amsterdam gaan één keer per jaar open voor de crème de la crème van het Nederlandse profboksen. De beste Nederlandse boksers dagen hier elkaar uit. Ben Bril Memorial is al twaalf jaar een vast onderdeel van het programma en voor de dertiende editie kan het na het grote succes van vorig jaar niet anders dan weer een heel bijzonder evenement worden. ","image":"event-image-1561541048046.jpeg","recurring":"on"},"sport":{"name":"Kickboksen"},"location":{"name":"Koninklijk Theater Carré","city":"Amsterdam Centrum","address":"Amstel 115-125, 1018 EM AMSTERDAM"},"time":{"date":"2019-10-27","start":"19:00","end":"23:00"}},{"general":{"id":0.351640321158589,"title":"Amsterdam Sevens Rugby","description":"Hoewel Nederland internationaal niet te boek staat als rugbyland, is onder jonge Nederlandse sporters de snellere variant Rugby Sevens – met 7 spelers per team – immens populair. Er wordt niet alleen met minder man gespeeld dan de gebruikelijke 15 spelers per team, maar de wedstrijden zijn ook een stuk korter.","image":"event-image-1561541233021.jpg","recurring":"on"},"sport":{"name":"Rugby"},"location":{"name":"Stichting Rugby Promotie Amsterdam","city":"Amsterdam West","address":"Bok de Korverweg 6, 1067 HR AMSTERDAM"},"time":{"date":"2019-07-10","start":"09:00","end":"19:00"}},
+[
 	{
 		"general": {
-			"id": 0.41195251843149827,
-			"title": "Hockey Event",
-			"description": "Dit is een test",
-			"image": "event-image-1561365757741.png",
+			"id": 0.4271172454614347,
+			"title": "Aloha Yoga op Paaseiland",
+			"description": "Aloha is de bekende liefdevolle Hawaïaanse groet en betekent letterlijk de adem van het leven. En net als voor het leven is bij yoga je ademhaling de basis van alles. Ademhaling en aandacht, compassie en vriendelijkheid voor elkaar en voor jezelf. Daar draait het om bij Aloha Yoga. \r\n\r\nOp de prachtige locatie van Paaseiland aan het IJ in Amsterdam, verzorgen we yogalessen, buiten met het kabbelende water op de achtergrond. ’s Morgens vroeg genieten van een gentle flow- of een dynamische vinyasa-klas of een meer restauratieve yin- of yinyang-klas gedurende de dag of avond.",
+			"image": "event-image-1561540435949.jpeg",
 			"recurring": "on"
 		},
-		"sport": {
-			"name": ["training", "Hockey"],
-			"category": "Sport games"
-		},
+		"sport": { "name": "Yoga" },
 		"location": {
-			"name": "Bijlmer Sportpark",
-			"city": "Amsterdam Zuidoost",
-			"address": "Lalala straat 9"
-		},
-		"time": {
-			"date": "2019-07-18",
-			"start": "14:00",
-			"end": "20:00"
-		}
-	},
-	{
-		"general": {
-			"id": 0.041285291228611465,
-			"title": "Urban Sports Week Amsterdam (USWA)",
-			"description": "Van 19 t/m 23 juni 2019 is Amsterdam het decor van de derde editie van de Urban Sports Week Amsterdam (USWA). In de stad vindt een groot aan",
-			"image": "event-image-1561364407799.png",
-			"recurring": "on"
-		},
-		"sport": {
-			"name": ["sportdag", "Mountainbike"],
-			"category": "Sport games"
-		},
-		"location": {
-			"name": "Museumplein",
+			"name": "Paaseiland",
 			"city": "Amsterdam Centrum",
-			"address": "Museumstraat 1, 1071 XX AMSTERDAM"
+			"address": "Westerdoksdijk 707, 1013 BX AMSTERDAM"
 		},
-		"time": {
-			"date": "2019-06-23",
-			"start": "10:00",
-			"end": "20:00"
-		}
+		"time": { "date": "2019-06-29", "start": "08:00", "end": "18:00" }
 	},
 	{
 		"general": {
-			"id": 0.46644806684157003,
-			"title": "Dam tot Damloop",
-			"description": "Naast alle sportieve deelnemers komen er ieder jaar ook duizenden enthousiaste toeschouwers naar de Dam tot Damloop. De 33e editie van het h",
-			"image": "event-image-1561364521840.png",
+			"id": 0.784881598853777,
+			"title": "Grachtenrace Amsterdam",
+			"description": "De Grachtenrace is een jaarlijkse sloepenrace van bijna 23 kilometer over de grachten van Amsterdam. In oktober 2019 keert deze unieke race door de Amsterdamse binnenstad terug.",
+			"image": "event-image-1561540636582.jpg",
 			"recurring": "on"
 		},
-		"sport": { "name": ["sportdag", "Running"], "category": "Outdoor" },
+		"sport": { "name": "Zwemmen" },
 		"location": {
-			"name": "",
+			"name": "Herengracht",
 			"city": "Amsterdam Centrum",
-			"address": "Prins Hendrikkade , 1011 AG AMSTERDAM"
+			"address": "Herengracht , 1017 CD AMSTERDAM"
 		},
-		"time": { "date": "2019-09-21", "start": "09:00", "end": "18:00" }
+		"time": { "date": "2019-10-12", "start": "11:00", "end": "16:30" }
 	},
 	{
 		"general": {
-			"id": 0.7456974606167703,
-			"title": "Amsterdam City Swim",
-			"description": "Na de alternatieve City Swim van 2018 maken in september 2019 de rondvaartboten en waterfietsen in de Amsterdamse grachten weer plaats voor ",
-			"image": "event-image-1561364648847.png",
+			"id": 0.3847618078329378,
+			"title": "Zuidas Run",
+			"description": "De Zuidas Run keert weer terug voor de 11e editie rondom de Zuidas in Amsterdam. De Zuidas Run is een uniek hardloop- en netwerkevenement, waarbij de maatpakken van de Zuidas letterlijk worden verruild voor hardloopshirts. Schrijf je in voor de 5 of 10 kilometer en loop door het iconische zakelijke district van Amsterdam.",
+			"image": "event-image-1561540874409.jpg",
 			"recurring": "on"
 		},
-		"sport": { "name": ["sportdag", "Swimming"], "category": "Outdoor" },
+		"sport": { "name": "Hardlopen" },
 		"location": {
-			"name": "",
-			"city": "Amsterdam Centrum",
-			"address": "Kattenburgerstraat , 1018 JA AMSTERDAM"
+			"name": "Zuidas",
+			"city": "Amsterdam Zuid",
+			"address": "Gustav Mahlerplein 1, 1082 MS AMSTERDAM"
 		},
-		"time": { "date": "2019-09-08", "start": "10:00", "end": "20:00" }
+		"time": { "date": "2019-07-05", "start": "19:00", "end": "23:00" }
 	},
 	{
 		"general": {
-			"id": 0.9852555719588685,
+			"id": 0.10130497738570443,
+			"title": "Ben Bril Memorial Boksgala 2019",
+			"description": "De deuren van het Koninklijk Theater Carré in Amsterdam gaan één keer per jaar open voor de crème de la crème van het Nederlandse profboksen. De beste Nederlandse boksers dagen hier elkaar uit. Ben Bril Memorial is al twaalf jaar een vast onderdeel van het programma en voor de dertiende editie kan het na het grote succes van vorig jaar niet anders dan weer een heel bijzonder evenement worden. ",
+			"image": "event-image-1561541048046.jpeg",
+			"recurring": "on"
+		},
+		"sport": { "name": "Kickboksen" },
+		"location": {
+			"name": "Koninklijk Theater Carré",
+			"city": "Amsterdam Centrum",
+			"address": "Amstel 115-125, 1018 EM AMSTERDAM"
+		},
+		"time": { "date": "2019-10-27", "start": "19:00", "end": "23:00" }
+	},
+	{
+		"general": {
+			"id": 0.351640321158589,
 			"title": "Amsterdam Sevens Rugby",
-			"description": "Hoewel Nederland internationaal niet te boek staat als rugbyland, is onder jonge Nederlandse sporters de snellere variant Rugby Sevens – met",
-			"image": "event-image-1561364843571.png",
+			"description": "Hoewel Nederland internationaal niet te boek staat als rugbyland, is onder jonge Nederlandse sporters de snellere variant Rugby Sevens – met 7 spelers per team – immens populair. Er wordt niet alleen met minder man gespeeld dan de gebruikelijke 15 spelers per team, maar de wedstrijden zijn ook een stuk korter.",
+			"image": "event-image-1561541233021.jpg",
 			"recurring": "on"
 		},
-		"sport": { "name": ["opendag", "Rugby"], "category": "Fitness" },
+		"sport": { "name": "Rugby" },
 		"location": {
 			"name": "Stichting Rugby Promotie Amsterdam",
 			"city": "Amsterdam West",
 			"address": "Bok de Korverweg 6, 1067 HR AMSTERDAM"
 		},
-		"time": { "date": "2019-06-29", "start": "09:00", "end": "17:00" }
-	},
-	{
-		"general": {
-			"id": 0.398267132889655,
-			"title": "Euro 2020",
-			"description": "Vanwege het zestigjarig bestaan van de UEFA wordt het EK in de zomer van 2020 op een bijzondere manier gehouden. Voor deze editie zijn er tw",
-			"image": "event-image-1561364978323.png",
-			"recurring": "on"
-		},
-		"sport": { "name": ["opendag", "Soccer"], "category": "Sport games" },
-		"location": {
-			"name": "Johan Cruijff ArenA",
-			"city": "Amstedam Zuid",
-			"address": "Arena Boulevard 1, 1101 AX AMSTERDAM"
-		},
-		"time": { "date": "2019-06-14", "start": "12:00", "end": "21:00" }
-	},
-	{
-		"general": {
-			"id": 0.398267132123455,
-			"title": "Rondje om de tafel",
-			"description": "Wegens de grote opkomst van de vorige editie is er op 30 juni opnieuw “Rondje om de Tafel”",
-			"image": "",
-			"recurring": "on"
-		},
-		"sport": { "name": ["toernooi", "Tafeltennis"] },
-		"location": {
-			"name": "Bijlmer Sportpark",
-			"city": "Amstedam Zuid",
-			"address": "Karspeldreef 501, 1102 BX Amsterdam"
-		},
-		"time": { "date": "2019-06-30", "start": "13:00", "end": "16:00" }
-	},
-	{
-		"general": {
-			"id": 0.398543232123455,
-			"title": "Racketsport bijeenkomst",
-			"description": "Onze maandelijkse borrel op de club is voor iedereen beschikbaar! We hebben bitterballen en wat te drinken",
-			"image": "",
-			"recurring": "on"
-		},
-		"sport": { "name": ["bijeenkomst", "Tennis"] },
-		"location": {
-			"name": "Bijlmer Sportpark",
-			"city": "Amstedam Zuid",
-			"address": "Karspeldreef 501, 1102 BX Amsterdam"
-		},
-		"time": { "date": "2019-06-30", "start": "17:00", "end": "21:00" }
-	},
-	{
-		"general": {
-			"id": 0.398543232198765,
-			"title": "Kickbox kennismaking",
-			"description": "Samen sparren om kennis te maken met de sport, voor jong en oud",
-			"image": "",
-			"recurring": "on"
-		},
-		"sport": { "name": ["opendag", "Kickboksen"] },
-		"location": {
-			"name": "Bijlmer Sportpark",
-			"city": "Amstedam Zuid",
-			"address": "Karspeldreef 501, 1102 BX Amsterdam"
-		},
-		"time": { "date": "2019-06-29", "start": "14:00", "end": "16:00" }
-	},
-	{
-		"general": {
-			"id": 0.309890232198765,
-			"title": "Karate, hoe is het ontstaan?",
-			"description": "Kom samen en luister naar de oorsprong van onze sport",
-			"image": "",
-			"recurring": "on"
-		},
-		"sport": { "name": ["opendag", "Karate"] },
-		"location": {
-			"name": "Bijlmer Sportpark",
-			"city": "Amstedam Zuid",
-			"address": "Karspeldreef 501, 1102 BX Amsterdam"
-		},
-		"time": { "date": "2019-06-29", "start": "10:00", "end": "12:30" }
-	},
-	{
-		"general": {
-			"id": 0.309000232198765,
-			"title": "Frisbee friends",
-			"description": "Doe mee met ons gezamelijke frisbee middag, en geniet van het mooie weer",
-			"image": "",
-			"recurring": "on"
-		},
-		"sport": { "name": ["sportdag", "Frisbee"] },
-		"location": {
-			"name": "Bijlmer Sportpark",
-			"city": "Amstedam Zuid",
-			"address": "Karspeldreef 501, 1102 BX Amsterdam"
-		},
-		"time": { "date": "2019-06-29", "start": "13:00", "end": "15:30" }
+		"time": { "date": "2019-07-10", "start": "09:00", "end": "19:00" }
 	}
 ]
-
