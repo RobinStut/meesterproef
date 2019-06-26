@@ -1,7 +1,9 @@
-module.exports = (req, description, quizValue) => {
+module.exports = (req, description, quizValue, event) => {
 	const descriptionData = JSON.parse(description)
+	const eventData = JSON.parse(event)
+	// console.log(eventData)
 
-	const mergedData = quizValue.map(x => {
+	const mergedDescriptions = quizValue.map(x => {
 		const sportName = x.sport.sport
 
 		function matchDescription(object) {
@@ -12,5 +14,17 @@ module.exports = (req, description, quizValue) => {
 		return x
 	})
 
-	return mergedData
+	const mergedEvent = mergedDescriptions.map(x => {
+		const sportName = x.sport.sport
+		// console.log(eventData)
+
+		function matchEvent(object) {
+			return object.sport.name[1] === sportName
+		}
+		const eventDetail = eventData.find(matchEvent)
+		x.sport.event = eventDetail
+		return x
+	})
+
+	return mergedEvent
 }

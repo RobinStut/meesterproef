@@ -176,12 +176,12 @@
 	{
 		"general": {
 			"id": 0.309000232198765,
-			"title": "Frisbee friends ",
+			"title": "Frisbee friends",
 			"description": "Doe mee met ons gezamelijke frisbee middag, en geniet van het mooie weer",
 			"image": "",
 			"recurring": "on"
 		},
-		"sport": { "name": ["sportdag", "frisbee"] },
+		"sport": { "name": ["sportdag", "Frisbee"] },
 		"location": {
 			"name": "Bijlmer Sportpark",
 			"city": "Amstedam Zuid",

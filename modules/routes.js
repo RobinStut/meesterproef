@@ -99,7 +99,12 @@ module.exports = app => {
 
 	app.post("/quiz", (req, res) => {
 		const quizResult = quizCalc(req, _quizData)
-		const quizCombination = quizCombine(req, _descriptionData, quizResult)
+		const quizCombination = quizCombine(
+			req,
+			_descriptionData,
+			quizResult,
+			_eventData
+		)
 
 		res.render("pages/quiz/quiz-result.ejs", {
 			quizResult: quizCombination,
