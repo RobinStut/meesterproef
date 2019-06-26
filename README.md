@@ -62,17 +62,17 @@ The residents consist of people both young and old who live in Amsterdam Southea
 
 They want to use the app to find sports that they maybe wouldn't have thought about at first. They need to be inspirited.
 
-### The Sport Providers
-
-The sport providers consist of the local sport clubs. They have a lot to offer but sport participation numbers in Southeast are the lowest in the whole of Amsterdam.
-
-They want to use the app to reach the residents by creating a personal page for their club or organisation where they can post events for example.
-
 ### The Sport Brokers
 
 The sport brokers help the residents of Southeast with questions they have about sports. For example a mom asks what possibilities there are for their children to participate in.
 
 They want to have a list of all sports that they can browse through to help people find a fitting sport.
+
+### The Sport Providers
+
+The sport providers consist of the local sport clubs. They have a lot to offer but sport participation numbers in Southeast are the lowest in the whole of Amsterdam.
+
+They want to use the app to reach the residents by creating a personal page for their club or organisation where they can post events for example.
 
 ## How It Works 🛠️
 
@@ -81,6 +81,13 @@ We have worked on three use cases in the app:
 - Residents are able to fill out a quiz that acts as a filter to show them sports together with matching activities that they can try out.
 - Sport brokers can use a list and map view to help people find sports for them.
 - Sport clubs are able to create activities.
+
+If you want to read more about the process and how things work you can look at our personal repositories or read the [design rational](https://meesterproef.gitbook.io/design-rationale/):
+
+- [Robin Stut](https://github.com/RobinStut/meesterproef-1819)
+- [Bas Pieren](https://github.com/BasPieren/meesterproef-1819)
+- [Sterre van Geest](https://github.com/sterrevangeest/meesterproef-1819)
+- [Jesse Dijkman](https://github.com/jesseDijkman1/meesterproef-1819)
 
 ## Sources 📚
 
