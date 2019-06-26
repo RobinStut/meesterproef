@@ -1,66 +1,186 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 
 <h1>Sportstimulering</h1>
 
-<% include ../partials/nav %>
-
-<% include ../partials/hero %>
+<% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-    <section id="st-create-event" class="display-flex-v st-section-radius">
-        <h3>Create Event</h3>
+	<section class="display--flex-v section section--radius">
+		<h3 class="section__h3--heading">Creeër een activiteit</h3>
 
-        <form action="/create-event" class="display-flex-v" method="POST">
+		<form
+			action="/create-event"
+			class="display--flex-v form"
+			enctype="multipart/form-data"
+			method="POST"
+		>
+			<label for="event-name" class="form__label form__label--required"
+				>Titel</label
+			>
+			<input
+				id="event-name"
+				class="form__inputText"
+				type="text"
+				name="event-name"
+				placeholder="Bijv. Amsterdam City Swim"
+				required
+			/>
 
-            <label for="">Title
-                <input type="text" name="event-name" required>
-            </label>
+			<div class="divider"></div>
 
-            <label for="">Description
-                <textarea name="event-description" required></textarea>
-            </label>
-            
-            <label for="">Sport
-                <select name="event-sport">
-                    <% data.forEach(sport => { %>
-                    <option value="<%= sport.sport %>"><%= sport.sport %></option>
-                    <% }) %>
-                </select>
-            </label>
+			<label for="event-description" class="form__label form__label--required"
+				>Omschrijving</label
+			>
+			<textarea
+				id="event-description"
+				class="form__textarea"
+				name="event-description"
+				maxlength="1000"
+				placeholder="Max 1000 karakters..."
+				required
+			></textarea>
 
-            <label for="">Category
-                <select name="event-category">
-                    <% data.forEach(category => { %>
-                        <option value="<%= category.category %>"><%= category.category %></option>
-                    <% }) %>
-                </select>
-            </label>
+			<div class="divider"></div>
 
-            <label for="">City
-                <input type="text" name="event-city" required>
-            </label>
+			<label for="event-image" class="form__label">Afbeelding</label>
+			<p>
+				Upload een article voor bij je activiteit.
+			</p>
+			<input
+				id="event-image"
+				type="file"
+				accept="image/png, image/jpeg"
+				name="event-image"
+			/>
 
-            <label for="">Address
-                <input type="text" name="event-address" required>
-            </label>
+			<div class="divider"></div>
 
-            <label for="">Date
-                <input type="date" name="event-date" required>
-            </label>
+			<label for="event-type" class="form__label form__label--required"
+				>Type Activiteit</label
+			>
+			<p>
+				Wat voor soort activiteit is het?
+			</p>
+			<select id="event-type" name="event-type" required>
+				<option value="training">Training</option>
+				<option value="opendag">Opendag</option>
+				<option value="sportdag">Sportdag</option>
+			</select>
 
-            <div>
-                <label for="">From
-                    <input type="time" name="event-from-time" required>
-                </label>
-    
-                <label for="">Till
-                    <input type="time" name="event-till-time" required>
-                </label>
-            </div>
+			<div class="divider"></div>
 
-            <button type="submit" class="st-button st-button-border">Submit</button>
-        </form>
-    </section>
+			<label for="event-sport" class="form__label form__label--required"
+				>Sport</label
+			>
+			<p>
+				Om welke sport draait de activiteit?
+			</p>
+			<select id="event-sport" name="event-sport" required>
+				<% sportDescription.forEach(sport => { %>
+				<option value="<%= sport.sport %>"><%= sport.sport %></option>
+				<% }) %>
+			</select>
+
+			<div class="divider"></div>
+
+			<label for="event-city" class="form__label form__label--required"
+				>Stadsdeel</label
+			>
+			<input
+				id="event-city"
+				class="form__inputText"
+				type="text"
+				name="event-city"
+				placeholder="Bijv. Amsterdam Zuidoost"
+				required
+			/>
+
+			<div class="divider"></div>
+
+			<label for="event-address" class="form__label form__label--required"
+				>Address</label
+			>
+			<input
+				id="event-address"
+				class="form__inputText"
+				type="text"
+				name="event-address"
+				placehoder="Bijv. Karspeldreef 501, 1102 BX Amsterdam"
+				required
+			/>
+
+			<div class="divider"></div>
+
+			<label for="event-location-name" class="form__label">Locatie</label>
+			<p>
+				De naam van de locatie waar de activiteit zich plaatsvind.
+			</p>
+			<input
+				id="event-location-name"
+				class="form__inputText"
+				type="text"
+				name="event-location-name"
+				placeholder="Bijv. Bijlmer Sportpark"
+			/>
+
+			<div class="divider"></div>
+
+			<label for="event-date" class="form__label form__label--required"
+				>Datum</label
+			>
+			<p>
+				Op welke dag vind de activiteit plaats?
+			</p>
+			<input id="event-date" type="date" name="event-date" required />
+
+			<div class="divider"></div>
+
+			<label for="event-from-time" class="form__label form__label--required"
+				>Van</label
+			>
+			<p>
+				De activiteit begint om:
+			</p>
+			<input id="event-from-time" type="time" name="event-from-time" required />
+
+			<div class="divider"></div>
+
+			<label for="event-till-time" class="form__label form__label--required"
+				>Tot</label
+			>
+			<p>
+				De activiteit eindigt om:
+			</p>
+			<input id="event-till-time" type="time" name="event-till-time" required />
+
+			<div class="divider"></div>
+
+			<fieldset>
+				<legend class="form__label form__label--required">
+					Is je activiteit eenmalig, wekelijks, maandelijks?
+				</legend>
+
+				<input id="one-off" type="radio" name="event-recurring" required />
+				<label for="one-off">Eenmalig</label>
+				<br />
+
+				<input id="weekly" type="radio" name="event-recurring" required />
+				<label for="weekly">Wekelijks</label>
+				<br />
+
+				<input id="monthly" type="radio" name="event-recurring" required />
+				<label for="monthly">Maandelijks</label>
+				<br />
+
+				<input id="annually" type="radio" name="event-recurring" required />
+				<label for="annually">Jaarlijks</label>
+			</fieldset>
+
+			<button type="submit" class="button button--ghost button--top">
+				Submit
+			</button>
+		</form>
+	</section>
 </main>
 
-<% include ../partials/footer %>
+<% include ../../partials/footer %>

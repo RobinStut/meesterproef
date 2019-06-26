@@ -1,17 +1,67 @@
-header {
-  position: fixed;
-  padding: 0 0.938em;
-  width: 100vw;
-  height: 10vh;
-  z-index: 999;
+.header {
+	position: fixed;
+	padding: 0 0.938em;
+	width: 100vw;
+	height: 10vh;
+	z-index: 3;
 }
 
-header button svg {
-  width: 25px;
-  color: var(--white);
+.header__hamburger {
+	margin: 0 0 0 auto;
+	border: none;
+	background-color: transparent;
+	margin-right: 1em;
 }
 
-.st-header-background-color {
-  background-color: rgba(255, 255, 255, 0.95);
-  transition: 0.2s ease-in-out;
+.header__hamburger svg {
+	width: 25px;
+	color: var(--white);
+}
+
+.header--background-solid {
+	background-color: rgba(255, 255, 255, 0.95);
+	transition: 0.2s ease-in-out;
+}
+
+.header__hamburger--blue {
+	color: var(--text-color) !important;
+	font-weight: 500;
+}
+
+.body--overflow-hidden {
+	overflow: hidden;
+}
+
+.header__logo {
+	margin: 0 auto 0 0;
+}
+
+.header__logo__svg {
+	width: auto;
+	height: 1em;
+}
+
+.header__logo__svg--blue {
+	fill: var(--text-color) !important;
+}
+
+.display--none {
+	display: none;
+	background-color: transparent;
+}
+
+.transparent {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+@media (min-width: 768px) {
+	.header {
+		padding: 1em 10em;
+	}
+}
+
+@media (min-width: 1280px) {
+	.header {
+		padding: 1em 25em;
+	}
 }

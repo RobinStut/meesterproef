@@ -1,37 +1,34 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 
 <h1>Sportstimulering</h1>
 
-<% include ../partials/nav %>
+<% include ../../partials/nav %>
 
-<% include ../partials/hero %>
+<% include ../../partials/hero %>
 
 <main>
 
-    <section id="st-events" class="display-flex-v st-section-radius">
-        <h3>Events</h3>
-
+    <section class="display--flex-v section section--radius section--padding-0 section--minHeight">
+            <h3 class="section__h3--heading">Vind jouw activiteit</h3>
         <% data.forEach(event => { %>
-            <article class="st-homepage-palace-article">
-                <p class="st-p-bold"><%= event.general.title %></p>
-
-                <img src="/images/swimming-pool.png" alt="">
-
-                <a href="#" class="st-button st-button-solid-yellow"><%= event.sport.sportName %></a>
-
-                <p><%= event.general.description %></p>
-
-                <p>Van <span class="st-p-bold"><%= event.time.timeStart %></span> t/m <span class="st-p-bold"><%= event.time.timeEnd %></span></p>
-
-                <ul>
-                    <li><%= event.location.city %></li>
-                    <li><%= event.location.address %></li>
-                </ul>
-            </article>
+            <a class="event__link" href="/events/<%= event.general.id %>">
+                <article class="event">
+                    <div
+                    class="event__content overlay"
+                    style="background-image:url(/uploads/<%= event.general.image %>)"
+                    >
+                    <h4 class="event__h4 event__h4--name"><%= event.location.name %></h4>
+                    <p class="event__time">
+                            Van <span class="p--bold"><%= event.time.start %></span> t/m <span class="p--bold"><%= event.time.end %></span></p>
+                    </p>
+                    <h4 class="event__h4 event__h4--title"><%= event.general.title %></h4>
+                    </div>
+                </article>
+            </a>
         <% }) %>
 
     </section>
 
 </main>
 
-<% include ../partials/footer %></section>
+<% include ../../partials/footer %></section>

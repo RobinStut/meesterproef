@@ -1,31 +1,37 @@
 require("dotenv").config()
 
 const express = require("express")
-const bodyParser = require("body-parser")
-const session = require("express-session")
 const ejs = require("ejs")
-const fs = require('fs')
-const request = require('request');
+const bodyParser = require("body-parser")
+const path = require("path")
+const multer = require("multer")
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
-let conceptEvents = []
-let eventsData = []
+const storage = multer.diskStorage({
+	destination: "./public/uploads/",
+	filename: function(req, file, cb) {
+		cb(
+			null,
+			file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+		)
+	}
+})
+
+const upload = multer({ storage: storage })
 
 app
-  .set("view engine", "ejs")
-  .set("views", "views")
+	.set("view engine", "ejs")
+	.set("views", "views")
 
-  .use(express.static("public"))
-  .use(bodyParser.json())
-  .use(bodyParser.urlencoded({ extended: true }))
-  .use(session({ secret: "classified" }))
+	.use(express.static("public"))
+	.use(bodyParser.json())
+	.use(
+		bodyParser.urlencoded({
+			extended: true
+		})
+	)
 
-require("./modules/sportslist.js")(request);
-require("./modules/routes.js")(app, eventsData)
-require("./modules/quizPostRequest.js")(app);
-require("./modules/create-event.js")(app, conceptEvents)
-require("./modules/publish-event.js")(app, fs, conceptEvents, eventsData)
-require("./modules/quiz.js")(app);
+require("./modules/routes.js")(app, upload)
 
-app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
+app.listen(PORT, () => console.log(`Listening to port: ${PORT}`))

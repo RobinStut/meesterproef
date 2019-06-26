@@ -1,35 +1,33 @@
 /* ---------- GLOBAL ---------- */
-@import "modules/fonts.css";
-@import "modules/root.css";
-@import "modules/general.css";
+@import "./fonts.css";
+@import "./root.css";
+@import "./general.css";
+
+/* ---------- HEADER ---------- */
 @import "modules/header/header.css";
 @import "modules/header/header-sidebar.css";
+
+/* ---------- HERO ---------- */
 @import "modules/hero.css";
-@import "modules/footer/footer.css";
 
 /* ---------- HOMEPAGE ---------- */
 @import "modules/home/homepage-quiz.css";
 @import "modules/home/homepage-community.css";
-@import "modules/home/homepage-places.css";
-@import "modules/home/homepage-healthy-living.css";
 
 /* ---------- QUIZ ---------- */
-@import "modules/quiz.css";
+@import "modules/quiz/quiz.css";
+@import "modules/quiz/quiz-carousel.css";
+@import "modules/quiz/quiz-splitup.css";
 
-/* ---------- SPORTSLIST ---------- */
-@import "modules/sportslist.css";
-
-/* ---------- LOGIN ---------- */
-@import "modules/login/login.css";
-
-/* ---------- DASHBOARD ---------- */
-@import "modules/dashboard/sportprovider-dashboard.css";
-
-/* ---------- CREATE EVENT ---------- */
-@import "modules/dashboard/create-event/create-event.css";
+/* ---------- SPORTS ACTIVITIES A-Z ---------- */
+@import "modules/sportslist/sportslist.css";
 
 /* ---------- EVENTS ---------- */
-@import "modules/events/events.css";
+@import "modules/events/events-filter.css";
 
-/* ---------- CAROUSEL --------- */
-@import "modules/carousel.css";
+/* ---------- POP-UP --------- */
+@import "modules/pop-up/pop-up.css";
+@import "modules/pop-up/pop-up-content.css";
+
+/* ---------- FOOTER --------- */
+@import "modules/footer/footer.css";

@@ -1,0 +1,42 @@
+.pop-up-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.pop-up-content .content-item .card {
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.pop-up-content.empty {
+  height: 100%;
+}
+
+.pop-up-content.empty::after {
+  content: "Er zijn op dit moment geen evenementen";
+  color: white;
+  display: block;
+  margin-top: calc(50vh - 2em);
+  width: 100%;
+  opacity: 0;
+  font-size: 3em;
+  text-align: center;
+  font-weight: bold;
+}
+
+#pop-up-toggle:checked ~ .pop-up .pop-up-content.empty::after {
+  opacity: 0.75;
+}
+
+.card a.link-overlay {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 2;
+  background: none;
+}

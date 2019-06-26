@@ -1,0 +1,82 @@
+[
+	{
+		"general": {
+			"id": 0.4271172454614347,
+			"title": "Aloha Yoga op Paaseiland",
+			"description": "Aloha is de bekende liefdevolle Hawaïaanse groet en betekent letterlijk de adem van het leven. En net als voor het leven is bij yoga je ademhaling de basis van alles. Ademhaling en aandacht, compassie en vriendelijkheid voor elkaar en voor jezelf. Daar draait het om bij Aloha Yoga. \r\n\r\nOp de prachtige locatie van Paaseiland aan het IJ in Amsterdam, verzorgen we yogalessen, buiten met het kabbelende water op de achtergrond. ’s Morgens vroeg genieten van een gentle flow- of een dynamische vinyasa-klas of een meer restauratieve yin- of yinyang-klas gedurende de dag of avond.",
+			"image": "event-image-1561540435949.jpeg",
+			"recurring": "on"
+		},
+		"sport": { "name": "Yoga" },
+		"location": {
+			"name": "Paaseiland",
+			"city": "Amsterdam Centrum",
+			"address": "Westerdoksdijk 707, 1013 BX AMSTERDAM"
+		},
+		"time": { "date": "2019-06-29", "start": "08:00", "end": "18:00" }
+	},
+	{
+		"general": {
+			"id": 0.784881598853777,
+			"title": "Grachtenrace Amsterdam",
+			"description": "De Grachtenrace is een jaarlijkse sloepenrace van bijna 23 kilometer over de grachten van Amsterdam. In oktober 2019 keert deze unieke race door de Amsterdamse binnenstad terug.",
+			"image": "event-image-1561540636582.jpg",
+			"recurring": "on"
+		},
+		"sport": { "name": "Zwemmen" },
+		"location": {
+			"name": "Herengracht",
+			"city": "Amsterdam Centrum",
+			"address": "Herengracht , 1017 CD AMSTERDAM"
+		},
+		"time": { "date": "2019-10-12", "start": "11:00", "end": "16:30" }
+	},
+	{
+		"general": {
+			"id": 0.3847618078329378,
+			"title": "Zuidas Run",
+			"description": "De Zuidas Run keert weer terug voor de 11e editie rondom de Zuidas in Amsterdam. De Zuidas Run is een uniek hardloop- en netwerkevenement, waarbij de maatpakken van de Zuidas letterlijk worden verruild voor hardloopshirts. Schrijf je in voor de 5 of 10 kilometer en loop door het iconische zakelijke district van Amsterdam.",
+			"image": "event-image-1561540874409.jpg",
+			"recurring": "on"
+		},
+		"sport": { "name": "Hardlopen" },
+		"location": {
+			"name": "Zuidas",
+			"city": "Amsterdam Zuid",
+			"address": "Gustav Mahlerplein 1, 1082 MS AMSTERDAM"
+		},
+		"time": { "date": "2019-07-05", "start": "19:00", "end": "23:00" }
+	},
+	{
+		"general": {
+			"id": 0.10130497738570443,
+			"title": "Ben Bril Memorial Boksgala 2019",
+			"description": "De deuren van het Koninklijk Theater Carré in Amsterdam gaan één keer per jaar open voor de crème de la crème van het Nederlandse profboksen. De beste Nederlandse boksers dagen hier elkaar uit. Ben Bril Memorial is al twaalf jaar een vast onderdeel van het programma en voor de dertiende editie kan het na het grote succes van vorig jaar niet anders dan weer een heel bijzonder evenement worden. ",
+			"image": "event-image-1561541048046.jpeg",
+			"recurring": "on"
+		},
+		"sport": { "name": "Kickboksen" },
+		"location": {
+			"name": "Koninklijk Theater Carré",
+			"city": "Amsterdam Centrum",
+			"address": "Amstel 115-125, 1018 EM AMSTERDAM"
+		},
+		"time": { "date": "2019-10-27", "start": "19:00", "end": "23:00" }
+	},
+	{
+		"general": {
+			"id": 0.351640321158589,
+			"title": "Amsterdam Sevens Rugby",
+			"description": "Hoewel Nederland internationaal niet te boek staat als rugbyland, is onder jonge Nederlandse sporters de snellere variant Rugby Sevens – met 7 spelers per team – immens populair. Er wordt niet alleen met minder man gespeeld dan de gebruikelijke 15 spelers per team, maar de wedstrijden zijn ook een stuk korter.",
+			"image": "event-image-1561541233021.jpg",
+			"recurring": "on"
+		},
+		"sport": { "name": "Rugby" },
+		"location": {
+			"name": "Stichting Rugby Promotie Amsterdam",
+			"city": "Amsterdam West",
+			"address": "Bok de Korverweg 6, 1067 HR AMSTERDAM"
+		},
+		"time": { "date": "2019-07-10", "start": "09:00", "end": "19:00" }
+	}
+]

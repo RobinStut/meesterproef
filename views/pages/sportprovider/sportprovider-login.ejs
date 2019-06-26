@@ -1,17 +1,43 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 
 <h1>Sportstimulering</h1>
 
-<% include ../partials/nav %>
-
-<% include ../partials/hero %>
+<% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-    <section id="st-login" class="display-flex-v">
-        <a href="/sportprovider">Sign in as a Sportprovider</a>
-        <a href="/user">Sign in as a User</a>
-    </section>
+	<section class="display-flex-v section section--radius section--minHeight">
+		<form action="/dashboard" class="display--flex-v form">
+			<label for="login-username" class="form__label form__label--required"
+				>Username</label
+			>
+			<input
+				id="login-username"
+				name="login-username"
+				class="form__inputText"
+				type="text"
+				required
+			/>
+
+			<label
+				for="login-password"
+				class="form__label form__label--topMargin form__label--required"
+				>Password</label
+			>
+			<input
+				id="login-password"
+				class="form__inputText"
+				type="password"
+				required
+			/>
+
+			<button
+				class="button button--ghost button--topBottomMargin"
+				type="submit"
+			>
+				Login
+			</button>
+		</form>
+	</section>
 </main>
 
-
-<% include ../partials/footer %>
+<% include ../../partials/footer %>

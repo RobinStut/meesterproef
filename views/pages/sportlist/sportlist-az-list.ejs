@@ -1,51 +1,40 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 
 <h1>Sportstimulering</h1>
 
-<% include ../partials/nav %>
-
-<% include ../partials/hero %>
+<% include ../../partials/nav %> <% include ../../partials/hero %>
 
 <main>
-    <section id="st-sportactivities" class="display-flex-v st-section-radius">
-        <!-- <h3>Find your sport activity</h3> -->
+	<section class="section section--radius">
+		<h3 class="section__h3--heading">Vind jouw sport</h3>
 
-        <div>
-            <ul class="filter-bar">
-                <li><a href="#">Filter</a></li>
-                <!-- <li><a href="#">Sorteer</a></li> -->
-                <li>
-                <span class="selected">
-                    <a href="#">List</a>
-                </span>
-                <span>
-                    <a href="/sportsmap">Map</a>
-                </span>
-                </li>
-            </ul>
-        </div>
+		<div class="switchFilter">
+			<ul class="filter--bar">
+				<li>
+					<span class="selected">
+						<a href="#">Lijst</a>
+					</span>
+					<span>
+						<a href="/sportsmap">Kaart</a>
+					</span>
+				</li>
+			</ul>
+		</div>
 
-        <div class="search-bar">
-            <!-- <input type="text" name="" value=""> -->
-            <!-- <button type="button" name="button">search</button></button> -->
-        </div>
-
-        <div class="display-flex-v">
-            <ul class="sports-list">
-                <%keys.forEach(key => {%>
-                <li class="letter-keys"><%=key%></li>
-                    <ul>
-                        <%data[key].forEach(item2 => {%>
-                            <li>
-                                <img src="http://lorempixel.com/400/200/sports" alt="">
-                                <a href="/sportslist/events/<%=item2%>"><%=item2%></a>
-                            </li>
-                        <%})%>
-                    <%})%>
-                    </ul>
-            </ul>
-        </div>
-    </section>
+		<div class="display-flex-v">
+			<ul class="sports__list">
+				<%keys.forEach(key => {%>
+				<li class="letter-keys"><%=key%></li>
+				<ul>
+					<%data[key].forEach(item2 => {%>
+					<li>
+						<a href="/sportslist/events/<%=item2%>"><%=item2%></a>
+					</li>
+					<%})%> <%})%>
+				</ul>
+			</ul>
+		</div>
+	</section>
 </main>
 
-<% include ../partials/footer %>
+<% include ../../partials/footer %>

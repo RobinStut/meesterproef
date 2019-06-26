@@ -1,0 +1,132 @@
+.floating-action {
+  --bell-speed: 0.5s;
+  background: #ed553b;
+  border-radius: 100px;
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+  height: 4em;
+  width: 4em;
+  padding: 1em;
+  z-index: 1;
+  filter: blur(0px) !important;
+  transition: padding 0.2s linear;
+  -webkit-box-shadow: var(--subtle-shadow);
+  -moz-box-shadow: var(--subtle-shadow);
+  box-shadow: var(--subtle-shadow);
+}
+
+.floating-action:hover {
+  cursor: pointer;
+}
+
+.floating-action:hover #notification-bell {
+  animation-name: shakeBell;
+  animation-duration: var(--bell-speed);
+  animation-timing-function: ease-in-out;
+  transform-origin: center top;
+}
+
+.floating-action:hover #bell-ball {
+  cursor: pointer;
+  animation-name: ringBell;
+  animation-duration: calc(var(--bell-speed));
+  animation-delay: 0.25s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes ringBell {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(25%);
+  }
+  66% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shakeBell {
+  0% {
+    transform: rotate(0);
+  }
+  33% {
+    transform: rotate(15deg);
+  }
+  66% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.floating-action svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: var(--white);
+}
+
+.pop-up {
+  --duration: 0.3s;
+  filter: blur(0px) !important;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 100%;
+  left: 0;
+  opacity: 0;
+  transition: bottom 0s ease calc(2 * var(--duration)),
+    opacity var(--duration) ease calc(var(--duration) / 2);
+  padding: 2em;
+  overflow: scroll;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+
+  z-index: 100;
+}
+
+#pop-up-toggle:checked ~ .pop-up {
+  transition: bottom 0s ease, opacity var(--duration) ease;
+  bottom: 0;
+  opacity: 1;
+}
+
+#pop-up-toggle:checked ~ .floating-action {
+  z-index: 101;
+}
+.pop-up-content .content-item {
+  transform: translateX(100vw);
+  transition: transform calc(var(--duration) / 2) ease;
+}
+
+#pop-up-toggle:checked ~ .pop-up .pop-up-content .content-item {
+  transform: translateX(0);
+  transition: transform var(--duration) ease;
+}
+
+.pop-up label[for="pop-up-toggle"] {
+  margin: 0;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#pop-up-toggle:checked ~ .pop-up label[for="pop-up-toggle"] {
+  display: block;
+}
+
+#pop-up-toggle:checked ~ * {
+  filter: blur(1px);
+}

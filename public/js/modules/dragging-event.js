@@ -1,82 +1,79 @@
 export default class {
-    constructor(target = undefined) {
-        this.target = target;
-    }
+	constructor(target = undefined) {
+		this.target = target
+	}
 
-    event(callback) {
-        let handler;
+	event(callback) {
+		let handler
 
-        this.target.addEventListener("mousedown", e => {
-            e.preventDefault()
+		this.target.style.setProperty("touch-action", "none")
 
-            handler = callback(e)
+		this.target.addEventListener("pointerdown", e => {
+			e.preventDefault()
 
-            window.addEventListener("mousemove", handler)
+			handler = callback(e)
 
-            window.addEventListener("mouseup", clearDraggingEvent)
+			window.addEventListener("pointermove", handler)
+			window.addEventListener("pointerup", clearDraggingEvent)
 
-            document.body.addEventListener("mouseleave", clearDraggingEvent)
+			function clearDraggingEvent(e) {
+				window.removeEventListener("pointermove", handler)
+				window.removeEventListener("pointerup", clearDraggingEvent)
 
-            function clearDraggingEvent() {
-                window.removeEventListener("mousemove", handler)
-                window.removeEventListener("mouseup", clearDraggingEvent)
+				handler(null)
+			}
+		})
+	}
 
-                handler(null)
-            }
-        })
+	getDistance(callback) {
+		function distanceInit(e1) {
+			const startingX = e1.clientX
+			const startingY = e1.clientY
 
-        this.target.addEventListener("touchstart", e => {
-            handler = callback(e)
+			callback({ x: 0, y: 0 })
 
-            window.addEventListener("touchmove", handler)
+			return function(e2) {
+				if (e2 === null) {
+					return callback(null)
+				} else {
+					return callback({
+						x: e2.clientX - startingX,
+						y: e2.clientY - startingY
+					})
+				}
+			}
+		}
 
-            window.addEventListener("touchend", clearDraggingEvent)
+		this.event(distanceInit)
+	}
 
-            document.body.addEventListener("mouseleave", clearDraggingEvent)
+	getPosition(callback) {
+		function positionInit(e1) {
+			const startingX = e1.clientX
+			const startingY = e1.clientY
 
-            function clearDraggingEvent() {
-                window.removeEventListener("touchmove", handler)
-                window.removeEventListener("touchend", clearDraggingEvent)
+			callback({
+				clickedX: startingX,
+				clickedY: startingY
+			})
 
-                handler(null)
-            }
-        })
-    }
+			return function(e2) {
+				if (e2 === null) {
+					return callback(null)
+				} else {
+					const x = e2.clientX
+					const y = e2.clientY
 
-    // Get the distance that the user has dragged
-    getDistance(callback) {
-        function distanceInit(e1) {
-            let startingX, startingY;
+					return callback({
+						startX: startingX,
+						startY: startingY,
+						x: x,
+						y: y
+					})
+				}
+			}
+		}
 
-            if ("touches" in e1) {
-                startingX = e1.touches[0].clientX
-                startingY = e1.touches[0].clientY
-            } else {
-                startingX = e1.clientX
-                startingY = e1.clientY
-            }
-
-
-            return function (e2) {
-                if (e2 === null) {
-                    return callback(null)
-                } else {
-
-                    if ("touches" in e2) {
-                        return callback({
-                            x: e2.touches[0].clientX - startingX,
-                            y: e2.touches[0].clientY - startingY
-                        })
-                    } else {
-                        return callback({
-                            x: e2.clientX - startingX,
-                            y: e2.clientY - startingY
-                        })
-                    }
-                }
-            }
-        }
-
-        this.event(distanceInit)
-    }
+		this.event(positionInit)
+	}
 }

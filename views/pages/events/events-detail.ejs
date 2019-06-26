@@ -1,0 +1,41 @@
+<% include ../../partials/header %>
+
+<h1>Sportstimulering</h1>
+
+<% include ../../partials/nav %>
+
+<% include ../../partials/hero %>
+
+<main>
+
+    <section class="display--flex-v section section--radius section--minHeight">
+        <div class="eventDetail">
+            <h3 class="section__h3--heading"><%= data.general.title %></h3>
+
+            <p><%= data.general.description %></p>
+    
+            <img class="eventDetail__img" src="/uploads/<%= data.general.image %>" alt="">
+            
+            <div class="display--flex-v eventDetail__block">
+                <div class="display--flex-v">
+                    <h4 class="eventDetail__block__heading">Datum</h4>
+
+                    <p><span class="p--bold"><%= data.time.date %></span></p>
+                    <p><%= data.time.start %> - <%= data.time.end %></p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="display--flex-v">
+                    <h4>Address</h4>
+
+                    <p><span class="p--bold"><%= data.location.name %></span></p>
+                    <p><%= data.location.address %></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<% include ../../partials/footer %></section>
