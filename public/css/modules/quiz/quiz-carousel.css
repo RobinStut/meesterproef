@@ -83,3 +83,11 @@
 	bottom: 0;
 	margin-bottom: 2em;
 }
+
+.nav__cross--transparant {
+	background-color: var(--secondary-color);
+}
+
+.displayNone {
+	display: none;
+}
