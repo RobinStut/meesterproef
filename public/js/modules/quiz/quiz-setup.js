@@ -12,7 +12,9 @@ export default (() => {
   if (!isMobileDevice() && document.getElementById("mainMotivation")) {
     document.getElementById(
       "mainMotivation"
-    ).innerHTML = `   <h3>What are your 3 main motivations for sports?</h3>
+    ).innerHTML = `    <h3 class="section__h3--heading">
+    Welke 3 factoren motiveren jouw het meest om te sporten?
+  </h3>
         <label for="13">
             <div class="container dragInput" connectTo="13"></div>
             <input type="hidden" id="13" name="genderChoice">
@@ -27,32 +29,32 @@ export default (() => {
         </label>
         <div>
             <div class="container">
-                <p draggable="true" class="draggableTag">fun</p>
+                <p draggable="true" class="draggableTag">Plezier</p>
             </div>
             <div class="container">
-                <p draggable="true" class="draggableTag">meet friends</p>
+                <p draggable="true" class="draggableTag">Nieuwe vrienden ontmoeten</p>
             </div>
             <div class="container">
-                <p draggable="true" class="draggableTag">relaxation</p>
+                <p draggable="true" class="draggableTag">Om te ontspannen</p>
             </div>
             <div class="container">
-                <p draggable="true" class="draggableTag">me time</p>
+                <p draggable="true" class="draggableTag">Voor mijn gezondheid</p>
             </div>
             <div class="container">
-                <p draggable="true" class="draggableTag">stress relief</p>
+                <p draggable="true" class="draggableTag">Om te winnen</p>
             </div>
             <div class="container">
-                <p draggable="true" class="draggableTag">winning</p>
+                <p draggable="true" class="draggableTag">Om iets te leren</p>
             </div>
             <div class="container">
-                <p draggable="true" class="draggableTag">learn something</p>
+                <p draggable="true" class="draggableTag">Om persoonlijke doelen te halen</p>
             </div>
             <div class="container">
                 <p draggable="true" class="draggableTag">personal achievements </p>
             </div>
         </div>
-        <label for="s-2">Back</label>
-        <label for="s-4">Next</label>`
+        <label class="quiz__navigation" for="s-2">Vorige</label>
+        <label class="quiz__navigation" for="s-4">Volgende</label>`
   }
 
   let currentDraggedElement
