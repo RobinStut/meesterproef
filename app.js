@@ -1,20 +1,12 @@
 require("dotenv").config()
 
 const express = require("express")
-const bodyParser = require("body-parser")
-const session = require("express-session")
 const ejs = require("ejs")
+const bodyParser = require("body-parser")
 const path = require("path")
-const fs = require("fs")
-const request = require("request")
 const multer = require("multer")
 const app = express()
 const PORT = process.env.PORT || 3000
-
-let conceptEvents = []
-let eventsData = []
-let sportproviderData = []
-let sportDescriptionData = []
 
 const storage = multer.diskStorage({
 	destination: "./public/uploads/",
@@ -37,11 +29,6 @@ app
 	.use(
 		bodyParser.urlencoded({
 			extended: true
-		})
-	)
-	.use(
-		session({
-			secret: "classified"
 		})
 	)
 
