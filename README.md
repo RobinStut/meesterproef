@@ -78,9 +78,9 @@ They want to have a list of all sports that they can browse through to help peop
 
 We have worked on three use cases in the app:
 
-- Sport clubs are able to create activities.
 - Residents are able to fill out a quiz that acts as a filter to show them sports together with matching activities that they can try out.
 - Sport brokers can use a list and map view to help people find sports for them.
+- Sport clubs are able to create activities.
 
 ## Sources 📚
 
