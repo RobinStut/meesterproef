@@ -8,7 +8,6 @@ This is the repo for the 'Meesterproef' assignment of [Robin Stut](https://githu
 
 ## Table of Contents 🗃
 
-- [To Do](#to-do-)
 - [Description](#description-)
 - [Installing](#installing-)
   - [Packages and Technologies](#packages-and-technologies)
@@ -20,12 +19,6 @@ This is the repo for the 'Meesterproef' assignment of [Robin Stut](https://githu
 - [Sources](#sources-)
   - [The Team](#the-team)
 - [Licence](#licence-)
-
-## To Do 📌
-
-This is a list of things we want to do in this project:
-
-- [ ] .
 
 ## Description 📝
 
