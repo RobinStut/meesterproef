@@ -2,225 +2,231 @@ import DraggingEvent from "../dragging-event.js"
 import checkBrowser from "../helpers/checkBrowser.js"
 
 export default class extends DraggingEvent {
-	constructor(container, controller = undefined) {
-		if (checkBrowser() !== "safari") {
-			super(container)
+  constructor(container, onChange = undefined, controller = undefined) {
+    if (checkBrowser() !== "safari") {
+      super(container)
 
-			// Elements
-			this.container = container
-			this.controllerElement = controller
+      // Elements
+      this.container = container
+      this.controllerElement = controller
 
-			this.cards = container.querySelectorAll(".card")
+      this.cards = container.querySelectorAll(".card")
 
-			// Carousel data
-			this.centerIndex = (this.cards.length - 1) / 2
-			this.cardWidth =
-				(this.cards[0].offsetWidth / this.container.offsetWidth) * 100
-			this.xScale = {}
+      this.onChange = onChange
 
-			// Resizing
-			window.addEventListener("resize", this.updateCardWidth.bind(this))
+      // Carousel data
+      this.centerIndex = (this.cards.length - 1) / 2
+      this.cardWidth =
+        (this.cards[0].offsetWidth / this.container.offsetWidth) * 100
+      this.xScale = {}
 
-			if (this.controllerElement) {
-				this.controllerElement.addEventListener(
-					"keydown",
-					this.controller.bind(this)
-				)
-			}
-			// Initalizer
-			this.build()
+      // Resizing
+      window.addEventListener("resize", this.updateCardWidth.bind(this))
 
-			// Bind dragging event
-			super.getDistance(this.moveCards.bind(this))
-		} else {
-			super()
+      if (this.controllerElement) {
+        this.controllerElement.addEventListener(
+          "keydown",
+          this.controller.bind(this)
+        )
+      }
+      // Initalizer
+      this.build()
 
-			container.style.display = "flex"
-			container.style.overflow = "scroll"
-		}
-	}
+      // Bind dragging event
+      super.getDistance(this.moveCards.bind(this))
+    } else {
+      super()
 
-	build() {
-		this.container.style.overflow = "hidden"
+      container.style.display = "flex"
+      container.style.overflow = "scroll"
+    }
+  }
 
-		for (let i = 0; i < this.cards.length; i++) {
-			this.cards[i].style.position = "absolute"
+  build() {
+    this.container.style.overflow = "hidden"
 
-			const x = i - this.centerIndex,
-				sizeScale = this.calcScaleSize(x),
-				positionScale = this.calcScalePosition(x),
-				leftPos = this.calcPosition(x, positionScale),
-				zIndex = -Math.abs(x)
+    for (let i = 0; i < this.cards.length; i++) {
+      this.cards[i].style.position = "absolute"
 
-			this.xScale[x] = this.cards[i]
+      const x = i - this.centerIndex,
+        sizeScale = this.calcScaleSize(x),
+        positionScale = this.calcScalePosition(x),
+        leftPos = this.calcPosition(x, positionScale),
+        zIndex = -Math.abs(x)
 
-			this.updateCards(this.cards[i], {
-				x: x,
-				left: leftPos,
-				scale: sizeScale,
-				zIndex: zIndex
-			})
-		}
-	}
+      this.xScale[x] = this.cards[i]
 
-	controller(e) {
-		const temp = { ...this.xScale }
+      this.updateCards(this.cards[i], {
+        x: x,
+        left: leftPos,
+        scale: sizeScale,
+        zIndex: zIndex
+      })
+    }
+  }
 
-		if (e.keyCode === 39) {
-			// Left arrow
-			for (let x in this.xScale) {
-				const newX =
-					parseInt(x) - 1 < -this.centerIndex
-						? this.centerIndex
-						: parseInt(x) - 1
+  controller(e) {
+    const temp = { ...this.xScale }
 
-				temp[newX] = this.xScale[x]
-			}
-		}
+    if (e.keyCode === 39) {
+      // Left arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) - 1 < -this.centerIndex
+            ? this.centerIndex
+            : parseInt(x) - 1
 
-		if (e.keyCode == 37) {
-			// Right arrow
-			for (let x in this.xScale) {
-				const newX =
-					parseInt(x) + 1 > this.centerIndex
-						? -this.centerIndex
-						: parseInt(x) + 1
+        temp[newX] = this.xScale[x]
+      }
+    }
 
-				temp[newX] = this.xScale[x]
-			}
-		}
+    if (e.keyCode == 37) {
+      // Right arrow
+      for (let x in this.xScale) {
+        const newX =
+          parseInt(x) + 1 > this.centerIndex
+            ? -this.centerIndex
+            : parseInt(x) + 1
 
-		this.xScale = temp
+        temp[newX] = this.xScale[x]
+      }
+    }
 
-		for (let x in temp) {
-			const sizeScale = this.calcScaleSize(x),
-				positionScale = this.calcScalePosition(x),
-				leftPos = this.calcPosition(x, positionScale),
-				zIndex = -Math.abs(x)
+    this.xScale = temp
 
-			this.updateCards(temp[x], {
-				x: x,
-				left: leftPos,
-				scale: sizeScale,
-				zIndex: zIndex
-			})
-		}
-	}
+    for (let x in temp) {
+      const sizeScale = this.calcScaleSize(x),
+        positionScale = this.calcScalePosition(x),
+        leftPos = this.calcPosition(x, positionScale),
+        zIndex = -Math.abs(x)
 
-	updateCardWidth() {
-		this.cardWidth =
-			(this.cards[0].offsetWidth / this.container.offsetWidth) * 100
+      this.updateCards(temp[x], {
+        x: x,
+        left: leftPos,
+        scale: sizeScale,
+        zIndex: zIndex
+      })
+    }
+  }
 
-		this.build()
-	}
+  updateCardWidth() {
+    this.cardWidth =
+      (this.cards[0].offsetWidth / this.container.offsetWidth) * 100
 
-	updateCards(card, data) {
-		if (data.hasOwnProperty("x")) {
-			card.setAttribute("data-x", data.x)
-		}
+    this.build()
+  }
 
-		if (data.hasOwnProperty("left")) {
-			card.style.left = `${data.left}%`
-		}
+  updateCards(card, data) {
+    if (data.hasOwnProperty("x")) {
+      card.setAttribute("data-x", data.x)
 
-		if (data.hasOwnProperty("scale")) {
-			card.style.transform = `scale(${data.scale})`
-		}
+      if (data.x == 0) {
+        this.onChange(card)
+      }
+    }
 
-		if (data.hasOwnProperty("zIndex")) {
-			if (data.zIndex === 0) {
-				card.classList.add("highlight")
-			} else {
-				card.classList.remove("highlight")
-			}
+    if (data.hasOwnProperty("left")) {
+      card.style.left = `${data.left}%`
+    }
 
-			card.style.zIndex = data.zIndex
-		}
-	}
+    if (data.hasOwnProperty("scale")) {
+      card.style.transform = `scale(${data.scale})`
+    }
 
-	calcScaleSize(x) {
-		const formula = 1 - (1 / 5) * Math.pow(x, 2)
+    if (data.hasOwnProperty("zIndex")) {
+      if (data.zIndex === 0) {
+        card.classList.add("highlight")
+      } else {
+        card.classList.remove("highlight")
+      }
 
-		if (formula <= 0) {
-			return 0
-		}
+      card.style.zIndex = data.zIndex
+    }
+  }
 
-		return formula
-	}
+  calcScaleSize(x) {
+    const formula = 1 - (1 / 5) * Math.pow(x, 2)
 
-	calcScalePosition(x) {
-		if (x <= 0) {
-			return 1 - (-1 / 5) * x
-		}
+    if (formula <= 0) {
+      return 0
+    }
 
-		return 1 - (1 / 5) * x
-	}
+    return formula
+  }
 
-	calcPosition(x, scale) {
-		if (x <= 0) {
-			return (scale * 100 - this.cardWidth) / 2
-		}
+  calcScalePosition(x) {
+    if (x <= 0) {
+      return 1 - (-1 / 5) * x
+    }
 
-		return 100 - (scale * 100 + this.cardWidth) / 2
-	}
+    return 1 - (1 / 5) * x
+  }
 
-	checkOrdering(card, x, xDist) {
-		const rounded = Math.round(xDist)
+  calcPosition(x, scale) {
+    if (x <= 0) {
+      return (scale * 100 - this.cardWidth) / 2
+    }
 
-		let newX = x
+    return 100 - (scale * 100 + this.cardWidth) / 2
+  }
 
-		if (x + rounded > x) {
-			if (x + rounded > this.centerIndex) {
-				newX = x + rounded - 1 - this.centerIndex - rounded + -this.centerIndex
-			}
-		} else if (x + rounded < x) {
-			if (x + rounded < -this.centerIndex) {
-				newX = x + rounded + 1 + this.centerIndex - rounded + this.centerIndex
-			}
-		}
+  checkOrdering(card, x, xDist) {
+    const rounded = Math.round(xDist)
 
-		this.xScale[newX + rounded] = card
+    let newX = x
 
-		this.updateCards(card, {
-			zIndex: -Math.abs(newX + rounded)
-		})
+    if (x + rounded > x) {
+      if (x + rounded > this.centerIndex) {
+        newX = x + rounded - 1 - this.centerIndex - rounded + -this.centerIndex
+      }
+    } else if (x + rounded < x) {
+      if (x + rounded < -this.centerIndex) {
+        newX = x + rounded + 1 + this.centerIndex - rounded + this.centerIndex
+      }
+    }
 
-		return newX
-	}
+    this.xScale[newX + rounded] = card
 
-	moveCards(data) {
-		let xDist
+    this.updateCards(card, {
+      zIndex: -Math.abs(newX + rounded)
+    })
 
-		if (data == null) {
-			xDist = 0
+    return newX
+  }
 
-			this.container.classList.add("smooth-return")
+  moveCards(data) {
+    let xDist
 
-			for (let x in this.xScale) {
-				this.updateCards(this.xScale[x], {
-					x: x
-				})
-			}
-		} else {
-			xDist = data.x / 250
+    if (data == null) {
+      xDist = 0
 
-			this.container.classList.remove("smooth-return")
-		}
+      this.container.classList.add("smooth-return")
 
-		for (let i = 0; i < this.cards.length; i++) {
-			const x = this.checkOrdering(
-					this.cards[i],
-					parseInt(this.cards[i].dataset.x),
-					xDist
-				),
-				sizeScale = this.calcScaleSize(x + xDist),
-				positionScale = this.calcScalePosition(x + xDist),
-				leftPos = this.calcPosition(x + xDist, positionScale)
+      for (let x in this.xScale) {
+        this.updateCards(this.xScale[x], {
+          x: x
+        })
+      }
+    } else {
+      xDist = data.x / 250
 
-			this.updateCards(this.cards[i], {
-				left: leftPos,
-				scale: sizeScale
-			})
-		}
-	}
+      this.container.classList.remove("smooth-return")
+    }
+
+    for (let i = 0; i < this.cards.length; i++) {
+      const x = this.checkOrdering(
+          this.cards[i],
+          parseInt(this.cards[i].dataset.x),
+          xDist
+        ),
+        sizeScale = this.calcScaleSize(x + xDist),
+        positionScale = this.calcScalePosition(x + xDist),
+        leftPos = this.calcPosition(x + xDist, positionScale)
+
+      this.updateCards(this.cards[i], {
+        left: leftPos,
+        scale: sizeScale
+      })
+    }
+  }
 }

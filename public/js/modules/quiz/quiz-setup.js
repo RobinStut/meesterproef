@@ -7,6 +7,9 @@ const dragTagValues = document.getElementsByClassName("draggableTag")
 const carouselController = document.querySelector(
   ".card-carousel + .carousel-controller"
 )
+const quizResultEvents = document.querySelectorAll(
+  "#quiz-results-events [data-sport]"
+)
 
 export default (() => {
   if (!isMobileDevice() && document.getElementById("mainMotivation")) {
@@ -60,7 +63,38 @@ export default (() => {
   let currentDraggedElement
 
   if (carousel) {
-    new Carousel(carousel, carouselController)
+    new Carousel(carousel, updateEvents, carouselController)
+  }
+
+  function updateEvents(card) {
+    const sport = card.dataset.sport.toLowerCase()
+
+    for (let i = 0; i < quizResultEvents.length; i++) {
+      if (!quizResultEvents[i].hasAttribute("data-height")) {
+        quizResultEvents[i].setAttribute(
+          "data-height",
+          quizResultEvents[i].offsetHeight
+        )
+
+        quizResultEvents[i].style.height = quizResultEvents[i].offsetHeight
+      }
+
+      setTimeout(() => {
+        if (quizResultEvents[i].dataset.sport.toLowerCase() !== sport) {
+          quizResultEvents[i].classList.add("filter-out")
+        } else {
+          quizResultEvents[i].classList.remove("filter-out")
+        }
+      }, 0)
+    }
+  }
+
+  if (quizResultEvents) {
+    for (let i = 0; i < quizResultEvents.length; i++) {
+      const h = quizResultEvents[i].offsetHeight
+
+      quizResultEvents[i].style.height = `${h}px`
+    }
   }
 
   for (const dragInput of dragInputs) {

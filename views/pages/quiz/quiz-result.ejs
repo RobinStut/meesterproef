@@ -8,7 +8,7 @@
 <section class="card-carousel">
 	<% for (let index = 0; index < quizResult.length; index++) { %>
 
-	<div class="card">
+	<div class="card" data-sport="<%= quizResult[index].sport.sport %>">
 		<span><%= index+1 %></span>
 		<h2><%= quizResult[index].sport.sport %></h2>
 		<p><%= quizResult[index].sport.description %></p>
@@ -21,13 +21,12 @@
   <% } %>
 </section>
 
-  <section class="display--flex-v section section--radius section--padding-0 section--minHeight">
+  <section id="quiz-results-events" class="display--flex-v section section--radius section--padding-0 section--minHeight">
       <% for (let index = 0; index < quizResult.length; index++) { %>
         <% if (quizResult[index].sport.event) { %>
-  <a class="event__link" href="/event/">
 
     <article class="event" data-sport="<%= quizResult[index].sport.sport %>">
-        
+      <a class="link-overlay" href="/events/<%= quizResult[index].sport.event.general.id %>"></a>
         <div
         class="event__content overlay"
         style="background-image:url(/uploads/<%= quizResult[index].sport.event.general.image %>)"
@@ -40,7 +39,6 @@
         <h4 class="event__h4 event__h4--title"><%= quizResult[index].sport.event.general.title %></h4>
         </div>
     </article>
-  </a>
   <% } %>
 <% } %>
 </section>
