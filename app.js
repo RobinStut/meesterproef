@@ -31,11 +31,6 @@ app
 			extended: true
 		})
 	)
-	.use(
-		session({
-			secret: "classified"
-		})
-	)
 
 require("./modules/routes.js")(app, upload)
 
