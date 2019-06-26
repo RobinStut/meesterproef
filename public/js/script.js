@@ -10,29 +10,20 @@ const customSliders = document.getElementsByClassName("custom-slider")
 const cardsContainer = document.querySelector(".interactive-cards")
 
 for (let i = 0; i < customSliders.length; i++) {
-  new CustomSlider(customSliders[i], (origin, value) => {
-    origin.slider.pin.textContent = value
-    quizSliderTexts(value, origin.id)
-  })
+	new CustomSlider(customSliders[i], (origin, value) => {
+		origin.slider.pin.textContent = value
+		quizSliderTexts(value, origin.id)
+	})
 }
 
 if (cardsContainer) {
-  new InteractiveCards(cardsContainer, (target, amount) => {
-    if (amount === 0) {
-      setTimeout(() => {
-        document.getElementById("pop-up-toggle").checked = false
+	new InteractiveCards(cardsContainer, (target, amount) => {
+		if (amount === 0) {
+			setTimeout(() => {
+				document.getElementById("pop-up-toggle").checked = false
 
-        cardsContainer.classList.add("empty")
-      }, 300)
-    }
-  })
+				cardsContainer.classList.add("empty")
+			}, 300)
+		}
+	})
 }
-
-// const eventsFilter = document.querySelector(".st-filter-form")
-// const eventsFilterButton = document.querySelector(".st-filter-form button")
-// const toggleElements = [
-// 	{ element: eventsFilter, class: "st-filter-form-show" },
-// 	{ element: eventsFilterButton, class: "st-turn-180" }
-// ]
-
-// classToggleClick(eventsFilterButton, toggleElements)
