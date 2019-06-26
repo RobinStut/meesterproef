@@ -7,10 +7,10 @@
 }
 
 .header__hamburger {
-  margin: 0 0 0 auto;
-  border: none;
-  background-color: transparent;
-  margin-right: 1em;
+	margin: 0 0 0 auto;
+	border: none;
+	background-color: transparent;
+	margin-right: 1em;
 }
 
 .header__hamburger svg {
@@ -19,7 +19,7 @@
 }
 
 .header--background-solid {
-	background-color: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, 0.95);
 	transition: 0.2s ease-in-out;
 }
 
@@ -55,13 +55,13 @@
 }
 
 @media (min-width: 768px) {
-  .header {
-    padding: 1em 10em;
-  }
+	.header {
+		padding: 1em 10em;
+	}
 }
 
 @media (min-width: 1280px) {
-  .header {
-    padding: 1em 25em;
-  }
+	.header {
+		padding: 1em 25em;
+	}
 }
