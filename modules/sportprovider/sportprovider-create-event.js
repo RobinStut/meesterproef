@@ -6,7 +6,6 @@ module.exports = (app, upload, conceptEvents) => {
 				title: req.body["event-name"],
 				description: req.body["event-description"],
 				image: req.file ? req.file.filename : null,
-				type: req.body["event-type"],
 				recurring: req.body["event-recurring"]
 			},
 			sport: {

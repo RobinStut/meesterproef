@@ -1,102 +1,96 @@
 .sports__list .letter-keys {
-  background-color: #b1c3d2;
-  font-weight: 600;
-  margin: 1em 0;
-  padding: 0.5em;
+	background-color: #b1c3d2;
+	font-weight: 600;
+	margin: 1em 0;
+	padding: 0.5em;
 }
 
 .sports__list {
-  width: 100%;
+	width: 100%;
 }
 
 .sports__list a {
-  display: inline-block;
-  padding: 0.3sem 0;
-  text-decoration: none;
+	display: inline-block;
+	padding: 0.3sem 0;
+	text-decoration: none;
 }
 
 .sports__list a {
-  font-weight: 500;
-  font-size: 1em;
-  padding: 0.5em 0;
+	font-weight: 500;
+	font-size: 1em;
+	padding: 0.5em 0;
 }
 
 .toggle-button__container {
-  color: blue !important;
+	color: blue !important;
 }
 
 .filter--bar {
-  border: 1px solid var(--text-color);
-  border-radius: 0.1em;
+	border: 1px solid var(--text-color);
+	border-radius: 0.1em;
 }
 
 .filter--bar li {
-  display: flex;
-  width: auto;
-  margin: 0 auto;
+	display: flex;
+	width: auto;
+	margin: 0 auto;
 }
 
 .filter--bar span {
-  width: 100%;
-  text-align: center;
+	width: 100%;
+	text-align: center;
 }
 
 .filter--bar li:last-of-type span {
-  padding: 0.5em;
+	padding: 0.5em;
 }
 
 .filter--bar .selected {
-  color: white;
-  background-color: var(--text-color);
+	color: white;
+	background-color: var(--text-color);
 }
 
 .filter--bar li:last-of-type a {
-  padding: 0 0.75em;
+	padding: 0 0.75em;
 }
 
 .filter--bar span:hover {
-  background-color: var(--text-color);
-  color: white;
+	background-color: var(--text-color);
+	color: white;
 }
 
 .p--sportdescription {
-  color: white;
-  line-height: 1.4em;
+	color: white;
+	line-height: 1.4em;
 }
 
 .button--back {
-  color: var(--text-color);
-  padding-bottom: 1em;
-  top: -15px;
-}
-
-.article--sportclubs {
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid lightgray;
+	color: var(--text-color);
+	padding-bottom: 1em;
+	top: -15px;
 }
 
 .article--sportclubs h4 {
-  margin-bottom: 0.3em;
-  font-size: 1.2em;
+	margin-bottom: 0.3em;
+	font-size: 1.2em;
 }
 
 .article--sportclubs h5 {
-  margin-bottom: 0.3em;
-  color: var(--primary-color);
+	margin-bottom: 0.3em;
+	color: var(--primary-color);
 }
 
 .article--sportclubs p:first-of-type {
-  margin-top: 0.5em;
+	margin-top: 0.5em;
 }
 
 .article--sportclubs a {
-  display: inline-block;
-  padding: 0.4em 1em;
-  margin: 0.4em 0;
-  font-weight: 400;
-  font-size: 1em;
-  border-radius: 0.1em;
-  background-color: var(--text-color);
-  color: white;
+	display: inline-block;
+	padding: 0.4em 1em;
+	margin: 0.4em 0;
+	font-weight: 400;
+	font-size: 1em;
+	border-radius: 0.1em;
+	background-color: var(--text-color);
+	color: white;
 }

@@ -33,6 +33,8 @@ export default class extends DraggingEvent {
 			// Bind dragging event
 			super.getDistance(this.moveCards.bind(this))
 		} else {
+			super()
+
 			container.style.display = "flex"
 			container.style.overflow = "scroll"
 		}

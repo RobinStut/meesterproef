@@ -8,17 +8,28 @@ export default class extends DraggingEvent {
     this.cards = container.querySelectorAll(".card")
     this.cardsAmount = this.cards.length
 
-    this.onRemove = onRemove
+    this.onRemove = onRemove.bind(this)
 
     this.memory
 
+    this.setTransitionDelays()
+
     for (let i = 0; i < this.cards.length; i++) {
-      // Set the content-item' transition delay
-      this.cards[i].parentElement.style.transitionDelay = `${i / 15}s`
+      this.cards[i].addEventListener("click", this.redirectPrevent)
 
       super.target = this.cards[i]
 
       super.getDistance(this.slideCard.bind(this, this.cards[i]))
+    }
+  }
+
+  redirectPrevent(e) {
+    e.preventDefault()
+  }
+
+  setTransitionDelays() {
+    for (let i = 0; i < this.cards.length; i++) {
+      this.cards[i].parentElement.style.transitionDelay = `${i / 15}s`
     }
   }
 
@@ -40,6 +51,10 @@ export default class extends DraggingEvent {
 
     setTimeout(() => {
       target.remove()
+
+      this.cards = this.container.querySelectorAll(".card")
+
+      this.setTransitionDelays()
     }, 300)
 
     this.cardsAmount--
@@ -57,6 +72,10 @@ export default class extends DraggingEvent {
       target.classList.remove("smooth-return")
       target.style.transform = `translateX(${data.x}px)`
     } else {
+      if (this.memory.x === 0) {
+        target.removeEventListener("click", this.redirectPrevent)
+      }
+
       if (Math.abs(this.memory.x) > target.offsetWidth * 0.75) {
         target.classList.add("smooth-return")
         this.removeCard(target, this.memory.x > 0)
@@ -65,9 +84,5 @@ export default class extends DraggingEvent {
         target.style.transform = `translateX(0)`
       }
     }
-  }
-
-  static countCards(container) {
-    console.log(container.querySelectorAll(".card").length)
   }
 }

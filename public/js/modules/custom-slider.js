@@ -25,8 +25,6 @@ export default class extends DraggingEvent {
 
       this.leftOffset
 
-      this.updateLeftOffset()
-
       super.target = this.slider.track
 
       super.getPosition(this.sliding.bind(this))
@@ -51,14 +49,13 @@ export default class extends DraggingEvent {
     this.slider.trail.style.width = `${position +
       this.slider.pin.offsetWidth / 2}px`
 
+    this.updateLeftOffset()
+
     if (this._output) this._output(this, this.rangeInput.value)
   }
 
   updateLeftOffset() {
-    const x1 = this.slider.track.getBoundingClientRect().left
-    const x2 = this.slider.container.parentElement.getBoundingClientRect().left
-
-    this.leftOffset = x1 - x2
+    this.leftOffset = this.slider.track.getBoundingClientRect().left
   }
 
   createSettings() {
@@ -156,6 +153,10 @@ export default class extends DraggingEvent {
 
   sliding(data) {
     if (data !== null) {
+      if ("clickedX" in data) {
+        this.updateLeftOffset()
+      }
+
       const position = this.findPosition(
         data.clickedX - this.leftOffset || data.x - this.leftOffset
       )
