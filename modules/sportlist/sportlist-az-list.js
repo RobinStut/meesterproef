@@ -1,6 +1,7 @@
 module.exports = data => {
 	return new Promise(async (resolve, reject) => {
-		const dataMapping = JSON.parse(data).map(function(num) {
+		console.log(data)
+		const dataMapping = data.map(function(num) {
 			const sportName = num.sport
 			const clubName = num.naam
 			const website = num.website

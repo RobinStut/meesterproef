@@ -5,6 +5,8 @@ module.exports = (app, fs, conceptEvents, eventsData) => {
 
 			eventsData.push(conceptEvents[0])
 
+			console.log(eventsData)
+
 			fs.writeFile(
 				"./data/json/sportEvents.json",
 				JSON.stringify(eventsData),
