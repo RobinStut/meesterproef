@@ -7,7 +7,7 @@
 	position: relative;
 	margin: 0 auto;
 	width: 100%;
-	height: calc(var(--card-height) + 50px);
+	height: calc(var(--card-height) + 200px);
 	min-width: var(--carousel-min-width);
 	transition: filter 0.3s ease;
 	padding-top: 2em;
@@ -25,7 +25,8 @@
 	max-width: var(--card-max-width);
 	text-align: center;
 	min-width: 250px;
-	height: var(--card-height);
+	/* height: var(--card-height); */
+	min-height: 430px;
 	margin: 0 auto;
 	color: rgba(0, 0, 0, 0.5);
 	filter: brightness(1.1);
@@ -75,4 +76,10 @@
 	border-radius: 35px;
 	margin: 0 auto;
 	margin-top: -50px;
+}
+
+.card a {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 2em;
 }

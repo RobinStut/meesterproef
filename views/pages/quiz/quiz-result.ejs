@@ -11,6 +11,11 @@
 		<span><%= index+1 %></span>
 		<h2><%= quizResult[index].sport.sport %></h2>
 		<p><%= quizResult[index].sport.description %></p>
+		<a
+			href="/sportslist/clubs/<%= quizResult[index].sport.sport %>"
+			class="button button--ghost button--top"
+			>Bekijk de sportclubs</a
+		>
 	</div>
 
 	<%}%>
