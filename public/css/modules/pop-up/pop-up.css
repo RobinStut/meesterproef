@@ -1,5 +1,5 @@
 .floating-action {
-  --bell-speed: 0.75s;
+  --bell-speed: 0.5s;
   background: #ed553b;
   border-radius: 100px;
   position: fixed;
@@ -23,30 +23,26 @@
 .floating-action:hover #notification-bell {
   animation-name: shakeBell;
   animation-duration: var(--bell-speed);
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   transform-origin: center top;
 }
 
 .floating-action:hover #bell-ball {
   cursor: pointer;
   animation-name: ringBell;
-  animation-duration: calc(var(--bell-speed) / 2);
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-duration: calc(var(--bell-speed));
+  animation-delay: 0.25s;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes ringBell {
   0% {
     transform: translateX(0);
   }
-  25% {
+  33% {
     transform: translateX(25%);
   }
-  50% {
-    transform: translateX(0);
-  }
-  75% {
+  66% {
     transform: translateX(-25%);
   }
   100% {
@@ -58,13 +54,10 @@
   0% {
     transform: rotate(0);
   }
-  25% {
+  33% {
     transform: rotate(15deg);
   }
-  50% {
-    transform: rotate(0);
-  }
-  75% {
+  66% {
     transform: rotate(-15deg);
   }
   100% {
