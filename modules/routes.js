@@ -5,6 +5,7 @@ const filter = require("./helper/filter.js")
 
 const getAllSports = require("./sportlist/sportlist-az-list.js")
 const quizCalc = require("./quiz/quiz-calculation.js")
+const quizCombine = require("./quiz/quiz-combine.js")
 
 const conceptEvents = []
 
@@ -78,7 +79,6 @@ module.exports = (app, upload) => {
 
 	app.get("/sportslist/events/:id", async (req, res) => {
 		const id = req.params.id
-
 		const matchingEvents = await filter.eventsByName(_eventData, id)
 		const description = await filter.descriptions(_descriptionData, id)
 
@@ -123,14 +123,22 @@ module.exports = (app, upload) => {
 
 	app.post("/quiz", (req, res) => {
 		const quizResult = quizCalc(req, _quizData)
+		const quizCombination = quizCombine(
+			req,
+			_descriptionData,
+			quizResult,
+			_eventData
+		)
+
+		console.log(quizCombination)
 
 		res.render("pages/quiz/quiz-result.ejs", {
-			quizResult: quizResult,
+			quizResult: quizCombination,
 			hero: "hero--small",
 			heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
 		})
 	})
-
+  
 	// SPORTPROVIDER
 	app.get("/login", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-login.ejs", {

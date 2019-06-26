@@ -1,21 +1,46 @@
 <% include ../../partials/header %>
 
 <h1>Sportstimulering</h1>
-
-<% include ../../partials/nav %> <% include ../../partials/hero %>
+<% include ../../partials/nav-basic %>
+<!-- <% include ../../partials/hero %> -->
+<section class="custom-Hero--big"></section>
 
 <section class="card-carousel">
-  <% for (let index = 0; index < quizResult.length; index++) { %>
+	<% for (let index = 0; index < quizResult.length; index++) { %>
 
-  <div class="card">
-    <h2><%= quizResult[index].sport.sport %></h2>
-    <p><%= quizResult[index].sport.description %></p>
-    <a href="/events">Bekijk direct de events</a>
+	<div class="card">
+		<span><%= index+1 %></span>
+		<h2><%= quizResult[index].sport.sport %></h2>
+		<p><%= quizResult[index].sport.description %></p>
+		<a
+			href="/sportslist/clubs/<%= quizResult[index].sport.sport %>"
+			class="button button--ghost button--top"
+			>Bekijk de sportclubs</a
+		>
   </div>
-
-  <%}%>
+  <% } %>
 </section>
 
-<a href="#" class="carousel-controller">Carousel</a>
+  <section class="display--flex-v section section--radius section--padding-0 section--minHeight">
+      <% for (let index = 0; index < quizResult.length; index++) { %>
+  <a class="event__link" href="/event/">
+
+    <article class="event" data-sport="<%= quizResult[index].sport.sport %>">
+        <div
+        class="event__content overlay"
+        style="background-image:url(/uploads/<%= quizResult[index].sport.event.general.image %>)"
+        >
+        <h4 class="event__h4 event__h4--name"><%= quizResult[index].sport.event.location.name %></h4>
+        <p class="event__time">
+                Van <%= quizResult[index].sport.event.time.start %> t/m <%= quizResult[index].sport.event.time.end %></p>
+        </p>
+        <h4 class="event__h4 event__h4--title"><%= quizResult[index].sport.event.general.title %></h4>
+        </div>
+    </article>
+  </a>
+<% } %>
+</section>
+</section>
+<a href="#" class="carousel-controller"></a>
 
 <% include ../../partials/footer %>
