@@ -23,34 +23,17 @@ nav button {
   color: var(--text-color);
 }
 
-/* .visuallyhidden {
-  position: absolute;
-  right: 100%;
-  opacity: 0;
-  z-index: -1;
-} */
-
-.header {
-}
-
 .quiz--form input {
   display: none;
 }
 
-.quiz--form {
-  //height: 100vh;
-}
-
 .quiz__navigation {
   border: none !important;
-  //width: fit-content !important;
   border-radius: 5em !important;
   padding: 0.6em 2em !important;
   display: inline;
   margin-top: 1em;
-
   background-color: var(--secondary-color) !important;
-  //display: flex !important;
   justify-content: flex-end !important;
   line-height: 30px !important;
 }
@@ -152,12 +135,6 @@ nav button {
     height: 3em;
   }
 }
-
-/* .quiz--form .showFormElement {
-  display: block;
-  height: fit-content;
-  position: relative;
-} */
 
 .section-4 p {
   background-color: #b1c3d2;
@@ -315,19 +292,12 @@ nav button {
   width: 7em !important;
 }
 
-/* #sliderOptions #improvement svg {
-    max-height: 100px;
-} */
-
 #quizForm button {
-  //position: absolute;
-  /* bottom: -40px; */
   font-size: 1rem;
   border: none;
   background-color: var(--primary-color);
   margin: 0.3rem;
   border-radius: 5px;
-
   padding: 1em 2em;
   margin: 0.3em;
   color: white;
