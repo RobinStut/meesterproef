@@ -27,7 +27,6 @@ async function updateData() {
 
 updateData()
 
-// Update the data, not sure if this is good practice.
 setInterval(updateData, 1000 * 60 * 60 * 24)
 
 module.exports = (app, upload) => {
@@ -37,7 +36,7 @@ module.exports = (app, upload) => {
 
 		res.render("pages/index.ejs", {
 			hero: "hero--big",
-			heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"],
+			heroText: ["Amsterdam", "Zuidoost", "Be a part of it!"],
 			sportEvents: firstTwo,
 			popUpData: _eventData
 		})
@@ -61,7 +60,6 @@ module.exports = (app, upload) => {
 			heroText: ["Sporten A-Z"]
 		})
 	})
-
 	app.get("/sportslist/clubs/:id", async (req, res) => {
 		const id = req.params.id
 
@@ -79,6 +77,7 @@ module.exports = (app, upload) => {
 
 	app.get("/sportslist/events/:id", async (req, res) => {
 		const id = req.params.id
+
 		const matchingEvents = await filter.eventsByName(_eventData, id)
 		const description = await filter.descriptions(_descriptionData, id)
 
@@ -99,12 +98,10 @@ module.exports = (app, upload) => {
 			data: _eventData
 		})
 	})
-
 	app.get("/events/:id", async (req, res) => {
 		const id = req.params.id
-		const matchingEvents = await filter.eventsById(_eventData, id)
 
-		console.log(matchingEvents)
+		const matchingEvents = await filter.eventsById(_eventData, id)
 
 		res.render("pages/events/events-detail.ejs", {
 			hero: "hero--small",
@@ -120,7 +117,6 @@ module.exports = (app, upload) => {
 			heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
 		})
 	})
-
 	app.post("/quiz", (req, res) => {
 		const quizResult = quizCalc(req, _quizData)
 		const quizCombination = quizCombine(
@@ -130,15 +126,13 @@ module.exports = (app, upload) => {
 			_eventData
 		)
 
-		console.log(quizCombination)
-
 		res.render("pages/quiz/quiz-result.ejs", {
 			quizResult: quizCombination,
 			hero: "hero--small",
 			heroText: ["Amsterdam", "Zuid-Oost", "Be a part of it!"]
 		})
 	})
-  
+
 	// SPORTPROVIDER
 	app.get("/login", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-login.ejs", {
@@ -146,14 +140,12 @@ module.exports = (app, upload) => {
 			heroText: ["Login"]
 		})
 	})
-
 	app.get("/dashboard", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-dashboard.ejs", {
 			hero: "hero--small",
 			heroText: ["Dashboard"]
 		})
 	})
-
 	app.get("/create-event", (req, res) => {
 		res.render("pages/sportprovider/sportprovider-create-event.ejs", {
 			hero: "hero--small",
@@ -162,7 +154,6 @@ module.exports = (app, upload) => {
 			sportDescription: _descriptionData
 		})
 	})
-
 	app.post("/create-event", upload.single("event-image"), (req, res) => {
 		let event = {
 			general: {
@@ -196,7 +187,6 @@ module.exports = (app, upload) => {
 			event: event
 		})
 	})
-
 	app.post("/publish-event", async (req, res) => {
 		if (_eventData.length === 0) {
 			_eventData.push(conceptEvents[0])
