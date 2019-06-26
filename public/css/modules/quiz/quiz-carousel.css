@@ -108,3 +108,11 @@ a.link-overlay {
   margin: 0;
   padding: 0;
 }
+
+.nav__cross--transparant {
+	background-color: var(--secondary-color);
+}
+
+.displayNone {
+	display: none;
+}
