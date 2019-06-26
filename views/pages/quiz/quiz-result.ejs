@@ -17,9 +17,29 @@
 			class="button button--ghost button--top"
 			>Bekijk de sportclubs</a
 		>
-	</div>
+  </div>
+  <% } %>
+</section>
 
-	<%}%>
+  <section class="display--flex-v section section--radius section--padding-0 section--minHeight">
+      <% for (let index = 0; index < quizResult.length; index++) { %>
+  <a class="event__link" href="/event/">
+
+    <article class="event" data-sport="<%= quizResult[index].sport.sport %>">
+        <div
+        class="event__content overlay"
+        style="background-image:url(/uploads/<%= quizResult[index].sport.event.general.image %>)"
+        >
+        <h4 class="event__h4 event__h4--name"><%= quizResult[index].sport.event.location.name %></h4>
+        <p class="event__time">
+                Van <%= quizResult[index].sport.event.time.start %> t/m <%= quizResult[index].sport.event.time.end %></p>
+        </p>
+        <h4 class="event__h4 event__h4--title"><%= quizResult[index].sport.event.general.title %></h4>
+        </div>
+    </article>
+  </a>
+<% } %>
+</section>
 </section>
 <a href="#" class="carousel-controller"></a>
 

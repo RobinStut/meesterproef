@@ -106,6 +106,8 @@ module.exports = app => {
 			_eventData
 		)
 
+		console.log(quizCombination)
+
 		res.render("pages/quiz/quiz-result.ejs", {
 			quizResult: quizCombination,
 			hero: "hero--small",

@@ -16,7 +16,6 @@ module.exports = (req, description, quizValue, event) => {
 
 	const mergedEvent = mergedDescriptions.map(x => {
 		const sportName = x.sport.sport
-		// console.log(eventData)
 
 		function matchEvent(object) {
 			return object.sport.name[1] === sportName
