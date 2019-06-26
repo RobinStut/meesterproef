@@ -1,87 +1,112 @@
 .card-carousel {
-	--card-width: 80%;
-	--card-max-width: 280px;
-	--card-height: 350px;
-	--carousel-min-width: 600px;
-	z-index: 1;
-	position: relative;
-	margin: 0 auto;
-	width: 100%;
-	height: calc(var(--card-height) + 200px);
-	min-width: var(--carousel-min-width);
-	transition: filter 0.3s ease;
-	padding-top: 2em;
+  --card-width: 80%;
+  --card-max-width: 280px;
+  --card-height: 350px;
+  --carousel-min-width: 600px;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: calc(var(--card-height) + 200px);
+  min-width: var(--carousel-min-width);
+  transition: filter 0.3s ease;
+  padding-top: 2em;
 }
 
 @media screen and (max-width: 600px) {
-	.card-carousel {
-		margin-left: calc((100vw - var(--carousel-min-width)) / 2);
-	}
+  .card-carousel {
+    margin-left: calc((100vw - var(--carousel-min-width)) / 2);
+  }
 }
 
 .card-carousel .card {
-	background: var(--white);
-	width: var(--card-width);
-	max-width: var(--card-max-width);
-	text-align: center;
-	min-width: 250px;
-	/* height: var(--card-height); */
-	min-height: 430px;
-	margin: 0 auto;
-	color: rgba(0, 0, 0, 0.5);
-	filter: brightness(1.1);
-	transition: inherit;
-	border-radius: 0.2em;
-	padding: 2em;
-	box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: var(--white);
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  text-align: center;
+  min-width: 250px;
+  /* height: var(--card-height); */
+  min-height: 430px;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+  transition: inherit;
+  border-radius: 0.2em;
+  padding: 2em;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-carousel .card p,
 .card-carousel .card a,
 .card-carousel .card h2 {
-	padding-top: 1em;
-	padding-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .card.highlight {
-	filter: brightness(1);
+  filter: brightness(1);
 }
 
 .custom-Hero--big {
-	background-color: var(--secondary-color);
-	width: 100%;
-	height: 200px;
-	position: absolute;
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 200px;
+  position: absolute;
 }
 
 .card h2 {
-	color: var(--text-color);
+  color: var(--text-color);
 }
 
 .card p {
-	color: var(--text-color);
+  color: var(--text-color);
 }
 
 .card span {
-	display: block;
-	font-size: 1.5em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
-	font-weight: bold;
-	color: var(--white);
-	background-color: var(--primary-color);
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	border-radius: 35px;
-	margin: 0 auto;
-	margin-top: -50px;
+  display: block;
+  font-size: 1.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--primary-color);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 35px;
+  margin: 0 auto;
+  margin-top: -50px;
 }
 
 .card a {
-	position: absolute;
-	bottom: 0;
-	margin-bottom: 2em;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2em;
+}
+
+a.link-overlay {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 2;
+  background: none;
+}
+#quiz-results-events [data-sport] {
+  margin: 0.5em 1em 0.5em 1em;
+  transition: all 0.3s linear 0s, opacity 0.3s linear 0.3s;
+  overflow: hidden;
+}
+
+#quiz-results-events [data-sport].filter-out {
+  transition: all 0.3s linear 0.3s, opacity 0.3s linear 0s;
+  opacity: 0;
+  height: 0 !important;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__cross--transparant {
