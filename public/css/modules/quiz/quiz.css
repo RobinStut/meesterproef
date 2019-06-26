@@ -1,333 +1,353 @@
 /* begin of Quiz styling  */
 nav {
-  z-index: 10;
-  color: var(--white);
-  background-color: blue;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+	z-index: 10;
+	color: var(--white);
+	background-color: blue;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
 nav label {
-  background-color: var(--text-color);
-  padding: 0.5em;
-  border-radius: 0.1em;
+	background-color: var(--text-color);
+	padding: 0.5em;
+	border-radius: 0.1em;
 }
 
 nav button {
-  align-self: right;
+	align-self: right;
 }
 
 .header__cross svg {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 .quiz--form input {
-  display: none;
+	display: none;
 }
 
 .quiz__navigation {
-  border: none !important;
-  border-radius: 5em !important;
-  padding: 0.6em 2em !important;
-  display: inline;
-  margin-top: 1em;
-  background-color: var(--secondary-color) !important;
-  justify-content: flex-end !important;
-  line-height: 30px !important;
+	border: none !important;
+	border-radius: 5em !important;
+	padding: 0.6em 2em !important;
+	display: inline;
+	margin-top: 1em;
+	background-color: var(--secondary-color) !important;
+	justify-content: flex-end !important;
+	line-height: 30px !important;
 }
 
 /* #howOldAreYou */
 
 #howOldAreYou p {
-  margin: 1rem 0;
-  align-self: center;
-  text-align: center;
-  line-height: 30px;
-  border: 2px solid var(--text-color);
-  border-radius: 5em;
-  color: var(--text-color);
+	margin: 1rem 0;
+	align-self: center;
+	text-align: center;
+	line-height: 30px;
+	border: 2px solid var(--text-color);
+	border-radius: 5em;
+	color: var(--text-color);
 }
 
 #howOldAreYou input:checked + label p {
-  background-color: var(--text-color);
-  color: var(--secondary-color);
+	background-color: var(--text-color);
+	color: var(--secondary-color);
 }
 
 #howOldAreYou input:checked + label p {
-  color: var(--white);
+	color: var(--white);
 }
 
 /* #whichGender */
 #whichGender {
-  display: grid;
-  grid-template-rows: 3em 15em 0.8rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 4em;
+	display: grid;
+	grid-template-rows: 3em 15em 0.8rem;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap: 4em;
 }
 
 .quiz--form .section {
-  margin: 0;
+	margin: 0;
 }
 
 .quiz--form h3 {
-  display: block;
+	display: block;
 }
 
 #whichGender svg {
-  margin: auto auto;
-  width: 40%;
+	margin: auto auto;
+	width: 40%;
 }
 
 #whichGender input {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 #whichGender h3 {
-  grid-column-end: 4;
-  grid-column-start: 1;
-  grid-row: 1;
+	grid-column-end: 4;
+	grid-column-start: 1;
+	grid-row: 1;
 }
 
 #whichGender label {
-  border: 2px solid var(--text-color);
-  border-radius: 0.5em;
-  text-align: center;
-  color: var(--text-color);
-  padding-top: 3em;
-  margin: -1em 1em;
+	border: 2px solid var(--text-color);
+	border-radius: 0.5em;
+	text-align: center;
+	color: var(--text-color);
+	padding-top: 3em;
+	margin: -1em 1em;
 }
 
 #whichGender p {
-  padding: 1em;
+	padding: 1em;
 }
 
 #whichGender svg {
-  fill: var(--text-color);
-  margin: 0 auto;
+	fill: var(--text-color);
+	margin: 0 auto;
 }
 
 #whichGender input:checked + label svg {
-  fill: var(--white);
+	fill: var(--white);
 }
 
 #whichGender input:checked + label {
-  background-color: var(--text-color);
+	background-color: var(--text-color);
 }
 
 #whichGender input:checked + label {
-  color: var(--white);
+	color: var(--white);
 }
 
 @media (max-width: 768px) {
-  #whichGender {
-    display: flex;
-    flex-direction: column;
-  }
-  #whichGender label {
-    padding: 2em;
-    padding-bottom: 1em;
-    margin-bottom: 2em;
-  }
+	#whichGender {
+		display: flex;
+		flex-direction: column;
+	}
+	#whichGender label {
+		padding: 2em;
+		padding-bottom: 1em;
+		margin-bottom: 2em;
+	}
 
-  #whichGender svg {
-    height: 3em;
-  }
+	#whichGender svg {
+		height: 3em;
+	}
 }
 
 .section-4 p {
-  background-color: #b1c3d2;
-  width: fit-content;
-  padding: 0.5em;
-  border-radius: 0.1em;
-  margin: 0 auto;
-  color: var(--text-color);
+	background-color: #b1c3d2;
+	width: fit-content;
+	padding: 0.5em;
+	border-radius: 0.1em;
+	margin: 0 auto;
+	color: var(--text-color);
 }
 
 /* Custom sliders CSS */
 
 .visuallyhidden {
-  position: absolute;
-  right: 100%;
-  opacity: 0;
-  z-index: -1;
+	position: absolute;
+	right: 100%;
+	opacity: 0;
+	z-index: -1;
 }
 
 .slider-container {
-  --slider-transition: all 0.1s linear;
-  height: 100px;
-  width: 100%;
-  border: solid 1px black;
-  display: flex;
-  align-items: center;
-  padding: 1em;
+	--slider-transition: all 0.1s linear;
+	height: 100px;
+	width: 100%;
+	border: solid 1px black;
+	display: flex;
+	align-items: center;
+	padding: 1em;
 }
 
 #sliderOptions label {
-  margin-bottom: 4em;
+	margin-bottom: 4em;
 }
 
 .slider-track {
-  height: 10px;
-  width: 100%;
-  background: #b1c3d2;
-  position: relative;
-  border-radius: 50px;
+	height: 10px;
+	width: 100%;
+	background: #b1c3d2;
+	position: relative;
+	border-radius: 50px;
 }
 
 .slider-trail {
-  background: var(--text-color);
-  border-radius: inherit;
-  height: inherit;
-  transition: var(--slider-transition);
+	background: var(--text-color);
+	border-radius: inherit;
+	height: inherit;
+	transition: var(--slider-transition);
 }
 
 .slider-pin {
-  height: 30px;
-  width: 30px;
-  background: blue;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  border-radius: 100%;
-  transition: var(--slider-transition);
+	height: 30px;
+	width: 30px;
+	background: blue;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	border-radius: 100%;
+	transition: var(--slider-transition);
 }
 
 #sliderOptions svg {
-  max-height: 30px;
-  fill: var(--text-color);
+	max-height: 30px;
+	fill: var(--text-color);
 }
 
 #sliderOptions .slider-container {
-  border: none;
+	border: none;
 }
 
 #sliderOptions .slider-pin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border: 3px solid var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border: 3px solid var(--text-color);
 }
 
 #sliderOptions label {
-  display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  align-items: center;
-  color: var(--text-color);
-  font-size: var(--font-size-15px);
-  font-weight: 400;
-  font-family: "Roboto", sans-serif;
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	align-items: center;
+	color: var(--text-color);
+	font-size: var(--font-size-15px);
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
 }
 
 #sliderOptions #improvement {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 #sliderOptions #improvement input {
-  display: none;
+	display: none;
 }
 
 #sliderOptions #improvement label {
-  display: block;
+	display: block;
 }
 
 #sliderOptions #improvement input:checked + label svg {
-  fill: var(--text-color);
+	fill: var(--text-color);
 }
 
 /* #mainMotivation */
 
 #mainMotivation p {
-  //background-color: var(--secondary-color);
-  //width: fit-content;
-  padding: 0.2em 1em;
-  margin: 0.3rem;
-  border-radius: 5px;
+	//background-color: var(--secondary-color);
+	//width: fit-content;
+	padding: 0.2em 1em;
+	margin: 0.3rem;
+	border-radius: 5px;
 }
 
 #mainMotivation .dragInput {
-  padding: 0.6rem;
-  color: var(--text-color);
-  //font-size: var(--font-size-15px);
-  font-weight: 400;
-  font-family: "Roboto", sans-serif;
-  height: 40px;
-  border-radius: 4em;
-  background-color: #b1c3d2;
-  margin: 0.3rem;
-  text-align: center;
-  font-size: 1rem;
+	padding: 0.6rem;
+	color: var(--text-color);
+	//font-size: var(--font-size-15px);
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	height: 40px;
+	border-radius: 4em;
+	background-color: #b1c3d2;
+	margin: 0.3rem;
+	text-align: center;
+	font-size: 1rem;
 }
 
 #mainMotivation .quiz__navigation {
-  display: inline;
+	display: inline;
 }
 
 #mainMotivation p {
-  margin: 1rem 0;
-  //width: fit-content;
-  align-self: center;
-  text-align: center;
-  /* //margin: 1em auto; */
-  line-height: 30px;
-  border: 2px solid var(--text-color);
-  border-radius: 5em;
-  color: var(--text-color);
+	margin: 1rem 0;
+	//width: fit-content;
+	align-self: center;
+	text-align: center;
+	/* //margin: 1em auto; */
+	line-height: 30px;
+	border: 2px solid var(--text-color);
+	border-radius: 5em;
+	color: var(--text-color);
 }
 
 #mainMotivation input:checked + label p {
-  background-color: var(--text-color);
-  color: var(--secondary-color);
+	background-color: var(--text-color);
+	color: var(--secondary-color);
 }
 
 #mainMotivation input:checked + label p {
-  color: var(--white);
+	color: var(--white);
 }
 
 #last--button {
-  width: 7em !important;
+	width: 7em !important;
 }
 
 #quizForm button {
-  font-size: 1rem;
-  border: none;
-  background-color: var(--primary-color);
-  margin: 0.3rem;
-  border-radius: 5px;
-  padding: 1em 2em;
-  margin: 0.3em;
-  color: white;
+	font-size: 1rem;
+	border: none;
+	background-color: var(--primary-color);
+	margin: 0.3rem;
+	border-radius: 5px;
+	padding: 1em 2em;
+	margin: 0.3em;
+	color: white;
 }
 
 #quizForm button:disabled,
 button[disabled] {
-  background-color: #cccccc;
-  color: #666666;
+	background-color: #cccccc;
+	color: #666666;
 }
 
 #quizBackButton {
-  left: 16px;
+	left: 16px;
 }
 
 #quizNextButton {
-  left: 80px;
+	left: 80px;
 }
 
 #endresult p {
-  margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .section-4 h3:first-of-type {
-  margin-top: 2em;
+	margin-top: 2em;
 }
 #quizForm input:focus:checked + label p {
-  background-color: var(--primary-color);
+	background-color: var(--primary-color);
 }
 
 #quizForm .footer {
-  display: none;
+	display: none;
+}
+
+.mainMotivation__dragElement--animation:hover {
+	color: red;
+	animation: wiggleEffect 0.25s infinite;
+}
+
+@keyframes wiggleEffect {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(0.5deg);
+	}
+	75% {
+		transform: rotate(0.5deg);
+	}
+	0% {
+		transform: rotate(0deg);
+	}
 }
